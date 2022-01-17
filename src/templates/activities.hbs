@@ -6,10 +6,10 @@
 }}
 
 {{#*inline "main-content"}}
-<h2>Activities</h2>
+<h2>{{ locale.pageTitle }}</h2>
 <ul>
-    {{#each activities}}
-    <li><a href="activities/{{slug}}">{{locales.en.title}}</a></li>
+    {{#each locale.activities}}
+    <li><a href="activities/{{slug}}">{{title}}</a></li>
     {{/each}}
 </ul>
 {{/inline}}

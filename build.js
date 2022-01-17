@@ -9,7 +9,7 @@ var fs = require('fs'),
     markdown = new (require('showdown')).Converter(),
     args = process.argv.slice(2),
     debugMode = args.includes('--debug'),
-    data = {};
+    locales = {};
 
 // Data
 
@@ -71,20 +71,30 @@ function compileTemplates () {
         'hbs',
         (fileName, fileContents) => {
             var dataPath = `${__dirname}/data/pages/${fileName}.json`,
-                datum = fs.existsSync(dataPath) ?
-                    JSON.parse(fs.readFileSync(dataPath), 'utf8') :
-                    (data[fileName] || {});
-            if (debugMode) { datum.livereload = true; }
-            fs.writeFileSync(
-                `dist/${fileName}.html`,
-                handlebars.compile(fileContents)(datum)
+                data = fs.existsSync(dataPath) ?
+                    JSON.parse(fs.readFileSync(dataPath), 'utf8') : {};
+            if (debugMode) { data.livereload = true; }
+            // make the locale list available to all pages
+            data.locales = Object.keys(locales);
+            Object.keys(locales).forEach(
+                (langCode) => {
+                    data.locale = locales[langCode].pages[fileName];
+                    if (!data.locale) {
+                        debug(`missing locale: ${langCode} (default to EN)`);
+                        data.locale = locales.en.pages[fileName];
+                    }
+                    fse.ensureDirSync(`${__dirname}/dist/${langCode}`);
+                    fs.writeFileSync(
+                        `dist/${langCode}/${fileName}.html`,
+                        handlebars.compile(fileContents)(data)
+                    );
+                    debug(`compiled template: ${fileName} (${langCode})`);
+                }
             );
-            debug(`compiled template: ${fileName}`);
         }
     );
+
 };
-
-
 
 // Handlebars additions
 
@@ -126,38 +136,79 @@ function build () {
     // copy assets and JSON files
     copyAssets();
 
-    // process all activities
+    // process localization files
+    processLocales();
+
+    // process activities
     processActivities();
 
     // compile all templates
     compileTemplates();
 };
 
+function processLocales () {
+    doForFilesInDir(
+        'locales',
+        '/',
+        (dirName, fullPath) => {
+            locales[dirName] = { pages: {} };
+            doForFilesInDir(
+                `locales/${dirName}`,
+                'json',
+                (fileName, fileContents) => {
+                    locales[dirName].pages[fileName] =
+                        JSON.parse(fileContents);
+                },
+                true // recursive
+            )
+            console.log(`processed locale: ${dirName}`);
+        }
+    );
+};
+
 function processActivities () {
-    data.activities = { activities: {} };
     doForFilesInDir(
         'data/activities',
         '/',
         (slug, activityPath) => {
             // new activity
-            data.activities.activities[slug] = JSON.parse(
+            var meta = JSON.parse(
                 fs.readFileSync(`${activityPath}/meta.json`, 'utf8')
             );
-            data.activities.activities[slug].slug = slug;
-            data.activities.activities[slug].locales = {};
+            meta.slug = slug;
             // process locales, under subdirs
             doForFilesInDir(
                 `data/activities/${slug}`,
                 '/',
                 (langCode, localePath) => {
-                    data.activities.activities[slug].locales[langCode] =
+                    if (!locales[langCode]) {
+                        // there may be activities translated to languages to
+                        // which we don't yet have full site localization, so
+                        // we default to EN for the activity page in those
+                        // languages
+                        locales[langCode] = { pages: { activities : {}}}
+                        // deep copy
+                        Object.assign(
+                            locales[langCode].pages.activities,
+                            locales.en.pages.activities
+                        );
+                        // get rid of the activity list
+                        locales[langCode].pages.activities.activities = {};
+                    }
+                    // not redundant; the first "activities" refers to the page
+                    // slug, while the second one stores the activity list
+                    if (!locales[langCode].pages.activities.activities) {
+                        locales[langCode].pages.activities.activities = {};
+                    }
+                    locales[langCode].pages.activities.activities[slug] =
                         JSON.parse(fs.readFileSync(
                             `${localePath}/meta.json`,
                             'utf8'
                         ));
+                    console.log(`processed activity: ${slug} (${langCode})`);
+                    console.log(locales[langCode].pages.activities)
                 }
             );
-            console.log(`processed activity ${slug}`);
         }
     );
 };
