@@ -1,0 +1,22 @@
+{
+  "name": "microblocks-site",
+  "version": "1.0.0",
+  "description": "MicroBlocks website",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js",
+    "dev": "node build.js --debug"
+  },
+  "author": "Marc Campreciós",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^3.0.1",
+    "handlebars": "^4.7.7",
+    "node-sass": "^6.0.0",
+    "postcss": "^7.0.35",
+    "showdown": "^1.9.1",
+    "ws": "^7.4.6"
+  }
+}

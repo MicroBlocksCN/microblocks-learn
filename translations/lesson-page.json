@@ -1,0 +1,17 @@
+{
+    "pageTitle": {
+        "en": "Activities",
+        "ca": "Activitats",
+        "de": "Aktivitäten"
+    },
+    "pageSlug": {
+        "en": "activities-slug",
+        "ca": "activitats-slug",
+        "de": "aktivitaten-slug"
+    },
+    "pageIntro": {
+        "en": "Welcome to our activities list!",
+        "ca": "Benvinguts a la nostra llista d'activitats",
+        "de": "Willkommen in unserer Aktivitätenliste!"
+    }
+}

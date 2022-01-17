@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+  </head>
+  <body>
+    <div class="page {{ pageClass }}">
+
+        {{> _header }}
+
+      <main class="main">
+          {{#> main-content }}
+                {{! Page contents will end up here }}
+          {{/main-content }}
+      </main>
+
+      {{> _footer }}
+
+    </div>
+
+    {{#if livereload}}
+    <script>
+      console.log('live reload enabled');
+      var ws = new WebSocket(`ws://${location.hostname}:8080`);
+      ws.onmessage = function (msg) {
+        if (msg.data === 'reload') {
+          location.reload();
+        } else {
+          console.log(msg.data);
+        }
+      };
+    </script>
+    {{/if}}
+  </body>
+</html>

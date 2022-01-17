@@ -1,0 +1,24 @@
+{
+    "languages": [
+        "en", 
+        "ca",
+        "de"
+    ],
+    "urls": {
+        "index": {
+            "en": "",
+            "ca": "",
+            "de": ""
+        },
+        "about": {
+            "en": "about-us",
+            "ca": "sobre-nosaltres",
+            "de": "uber"
+        },
+        "activities": {
+            "en": "activities",
+            "ca": "activitats",
+            "de": "aktivitaten"
+        }
+    }
+}

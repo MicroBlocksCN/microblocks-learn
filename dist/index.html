@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+  </head>
+  <body>
+    <div class="page page-home page-has-hero">
+
+        <h1>Learn MicroBlocks!</h1>
+
+      <main class="main">
+<h2>You are learning MicroBlocks</h2>
+<p>...</p>
+      </main>
+
+      <small>You've learned MicroBlocks :)</small>
+
+    </div>
+
+    <script>
+      console.log('live reload enabled');
+      var ws = new WebSocket(`ws://${location.hostname}:8080`);
+      ws.onmessage = function (msg) {
+        if (msg.data === 'reload') {
+          location.reload();
+        } else {
+          console.log(msg.data);
+        }
+      };
+    </script>
+  </body>
+</html>

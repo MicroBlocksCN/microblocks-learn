@@ -1,0 +1,7 @@
+{
+    "autor": "Marc Campreciós",
+    "level": "Beginner",
+    "boards": [
+        "micro:bit", "Adafruit Circuit"
+    ]
+}
