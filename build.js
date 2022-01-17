@@ -8,7 +8,8 @@ var fs = require('fs'),
     postcss = require('postcss'),
     markdown = new (require('showdown')).Converter(),
     args = process.argv.slice(2),
-    debugMode = args.includes('--debug');
+    debugMode = args.includes('--debug'),
+    data = {};
 
 // Data
 
@@ -37,6 +38,9 @@ function doForFilesInDir (dir, extension, action, recursive) {
         } else if (recursive && fs.statSync(fullPath).isDirectory()) {
             // recurse into directory
             doForFilesInDir(dir + '/' + fileName, extension, action, recursive);
+        } else if (extension == '/' && fs.statSync(fullPath).isDirectory()) {
+            // iterate over directories
+            action.call(this, fileName, fullPath); 
         }
     });
 };
@@ -66,14 +70,14 @@ function compileTemplates () {
         'src/templates',
         'hbs',
         (fileName, fileContents) => {
-            var dataPath = `${__dirname}/data/static/${fileName}.json`;
-            var data = fs.existsSync(dataPath) ?
+            var dataPath = `${__dirname}/data/pages/${fileName}.json`,
+                datum = fs.existsSync(dataPath) ?
                     JSON.parse(fs.readFileSync(dataPath), 'utf8') :
-                    {};
-            if (debugMode) { data.livereload = true; }
+                    (data[fileName] || {});
+            if (debugMode) { datum.livereload = true; }
             fs.writeFileSync(
                 `dist/${fileName}.html`,
-                handlebars.compile(fileContents)(data)
+                handlebars.compile(fileContents)(datum)
             );
             debug(`compiled template: ${fileName}`);
         }
@@ -122,8 +126,40 @@ function build () {
     // copy assets and JSON files
     copyAssets();
 
+    // process all activities
+    processActivities();
+
     // compile all templates
     compileTemplates();
+};
+
+function processActivities () {
+    data.activities = { activities: {} };
+    doForFilesInDir(
+        'data/activities',
+        '/',
+        (slug, activityPath) => {
+            // new activity
+            data.activities.activities[slug] = JSON.parse(
+                fs.readFileSync(`${activityPath}/meta.json`, 'utf8')
+            );
+            data.activities.activities[slug].slug = slug;
+            data.activities.activities[slug].locales = {};
+            // process locales, under subdirs
+            doForFilesInDir(
+                `data/activities/${slug}`,
+                '/',
+                (langCode, localePath) => {
+                    data.activities.activities[slug].locales[langCode] =
+                        JSON.parse(fs.readFileSync(
+                            `${localePath}/meta.json`,
+                            'utf8'
+                        ));
+                }
+            );
+            console.log(`processed activity ${slug}`);
+        }
+    );
 };
 
 function copyAssets () {
@@ -178,10 +214,10 @@ function serve () {
     // Dead simple (and naive) HTTP static server
 
     function respondWithFile (res, fileName, params) {
-        // So we need to do anything at all with params? I don't think so
+        // Do we need to do anything at all with params? I don't think so
         fs.readFile(
             pathTo(fileName),
-            (err,data) => {
+            (err, data) => {
                 res.setHeader('Content-Type', mimeTypeFor(fileName));
                 if (err) {
                     res.writeHead(404);
