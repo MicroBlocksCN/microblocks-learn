@@ -11,29 +11,14 @@ var fs = require('fs'),
     debugMode = args.includes('--debug'),
     locales = {};
 
-// Thanks to Hiew Nguyen for the custom CSS extension:
-// https://github.com/showdownjs/showdown/issues/542#issuecomment-660437310
 markdown.addExtension({
     type: 'output',
     filter: function (text) {
-        return text
-            // Add class for list (ol, ul)
-            .replace(
-                /<p>\[\.([a-z0-9A-Z\s]+)\]<\/p>[\n]?<(.+)>/g,
-                `<$2 class="$1">`
-            )
-
-            // Add class for other blocks
-            .replace(/<(.+)>\[\.([a-z0-9A-Z\s]+)\]/g, `<$1 class="$2">`)
-
-            // Prevent class name with 2 dashes from being replaced by an
-            // `<em>` tag
-            .replace(/class="(.+)"/g, function (str) {
-                if (str.indexOf("<em>") !== -1) {
-                    return str.replace(/<[/]?em>/g, '_');
-                }
-                return str;
-            });
+        return text.replace(
+            /<p>\[(.+)\]/g, `<div class="$1">`
+        ).replace(
+            /\[\/.*\]<\/p>/g, `</div>`
+        );
     }
 });
 
@@ -134,7 +119,9 @@ function compileTemplates () {
 
 handlebars.registerHelper('markdown', (context, options) => {
     var mdPath = `${__dirname}/data/markdown/${context}.md`,
-        md = options.data.root.markdown || (options ? options.fn(this) : context.fn(this)),
+        md =  options ?
+            (options.data.root.markdown || options.fn(this)) :
+            context.fn(this),
         html;
     if (fs.existsSync(mdPath)) {
         md = fs.readFileSync(mdPath, 'utf8');

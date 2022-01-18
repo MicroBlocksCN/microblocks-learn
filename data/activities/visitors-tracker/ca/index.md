@@ -5,4 +5,15 @@ Utilitzarem un *sensor* per comptar visitants.
 * Sensor
 * Placa
 
-[.tip] Un consell per a principiants
+[tip]
+Aquí provant mandangues
+
+[jazz]
+múltiples
+[/jazz]
+
+amb
+    * llistes
+
+**wow**
+[/]

@@ -4,8 +4,12 @@
     <option>{{this}}</option>
     {{/each}}
 </select>
-{{/unless}}
 <script>
     document.querySelector('.locale').value = location.pathname.substring(1,3);
 </script>
-<h1>Learn MicroBlocks!</h1>
+{{/unless}}
+<nav>
+{{#markdown}}
+[index](index) [activities](activity-list)
+{{/markdown}}
+</nav>
