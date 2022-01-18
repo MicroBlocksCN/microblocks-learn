@@ -136,6 +136,19 @@ handlebars.registerHelper('markdown', (context, options) => {
     return html;
 });
 
+handlebars.registerHelper('localize', function () {
+    var locale = arguments[arguments.length - 1].data.root.locale,
+        key = arguments[0],
+        params = [].slice.call(arguments, 1, arguments.length - 1),
+        localized = locale[key];
+
+    params.forEach((param, index) => {
+        localized = localized.replace(`@${index + 1}`, param);
+    });
+
+    return localized
+});
+
 // Build script functions
 
 function build () {
@@ -146,7 +159,7 @@ function build () {
     fse.ensureDirSync(`${__dirname}/dist`);
 
     // register all handlebars partials
-    //registerPartials('svg');
+    registerPartials('svg');
     registerPartials('layouts');
     registerPartials();
 
