@@ -96,25 +96,42 @@ function compileTemplates () {
             // make the locale list available to all pages
             data.locales = Object.keys(locales);
             Object.keys(locales).forEach(
-                (langCode) => {
-                    data.locale = locales[langCode].pages[fileName];
-                    if (!data.locale) {
-                        debug(`missing locale: ${langCode} (default to EN)`);
-                        data.locale = {};
-                        Object.assign(data.locale, locales.en.pages[fileName]);
-                    }
-                    data.locale.code = langCode;
-                    fse.ensureDirSync(`${__dirname}/dist/${langCode}`);
-                    fs.writeFileSync(
-                        `dist/${langCode}/${fileName}.html`,
-                        handlebars.compile(fileContents)(data)
-                    );
-                    debug(`compiled template: ${fileName} (${langCode})`);
-                }
+                (langCode) => { compileTemplate(fileName, data, langCode); }
             );
         }
     );
 
+};
+
+function compileTemplate (templateName, descriptor, langCode, destinationDir) {
+    var template =
+            fs.readFileSync(
+                `${__dirname}/src/templates/${templateName}.hbs`,
+                'utf8'
+            ),
+        destinationDir = destinationDir || '';
+
+    // make the locale list available to all pages
+    descriptor.locales = Object.keys(locales);
+
+    // find locale data for this template
+    descriptor.locale = locales[langCode].pages[templateName];
+    if (!descriptor.locale) {
+        debug(`missing locale: ${langCode} (default to EN)`);
+        descriptor.locale = {};
+        Object.assign(descriptor.locale, locales.en.pages[templateName]);
+    }
+    descriptor.locale.code = langCode;
+
+    // compile the template
+    fse.ensureDirSync(`${__dirname}/dist/${langCode}/${destinationDir}`);
+    fs.writeFileSync(
+        `dist/${langCode}/${destinationDir}/` +
+            `${descriptor.slug || templateName}.html`,
+        handlebars.compile(template)(descriptor)
+    );
+    debug(`compiled template: ${templateName}` +
+        `${descriptor.slug ? (' ' + descriptor.slug) : ''} (${langCode})`);
 };
 
 // Handlebars additions
@@ -260,28 +277,12 @@ function buildActivities () {
 };
 
 function buildActivity (descriptor, langCode, activityPath) {
-    var template =
-        fs.readFileSync(`${__dirname}/src/templates/activity.hbs`, 'utf8');
     descriptor.markdown =
         fs.readFileSync(
             `${activityPath}/${langCode}/index.md`,
             'utf8'
         );
-    // make the locale list available to all pages
-    descriptor.locales = Object.keys(locales);
-    descriptor.locale = locales[langCode].pages.activity;
-    if (!descriptor.locale) {
-        debug(`missing locale: ${langCode} (default to EN)`);
-        descriptor.locale = {};
-        Object.assign(descriptor.locale, locales.en.pages.activity);
-    }
-    descriptor.locale.code = langCode;
-    fse.ensureDirSync(`${__dirname}/dist/${langCode}/activities`);
-    fs.writeFileSync(
-        `dist/${langCode}/activities/${descriptor.slug}.html`,
-        handlebars.compile(template)(descriptor)
-    );
-    debug(`compiled activity: ${descriptor.slug}`);
+    compileTemplate('activity', descriptor, langCode, 'activities');
 };
 
 function copyAssets () {
