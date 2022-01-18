@@ -45,6 +45,14 @@ function doForFilesInDir (dir, extension, action, recursive) {
     });
 };
 
+function slugify (string) {
+    // make all lowercase, allow only alpha characters, and replace spaces with
+    // hyphens
+    return string.split('').map(
+        char => char.toLowerCase().replace(' ','-')
+    ).join('').replaceAll(/[^\p{L}-]/gu,''); // \p{L} → letter in any locale
+};
+
 // Handlebars processing
 
 function registerPartials (dir) {
@@ -139,8 +147,8 @@ function build () {
     // process localization files
     processLocales();
 
-    // process activities
-    processActivities();
+    // process all activity descriptors and build pages for each of them
+    buildActivities();
 
     // compile all templates
     compileTemplates();
@@ -166,7 +174,7 @@ function processLocales () {
     );
 };
 
-function processActivities () {
+function buildActivities () {
     doForFilesInDir(
         'data/activities',
         '/',
@@ -200,17 +208,30 @@ function processActivities () {
                     if (!locales[langCode].pages.activities.activities) {
                         locales[langCode].pages.activities.activities = {};
                     }
-                    locales[langCode].pages.activities.activities[slug] =
-                        JSON.parse(fs.readFileSync(
+                    var activities =
+                        locales[langCode].pages.activities.activities;
+                    activities[slug] = JSON.parse(
+                        fs.readFileSync(
                             `${localePath}/meta.json`,
                             'utf8'
-                        ));
-                    console.log(`processed activity: ${slug} (${langCode})`);
-                    console.log(locales[langCode].pages.activities)
+                        )
+                    );
+                    activities[slug].slug = slugify(activities[slug].title);
+                    debug(
+                        `processed activity: ${slug} (${langCode} : ` +
+                            `${activities[slug].slug})`
+                    );
+
+                    // build the actual activity page
+                    buildActivity(activities[slug], activityPath, localePath);
                 }
             );
         }
     );
+};
+
+function buildActivity (descriptor, activityPath, localePath) {
+
 };
 
 function copyAssets () {
