@@ -1,0 +1,16 @@
+{{#> layouts._html-shell
+    title="Home"
+    pageClass="page-home page-has-hero"
+    pageUrl="https://learn.microblocks.fun/"
+    pageDescription="MicroBlocks is a live blocks programming language for physical computing."
+}}
+
+{{#*inline "main-content"}}
+<h2>{{ locale.pageTitle }}</h2>
+<ul>
+    {{#each locale.activities}}
+    <li><a href="activities/{{slug}}">{{title}}</a></li>
+    {{/each}}
+</ul>
+{{/inline}}
+{{/layouts._html-shell }}

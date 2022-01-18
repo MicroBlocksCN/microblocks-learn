@@ -1,8 +1,10 @@
+{{#unless untranslatable}}
 <select class="locale" onchange="setLang(this.value)">
     {{#each locales}}
     <option>{{this}}</option>
     {{/each}}
 </select>
+{{/unless}}
 <script>
     document.querySelector('.locale').value = location.pathname.substring(1,3);
 </script>

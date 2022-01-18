@@ -108,7 +108,7 @@ function compileTemplates () {
 
 handlebars.registerHelper('markdown', (context, options) => {
     var mdPath = `${__dirname}/data/markdown/${context}.md`,
-        md = options ? options.fn(this) : context.fn(this),
+        md = options.data.root.markdown || (options ? options.fn(this) : context.fn(this)),
         html;
     if (fs.existsSync(mdPath)) {
         md = fs.readFileSync(mdPath, 'utf8');
@@ -194,22 +194,25 @@ function buildActivities () {
                         // which we don't yet have full site localization, so
                         // we default to EN for the activity page in those
                         // languages
-                        locales[langCode] = { pages: { activities : {}}}
+                        locales[langCode] = { pages: {} };
+                        locales[langCode].pages['activity-list'] = {};
                         // deep copy
                         Object.assign(
-                            locales[langCode].pages.activities,
-                            locales.en.pages.activities
+                            locales[langCode].pages['activity-list'],
+                            locales.en.pages['activity-list']
                         );
                         // get rid of the activity list
-                        locales[langCode].pages.activities.activities = {};
+                        locales[langCode].pages['activity-list'].activities =
+                            {};
                     }
-                    // not redundant; the first "activities" refers to the page
-                    // slug, while the second one stores the activity list
-                    if (!locales[langCode].pages.activities.activities) {
-                        locales[langCode].pages.activities.activities = {};
+                    // activities stores the list of activity descriptors for
+                    // this particular locale
+                    if (!locales[langCode].pages['activity-list'].activities) {
+                        locales[langCode].pages['activity-list'].activities =
+                            {};
                     }
                     var activities =
-                        locales[langCode].pages.activities.activities;
+                        locales[langCode].pages['activity-list'].activities;
                     activities[slug] = JSON.parse(
                         fs.readFileSync(
                             `${localePath}/meta.json`,
@@ -217,21 +220,33 @@ function buildActivities () {
                         )
                     );
                     activities[slug].slug = slugify(activities[slug].title);
-                    debug(
-                        `processed activity: ${slug} (${langCode} : ` +
-                            `${activities[slug].slug})`
+                    debug(`processed activity: ${slug} (${langCode})`
                     );
 
                     // build the actual activity page
-                    buildActivity(activities[slug], activityPath, localePath);
+                    buildActivity(activities[slug], langCode, activityPath);
                 }
             );
         }
     );
 };
 
-function buildActivity (descriptor, activityPath, localePath) {
-
+function buildActivity (descriptor, langCode, activityPath) {
+    var template =
+        fs.readFileSync(`${__dirname}/src/templates/activity.hbs`, 'utf8');
+    descriptor.markdown =
+        fs.readFileSync(
+            `${activityPath}/${langCode}/index.md`,
+            'utf8'
+        );
+    // make the locale list available to all pages
+    descriptor.locales = Object.keys(locales);
+    fse.ensureDirSync(`${__dirname}/dist/${langCode}/activities`);
+    fs.writeFileSync(
+        `dist/${langCode}/activities/${descriptor.slug}.html`,
+        handlebars.compile(template)(descriptor)
+    );
+    debug(`compiled activity: ${descriptor.slug}`);
 };
 
 function copyAssets () {
