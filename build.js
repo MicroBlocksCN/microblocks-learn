@@ -100,8 +100,10 @@ function compileTemplates () {
                     data.locale = locales[langCode].pages[fileName];
                     if (!data.locale) {
                         debug(`missing locale: ${langCode} (default to EN)`);
-                        data.locale = locales.en.pages[fileName];
+                        data.locale = {};
+                        Object.assign(data.locale, locales.en.pages[fileName]);
                     }
+                    data.locale.code = langCode;
                     fse.ensureDirSync(`${__dirname}/dist/${langCode}`);
                     fs.writeFileSync(
                         `dist/${langCode}/${fileName}.html`,
@@ -254,6 +256,13 @@ function buildActivity (descriptor, langCode, activityPath) {
         );
     // make the locale list available to all pages
     descriptor.locales = Object.keys(locales);
+    descriptor.locale = locales[langCode].pages.activity;
+    if (!descriptor.locale) {
+        debug(`missing locale: ${langCode} (default to EN)`);
+        descriptor.locale = {};
+        Object.assign(descriptor.locale, locales.en.pages.activity);
+    }
+    descriptor.locale.code = langCode;
     fse.ensureDirSync(`${__dirname}/dist/${langCode}/activities`);
     fs.writeFileSync(
         `dist/${langCode}/activities/${descriptor.slug}.html`,

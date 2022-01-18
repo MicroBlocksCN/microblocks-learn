@@ -5,11 +5,13 @@
     {{/each}}
 </select>
 <script>
-    document.querySelector('.locale').value = location.pathname.substring(1,3);
+    document.querySelector('select.locale').value =
+        document.documentElement.lang;
 </script>
 {{/unless}}
 <nav>
 {{#markdown}}
-[index](index) [activities](activity-list)
+[index](/{{@root.locale.code}}/index)
+[activities](/{{@root.locale.code}}/activity-list)
 {{/markdown}}
 </nav>

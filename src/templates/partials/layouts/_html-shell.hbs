@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html >
+<html lang="{{@root.locale.code}}">
   <head>
+    <title>{{ title }}</title>
     <meta charset="UTF-8">
     <script src="/main.js"></script>
   </head>
   <body>
     <div class="page {{ pageClass }}">
 
-        {{> _header }}
+        {{> _header}}
 
       <main class="main">
           {{#> main-content }}

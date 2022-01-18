@@ -13,7 +13,7 @@ múltiples
 [/jazz]
 
 amb
-    * llistes
+* llistes
 
 **wow**
 [/]
