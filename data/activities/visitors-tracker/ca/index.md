@@ -4,3 +4,5 @@ Utilitzarem un *sensor* per comptar visitants.
 
 * Sensor
 * Placa
+
+[.tip] Un consell per a principiants
