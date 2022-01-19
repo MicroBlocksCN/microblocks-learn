@@ -1,0 +1,17 @@
+<div id="activity-filters">
+    <h4>Filters:</h4>
+    <h5>Language</h5>
+    <select
+        class="locale activity-filter"
+        onchange="applyFilter('locale', this.value)" >
+    </select>
+    <h5>Board</h5>
+    <select
+        class="board activity-filter"
+        onchange="applyFilter('board', this.value)">
+    </select>
+    <label><input
+        class = "compatible toggle"
+        type="checkbox"
+        value="compatible-boards"> and compatible boards</label>
+</div>

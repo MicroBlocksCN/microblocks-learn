@@ -7,10 +7,12 @@
 
 {{#*inline "main-content"}}
 <h2>{{ locale.pageTitle }}</h2>
-<ul>
-    {{#each locale.activities}}
-    <li><a href="activities/{{slug}}">{{title}}</a></li>
-    {{/each}}
-</ul>
+{{> _activity-filters }}
+
+{{! gets filled from activity-list.js }}
+<div id="activity-list"></div>
+
+<script>fetchActivities();</script>
+
 {{/inline}}
 {{/layouts._html-shell }}
