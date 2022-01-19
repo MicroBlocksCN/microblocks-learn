@@ -2,16 +2,24 @@
     <h4>Filters:</h4>
     <h5>Language</h5>
     <select
-        class="locale activity-filter"
-        onchange="applyFilter('locale', this.value)" >
+        class="locales activity-filter"
+        onchange="applyFilter('locales', this.value)" >
+        <option value="">All</option>
     </select>
     <h5>Board</h5>
     <select
-        class="board activity-filter"
-        onchange="applyFilter('board', this.value)">
+        class="boards activity-filter"
+        onchange="applyFilter('boards', this.value)" >
+        <option value="">All</option>
     </select>
     <label><input
         class = "compatible toggle"
         type="checkbox"
         value="compatible-boards"> and compatible boards</label>
+    <h5>Level</h5>
+    <select
+        class="level activity-filter"
+        onchange="applyFilter('level', this.value)">
+        <option value="">All</option>
+    </select>
 </div>

@@ -1,10 +1,10 @@
 {
     "author": "Marc Campreciós",
     "boards": [
-        "micro:bit", "Adafruit Circuit"
+        "micro:bit", "Adafruit Circuit Playground Express"
     ],
     "level": "Beginner",
     "components": [
-        "component 1", "component 2"
+        "dht22", "servo"
     ]
 }

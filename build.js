@@ -233,6 +233,7 @@ function processLocales () {
 };
 
 function buildActivities () {
+    var activityDescriptors = [];
     doForFilesInDir(
         'data/activities',
         '/',
@@ -242,9 +243,9 @@ function buildActivities () {
                     fs.readFileSync(
                         `${activityPath}/meta.json`, 'utf8'
                     )
-                ),
-                pageDescriptor = {};
+                );
             meta.slug = slug;
+            meta.locales = {};
             // process locales, under subdirs
             doForFilesInDir(
                 `data/activities/${slug}`,
@@ -259,18 +260,24 @@ function buildActivities () {
                     );
                     activity.slug = slugify(activity.title);
                     activity.locale = langCode;
-                    activities.push(activity);
+
+                    meta.locales[langCode] = {
+                        code: langCode,
+                        label: langCode, // TODO actual language name
+                    };
+
                     debug(`processed activity: ${slug} (${langCode})`);
 
-                    // build the actual activity pages, copying the activity
-                    // object into another one so it doesn't get polluted later
-                    Object.assign(pageDescriptor, activity);
-                    buildActivity(pageDescriptor, langCode, activityPath);
+                    buildActivity(activity, langCode, activityPath);
                 }
             );
+            activityDescriptors.push(meta);
         }
     );
-    fs.writeFileSync('dist/activities.json', JSON.stringify(activities));
+    fs.writeFileSync(
+        'dist/activities.json',
+        JSON.stringify(activityDescriptors)
+    );
 };
 
 function buildActivity (descriptor, langCode, activityPath) {
