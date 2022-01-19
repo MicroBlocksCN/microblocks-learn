@@ -65,9 +65,11 @@ function populateFilters () {
         });
     });
 
-    // Set the language filter to the page locale, by default
+    // Set the language filter to the page locale, by default, and apply the
+    // filter
     document.querySelector('select.locale.activity-filter').value =
         document.documentElement.lang;
+    applyFilter('locale', document.documentElement.lang);
 };
 
 function applyFilter (selector, value) {
