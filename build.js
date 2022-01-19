@@ -122,6 +122,17 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         descriptor.locale = {};
         Object.assign(descriptor.locale, locales.en.pages[templateName]);
     }
+
+    // add global layout strings to all page locales
+    Object.keys(locales.en.pages.layout).forEach((key) => {
+        if (locales[langCode].pages.layout &&
+                locales[langCode].pages.layout[key]) {
+            descriptor.locale[key] = locales[langCode].pages.layout[key];
+        } else {
+            descriptor.locale[key] = locales.en.pages.layout[key];
+        }
+    });
+
     descriptor.locale.code = langCode;
 
     // compile the template
@@ -266,8 +277,7 @@ function buildActivities () {
                         )
                     );
                     activities[slug].slug = slugify(activities[slug].title);
-                    debug(`processed activity: ${slug} (${langCode})`
-                    );
+                    debug(`processed activity: ${slug} (${langCode})`);
 
                     // build the actual activity page
                     buildActivity(activities[slug], langCode, activityPath);

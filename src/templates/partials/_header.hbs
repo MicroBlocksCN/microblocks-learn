@@ -1,4 +1,3 @@
-{{#unless untranslatable}}
 <select class="locale" onchange="setLang(this.value)">
     {{#each locales}}
     <option>{{this}}</option>
@@ -8,10 +7,9 @@
     document.querySelector('select.locale').value =
         document.documentElement.lang;
 </script>
-{{/unless}}
 <nav>
 {{#markdown}}
-[index](/{{@root.locale.code}}/index)
-[activities](/{{@root.locale.code}}/activity-list)
+[{{@root.locale.index-nav-item}}](/{{@root.locale.code}}/index)
+[{{@root.locale.activities-nav-item}}](/{{@root.locale.code}}/activity-list)
 {{/markdown}}
 </nav>
