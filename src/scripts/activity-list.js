@@ -69,16 +69,6 @@ function populateFilters () {
                     value.forEach((value) => {
                         addOption(element, value, value);
                     });
-                } else if (typeof value === 'object') {
-                    // i.e. locales: en: { ... }, ca: { ... }
-                    Object.keys(value).forEach((key) => {
-                        addOption(
-                            element,
-                            key,
-                            value[key].label,
-                            value[key]
-                        );
-                    });
                 } else {
                     // atom, i.e. "beginner"
                     addOption(element, value, value);
@@ -89,7 +79,7 @@ function populateFilters () {
 
     // Set the language filter to the page locale, by default, and apply the
     // filter
-    document.querySelector('select.locales.activity-filter').value =
+    document.querySelector('select.locale.activity-filter').value =
         document.documentElement.lang;
     applyFilter('locale', document.documentElement.lang);
 };
@@ -106,12 +96,6 @@ function filteredActivities() {
                 // i.e. boards: [ 'micro:bit', 'ed1' ]
                 return filters[selector] === '' ||
                     activity[selector].includes(filters[selector]);
-            } else if (typeof value === 'object') {
-                // i.e. locales: en: { label: 'English', ... }, ca: { ... }
-                return filters[selector] === '' ||
-                    activity[selector].map(each => each.label).includes(
-                        filters[selector]
-                    );
             } else {
                 // atom, i.e. "beginner"
                 return filters[selector] === '' ||

@@ -9,8 +9,7 @@ var fs = require('fs'),
     markdown = new (require('showdown')).Converter(),
     args = process.argv.slice(2),
     debugMode = args.includes('--debug'),
-    locales = {},
-    activities = [];
+    locales = {};
 
 markdown.addExtension({
     type: 'output',
@@ -245,7 +244,6 @@ function buildActivities () {
                     )
                 );
             meta.slug = slug;
-            meta.locales = {};
             // process locales, under subdirs
             doForFilesInDir(
                 `data/activities/${slug}`,
@@ -253,25 +251,27 @@ function buildActivities () {
                 (langCode, localePath) => {
                     // activities stores the list of all activity descriptors
                     var activity = JSON.parse(
-                        fs.readFileSync(
-                            `${localePath}/meta.json`,
-                            'utf8'
-                        )
-                    );
+                            fs.readFileSync(
+                                `${localePath}/meta.json`,
+                                'utf8'
+                            )
+                        ),
+                        descriptor = {};
                     activity.slug = slugify(activity.title);
                     activity.locale = langCode;
 
-                    meta.locales[langCode] = {
-                        code: langCode,
-                        label: langCode, // TODO actual language name
-                    };
+                    Object.assign(descriptor, meta);
+                    Object.keys(activity).forEach((key) => {
+                        descriptor[key] = activity[key];
+                    });
+
+                    activityDescriptors.push(descriptor);
 
                     debug(`processed activity: ${slug} (${langCode})`);
 
                     buildActivity(activity, langCode, activityPath);
                 }
             );
-            activityDescriptors.push(meta);
         }
     );
     fs.writeFileSync(
