@@ -89,14 +89,13 @@ function compileTemplates () {
         'src/templates',
         'hbs',
         (fileName, fileContents) => {
-            var dataPath = `${__dirname}/data/pages/${fileName}.json`,
-                data = fs.existsSync(dataPath) ?
-                    JSON.parse(fs.readFileSync(dataPath), 'utf8') : {};
-            if (debugMode) { data.livereload = true; }
-            // make the locale list available to all pages
-            data.locales = Object.keys(locales);
+            var descriptorPath = `${__dirname}/data/pages/${fileName}.json`,
+                descriptor = fs.existsSync(descriptorPath) ?
+                    JSON.parse(fs.readFileSync(descriptorPath), 'utf8') : {};
             Object.keys(locales).forEach(
-                (langCode) => { compileTemplate(fileName, data, langCode); }
+                (langCode) => {
+                    compileTemplate(fileName, descriptor, langCode);
+                }
             );
         }
     );
@@ -113,6 +112,8 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
 
     // make the locale list available to all pages
     descriptor.locales = Object.keys(locales);
+
+    if (debugMode) { descriptor.livereload = true; }
 
     // find locale data for this template
     descriptor.locale = locales[langCode].pages[templateName];
