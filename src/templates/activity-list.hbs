@@ -6,10 +6,12 @@
 }}
 
 {{#*inline "main-content"}}
-<h2>{{ locale.pageTitle }}</h2>
+<h2>{{ localize "pageTitle" }}</h2>
+<span>{{ localize "pageIntro" }}</span>
 {{> _activity-filters }}
 
 {{! gets filled from activity-list.js }}
+<span id="activity-count"></span>
 <div id="activity-list"></div>
 
 <script>fetchActivities();</script>

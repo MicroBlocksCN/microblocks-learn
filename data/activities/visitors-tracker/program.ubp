@@ -1,0 +1,217 @@
+module main
+author unknown
+version 1 0 
+description ''
+variables _stop_scrolling_text doorOpenings visitors 
+
+	spec ' ' 'reset' 'reset'
+	spec ' ' 'tracker' 'tracker'
+
+to reset {
+  stopAll
+  doorOpenings = 0
+  visitors = 0
+  '[display:mbDisplay]' 33554431
+  waitMillis 200
+  '[display:mbDisplay]' 473536
+  waitMillis 200
+  '[display:mbDisplay]' 4096
+  waitMillis 200
+  '[display:mbDisplay]' 0
+}
+
+to tracker {
+  forever {
+    if (('[display:lightLevel]') > 50) {
+      '[display:mbDisplay]' 18400831
+      waitUntil (('[display:lightLevel]') < 3)
+      doorOpenings += 1
+      if ((doorOpenings % 2) == 0) {
+        visitors = (doorOpenings / 2)
+      }
+    }
+    scroll_text visitors
+    waitMillis 500
+  }
+}
+
+script 421 50 {
+whenButtonPressed 'B'
+stopAll
+doorOpenings = 0
+visitors = 0
+'[display:mbDisplay]' 33554431
+waitMillis 200
+'[display:mbDisplay]' 473536
+waitMillis 200
+'[display:mbDisplay]' 4096
+waitMillis 200
+'[display:mbDisplay]' 0
+}
+
+script 698 52 {
+whenBroadcastReceived 'isRunning'
+forever {
+  '[display:mbDisplay]' 4096
+  waitMillis 20
+  '[display:mbDisplayOff]'
+  waitMillis 2000
+}
+}
+
+script 65 53 {
+whenButtonPressed 'A'
+sendBroadcast 'isRunning'
+sendBroadcast 'localTesting'
+forever {
+  if (('[display:lightLevel]') > 5) {
+    '[radio:sendInteger]' -1
+    waitUntil (('[display:lightLevel]') < 5)
+    doorOpenings += 1
+    if ((doorOpenings % 2) == 0) {
+      visitors = (doorOpenings / 2)
+    }
+    '[radio:sendInteger]' visitors
+  }
+  waitMillis 500
+}
+}
+
+script 700 353 {
+whenBroadcastReceived 'localTesting'
+forever {
+  sayIt visitors 'visitors and' doorOpenings 'doorOpenings'
+  printIt ('[display:lightLevel]')
+  waitMillis 500
+}
+}
+
+script 70 495 {
+whenButtonPressed 'A+B'
+forever {
+  scroll_text (analogReadOp 0)
+  '[radio:sendInteger]' (analogReadOp 0)
+  printIt (analogReadOp 0)
+  waitMillis 500
+}
+}
+
+script 694 557 {
+whenButtonPressed 'A+B'
+}
+
+script 696 616 {
+forever {
+  printIt (analogReadOp 0)
+  scroll_text ('[display:lightLevel]')
+  waitMillis 1000
+}
+}
+
+script 321 731 {
+'[display:mbDisplay]' 16
+}
+
+script 187 773 ('[display:lightLevel]')
+
+script 927 774 ('[display:lightLevel]')
+
+
+module 'Basic Sensors' Input
+author MicroBlocks
+version 1 1 
+tags tilt acceleration light sensor 
+choices accelerometerRange '1' '2' '4' '8' 
+description 'Provides blocks to read tilt in the three axes, acceleration, temperature and light level. Many boards come with this particular set of sensors, such as the micro:bit, the Circuit Playground Express, the Calliope or the Citilab ED1.'
+
+	spec 'r' '[sensors:tiltX]' 'tilt x'
+	spec 'r' '[sensors:tiltY]' 'tilt y'
+	spec 'r' '[sensors:tiltZ]' 'tilt z'
+	spec 'r' '[sensors:acceleration]' 'acceleration'
+	spec 'r' '[display:lightLevel]' 'light level'
+	spec 'r' '[sensors:temperature]' 'temperature (°C)'
+	spec ' ' '_setAccelRange' 'set acceleration range _ g = 100' 'menu.accelerometerRange' '1'
+
+to '_setAccelRange' n {
+  '[sensors:setAccelerometerRange]' (0 + n)
+}
+
+
+module 'LED Display' Output
+author MicroBlocks
+version 1 2 
+tags pixel matrix led tft 
+description 'Display primitives for the 5x5 LED display on the BBC micro:bit, Calliope mini and M5Atom Matrix. Boards with TFT displays (such as the Citilab ED1 or the M5Stack family) also support this primitives in a simulated "fat pixel" display.'
+variables _stop_scrolling_text 
+
+	spec ' ' '[display:mbDisplay]' 'display _' 'microbitDisplay' 15237440
+	spec ' ' '[display:mbDisplayOff]' 'clear display'
+	spec ' ' '[display:mbPlot]' 'plot x _ y _' 'num num' 3 3
+	spec ' ' '[display:mbUnplot]' 'unplot x _ y _' 'num num' 3 3
+	spec ' ' 'displayCharacter' 'display character _' 'str' 'A'
+	spec ' ' 'scroll_text' 'scroll text _ : pausing _ ms' 'str num' 'HELLO ROSA!' 100
+	spec ' ' 'stopScrollingText' 'stop scrolling'
+
+to displayCharacter s {
+  s = ('[data:join]' '' s)
+  if ((size s) == 0) {
+    '[display:mbDisplayOff]'
+    return 0
+  }
+  '[display:mbDrawShape]' ('[display:mbShapeForLetter]' (at 1 s))
+}
+
+to scroll_text text optionalDelay {
+  text = ('[data:join]' text '')
+  delay = 100
+  if ((pushArgCount) > 1) {
+    delay = optionalDelay
+  }
+  _stop_scrolling_text = (booleanConstant false)
+  local 'length' (size text)
+  for position ((length * 6) + 6) {
+    if _stop_scrolling_text {return 0}
+    for i length {
+      '[display:mbDrawShape]' ('[display:mbShapeForLetter]' ('[data:unicodeAt]' i text)) (((i * 6) + 2) - position) 1
+    }
+    waitMillis delay
+  }
+}
+
+to stopScrollingText {
+  _stop_scrolling_text = (booleanConstant true)
+  waitMillis 10
+  '[display:mbDisplayOff]'
+}
+
+
+module Radio Comm
+author MicroBlocks
+version 1 1 
+tags radio communication messaging network 
+description 'Send and receive messages between micro:bit boards via their built-in radio system.'
+
+	spec ' ' '[radio:sendInteger]' 'radio send number _' 'num' 123
+	spec ' ' '[radio:sendString]' 'radio send string _' 'str' 'Hello!'
+	spec ' ' '[radio:sendPair]' 'radio send pair _ = _' 'str num' 'light' 10
+	spec 'r' '[radio:messageReceived]' 'radio message received?'
+	spec 'r' '[radio:receivedInteger]' 'radio last number'
+	spec 'r' '[radio:receivedString]' 'radio last string'
+	spec ' ' '[radio:setGroup]' 'radio set group _ (0-255)' 'num' 0
+	spec ' ' '[radio:setPower]' 'radio set power (0-7) _' 'num' 4
+	spec 'r' '_receivedMessageType' '_radio last message type'
+	spec ' ' '_setChannel' '_radio set channel (0-83) _' 'num' 7
+	spec 'r' '_signalStrength' '_radio last signal strength'
+
+to '_receivedMessageType' {
+  return ('[radio:receivedMessageType]')
+}
+
+to '_setChannel' channel {
+  '[radio:setChannel]' channel
+}
+
+to '_signalStrength' {
+  return ('[radio:signalStrength]')
+}
+

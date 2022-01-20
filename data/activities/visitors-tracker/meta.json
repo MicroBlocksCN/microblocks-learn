@@ -2,6 +2,6 @@
     "author": "Marc Campreciós",
     "level": "Beginner",
     "boards": [
-        "micro:bit", "Adafruit Circuit"
+        "microbit", "cpx"
     ]
 }

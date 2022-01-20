@@ -12,14 +12,25 @@
         onchange="applyFilter('boards', this.value)" >
         <option value="">All</option>
     </select>
+    <!-- TODO
     <label><input
-        class = "compatible toggle"
-        type="checkbox"
-        value="compatible-boards"> and compatible boards</label>
-    <h5>Level</h5>
+        onchange = "applyFilter('compatible', this.checked)"
+        class = "activity-toggle"
+        type="checkbox"> and compatible boards</label>
+    -->
+    <h5>Level & Resources</h5>
     <select
         class="level activity-filter"
         onchange="applyFilter('level', this.value)">
         <option value="">All</option>
     </select>
+    <label><input
+        onchange = "applyFilter('has-card', this.checked)"
+        class = "activity-toggle"
+        type="checkbox"> has activity card</label>
+    <label><input
+        onchange = "applyFilter('has-guide', this.checked)"
+        class = "activity-toggle"
+        type="checkbox"> has teacher's guide</label>
+ 
 </div>

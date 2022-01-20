@@ -1,0 +1,10 @@
+{
+    "cpx": {
+        "name": "Circuit Playground Express",
+        "compatible": [ "cpx-bluefruit" ]
+    },
+    "microbit": {
+        "name": "micro:bit",
+        "compatible": [ "clue", "ed1", "m5stack" ]
+    }
+}

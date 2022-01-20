@@ -3,11 +3,18 @@
     pageUrl="https://learn.microblocks.fun/"
     pageDescription="MicroBlocks is a live blocks programming language for physical computing."
 }}
-{{! for now, we don't allow using the language selector on activities }}
 
 {{#*inline "main-content"}}
-<h2>{{title}}</h2>
+<h1>{{title}}</h1>
 <small>{{localize "author" author}}</small>
+<div>
+{{#if has-guide}}
+    <a href="./guide">Teacher's Guide</a>
+{{/if}}
+{{#if has-card}}
+    <a href="./card">Activity Card</a>
+{{/if}}
+</div>
 {{! insert the compiled markdown for this particular activity }}
 
 {{#markdown markdown}}{{/markdown}}

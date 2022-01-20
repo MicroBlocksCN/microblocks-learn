@@ -13,11 +13,11 @@ var fs = require('fs'),
 
 markdown.addExtension({
     type: 'output',
-    filter: function (text) {
-        return text.replace(
-            /<p>\[(.+)\]/g, `<div class="$1">`
+    filter: function (html) {
+        return html.replace(
+            /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replace(
-            /\[\/.*\]<\/p>/g, `</div>`
+            /\[\[\/.*?\]\]<\/p>/g, `</div>`
         );
     }
 });
@@ -139,7 +139,7 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
     fse.ensureDirSync(`${__dirname}/dist/${langCode}/${destinationDir}`);
     fs.writeFileSync(
         `dist/${langCode}/${destinationDir}/` +
-            `${descriptor.slug || templateName}.html`,
+            `${descriptor.href || descriptor.slug || templateName}.html`,
         handlebars.compile(template)(descriptor)
     );
     debug(`compiled template: ${templateName}` +
@@ -244,9 +244,13 @@ function buildActivities () {
                     )
                 );
             meta.slug = slug;
+
+            // TODO get the slugs for each locale here
+            meta.locales = fs.readdirSync(`data/activities/${slug}/locales/`)
+
             // process locales, under subdirs
             doForFilesInDir(
-                `data/activities/${slug}`,
+                `data/activities/${slug}/locales/`,
                 '/',
                 (langCode, localePath) => {
                     // activities stores the list of all activity descriptors
@@ -257,15 +261,26 @@ function buildActivities () {
                             )
                         ),
                         descriptor = {};
+                    activity.title = activity.title || meta.title;
+                    activity.author = activity.author || meta.author;
                     activity.slug = slugify(activity.title);
                     activity.locale = langCode;
+                    activity.href = 'index';
+                    activity['has-card'] = 
+                        fs.existsSync(`${localePath}/activity-card.md`);
+                    activity['has-guide'] = 
+                        fs.existsSync(`${localePath}/teachers-guide.md`);
 
                     Object.assign(descriptor, meta);
+                    // overwrite top-level meta fields with their values in the
+                    // locale descriptor
                     Object.keys(activity).forEach((key) => {
                         descriptor[key] = activity[key];
                     });
 
-                    activityDescriptors.push(descriptor);
+                    if (!descriptor.draft) {
+                        activityDescriptors.push(descriptor);
+                    }
 
                     debug(`processed activity: ${slug} (${langCode})`);
 
@@ -283,14 +298,77 @@ function buildActivities () {
 function buildActivity (descriptor, langCode, activityPath) {
     // we need to build the activity page for all available page locales, even
     // though the activity may not be available in all of these languages
+    // TODO detect compatible boards
+    // TODO build relationship with other locales for this same card
+    // TODO refactor this humongous thing
     Object.keys(locales).forEach(
         (localeCode) => {
             descriptor.markdown =
                 fs.readFileSync(
-                    `${activityPath}/${langCode}/index.md`,
+                    `${activityPath}/locales/${langCode}/index.md`,
                     'utf8'
                 );
-            compileTemplate('activity', descriptor, localeCode, 'activities');
+            compileTemplate(
+                'activity',
+                descriptor,
+                localeCode,
+                `activities/${descriptor.slug}`
+            );
+
+            // copy image files from both the activity root and locale
+            if (fs.existsSync(`${activityPath}/files/`)) {
+                fse.copySync(
+                    `${activityPath}/files/`,
+                    `${__dirname}/dist/${localeCode}/` +
+                        `activities/${descriptor.slug}/`
+                );
+            }
+            if (fs.existsSync(`${activityPath}/locales/${langCode}/files/`)) {
+                fse.copySync(
+                    `${activityPath}/locales/${langCode}/files/`,
+                    `${__dirname}/dist/${localeCode}/` +
+                        `activities/${descriptor.slug}/`
+                );
+            }
+            // TODO refactor these two into a single method?
+            if (descriptor['has-card']) {
+                var cardDescriptor = {
+                    markdown:
+                        fs.readFileSync(
+                            `${activityPath}/locales/${langCode}/` +
+                                `activity-card.md`,
+                            'utf8'
+                        ),
+                    title: descriptor.title,
+                    href: 'index',
+                    slug: descriptor.slug
+                }
+                compileTemplate(
+                    'activity-card',
+                    cardDescriptor,
+                    localeCode,
+                    `activities/${descriptor.slug}/card`
+                );
+            }
+            if (descriptor['has-guide']) {
+                var guideDescriptor = {
+                    markdown:
+                        fs.readFileSync(
+                            `${activityPath}/locales/${langCode}/` + 
+                                `teachers-guide.md`,
+                            'utf8'
+                        ),
+                    title: descriptor.title,
+                    href: 'index',
+                    slug: descriptor.slug
+                }
+                compileTemplate(
+                    'teachers-guide',
+                    guideDescriptor,
+                    localeCode,
+                    `activities/${descriptor.slug}/guide`
+                );
+            }
         }
     );
 };
@@ -405,6 +483,15 @@ function serve () {
         }
         if (!fs.existsSync(pathTo(fileName))) {
             fileName = fileName + '.html';
+        } else if (fs.lstatSync(pathTo(fileName)).isDirectory()) {
+            if (!req.url.endsWith('/')) {
+                // this is a directory, redirect to the same path but with a
+                // trailing slash
+                res.writeHead(301, { Location: req.url + '/'} );
+                res.end();
+                return;
+            }
+            fileName = fileName + '/index.html';
         }
         respondWithFile(res, fileName, getParams(req.url));
     }).listen(3000);

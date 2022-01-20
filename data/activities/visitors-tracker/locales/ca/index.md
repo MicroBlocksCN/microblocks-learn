@@ -5,15 +5,15 @@ Utilitzarem un *sensor* per comptar visitants.
 * Sensor
 * Placa
 
-[tip]
+[[tip]]
 Aquí provant mandangues
 
-[jazz]
-múltiples
-[/jazz]
+[[jazz]] múltiples [[/]]
+
+[link](href)
 
 amb
 * llistes
 
 **wow**
-[/]
+[[/tip]]

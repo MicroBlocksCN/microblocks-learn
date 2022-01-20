@@ -24,18 +24,22 @@ function fetchActivities () {
 };
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div#activity-list');
+    var listDiv = document.querySelector('div#activity-list'),
+        countDiv = document.querySelector('span#activity-count'),
+        filtered = filteredActivities();
     listDiv.innerHTML = '';
-    filteredActivities().forEach((activity) => {
+    countDiv.innerHTML = filtered.length + ' results.';
+    filtered.forEach((activity) => {
         listDiv.appendChild(activityDiv(activity));
     });
 };
 
 function activityDiv (activity) {
     var div = document.createElement('div'),
-        title = document.createElement('span');
-    title.innerText = activity.title;
-    div.appendChild(title);
+        link = document.createElement('a');
+    link.innerText = activity.title;
+    link.href = `activities/${activity.slug}`;
+    div.appendChild(link);
     return div;
 };
 
@@ -44,7 +48,7 @@ function populateFilters () {
     // populate the <select> elements with all possible values in the activity
     // descriptors
 
-    var filterElements = Array.from(
+    var selectElements = Array.from(
             document.querySelector(
                 'div#activity-filters'
             ).querySelectorAll('.activity-filter')
@@ -60,7 +64,7 @@ function populateFilters () {
 
     activities.forEach((activity) => {
         Object.keys(activity).forEach((selector) => {
-            filterElements.filter((element) => {
+            selectElements.filter((element) => {
                 return element.classList.contains(selector)
             }).forEach((element) => {
                 var value = activity[selector];
@@ -96,8 +100,12 @@ function filteredActivities() {
                 // i.e. boards: [ 'micro:bit', 'ed1' ]
                 return filters[selector] === '' ||
                     activity[selector].includes(filters[selector]);
+            } else if (typeof filters[selector] === 'boolean') {
+                // only "true" triggers filters in checkboxes
+                return (filters[selector] && activity[selector]) ||
+                            !filters[selector]
             } else {
-                // atom, i.e. "beginner"
+                // other atoms, i.e. "beginner", 5
                 return filters[selector] === '' ||
                     activity[selector] === filters[selector];
             }
