@@ -15,6 +15,12 @@
     <a href="./card">Activity Card</a>
 {{/if}}
 </div>
+<div>
+    <h3>Available Languages</h3>
+    {{#each translations}}
+    <a href="/{{this.langCode}}/activities/{{this.slug}}">{{this.title}}</a>
+    {{/each}}
+</div>
 {{! insert the compiled markdown for this particular activity }}
 
 {{#markdown markdown}}{{/markdown}}

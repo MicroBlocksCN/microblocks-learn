@@ -51,7 +51,7 @@ function doForFilesInDir (dir, extension, action, recursive) {
             doForFilesInDir(dir + '/' + fileName, extension, action, recursive);
         } else if (extension == '/' && fs.statSync(fullPath).isDirectory()) {
             // iterate over directories
-            action.call(this, fileName, fullPath); 
+            action.call(this, fileName, fullPath);
         }
     });
 };
@@ -245,9 +245,28 @@ function buildActivities () {
                 );
             meta.slug = slug;
 
-            // TODO get the slugs for each locale here
-            meta.locales = fs.readdirSync(`data/activities/${slug}/locales/`)
+            // get the slugs for each locale
+            // unfortunately we need to do two passes over the directory
+            meta.translations = [];
+            doForFilesInDir(
+                `data/activities/${slug}/locales/`,
+                '/',
+                (langCode, localePath) => {
+                    var json = JSON.parse(
+                            fs.readFileSync(
+                                `${localePath}/meta.json`,
+                                'utf8'
+                            )
+                        );
 
+                    meta.translations.push({
+                        langCode: langCode,
+                        slug: slugify(json.title || meta.title),
+                        title: json.title || meta.title
+                    });
+                }
+            );
+            debug(meta.translations);
             // process locales, under subdirs
             doForFilesInDir(
                 `data/activities/${slug}/locales/`,
@@ -263,12 +282,14 @@ function buildActivities () {
                         descriptor = {};
                     activity.title = activity.title || meta.title;
                     activity.author = activity.author || meta.author;
+                    activity.translations = meta.translations.filter(
+                        (each) => { return each.langCode !== langCode });
                     activity.slug = slugify(activity.title);
                     activity.locale = langCode;
                     activity.href = 'index';
-                    activity['has-card'] = 
+                    activity['has-card'] =
                         fs.existsSync(`${localePath}/activity-card.md`);
-                    activity['has-guide'] = 
+                    activity['has-guide'] =
                         fs.existsSync(`${localePath}/teachers-guide.md`);
 
                     Object.assign(descriptor, meta);
@@ -354,7 +375,7 @@ function buildActivity (descriptor, langCode, activityPath) {
                 var guideDescriptor = {
                     markdown:
                         fs.readFileSync(
-                            `${activityPath}/locales/${langCode}/` + 
+                            `${activityPath}/locales/${langCode}/` +
                                 `teachers-guide.md`,
                             'utf8'
                         ),
