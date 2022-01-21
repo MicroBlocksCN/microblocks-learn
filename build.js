@@ -319,8 +319,6 @@ function buildActivities () {
 function buildActivity (descriptor, langCode, activityPath) {
     // we need to build the activity page for all available page locales, even
     // though the activity may not be available in all of these languages
-    // TODO detect compatible boards
-    // TODO build relationship with other locales for this same card
     // TODO refactor this humongous thing
     Object.keys(locales).forEach(
         (localeCode) => {
@@ -398,6 +396,12 @@ function copyAssets () {
     fse.copySync(
         `${__dirname}/src/assets`,
         `${__dirname}/dist/assets`,
+        { overwrite: true },
+        (err) => { if (err) { console.error(err); } }
+    );
+    fse.copySync(
+        `${__dirname}/data/json/`,
+        `${__dirname}/dist/`,
         { overwrite: true },
         (err) => { if (err) { console.error(err); } }
     );

@@ -2,7 +2,7 @@
     "draft": true,
     "author": "Marc Campreciós",
     "boards": [
-        "microbit", "ed1"
+        "ed1", "clue"
     ],
     "level": "Intermediate",
     "components": [

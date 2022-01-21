@@ -1,26 +1,36 @@
 var activities = null,
+    boards = null,
     filters = {};
 
-function fetchActivities () {
+function fetchJSON (fileName, onsuccess) {
     // only request the JSON file the first time
-    if (!activities) {
+    if (!window[fileName]) {
         var req = new XMLHttpRequest();
         req.open(
             'GET',
-            `/activities.json?random=${Math.floor(Math.random()*99999)}`,
+            `/${fileName}.json?random=${Math.floor(Math.random()*99999)}`,
             false
         );
         req.onreadystatechange = function () {
             if (req.readyState === 4) {
                 if (req.status === 200 || req.status == 0) {
-                    activities = JSON.parse(req.responseText);
-                    updateActivityList();
-                    populateFilters();
+                    window[fileName] = JSON.parse(req.responseText);
+                    if (onsuccess) { onsuccess.call(this); }
                 }
             }
         };
         req.send(null);
     }
+};
+
+function fetchActivities () {
+    fetchJSON('activities',
+        () => {
+            fetchJSON('boards');
+            updateActivityList();
+            populateFilters();
+        }
+    );
 };
 
 function updateActivityList () {
@@ -94,21 +104,47 @@ function applyFilter (selector, value) {
 }; 
 
 function filteredActivities() {
-    return activities.filter((activity) => {
+    var filtered = [];
+    if (filters.boards) {
+        filtered = activities.filter(
+            (activity) => {
+                return activity.boards.includes(filters.boards);
+            }
+        );
+    } else {
+        Object.assign(filtered, activities);
+    }
+
+    if (filters.boards && filters.compatible) {
+        activities.forEach((activity) => {
+            if (!filtered.includes(activity) &&
+                boards[filters.boards].compatible.some(
+                    (board) => {
+                        return activity.boards.includes(board)
+                    }
+                )
+            ) {
+                filtered.push(activity);
+            }
+        });
+    }
+
+    return filtered.filter((activity) => {
         return Object.keys(filters).every((selector) => {
             if (Array.isArray(activity[selector])) {
-                // i.e. boards: [ 'micro:bit', 'ed1' ]
-                return filters[selector] === '' ||
+                // i.e. topics: [ 'art', 'music' ]
+                return (filters[selector] === '') || (selector === 'boards') ||
                     activity[selector].includes(filters[selector]);
             } else if (typeof filters[selector] === 'boolean') {
                 // only "true" triggers filters in checkboxes
-                return (filters[selector] && activity[selector]) ||
-                            !filters[selector]
+                return (selector === 'compatible') ||
+                    (filters[selector] && activity[selector]) ||
+                    !filters[selector]
             } else {
                 // other atoms, i.e. "beginner", 5
                 return filters[selector] === '' ||
                     activity[selector] === filters[selector];
             }
-        });
+        })
     });
 };

@@ -1,0 +1,34 @@
+{
+    "ed1": {
+        "name": "Citilab ED1",
+        "compatible": [ "clue", "m5stack", "microbit", "nodemcu", "pico" ]
+    },
+    "clue": {
+        "name": "Adafruit Clue",
+        "compatible": [ "microbit", "pico" ]
+    },
+    "cpxfb": {
+        "name": "Circuit Playground Bluefruit",
+        "compatible": [ "cpx", "pico" ]
+    },
+    "cpx": {
+        "name": "Circuit Playground Express",
+        "compatible": [ "pico" ]
+    },
+    "calliope": {
+        "name": "Calliope",
+        "compatible": [ "microbit", "pico" ]
+    },
+    "microbit": {
+        "name": "micro:bit",
+        "compatible": [ "pico" ]
+    },
+    "pico": {
+        "name": "RaspberryPi Pico",
+        "compatible": [ ]
+    },
+    "nodemcu": {
+        "name": "NodeMCU",
+        "compatible": [ ]
+    }
+}
