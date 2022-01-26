@@ -41,8 +41,8 @@ function fetchActivities () {
 // ==== HTML COMPOSING ====
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div#activity-list'),
-        countDiv = document.querySelector('span#activity-count'),
+    var listDiv = document.querySelector('div.activity-list'),
+        countDiv = document.querySelector('span.activity-count'),
         filtered = filteredActivities();
     totalPages = Math.floor(filtered.length / pageSize);
     listDiv.innerHTML = '';
@@ -55,8 +55,13 @@ function updateActivityList () {
 
 function activityDiv (activity) {
     var div = document.createElement('div'),
+        thumb = document.createElement('img'),
+        title = document.createElement('span'),
         link = document.createElement('a');
-    link.innerText = activity.title;
+    thumb.src = `activities/${activity.slug}/thumbnail.png`;
+    title.innerText = activity.title;
+    link.appendChild(thumb);
+    link.appendChild(title);
     link.href = `activities/${activity.slug}`;
     div.appendChild(link);
     return div;

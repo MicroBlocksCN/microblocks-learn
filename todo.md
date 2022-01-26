@@ -4,8 +4,8 @@
 [x] Activity toggles
 [x] Activity filters
 [x] Compatible boards checkbox
-[ ] Activity pagination
-[ ] Thumbnail
+[x] Activity pagination
+[x] Thumbnail
 
 ## Activity
 [x] Links to available translations
