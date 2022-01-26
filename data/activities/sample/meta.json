@@ -1,0 +1,8 @@
+{
+    "draft": true,
+    "author": "Jane Doe",
+    "level": "Beginner",
+    "boards": [ "microbit", "cpx" ],
+    "time": [ 90, 120 ],
+    "topics": [ "music", "colors" ]
+}
