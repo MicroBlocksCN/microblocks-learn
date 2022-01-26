@@ -226,7 +226,7 @@ function processLocales () {
                 },
                 true // recursive
             )
-            console.log(`processed locale: ${dirName}`);
+            debug(`processed locale: ${dirName}`);
         }
     );
 };
@@ -266,7 +266,6 @@ function buildActivities () {
                     });
                 }
             );
-            debug(meta.translations);
             // process locales, under subdirs
             doForFilesInDir(
                 `data/activities/${slug}/locales/`,

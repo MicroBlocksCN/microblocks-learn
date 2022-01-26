@@ -47,7 +47,7 @@ The actual activity content for each locale is read from the `index.md` file,
 and is formatted in MarkDown.
 
 Our particular implementation of MarkDown has an additional feature that lets us
-define _fun facts_, _tips_ and _safety notes_. Here's how to use it:
+define _fun facts_, _tips_, _notes_ and _safety notes_. Here's how to use it:
 
 [[fact]]
 Write your concept note here
@@ -56,6 +56,10 @@ Write your concept note here
 [[tip]]
 Write your tip here
 [[/tip]]
+
+[[note]]
+Write your generic note here
+[[/note]]
 
 [[safety]]
 Write your safety note here

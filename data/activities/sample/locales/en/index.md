@@ -1,11 +1,3 @@
-# Introduction
-
-What this activity is about.
-
-# Goal
-
-What are you going to accomplish.
-
 # Materials needed
 
 * stuff
@@ -26,7 +18,7 @@ Don't run with scissors!
 
 Do some more stuff.
 
-![image-file.png](The description of this image)
+![The description of this image](image-file.png)
 
 [[tip]]
 Did you know that scissors can be used for good, too?
