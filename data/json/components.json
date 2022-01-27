@@ -4,6 +4,6 @@
     "ext_board": "Extension board",
     "led": "LED",
     "led_rgb": "RGB LED",
-    "piezzo": "Piezzo speaker",
+    "speaker": "Speaker",
     "alligators": "Alligator clips"
 }

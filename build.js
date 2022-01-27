@@ -11,6 +11,8 @@ var fs = require('fs'),
     debugMode = args.includes('--debug'),
     locales = {};
 
+markdown.setOption('strikethrough', true);
+
 markdown.addExtension({
     type: 'output',
     filter: function (html) {

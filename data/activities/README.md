@@ -56,24 +56,28 @@ The actual activity content for each locale is read from the `index.md` file,
 and is formatted in MarkDown.
 
 Our particular implementation of MarkDown has an additional feature that lets us
-define _fun facts_, _tips_, _notes_ and _safety notes_. Here's how to use it:
+define _fun facts_, _notes_ and _safety notes_. Here's how to use it:
 
 ```
 [[fact]]
-Write your concept note here
+Write your fun fact here
 [[/fact]]
 
-[[tip]]
-Write your tip here
-[[/tip]]
-
 [[note]]
-Write your generic note here
+Write your generic note or tip here
 [[/note]]
 
 [[safety]]
 Write your safety note here
 [[/safety]]
+```
+
+Another particularity of our rendering of MarkDown files is that you can add
+footnotes to images by adding an italic text right after them, like so:
+
+```
+![Image alt text](image.png)
+* A footnote for this image, including its licence - CC-BY-SA Somebody *
 ```
 
 #### Teacher's Guide

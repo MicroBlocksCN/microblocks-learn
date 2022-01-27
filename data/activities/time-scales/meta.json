@@ -4,5 +4,5 @@
     "boards": [ "microbit" ],
     "time": [ 90, 120 ],
     "topics": [ "music" ],
-    "components": [ "led", "piezzo", "alligators" ]
+    "components": [ "led", "speaker", "alligators" ]
 }

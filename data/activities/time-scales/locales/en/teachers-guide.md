@@ -42,7 +42,7 @@ micro:bit and its short leg to GND. This block should turn the LED on:
 
 ![Turn the digital pin 1 on](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20digitalWriteOp%201%20true;%7D%20%22&scale=1.25&locale=English&libs=[])
 
-￼If the LED does not turn on, check the connections. Is it connected to pin 1
+If the LED does not turn on, check the connections. Is it connected to pin 1
 and GND? You may need to reverse the connections to make the LED light up. This
 block will turn the LED off:
 

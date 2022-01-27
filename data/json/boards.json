@@ -7,7 +7,7 @@
         "name": "Adafruit Clue",
         "compatible": [ "microbit", "pico" ]
     },
-    "cpxfb": {
+    "cpxbf": {
         "name": "Circuit Playground Bluefruit",
         "compatible": [ "cpx", "pico" ]
     },
