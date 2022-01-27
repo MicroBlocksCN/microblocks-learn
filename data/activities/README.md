@@ -10,23 +10,27 @@ title, changing spaces for dashes and removing other special characters.
 Edit the `meta.json` file and add all the metadata. Below is an explanation of
 all the fields:
 
-* **draft**     Set to true to have the site builder ignore this activity at
-                compile time. Remove or set to false while testing.
+* **draft:**            Set to true to have the site builder ignore this
+                        activity at compile time. Remove or set to false while
+                        testing and when deploying.
 
-* **author**    Who wrote the activity.
+* **author:**           Who wrote the activity.
 
-* **level**     Either "Beginner" or "Experienced" 
+* **level:**            Either "Beginner" or "Experienced" 
 
-* **boards**    Am array of board codenames for which this activity has been
-                designed. You can see and modify the list of boards in
-                data/json/boards.json
+* **boards:**           An array of board codenames for which this activity has
+                        been designed. You can see and modify the list of boards
+                        and their codenames in data/json/boards.json
 
-* **time**      Lower and upper boundary for how many minutes it should take to
-                complete the activity, in an array.
-                (i.e. `[ 90, 120 ]` will become `90 to 120 minutes`.)
+* **time:**             Lower and upper boundary for how many minutes it should
+                        take to complete the activity, in an array.
+                        (i.e. `[ 90, 120 ]` will become `90 to 120 minutes`.)
 
-* **topics**    An array of topics that match this activity.
-                (i.e. Art, Sustainability, Music, Physics)
+* **topics:**           An array of topics that match this activity.
+                        (i.e. Art, Sustainability, Music, Physics)
+
+* **components:**       An array of component keys. These keys can be found and
+                        added at data/json/components.json.  
 
 ## Files
 
@@ -49,6 +53,7 @@ and is formatted in MarkDown.
 Our particular implementation of MarkDown has an additional feature that lets us
 define _fun facts_, _tips_, _notes_ and _safety notes_. Here's how to use it:
 
+```
 [[fact]]
 Write your concept note here
 [[/fact]]
@@ -64,6 +69,7 @@ Write your generic note here
 [[safety]]
 Write your safety note here
 [[/safety]]
+```
 
 #### Teacher's Guide
 
@@ -85,7 +91,7 @@ locale needs to.
 
 The only required field that this file needs to have is:
 
-* **title**     The localized title of this activity.
+* **title:**            The localized title of this activity.
 
 ### Locale Specific Files
 

@@ -1,0 +1,9 @@
+{
+    "cr_servo": "Servo (CR)",
+    "angle_servo": "Servo (angle)",
+    "ext_board": "Extension board",
+    "led": "LED",
+    "led_rgb": "RGB LED",
+    "piezzo": "Piezzo speaker",
+    "alligators": "Alligator clips"
+}

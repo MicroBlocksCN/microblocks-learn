@@ -4,5 +4,6 @@
     "level": "Beginner",
     "boards": [ "microbit", "cpx" ],
     "time": [ 90, 120 ],
-    "topics": [ "music", "colors" ]
+    "topics": [ "music", "colors" ],
+    "components": [ "led_rgb", "piezzo" ]
 }
