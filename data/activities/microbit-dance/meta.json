@@ -1,0 +1,8 @@
+{
+    "author": "MicroBlocks",
+    "level": "Beginner",
+    "boards": [ "microbit" ],
+    "time": [ 90, 120 ],
+    "topics": [ "robotics" ],
+    "components": [ "cr_servo", "ext_board" ]
+}

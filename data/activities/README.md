@@ -37,6 +37,11 @@ all the fields:
 Add all the files that the activity needs (that is, all the images, libraries,
 projects, etc) into the `files` directory.
 
+### Thumbnail
+
+The thumbnail for your activity should be named `thumbnail.png` and live in the
+`files` directory. It should be at least 420 pixels wide and 240 pixels high.
+
 ## Locales
 
 Create directories for all your available languages inside of the `locales`
