@@ -13,9 +13,16 @@
         <option value="">All</option>
     </select>
     <label><input
-        onchange = "applyFilter('compatible', this.checked)"
-        class = "activity-toggle"
+        onchange="applyFilter('compatible', this.checked)"
+        class="activity-toggle"
         type="checkbox"> and compatible boards</label>
+    <h5>Components</h5>
+    <select
+        class="components activity-filter"
+        onchange="applyFilter('components', this.value)">
+        <option value="">Unset</option>
+        <option value="none">None</option>
+    </select>
     <h5>Level & Resources</h5>
     <select
         class="level activity-filter"

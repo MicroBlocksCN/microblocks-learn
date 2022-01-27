@@ -121,6 +121,8 @@ function applyFilter (selector, value) {
 
 function filteredActivities() {
     var filtered = [];
+
+    // filter by boards
     if (filters.boards) {
         filtered = activities.filter(
             (activity) => {
@@ -131,6 +133,7 @@ function filteredActivities() {
         Object.assign(filtered, activities);
     }
 
+    // then, add compatible boards, if needed
     if (filters.boards && filters.compatible) {
         activities.forEach((activity) => {
             if (!filtered.includes(activity) &&
@@ -145,12 +148,15 @@ function filteredActivities() {
         });
     }
 
+    // now filter by all the rest
     return filtered.filter((activity) => {
         return Object.keys(filters).every((selector) => {
             if (Array.isArray(activity[selector])) {
                 // i.e. topics: [ 'art', 'music' ]
                 return (filters[selector] === '') || (selector === 'boards') ||
-                    activity[selector].includes(filters[selector]);
+                    activity[selector].includes(filters[selector]) ||
+                    ((filters[selector] === 'none') &&
+                        (activity[selector].length === 0));
             } else if (typeof filters[selector] === 'boolean') {
                 // only "true" triggers filters in checkboxes
                 return (selector === 'compatible') ||

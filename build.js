@@ -283,6 +283,7 @@ function buildActivities () {
                     activity.author = activity.author || meta.author;
                     activity.translations = meta.translations.filter(
                         (each) => { return each.langCode !== langCode });
+                    activity.components = meta.components || [];
                     activity.slug = slugify(activity.title);
                     activity.locale = langCode;
                     activity.href = 'index';
