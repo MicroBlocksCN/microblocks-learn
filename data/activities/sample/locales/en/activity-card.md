@@ -2,4 +2,4 @@
 
 Your card content goes here.
 
-![image-file.png](The description of this image)
+![The description of this image](../image-file.png)

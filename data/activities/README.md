@@ -76,11 +76,17 @@ Write your safety note here
 If your activity has a teacher's guide, please write it also in MarkDown on the
 `teachers-guide.md` file.
 
+> **Note:** To reference files from this markdown file, you'll need to prefix
+> your path with `../`, since all files live in the root directory.
+
 #### Activity Card
 
 Your activity could additionally have an activity card to hand to your students.
 
 Please write it in MarkDown on the `activity-card.md` file.
+
+> **Note:** To reference files from this markdown file, you'll need to prefix
+> your path with `../`, since all files live in the root directory.
 
 ### Metadata
 
