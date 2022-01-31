@@ -110,22 +110,22 @@ First, drag two set servo blocks into the scripting area. Encourage students to
 experiment with different numbers. What happens when they set two positive
 numbers? What about two negative numbers? By setting two positive numbers, the
 box should turn in one direction. Two negative numbers and the box should turn
-in the other direction. One positive and one negative will make the box move
+, in the other direction. One positive and one negative will make the box move
 forward or backward.
 
-![Setting servo 1 to speed 30](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20setServoSpeed%201%2030;%7D%20%22&scale=1.25&locale=English&libs=[%22Servo%22])
-![Setting servo 2 to speed -30](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20setServoSpeed%202%20-30;%7D%20%22&scale=1.25&locale=English&libs=[%22Servo%22])
+![Setting servo 1 to speed 30](https://microblocks.fun/render?json={%22libs%22:%20[%22Servo%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%20%22script%2010%2010%20{%20setServoSpeed%201%2030;}%20%22})
+![Setting servo 2 to speed -30](https://microblocks.fun/render?json={%22libs%22:%20[%22Servo%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%20%22script%2010%2010%20{%20setServoSpeed%202%20-30;}%20%22})
 
 Once students have made the box move, they may want to make it stop and get
 ready for another dance move. We can use the *stop servo* block for that:
 
-![Stopping servo 1](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20stopServo%201;%7D%20%22&scale=1.25&locale=English&libs=[%22Servo%22])
-![Stopping servo 2](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20stopServo%202;%7D%20%22&scale=1.25&locale=English&libs=[%22Servo%22])
+![Stopping servo 1](https://microblocks.fun/render?json={%22libs%22:%20[%22Servo%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%20%22script%2010%2010%20{%20stopServo%201;}%20%22})
+![Stopping servo 2](https://microblocks.fun/render?json={%22libs%22:%20[%22Servo%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%20%22script%2010%2010%20{%20stopServo%202;}%20%22})
 
 Put these scripts together with a wait block in between. When the program is
 started, the box will move forward and stop.
 
-![Moving forward for a bit, then stopping](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenStarted;%20setServoSpeed%201%2030;%20setServoSpeed%202%20-30;%20waitMillis%20500;stopServo%201;stopServo%202;%7D%20%22&scale=1.25&locale=English&libs=[%22Servo%22])
+![Moving forward for a bit, then stopping](https://microblocks.fun/render?json={%22libs%22:%20[%22Servo%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%20%22script%2010%2010%20{%20whenStarted;%20setServoSpeed%201%2030;%20setServoSpeed%202%20-30;%20waitMillis%20500;%20stopServo%201;%20stopServo%202;}%20%22})
 
 This is a great opportunity to show students how to make their own block in
 MicroBlocks! This code can be made into a block labeled *forward*. Click on the
@@ -136,7 +136,7 @@ students to make different command blocks to make their projects move and dance.
 
 ![Defining the "forward" block](../define-forward.png)
 
-![The new "forward" block](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forward;%7D%20%22&scale=1.25&locale=English)
+![The new "forward" block](https://microblocks.fun/render?json={%22libs%22:%20[],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%20%22script%2010%2010%20{%20forward;}%20%22})
 
 ## Setting Up a Remote Control
 
@@ -150,12 +150,12 @@ First, while the micro:bit on the box is still connected, add a radio set group
 block to its code under the when started block. Choose a number between 0 and
 255 and remember it! 
 
-![Setting the radio group to 8](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenStarted;%20%27%5Bradio:setGroup%5D%27%208;%7D%20%22&scale=1.25&locale=English&libs=[%22Servo%22%2C%22Radio%22])
+![Setting the radio group to 8](https://microblocks.fun/render?json={%22libs%22:%20[%22Radio%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%22script%2010%2010%20%7B%20whenStarted;%20%27%5Bradio:setGroup%5D%27%208;%7D%20%22})
 
 Next, add a *when radio message received* block and tell the box what to do when
 it receives the message. 
 
-![When radio message received, move forward](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenCondition%20%28%27%5Bradio:messageReceived%5D%27%29;%20forward;%7D%20%22&scale=1.25&locale=English&libs=[%22Radio%22])
+![When radio message received, move forward](https://microblocks.fun/render?json={%22libs%22:%20[%22Radio%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%22script%2010%2010%20%7B%20whenCondition%20%28%27%5Bradio:messageReceived%5D%27%29;%20forward;%7D%20%22})
 
 [[note]]
 If you are working in a classroom with several micro:bits, you will want
@@ -169,9 +169,9 @@ will act as a remote control. Disconnect the micro:bit on the box
 and connect your remote control micro:bit to your computer. Add these two
 instructions for the remote control. 
 
-![Setting the radio group to 8](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenStarted;%20%27%5Bradio:setGroup%5D%27%208;%7D%20%22&scale=1.25&locale=English&libs=[22Radio%22])
+![Setting the radio group to 8](https://microblocks.fun/render?json={%22libs%22:%20[%22Radio%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%22script%2010%2010%20%7B%20whenStarted;%20%27%5Bradio:setGroup%5D%27%208;%7D%20%22})
 
-![MicroBlocks script](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;%20%27%5Bradio:sendInteger%5D%27%20123;%7D%20%22&scale=1.25&locale=English&libs=[%22Radio%22])
+![MicroBlocks script](https://microblocks.fun/render?json={%22libs%22:%20[%22Radio%22],%20%22locale%22:%20%22English%22,%20%22scale%22:%201.25,%20%22script%22:%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;%20%27%5Bradio:sendInteger%5D%27%20123;%7D%20%2})
 
 First, set the group to be the same as the micro:bit on your box. Next when
 button A is pressed, use the *radio send number* block to send the command to

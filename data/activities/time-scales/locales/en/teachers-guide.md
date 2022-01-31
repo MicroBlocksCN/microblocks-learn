@@ -40,18 +40,18 @@ This activity begins with a simple program to make an LED blink. Use alligator
 clips or jumper wires to connect the long leg of an LED to pin 1 of the
 micro:bit and its short leg to GND. This block should turn the LED on:
 
-![Turn the digital pin 1 on](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20digitalWriteOp%201%20true;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Turn the digital pin 1 on](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20digitalWriteOp%201%20true;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 If the LED does not turn on, check the connections. Is it connected to pin 1
 and GND? You may need to reverse the connections to make the LED light up. This
 block will turn the LED off:
 
-![Turn the digital pin 1 off](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20digitalWriteOp%201%20false;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Turn the digital pin 1 off](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20digitalWriteOp%201%20false;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 Ask students to try to make the LED blink by putting these two blocks in a
 forever loop.
 
-![Toggle pin 1 constantly](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forever%20%7B%20digitalWriteOp%201%20true;%20digitalWriteOp%201%20false;%7D;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Toggle pin 1 constantly](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20forever%20%7B%20digitalWriteOp%201%20true;%20digitalWriteOp%201%20false;%7D;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 This script doesn't appear to do anything. Ask students why and solicit some
 ideas. Explain that the micro:bit turns the LED on then off again so fast we do
@@ -60,21 +60,21 @@ not even see it.
 To make the LED blink at a speed that humans can perceive, we need to slow
 things down by adding some wait blocks. 
 
-![Toggle pin 1 constantly, with a 500ms delay between each state](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forever%20%7B%20digitalWriteOp%201%20true;%20waitMillis%20500;%20digitalWriteOp%201%20false;%20waitMillis%20500;%7D;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Toggle pin 1 constantly, with a 500ms delay between each state](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20forever%20%7B%20digitalWriteOp%201%20true;%20waitMillis%20500;%20digitalWriteOp%201%20false;%20waitMillis%20500;%7D;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 A millisecond is 1/1000 of a second, so 500 milliseconds is half a second.
 Because the forever loop has two half-second waits, the LED now turns on and off
 once every second and it is easy to see each individual flash. What if we
 reduced those waits to 50 milliseconds each?
 
-![Toggle pin 1 constantly, with a 50ms delay between each state](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forever%20%7B%20digitalWriteOp%201%20true;%20waitMillis%2050;%20digitalWriteOp%201%20false;%20waitMillis%2050;%7D;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Toggle pin 1 constantly, with a 50ms delay between each state](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20forever%20%7B%20digitalWriteOp%201%20true;%20waitMillis%2050;%20digitalWriteOp%201%20false;%20waitMillis%2050;%7D;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 Now the light blinks 10 times every second. Nice! However, to change the speed,
 we had to change the numbers in both wait blocks, which is inconvenient. We can
 make experimenting with speeds easier by setting a local variable to the delay
 we want and using that variable in both wait blocks. 
 
-![Toggle pin 1 constantly at a configurable interval of 50ms](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forever%20%7B%20local%20%27delay%27%2050;%20digitalWriteOp%201%20true;%20waitMillis%20delay;%20digitalWriteOp%201%20false;%20waitMillis%20delay;%7D;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Toggle pin 1 constantly at a configurable interval of 50ms](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20forever%20%7B%20local%20%27delay%27%2050;%20digitalWriteOp%201%20true;%20waitMillis%20delay;%20digitalWriteOp%201%20false;%20waitMillis%20delay;%7D;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 [[note]]
 # Teaching Note
@@ -129,7 +129,7 @@ speaker between pin 0 and GND.
 In the script here, you'll see that blocks are added to turn pin 0 on and off.
 Run this program and, as before, slowly decrease the delay. What do you hear?
 
-![Toggling pins 0 and 1 at a configurable interval of 50ms](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forever%20%7B%20local%20%27delay%27%2050;%20digitalWriteOp%201%20true;%20digitalWriteOp%200%20true;%20waitMillis%20delay;%20digitalWriteOp%201%20false;%20digitalWriteOp%200%20false;%20waitMillis%20delay;%7D;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Toggling pins 0 and 1 at a configurable interval of 50ms](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20forever%20%7B%20local%20%27delay%27%2050;%20digitalWriteOp%201%20true;%20digitalWriteOp%200%20true;%20waitMillis%20delay;%20digitalWriteOp%201%20false;%20digitalWriteOp%200%20false;%20waitMillis%20delay;%7D;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 With delays of 50 or larger, you probably hear a series of clicks. As you
 decrease the delay, at some point, it starts to sound like a continuous musical
@@ -151,7 +151,7 @@ granularity. Replace the two wait milliseconds blocks with wait microseconds
 blocks. You can also remove the blocks that control pin 1, since we won't be
 using the LED for music. Here's the resulting script. 
 
-![Toggling pin 0 at a configurable interval of 955ms](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20forever%20%7B%20local%20%27delay%27%20955;%20digitalWriteOp%200%20true;%20waitMillis%20delay;%20digitalWriteOp%200%20false;%20waitMillis%20delay;%7D;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Toggling pin 0 at a configurable interval of 955ms](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20forever%20%7B%20local%20%27delay%27%20955;%20digitalWriteOp%200%20true;%20waitMillis%20delay;%20digitalWriteOp%200%20false;%20waitMillis%20delay;%7D;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 Try delays of 955, 850, and 755. Those delays approximate the first three notes
 the scale, _do_, _re_, _mi_.
@@ -166,7 +166,7 @@ Internally, the Tone library uses a script much like this one to generate notes.
 A microcontroller can also measure time! This script measures how many
 milliseconds a button is held down even when you press and release it quickly. 
 
-![Measuring button press time](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;%20resetTimer;%20waitUntil%20%28not%20%28buttonA%29%29;%20sayIt%20%27Click%20time%27%20%28timer%29%20%27milliseconds.%27;%7D%20%22&scale=1.25&locale=English&libs=[])
+![Measuring button press time](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;%20resetTimer;%20waitUntil%20%28not%20%28buttonA%29%29;%20sayIt%20%27Click%20time%27%20%28timer%29%20%27milliseconds.%27;%7D%20%22%2C%22libs%22:%5B%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 This script works in the same way you might use the second hand of a clock or
 watch to measure time. When the A button is pressed, the script resets the timer
@@ -182,7 +182,7 @@ change, your brain has to tell your muscles to react, and your muscles have to
 respond. This script is a way to test your reaction time to a visual change --
 the LED display turning on. 
 
-![MicroBlocks script](https://microblocks.fun/render?script=%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20sayIt%20%27%27;%20waitUntil%20%28not%20%28buttonA%29%29;%20waitMillis%20%28random%20500%202000%29;%20%27%5Bdisplay:mbDisplay%5D%27%2033554431;%20resetTimer;%20waitUntil%20%28buttonA%29;%20sayIt%20%27Your%20reaction%20time%20was%27%20%28timer%29%20%27milliseconds.%27;%7D%20%22&scale=1.25&locale=English&libs=[%22LED%20Display%22])
+![MicroBlocks script](https://microblocks.fun/render?json=%7B%22script%22:%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20sayIt%20%27%27;%20waitUntil%20%28not%20%28buttonA%29%29;%20waitMillis%20%28random%20500%202000%29;%20%27%5Bdisplay:mbDisplay%5D%27%2033554431;%20resetTimer;%20waitUntil%20%28buttonA%29;%20sayIt%20%27Your%20reaction%20time%20was%27%20%28timer%29%20%27milliseconds.%27;%7D%20%22%2C%22libs%22:%5B%22LED%20Display%22%5D%2C%22scale%22:1.12%2C%22locale%22:%22English%22%7D)
 
 To run this script, click the A button, then quickly click the A button again as
 soon as you see the LEDs turn on.  The timing part of this script is like the
