@@ -12,6 +12,7 @@ var fs = require('fs'),
     locales = {};
 
 markdown.setOption('strikethrough', true);
+markdown.setOption('tables', true);
 
 markdown.addExtension({
     type: 'output',
