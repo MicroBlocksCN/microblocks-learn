@@ -1,0 +1,26 @@
+//
+// Visibility
+// 
+// Classes and mixins to affect visibility, following guidelines in:
+// https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+// 
+// The :not portions of the selector are allowing a means for any 
+// focusable element to become visible when focused/active by a user.
+// ================================================================================
+
+
+@mixin visually-hidden() {
+  height: 1px;
+  width: 1px;
+
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  @include visually-hidden();
+}

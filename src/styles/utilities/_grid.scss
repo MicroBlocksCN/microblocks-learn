@@ -1,0 +1,143 @@
+//
+// Grid system
+// ================================================================================
+
+@use "sass:math";
+
+/* 
+ * Centum's design uses full widht fluid contents, divided by columns.
+ * The idea behind this grid is to work full width. Columns themselves will not 
+ * have an inner padding. Thus it will be aplied to the column independently.
+ * 
+ * Example:
+ * .row
+ *   .col xs-col-12 .md-col-8 .md-px-8
+ *     .text
+ *   .col xs-col-12 .md-col-4 .md-px-0
+ *     .picture
+ *
+**/
+
+
+// Common Styles
+// ==============================================================================
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+
+
+  // Breakpoint Widths
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @include breakpoint( #{$breakpoint-name} ) {
+      width: map-get($rowWidths, $breakpoint-name);
+    }
+  }
+
+
+  // Exceptions
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+.col {
+  flex: 0 0 auto;
+}
+
+
+// Columns Generation
+// ==============================================================================
+
+@each $breakpoint-name, $breakpoint-value in $breakpoints {
+
+  @if $breakpoint-name == 'xs' {
+
+    @for $i from 1 to ($col-total + 1) {
+      .col-#{$i} {
+        width: percentage( math.div($i, $col-total) );
+      };
+      .offset-#{$i} {
+        margin-left: percentage( math.div($i, $col-total) );
+      }
+    }
+    
+  } @else {
+
+    @include breakpoint( #{$breakpoint-name} ) {
+      @for $i from 0 to ($col-total + 1) {
+      
+        .#{$breakpoint-name}-col-#{$i} {
+          width: percentage( math.div($i, $col-total) );
+        };
+        .#{$breakpoint-name}-offset-#{$i} {
+          margin-left: percentage( math.div($i, $col-total) );
+        };
+      }
+    }
+  }
+}
+
+
+// Padding - If column has padding
+//
+// .col-px-none: padding x axis is 0
+// .col-px: padding x axis is $col-padding 
+// .col-pl: 'padding-left: $col-padding / 2' and 'padding-right = 0'
+// .col-pr: 'padding-left: 0' and 'padding-right: $col-padding / 2'
+// ==============================================================================
+
+@each $breakpoint-name, $breakpoint-value in $breakpoints {
+
+  @if $breakpoint-name == 'xs' {
+
+    .col-px-none {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .col-px {
+      padding-left: math.div($col-padding, 2);
+      padding-right: math.div($col-padding, 2);
+    }
+
+    .col-pl {
+      padding-left: math.div($col-padding, 2);
+      padding-right: 0;
+    }
+
+    .col-pr {
+      padding-left: 0;
+      padding-right: math.div($col-padding, 2);
+    }
+    
+  } @else {
+
+    @include breakpoint( #{$breakpoint-name} ) {
+      
+      .#{$breakpoint-name}-col-px-none {
+        padding-left: 0;
+        padding-right: 0;
+      }
+  
+      .#{$breakpoint-name}-col-px {
+        padding-left: math.div($col-padding, 2);
+        padding-right: math.div($col-padding, 2);
+      }
+  
+      .#{$breakpoint-name}-col-pl {
+        padding-left: math.div($col-padding, 2);
+        padding-right: 0;
+      }
+  
+      .#{$breakpoint-name}-col-pr {
+        padding-left: 0;
+        padding-right: math.div($col-padding, 2);
+      }
+
+    }
+  }
+}

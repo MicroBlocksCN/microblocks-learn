@@ -1,0 +1,67 @@
+//
+// Config / Fonts
+//
+// 1. Inter
+// 2. Space Grotesk
+// 3. Vars and Mixins
+// ================================================================================
+
+
+
+
+
+// Inter
+// ==========================================================================
+
+@font-face {
+  font-family: 'Inter';
+  src:  url('fonts/Inter-Regular.woff2') format('woff2'),
+        url('fonts/Inter-Regular.woff') format('woff');
+  font-weight: 400; // Regular
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:  url('fonts/Inter-Bold.woff2') format('woff2'),
+        url('fonts/Inter-Bold.woff') format('woff');
+  font-weight: 700; // Bold
+  font-style: normal;
+  font-display: optional;
+}
+
+
+
+
+
+// Space Grotesk
+// ==========================================================================
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src:  url('fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+        url('fonts/SpaceGrotesk-Medium.woff') format('woff');
+  font-weight: 500; // Medium
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src:  url('fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+        url('fonts/SpaceGrotesk-Bold.woff') format('woff');
+  font-weight: 700; // Medium
+  font-style: normal;
+  font-display: optional;
+}
+
+
+
+
+
+// Vars & Mixins
+// ==========================================================================
+
+$font-regular: 'Inter', Helvetica, Arial, sans-serif;
+$font-display: 'Space Grotesk', Helvetica, Arial, sans-serif;
