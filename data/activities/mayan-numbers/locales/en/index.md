@@ -139,7 +139,7 @@ Let's look at the numbers. We need to add a line every five digits after digit *
 
 Notice how the number of lines is equal to the integer part of the digit value divided by five, and since we should start drawing lines at the third row of the micro:bit display we can just add 2 to the calculation to get the *y* coordinate of each line, like this:
 
-![Drawing lines depending on the digit value](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20for%20i%205%20%7B%20%27%5Bdisplay:mbPlot%5D%27%20i%20%28%28%28v%20%27digit%20value%27%29%20/%205%29%20+%202%29;%7D;%7D%20%22%7D)
+![Drawing lines depending on the digit value](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20for%20i%205%20%7B%20%27%5Bdisplay:mbPlot%5D%27%20i%20%28%28%28v%20%27digit%20value%27%29%20%2F%205%29%20%2B%202%29;%7D;%7D%20%22%7D)
 
 So, the generic code would look like this:
 
