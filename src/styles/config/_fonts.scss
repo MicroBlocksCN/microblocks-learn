@@ -1,0 +1,106 @@
+//
+// Config / Fonts
+//
+// 1. Inter
+// 2. FG
+// 3. NM
+// 4. Vars and Mixins
+// ================================================================================
+
+
+
+
+
+// Inter
+// ==========================================================================
+
+@font-face {
+  font-family: 'Inter';
+  src:  url('fonts/Inter-Regular.woff2') format('woff2'),
+        url('fonts/Inter-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:  url('fonts/Inter-Bold.woff2') format('woff2'),
+        url('fonts/Inter-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+
+
+
+
+
+// FG
+// ==========================================================================
+
+@font-face {
+  font-family: 'FG';
+  src:  url('fonts/fg-bold.woff2') format('woff2'),
+        url('fonts/fg-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+
+
+
+
+
+// NM
+// ==========================================================================
+
+@font-face {
+  font-family: 'NM';
+  src:  url('fonts/nm-medium.woff2') format('woff2'),
+        url('fonts/nm-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+
+
+
+
+// Vars & Mixins
+//
+// Mixins are added because each family only has a specific weight
+// and will be easier than remember all of them all the time.
+// ==========================================================================
+
+$fontRegular:   'Inter', Helvetica, Arial, sans-serif;
+$fontDisplay:   'FG', Helvetica, Arial, sans-serif;
+$fontMono:      'NM', Helvetica, Arial, sans-serif;
+
+@mixin font-text-regular {
+  font-family: $fontRegular;
+  font-weight: 400;
+}
+
+@mixin font-text-bold {
+  font-family: $fontRegular;
+  font-weight: 700;
+}
+
+@mixin font-text-black {
+  font-family: $fontRegular;
+  font-weight: 900;
+}
+
+@mixin font-display {
+  font-family: $fontDisplay;
+  font-weight: 700;
+  line-height: $lineHeight-100; // Font error?
+}
+
+@mixin font-mono {
+  font-family: $fontMono;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}

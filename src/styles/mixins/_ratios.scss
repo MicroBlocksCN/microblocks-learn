@@ -1,0 +1,11 @@
+//
+// Picture Ratios
+// ================================================================================
+
+
+@mixin ratio( $width, $height ) {
+  position: relative;
+
+  width: 100%;
+  padding-bottom: calc( ( #{$height} / #{$width} ) * 100% );
+}

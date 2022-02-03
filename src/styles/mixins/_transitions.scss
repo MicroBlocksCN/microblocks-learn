@@ -1,0 +1,10 @@
+//
+// Mixins / Transitions
+//
+// '$trans-xxx' properties from config.scss
+// ================================================================================
+
+
+@mixin transition-base($property) {
+  transition: $property $trans-0200 $trans-easing;
+}
