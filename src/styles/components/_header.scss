@@ -1,0 +1,13 @@
+//
+// Components / Header
+// ================================================================================
+
+
+.header {
+  position: relative;
+  z-index: $zindex-above;
+
+  height: $space-350;
+
+  background-color: $color-white;
+}
