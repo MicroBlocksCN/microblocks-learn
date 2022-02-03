@@ -1,6 +1,5 @@
 var fs = require('fs'),
     fse = require('fs-extra'),
-    // sass = require('node-sass'),
     sass = require('sass'),
     handlebars = require('handlebars'),
     http = require('http'),
