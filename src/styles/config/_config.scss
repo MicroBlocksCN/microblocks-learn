@@ -95,34 +95,10 @@ $spacePercentual-80:   80%;
 
 
 // Colors
-//
-// The original brand colors are included -a purple-red and a purple-blue-,
-// although two more vivid tones are mainly being used, named 'burdeux' and 'blue'.
-// 
-// The grey scale is based on material design colors palette.
 // ================================================================================
 
 $color-burdeaux:      #7C1648;
-$color-blue:          #201E70;
 
-$color-burdeaux--bright: #9b1455;
-
-$color-burdeaux-brand:#862655;
-$color-blue-brand:    #333180;
-
-$color-background:    #FBFBFB; // Could be grey-050 - #FAFAFA
-
-$color-white:         #ffffff;
-// $color-grey-100:      #F5F5F5;
-$color-grey-200:      #EEEEEE;
-$color-grey-300:      #E0E0E0;
-$color-grey-400:      #BDBDBD;
-// $color-grey-500:      #9E9E9E;
-// $color-grey-600:      #757575;
-$color-grey-700:      #616161;
-// $color-grey-800:      #424242;
-$color-grey-900:      #212121;
-$color-black:         #000000;
 
 $gradient-brand-135:  linear-gradient(135deg, $color-burdeaux, $color-blue);
 $gradient-white:  linear-gradient(135deg, $color-white, $color-grey-300);
@@ -139,17 +115,17 @@ $background-white-transparent: rgba(255,255,255,0.9);
 // Font Sizes
 // ================================================================================
 
-$fontSize-075:   0.75rem; // 12px
-$fontSize-087:  0.875rem; // 14px
-$fontSize-100:      1rem; // 16px
-$fontSize-125:   1.25rem; // 20px
-$fontSize-150:    1.5rem; // 24px
-$fontSize-200:      2rem; // 32px
-$fontSize-250:    2.5rem; // 40px
+// $fontSize-075:   0.75rem; // 12px
+// $fontSize-087:  0.875rem; // 14px
+// $fontSize-100:      1rem; // 16px
+// $fontSize-125:   1.25rem; // 20px
+// $fontSize-150:    1.5rem; // 24px
+// $fontSize-200:      2rem; // 32px
+// $fontSize-250:    2.5rem; // 40px
 // $fontSize-300:      3rem; // 48px
-$fontSize-350:    3.5rem; // 56px
-$fontSize-400:      4rem; // 64px
-$fontSize-600:      6rem; // 96px
+// $fontSize-350:    3.5rem; // 56px
+// $fontSize-400:      4rem; // 64px
+// $fontSize-600:      6rem; // 96px
 
 
 
