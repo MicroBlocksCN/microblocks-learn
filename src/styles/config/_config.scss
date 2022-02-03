@@ -97,14 +97,11 @@ $spacePercentual-80:   80%;
 // Colors
 // ================================================================================
 
-$color-burdeaux:      #7C1648;
-
-
-$gradient-brand-135:  linear-gradient(135deg, $color-burdeaux, $color-blue);
-$gradient-white:  linear-gradient(135deg, $color-white, $color-grey-300);
-$gradient-black:  linear-gradient(135deg, $color-black, $color-grey-900);
-$gradient-darken-from-top:  linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
-$gradient-darken-from-bottom:  linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.75));
+$color-background:    #FCFCFC;
+$color-white:         #FFFFFF;
+$color-grey-700:      #616161;
+$color-grey-900:      #212121;
+$color-black:         #000000;
 
 $background-white-transparent: rgba(255,255,255,0.9);
 
@@ -134,12 +131,12 @@ $background-white-transparent: rgba(255,255,255,0.9);
 // Line Height
 // ================================================================================
 
-$lineHeight-0875:   0.875;
+// $lineHeight-0875:   0.875;
 $lineHeight-100:    1;
-$lineHeight-1125:   1.125; // Rename others?
+// $lineHeight-1125:   1.125; // Rename others?
 $lineHeight-120:    1.2;
-$lineHeight-140:    1.4;
-$lineHeight-150:    1.5;
+// $lineHeight-140:    1.4;
+// $lineHeight-150:    1.5;
 
 
 

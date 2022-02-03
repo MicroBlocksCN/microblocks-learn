@@ -1,0 +1,102 @@
+//
+// Components / WYSIWYG
+// ================================================================================
+
+
+.wysiwyg {
+
+  
+  // Headings
+  // ========================================
+
+  h3 {
+    font-size: $fontSize-150;
+    line-height: $lineHeight-120;
+    font-weight: 500;
+
+    margin-bottom: $space-100;
+
+    &:not(:first-child) {
+      margin-top: $space-200;
+    }
+  }
+
+
+  // Text
+  // ========================================
+
+  p {
+    line-height: $lineHeight-150;
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: $space-150;
+  }
+
+  a:not(.btn) {
+    text-decoration: underline;
+    // color: $color-burdeaux;
+    transition: color $trans-0200 $trans-easing;
+  }
+
+  a:not(.btn):hover {
+    color: $color-black;
+  }  
+
+  strong {
+    font-weight: 700;
+  }
+
+
+  // Lists
+  // ========================================
+
+  ul {
+    margin-bottom: $space-150;
+    padding-left: $space-100;
+    list-style-type: disc;
+  }
+
+  ol {
+    margin-bottom: $space-150;
+    padding-left: $space-100;
+    list-style-type: decimal;
+  }
+
+  li {
+    margin-bottom: $space-050;
+
+    &::marker {
+      // color: $color-burdeaux;
+    }
+  }
+
+
+
+
+  
+  // Exceptions
+  // ========================================
+
+  
+  &--small {
+    font-size: $fontSize-087;
+
+    p:not(:last-of-type) {
+      margin-bottom: $space-100;
+    }
+  }
+
+
+  &--large {
+
+    @include breakpoint(lg) {
+      font-size: $fontSize-125;
+
+      p:not(:last-of-type) {
+        margin-bottom: $space-125;
+      }
+    }
+  }
+
+}
