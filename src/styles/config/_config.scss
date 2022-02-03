@@ -112,17 +112,17 @@ $background-white-transparent: rgba(255,255,255,0.9);
 // Font Sizes
 // ================================================================================
 
-// $fontSize-075:   0.75rem; // 12px
-// $fontSize-087:  0.875rem; // 14px
-// $fontSize-100:      1rem; // 16px
-// $fontSize-125:   1.25rem; // 20px
-// $fontSize-150:    1.5rem; // 24px
-// $fontSize-200:      2rem; // 32px
-// $fontSize-250:    2.5rem; // 40px
-// $fontSize-300:      3rem; // 48px
-// $fontSize-350:    3.5rem; // 56px
-// $fontSize-400:      4rem; // 64px
-// $fontSize-600:      6rem; // 96px
+$fontSize-075:   0.75rem; // 12px
+$fontSize-087:  0.875rem; // 14px
+$fontSize-100:      1rem; // 16px
+$fontSize-125:   1.25rem; // 20px
+$fontSize-150:    1.5rem; // 24px
+$fontSize-200:      2rem; // 32px
+$fontSize-250:    2.5rem; // 40px
+$fontSize-300:      3rem; // 48px
+$fontSize-350:    3.5rem; // 56px
+$fontSize-400:      4rem; // 64px
+$fontSize-600:      6rem; // 96px
 
 
 
@@ -136,7 +136,7 @@ $lineHeight-100:    1;
 // $lineHeight-1125:   1.125; // Rename others?
 $lineHeight-120:    1.2;
 // $lineHeight-140:    1.4;
-// $lineHeight-150:    1.5;
+$lineHeight-150:    1.5;
 
 
 

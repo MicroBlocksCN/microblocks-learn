@@ -1,6 +1,7 @@
 var fs = require('fs'),
     fse = require('fs-extra'),
-    sass = require('node-sass'),
+    // sass = require('node-sass'),
+    sass = require('sass'),
     handlebars = require('handlebars'),
     http = require('http'),
     WebSocket = require('ws'),
@@ -427,7 +428,7 @@ function compileSass () {
     sass.render(
         {
             file: `${__dirname}/src/styles/main.scss`,
-            outputStyle: (debugMode ? 'nested' : 'compressed')
+            outputStyle: (debugMode ? 'expanded' : 'compressed')
         },
         (err, result) => {
             if (err) {
