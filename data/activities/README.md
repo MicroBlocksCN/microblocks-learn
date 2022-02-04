@@ -92,10 +92,9 @@ If your activity has a teacher's guide, please write it also in MarkDown on the
 
 Your activity could additionally have an activity card to hand to your students.
 
-Please write it in MarkDown on the `activity-card.md` file.
-
-> **Note:** To reference files from this markdown file, you'll need to prefix
-> your path with `../`, since all files live in the root directory.
+Please store it as PDF under the `files` folder. You can have different
+localized versions of your activity card under the `files` folders of each
+locale, or a global one under the root `files` folder.
 
 ### Metadata
 

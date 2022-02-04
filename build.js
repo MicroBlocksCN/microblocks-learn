@@ -291,7 +291,10 @@ function buildActivities () {
                     activity.locale = langCode;
                     activity.href = 'index';
                     activity['has-card'] =
-                        fs.existsSync(`${localePath}/activity-card.md`);
+                        fs.existsSync(
+                            `${localePath}/files/activity-card.pdf`) ||
+                        fs.existsSync(
+                            `${activityPath}/files/activity-card.pdf`);
                     activity['has-guide'] =
                         fs.existsSync(`${localePath}/teachers-guide.md`);
 
@@ -350,26 +353,6 @@ function buildActivity (descriptor, langCode, activityPath) {
                     `${activityPath}/locales/${langCode}/files/`,
                     `${__dirname}/dist/${localeCode}/` +
                         `activities/${descriptor.slug}/`
-                );
-            }
-            // TODO refactor these two into a single method?
-            if (descriptor['has-card']) {
-                var cardDescriptor = {
-                    markdown:
-                        fs.readFileSync(
-                            `${activityPath}/locales/${langCode}/` +
-                                `activity-card.md`,
-                            'utf8'
-                        ),
-                    title: descriptor.title,
-                    href: 'index',
-                    slug: descriptor.slug
-                }
-                compileTemplate(
-                    'activity-card',
-                    cardDescriptor,
-                    localeCode,
-                    `activities/${descriptor.slug}/card`
                 );
             }
             if (descriptor['has-guide']) {
