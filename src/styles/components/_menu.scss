@@ -27,7 +27,15 @@
   background-image: url("assets/img/backgrounds/background-on-yellow.png");
   background-position: center center;
 
+  box-shadow: $boxShadow-base;
   transition: right $trans-0400 $trans-easing;
+  
+
+  // Size md - Still responsive
+  @include breakpoint(md) {
+    width: $space-2500;
+    right: calc( -1 * #{$space-2500} );
+  }
 
   // Visible
   &--is-visible {
@@ -45,12 +53,32 @@
 
 .menu__logo {
   display: block;
+  width: 240px;
 
   position: absolute;
   top: $space-050;
   left: $space-050;
 }
 
+
+
+
+
+
+// Links
+// ========================================
+
+
+.menu__yellow {
+
+  @include breakpoint(md) {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 
 
 
