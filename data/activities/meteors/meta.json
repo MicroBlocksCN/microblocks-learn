@@ -1,0 +1,7 @@
+{
+    "author": "MicroBlocks",
+    "level": "Beginner",
+    "boards": [ "microbit" ],
+    "time": [ 60, 90 ],
+    "topics": [ "game" ]
+}
