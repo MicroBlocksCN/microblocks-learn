@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="{{@root.locale.code}}">
-  <head>
-    <title>{{ title }}</title>
-    <meta charset="UTF-8">
-    <script src="/main.js"></script>
-  </head>
-  <body>
-    <div class="page {{ pageClass }}">
 
-        {{> _header }}
 
-      <main class="main">
-          {{#> main-content }}
-                {{! Page contents will end up here }}
-          {{/main-content }}
-      </main>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      {{> _footer }}
+		<title>{{ title }}</title>
 
-    </div>
+		<link rel="stylesheet" href="/main.css" type="text/css">
+		<script src="/main.js"></script>
+	</head>
 
-    {{#if livereload}}
-    <script>
-      console.log('live reload enabled');
-      var ws = new WebSocket(`ws://${location.hostname}:8080`);
-      ws.onmessage = function (msg) {
-        if (msg.data === 'reload') {
-          location.reload();
-        } else {
-          console.log(msg.data);
-        }
-      };
-    </script>
-    {{/if}}
-  </body>
+
+	<body>
+
+		<div class="page {{ pageClass }}">
+
+			{{> _header }}
+
+			<main class="main">
+				{{#> main-content }}
+				{{! Page contents will end up here }}
+				{{/main-content }}
+			</main>
+
+			{{> _footer }}
+
+		</div>
+
+		{{#if livereload}}
+		<script>
+			console.log('live reload enabled');
+			var ws = new WebSocket(`ws://${location.hostname}:8080`);
+			ws.onmessage = function (msg) {
+				if (msg.data === 'reload') {
+					location.reload();
+				} else {
+					console.log(msg.data);
+				}
+			};
+		</script>
+		{{/if}}
+
+	</body>
+
+
 </html>

@@ -1,12 +1,12 @@
 //
-// Styles for FLS Science
+// Styles for MicroBlocks LEARN
 //
 // 1. Config: Variables used by all other elements
 // 2. Generic: Resets and site agnostic styles
 // 3. Mixins: Declarations of mixins used by components and tools
-// 4. Tools: Declarations that create utility classes like grids
-// 5. Elements: Styles for HTML elements
-// 6. Components: Styles for independent components
+// 4. Elements: Styles for HTML elements
+// 5. Utilities: Tools to create utility classes like grids
+// 6. Components: Styles for reusable components
 // 7. Views: Styles for specific pages
 // 8. Vendors: External components styles or overrides
 // ================================================================================
@@ -25,6 +25,7 @@
 
 // Mixins
 // ================================================================================
+@import 'mixins/block-connector';
 @import 'mixins/breakpoint';
 @import 'mixins/ratios';
 @import 'mixins/transitions';
@@ -32,6 +33,7 @@
 
 // Elements
 // ================================================================================
+@import 'elements/anchors';
 @import 'elements/body';
 
 
@@ -43,7 +45,10 @@
 
 // Components - prefix c_
 // ================================================================================
-@import 'components/wysiwyg';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/menu-toggle';
+// @import 'components/wysiwyg';
 
 
 // Views - prefix: v_

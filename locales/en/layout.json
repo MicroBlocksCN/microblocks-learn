@@ -1,4 +1,7 @@
 {
     "index-nav-item": "Home",
-    "activities-nav-item": "Activities"
+    "activities-nav-item": "Activities",
+    "get-started-nav-item": "Get Started",
+    "educators-nav-item": "Educators",
+    "run-nav-item": "Run"
 }
