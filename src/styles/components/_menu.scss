@@ -4,11 +4,14 @@
 
 
 .menu {
-  position: absolute;
+  position: fixed;
   z-index: $zindex-menu;
   height: 100vh;
   width: 100vw;
-  inset: 0;
+  // inset: 0;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
 
   display: flex;
   flex-direction: column;
@@ -23,6 +26,13 @@
   background-color: $color-yellow;
   background-image: url("assets/img/backgrounds/background-on-yellow.png");
   background-position: center center;
+
+  transition: right $trans-0400 $trans-easing;
+
+  // Visible
+  &--is-visible {
+    right: 0;
+  }
 }
 
 
