@@ -74,7 +74,8 @@ $space-400:    4rem; //  64px
 // $space-800:    8rem; // 128px 
 // $space-1000:  10rem; // 160px 
 // $space-1200:  12rem; // 192px 
-// $space-2000:  20rem; // 320px 
+$space-2000:  20rem; // 320px 
+$space-2500:  25rem; // 400px
 
 
 
@@ -164,9 +165,11 @@ $borderRadius-max:  100rem; // max
 // Shadows
 // ================================================================================
 
-$boxShadow-base:  0 0 16px rgba(0, 0, 0, 0.1);
-$boxShadow-base--pressed:  0 0 8px rgba(0, 0, 0, 0.3);
-$textShadow-base:  0 0 4px rgba(0, 0, 0, 0.5);
+$boxShadow-tight:     0 0 16px rgba(0, 0, 0, 0.1);
+$boxShadow-base:      0 0 16px rgba(0, 0, 0, 0.1);
+$boxShadow-expanded:  0 0 16px rgba(0, 0, 0, 0.1);
+
+$textShadow-base:     0 0 4px rgba(0, 0, 0, 0.5);
 
 
 

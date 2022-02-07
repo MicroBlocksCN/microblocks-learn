@@ -10,4 +10,18 @@
   height: $space-350;
 
   background-color: $color-white;
+  box-shadow: $boxShadow-base;
+}
+
+
+.header__logo {
+  display: block;
+
+  position: absolute;
+  top: $space-050;
+  left: $space-050;
+
+  @include breakpoint(md) {
+    width: 280px;
+  }
 }

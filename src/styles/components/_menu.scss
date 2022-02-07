@@ -4,11 +4,14 @@
 
 
 .menu {
-  position: absolute;
+  position: fixed;
   z-index: $zindex-menu;
   height: 100vh;
   width: 100vw;
-  inset: 0;
+  // inset: 0;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
 
   display: flex;
   flex-direction: column;
@@ -23,6 +26,58 @@
   background-color: $color-yellow;
   background-image: url("assets/img/backgrounds/background-on-yellow.png");
   background-position: center center;
+
+  box-shadow: $boxShadow-base;
+  transition: right $trans-0400 $trans-easing;
+  
+
+  // Size md - Still responsive
+  @include breakpoint(md) {
+    width: $space-2500;
+    right: calc( -1 * #{$space-2500} );
+  }
+
+  // Visible
+  &--is-visible {
+    right: 0;
+  }
+}
+
+
+
+
+
+// Logo
+// ========================================
+
+
+.menu__logo {
+  display: block;
+  width: 240px;
+
+  position: absolute;
+  top: $space-050;
+  left: $space-050;
+}
+
+
+
+
+
+
+// Links
+// ========================================
+
+
+.menu__yellow {
+
+  @include breakpoint(md) {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 
