@@ -51,7 +51,7 @@
 
             <div class="menu__lang">
                 <label for="site-language" class="visually-hidden">Site Language</label>
-                <select id="site-language" class="locale" onchange="setLang(this.value)">
+                <select id="site-language" class="locale menu__lang-select" onchange="setLang(this.value)">
                     {{#each locales}}
                     <option>{{this}}</option>
                     {{/each}}
