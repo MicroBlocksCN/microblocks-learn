@@ -1,11 +1,9 @@
-<form id="activity-filters">
-
-    <h3>Filters:</h3>
+<form id="activity-filters" class="c_filters">
 
 
     {{!-- Language --}}
-    <fieldset>
-        <legend>Language</legend>
+    <fieldset class="c_filters__group">
+        <legend class="c_filters__title">Language</legend>
 
         <div>
             <label for="filters-language" class="visually-hidden">Language</label>
@@ -20,8 +18,8 @@
 
 
     {{!-- Board --}}
-    <fieldset>
-        <legend>Board</legend>
+    <fieldset class="c_filters__group">
+        <legend class="c_filters__title">Board</legend>
 
         <div>
             <label for="filters-board" class="visually-hidden">Board model</label>
@@ -42,8 +40,8 @@
 
 
     {{!-- Componenets --}}
-    <fieldset>
-        <legend>Components</legend>
+    <fieldset class="c_filters__group">
+        <legend class="c_filters__title">Components</legend>
 
         <div>
             <label for="filters-components" class="visually-hidden">Components</label>
@@ -58,8 +56,8 @@
 
 
     {{!-- Level and Resources --}}
-    <fieldset>
-        <legend>Level & Resources</legend>
+    <fieldset class="c_filters__group">
+        <legend class="c_filters__title">Level & Resources</legend>
 
         <div>
             <label for="filters-level" class="visually-hidden">Level</label>
@@ -86,8 +84,8 @@
     
 
     {{!-- Topics --}}
-    <fieldset>
-        <legend>Topics</legend>
+    <fieldset class="c_filters__group">
+        <legend class="c_filters__title">Topics</legend>
 
         <div>
             <label for="filters-topic" class="visually-hidden">Topic</label>
@@ -97,6 +95,14 @@
                 <option value="">All</option>
             </select> 
         </div>
-    </fieldset>    
+    </fieldset>
+
+
+    {{!-- Buttons --}}
+    <div>
+        <button class="c_filters__button c_filters__button--filter">Filter</button>
+        <button class="c_filters__button c_filters__button--reset">Reset</button>
+    </div>
+    
 
 </form>

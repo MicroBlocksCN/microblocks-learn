@@ -74,7 +74,7 @@ function populateFilters () {
 
     var selectElements = Array.from(
             document.querySelector(
-                'div#activity-filters'
+                '#activity-filters'
             ).querySelectorAll('.activity-filter')
         ),
         addOption = function (element, selector, text, meta) {
