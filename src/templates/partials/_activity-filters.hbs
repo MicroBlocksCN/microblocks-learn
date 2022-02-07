@@ -1,46 +1,102 @@
-<div id="activity-filters">
-    <h4>Filters:</h4>
-    <h5>Language</h5>
-    <select
-        class="locale activity-filter"
-        onchange="applyFilter('locale', this.value)" >
-        <option value="">All</option>
-    </select>
-    <h5>Board</h5>
-    <select
-        class="boards activity-filter"
-        onchange="applyFilter('boards', this.value)" >
-        <option value="">All</option>
-    </select>
-    <label><input
-        onchange="applyFilter('compatible', this.checked)"
-        class="activity-toggle"
-        type="checkbox"> and compatible boards</label>
-    <h5>Components</h5>
-    <select
-        class="components activity-filter"
-        onchange="applyFilter('components', this.value)">
-        <option value="">Unset</option>
-        <option value="none">None</option>
-    </select>
-    <h5>Level & Resources</h5>
-    <select
-        class="level activity-filter"
-        onchange="applyFilter('level', this.value)">
-        <option value="">All</option>
-    </select>
-    <label><input
-        onchange = "applyFilter('has-card', this.checked)"
-        class = "activity-toggle"
-        type="checkbox"> has activity card</label>
-    <label><input
-        onchange = "applyFilter('has-guide', this.checked)"
-        class = "activity-toggle"
-        type="checkbox"> has teacher's guide</label>
-    <h5>Topics</h5>
-    <select
-        class="topics activity-filter"
-        onchange="applyFilter('topics', this.value)">
-        <option value="">All</option>
-    </select> 
-</div>
+<form id="activity-filters">
+
+    <h3>Filters:</h3>
+
+
+    {{!-- Language --}}
+    <fieldset>
+        <legend>Language</legend>
+
+        <div>
+            <label for="filters-language" class="visually-hidden">Language</label>
+            <select id="filters-language"
+                class="locale activity-filter"
+                onchange="applyFilter('locale', this.value)" >
+                <option value="">All</option>
+            </select>
+        </div>
+
+    </fieldset>
+
+
+    {{!-- Board --}}
+    <fieldset>
+        <legend>Board</legend>
+
+        <div>
+            <label for="filters-board" class="visually-hidden">Board model</label>
+            <select id="filters-board"
+                class="boards activity-filter"
+                onchange="applyFilter('boards', this.value)" >
+                <option value="">All</option>
+            </select>
+        </div>
+
+        <label><input
+            onchange="applyFilter('compatible', this.checked)"
+            class="activity-toggle"
+            type="checkbox"> and compatible boards
+        </label>
+
+    </fieldset>
+
+
+    {{!-- Componenets --}}
+    <fieldset>
+        <legend>Components</legend>
+
+        <div>
+            <label for="filters-components" class="visually-hidden">Components</label>
+            <select id="filters-compoenents"
+                class="components activity-filter"
+                onchange="applyFilter('components', this.value)">
+                <option value="">Unset</option>
+                <option value="none">None</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+    {{!-- Level and Resources --}}
+    <fieldset>
+        <legend>Level & Resources</legend>
+
+        <div>
+            <label for="filters-level" class="visually-hidden">Level</label>
+            <select id="filters-level"
+                class="level activity-filter"
+                onchange="applyFilter('level', this.value)">
+                <option value="">All</option>
+            </select>
+        </div>    
+
+        <label><input
+            onchange = "applyFilter('has-card', this.checked)"
+            class = "activity-toggle"
+            type="checkbox"> has activity card
+        </label>
+
+        <label><input
+            onchange = "applyFilter('has-guide', this.checked)"
+            class = "activity-toggle"
+            type="checkbox"> has teacher's guide
+        </label>
+
+    </fieldset>
+    
+
+    {{!-- Topics --}}
+    <fieldset>
+        <legend>Topics</legend>
+
+        <div>
+            <label for="filters-topic" class="visually-hidden">Topic</label>
+            <select id="filters-topic"
+                class="topics activity-filter"
+                onchange="applyFilter('topics', this.value)">
+                <option value="">All</option>
+            </select> 
+        </div>
+    </fieldset>    
+
+</form>

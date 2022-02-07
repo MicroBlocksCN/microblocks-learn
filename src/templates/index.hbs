@@ -26,33 +26,31 @@
 </div>
 
 
-<!-- Filters -->
-<div class="v_home__filters">
+<!-- Contents -->
+<div class="row">
+
+
+    <!-- Filters -->
+    <div class="col col-px col-12">
+        <div class="v_home__filters">
+            {{> _activity-filters }}
+        </div>
+    </div>  
+
+
+    <!-- Cards -->
+    <div class="col col-px col-12">
+        {{! gets filled from activity-list.js }}
+        <span class="activity-count"></span>
+        <div class="page-activities__pagination pagination"></div>
+        <div class="activity-list"></div>
+
+        <script>fetchActivities();</script>
+    </div>
+
 
 </div>
 
-
-
-
-
-
-
-
-
-<h2>{{ localize "pageTitle" }}</h2>
-<span>{{ localize "pageIntro" }}</span>
-
-
-
-{{!-- Activities --}}
-{{> _activity-filters }}
-
-{{! gets filled from activity-list.js }}
-<span class="activity-count"></span>
-<div class="page-activities__pagination pagination"></div>
-<div class="activity-list"></div>
-
-<script>fetchActivities();</script>
 
 {{/inline}}
 {{/layouts._html-shell }}
