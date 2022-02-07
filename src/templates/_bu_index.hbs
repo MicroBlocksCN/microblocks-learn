@@ -1,21 +1,11 @@
 {{#> layouts._html-shell
-    title=locale.pageTitle
-    pageClass="page-activities"
+    pageClass="page-home page-has-hero"
     pageUrl="https://learn.microblocks.fun/"
     pageDescription="MicroBlocks is a live blocks programming language for physical computing."
+    title=locale.pageTitle
 }}
 
 {{#*inline "main-content"}}
-<h2>{{ localize "pageTitle" }}</h2>
-<span>{{ localize "pageIntro" }}</span>
-{{> _activity-filters }}
-
-{{! gets filled from activity-list.js }}
-<span class="activity-count"></span>
-<div class="page-activities__pagination pagination"></div>
-<div class="activity-list"></div>
-
-<script>fetchActivities();</script>
-
+<p>{{ locale.pageIntro }}</p>
 {{/inline}}
 {{/layouts._html-shell }}
