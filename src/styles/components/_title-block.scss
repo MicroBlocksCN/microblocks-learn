@@ -1,0 +1,35 @@
+// 
+// Components / Title Blocks
+// ==========================================================================
+
+
+.c_title-block {
+  display: inline-block;
+  padding: 6px 12px 10px;
+  border-radius: $borderRadius-050;
+  margin-bottom: 12px;
+
+  font-family: $font-display;
+  font-weight: 700;
+  color: $color-white;
+  font-size: $fontSize-200;
+  line-height: 1;
+  letter-spacing: -0.05%;
+  text-transform: lowercase;
+
+  @include block-connector;
+
+
+  // Large Screens
+
+  @include breakpoint(md) {
+    font-size: $fontSize-300;
+  }
+
+
+  // Colors
+
+  &--purple {
+    background-color: $color-purple;
+  }
+}

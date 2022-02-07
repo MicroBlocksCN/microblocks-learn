@@ -1,0 +1,32 @@
+// 
+// Hero / Hero Yellow
+// ==========================================================================
+
+
+.c_hero-yellow {
+  padding: 0 $space-100;
+  min-height: $space-1500;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: $color-grey-900;
+  text-align: center;
+
+  background-color: $color-yellow;
+  background-image: url("assets/img/backgrounds/background-on-yellow.png");
+  background-position: center center;
+
+  border-bottom: 4px solid $color-yellow-dark;
+}
+
+
+.c_hero-yellow__title {
+  margin: $space-150 0;
+
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-250;
+  color: $color-black;
+}
