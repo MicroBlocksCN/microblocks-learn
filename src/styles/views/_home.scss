@@ -6,6 +6,7 @@
 // Boardie and So
 // ========================================
 
+
 .v_home__hero-picture {
   margin-top: calc( #{$space-100} * -1 );
   margin-bottom: $space-500;
@@ -18,8 +19,42 @@
 // Subtitle
 // ========================================
 
+
 .v_home__subtitle {
   margin-top: calc( #{$space-200} * -1 );
   margin-bottom: $space-200;
   transform: rotate( -2deg );
 }
+
+
+
+
+
+// Activities
+// ========================================
+
+
+.v_home__filters-button {
+  margin-bottom: $space-100;
+
+  @include breakpoint(xl) {
+    display: none;
+  }
+}
+
+
+.v_home__activity-list {
+  display: grid;
+  gap: $space-100;
+  grid-template-columns: 1fr;
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+

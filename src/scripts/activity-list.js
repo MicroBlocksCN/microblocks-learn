@@ -41,29 +41,73 @@ function fetchActivities () {
 // ==== HTML COMPOSING ====
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div.activity-list'),
+    var listDiv = document.querySelector('div#activity-list'),
         countDiv = document.querySelector('span.activity-count'),
         filtered = filteredActivities();
     totalPages = Math.floor(filtered.length / pageSize);
     listDiv.innerHTML = '';
     countDiv.innerHTML = filtered.length + ' results.';
-    filtered.splice((currentPage - 1) * pageSize, pageSize).forEach(
-        (activity) => { listDiv.appendChild(activityDiv(activity));
-    });
+    filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
+        (activity) => {
+            listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
+            console.log(activity);
+        }
+    );
     updatePages();
 };
 
 function activityDiv (activity) {
-    var div = document.createElement('div'),
-        thumb = document.createElement('img'),
-        title = document.createElement('span'),
-        link = document.createElement('a');
-    thumb.src = `activities/${activity.slug}/thumbnail.png`;
-    title.innerText = activity.title;
-    link.appendChild(thumb);
-    link.appendChild(title);
-    link.href = `activities/${activity.slug}`;
-    div.appendChild(link);
+
+    var title           = activity.title,
+        link            = `activities/${activity.slug}`,
+        thumb           = `activities/${activity.slug}/thumbnail.png`,
+        boards          = '',
+        components      = '';
+        
+    // create lists out of specs arrays
+    function buildList (arrayOfSpecs) {
+        let list = '';
+
+        if (arrayOfSpecs.length == 0) {
+            list = 'None.'
+        }
+
+        arrayOfSpecs.forEach( (element, index, array) => {
+            list += element;
+            if (index < (array.length - 1) ){
+                list += ', ';
+            } else {
+                list += '.';
+            }
+        });
+        
+        return list;
+    };
+
+    boards = buildList(activity.boards);
+    components = buildList(activity.components);
+
+    div = `
+        <a href="${link}" class="c_activity-card">
+            <div class="c_activity-card__thumb">
+                <img src="${thumb}" alt="${title}">
+            </div>
+            <div class="c_activity-card__content">
+                <h4 class="c_activity-card__title">${title}</h4>
+                <div class="c_activity-card__specs">
+                    <div class="c_activity-card__board">
+                        <div class="c_activity-card__icon"></div>
+                        <div class="c_activity-card__data">${boards}</div>
+                    </div>
+                    <div class="c_activity-card__components ${ components ? '' : 'c_activity-card__components--is-empty'}">
+                        <div class="c_activity-card__icon"></div>
+                        <div class="c_activity-card__data">${components}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    `;
+
     return div;
 };
 
@@ -227,3 +271,34 @@ function updatePages () {
         '.page-activities__pagination.pagination').innerHTML = html;
 };
 
+
+
+
+
+/**
+ * UI Responsive functionalities
+ * To refactor (add inline, or keep here, or separated JS file)
+ * 
+ * Bernat, what you think?
+ */
+
+function filtersResponsiveness() {
+    const windowWidth = window.innerWidth;
+    const activityFilters = document.querySelector('.c_filters');
+    const activityFiltersToggle = document.querySelector('.v_home__filters-button');
+    const activityFiltersClose = document.querySelector('.c_filters__mobile-close');
+
+    if ( windowWidth < '768' ) {
+        activityFilters.setAttribute('tabindex', '0');
+    };
+
+    activityFiltersToggle.addEventListener('click', () => {
+        activityFilters.classList.add('c_filters--is-visible');
+        activityFilters.setAttribute('tabindex', '1');
+    });
+
+    activityFiltersClose.addEventListener('click', () => {
+        activityFilters.classList.remove('c_filters--is-visible');
+        activityFilters.setAttribute('tabindex', '0');
+    });
+};
