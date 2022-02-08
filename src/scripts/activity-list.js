@@ -2,7 +2,7 @@ var activities = null,
     boards = null,
     currentPage = 1,
     totalPages = 1,
-    pageSize = 12,
+    pageSize = 2,
     filters = {};
 
 // ==== FETCHING DATA ====
@@ -41,8 +41,8 @@ function fetchActivities () {
 // ==== HTML COMPOSING ====
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div#activity-grid'),
-        countDiv = document.querySelector('span.activity-count'),
+    var listDiv = document.querySelector('#activity-grid'),
+        countDiv = document.querySelector('.v_home__activity-count'),
         filtered = filteredActivities();
     totalPages = Math.floor(filtered.length / pageSize);
     listDiv.innerHTML = '';
