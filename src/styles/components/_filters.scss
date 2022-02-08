@@ -11,11 +11,7 @@
 
   padding: $space-200 $space-150;
 
-
-
-
-
-  background-color: rgba( $color-white, 0.75);
+  background-color: rgba( $color-white, 0.9);
 
   // Responsiveness
   display: none;
@@ -24,6 +20,30 @@
   &--is-visible {
     display: block;
     visibility: visible;
+  }
+
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // End of popup format!
+  @include breakpoint(xl) {
+    position: relative;
+    inset: unset;
+    overflow-y: unset;
+
+    padding: 0 $space-100 0 0;
+    background-color: transparent;
+
+    display: block;
+    visibility: visible;
+  }
+
+  @include breakpoint(xxl) {
+    padding: 0 $space-300 0 0;
   }
 }
 
@@ -34,6 +54,23 @@
   border-radius: $borderRadius-050;
   background-color: $color-white;
   box-shadow: $boxShadow-base;
+
+  @include breakpoint(md) {
+    width: $spacePercentual-66;
+  }
+
+  @include breakpoint(lg) {
+    width: $spacePercentual-40;
+  }
+
+  // End of popup format!
+  @include breakpoint(xl) {
+    width: auto;
+    padding: 0;
+    border-radius: unset;
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 
@@ -49,6 +86,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  // End of popup format!
+  @include breakpoint(xl) {
+    display: none;
+  }
 }
 
 

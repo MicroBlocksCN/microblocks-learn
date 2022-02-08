@@ -258,5 +258,3 @@ function filtersResponsiveness() {
         activityFilters.setAttribute('tabindex', '0');
     });
 };
-
-

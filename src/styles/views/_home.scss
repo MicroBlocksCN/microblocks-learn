@@ -33,4 +33,8 @@
 
 .v_home__filters-button {
   margin-bottom: $space-100;
+
+  @include breakpoint(xl) {
+    display: none;
+  }
 }
