@@ -88,6 +88,7 @@
 
 
 .c_activity-card__list-icon {
+  flex-shrink: 0;
   margin-right: $space-050;
   display: block;
   width: $space-125;
@@ -100,9 +101,14 @@
 
 .c_activity-card__list-elements {
   flex-grow: 1;
+  height: $space-125;
 
   font-size: $fontSize-087;
+  line-height: $lineHeight-120;
   color: $color-grey-700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   transition: all $trans-0200 $trans-easing;
 
