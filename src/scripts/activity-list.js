@@ -88,7 +88,7 @@ function activityDiv (activity) {
     components = buildList(activity.components);
 
     var div = `
-        <a href="${ link }" class="c_activity-card">
+        <a href="${ link }" title="${ title }" class="c_activity-card">
             <div class="c_activity-card__thumb">
                 <img src="${ thumb }" alt="${ title }">
             </div>
