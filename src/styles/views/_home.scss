@@ -44,8 +44,14 @@
 
 
 .v_home__activity-list {
+  margin-bottom: $space-1500;
+}
+
+
+.v_home__activity-grid {
+  margin-bottom: $space-200;
   display: grid;
-  gap: $space-100;
+  gap: $space-150;
   grid-template-columns: 1fr;
 
   @include breakpoint(md) {
@@ -56,5 +62,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-

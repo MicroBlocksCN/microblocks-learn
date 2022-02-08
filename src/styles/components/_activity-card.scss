@@ -1,0 +1,112 @@
+// 
+// Components / Activity Card
+// ==========================================================================
+
+
+.c_activity-card {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+
+  border-radius: $borderRadius-050;
+  overflow: auto;
+  background-color: $color-white;
+  box-shadow: $boxShadow-base;
+
+  transition: all $trans-0400 $trans-easing;
+
+  &:hover {
+    box-shadow: $boxShadow-tight;
+    background-color: $color-yellow;
+  }
+
+  &:focus {
+    outline: $color-purple solid 2px;
+  }
+}
+
+
+.c_activity-card__thumb {
+  @include ratio(16,9);
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform $trans-0400 $trans-easing;
+
+    .c_activity-card:hover & {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+.c_activity-card__content {
+  flex-grow: 1;
+  padding: $space-100;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.c_activity-card__title {
+  min-height: $space-500;
+  margin-bottom: $space-100;
+
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-150;
+  line-height: $lineHeight-120;
+  letter-spacing: -0.05rem;
+
+  transition: all $trans-0200 $trans-easing;
+}
+
+
+.c_activity-card__list {
+  display: flex;
+  justify-content: center;
+
+  &:not(:last-of-type) {
+    margin-bottom: $space-050;
+  }
+}
+
+
+// ADD ICONS!
+// ADD ICONS!
+// ADD ICONS!
+// .c_activity-card__board,
+// .c_activity-card__components {
+
+
+.c_activity-card__list-icon {
+  margin-right: $space-050;
+  display: block;
+  width: $space-125;
+  height: $space-125;
+
+  // temp
+  background-color: $color-grey-200;
+}
+
+
+.c_activity-card__list-elements {
+  flex-grow: 1;
+
+  font-size: $fontSize-087;
+  color: $color-grey-700;
+
+  transition: all $trans-0200 $trans-easing;
+
+  .c_activity-card:hover & {
+    color: $color-grey-900;
+  }
+}

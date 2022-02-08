@@ -41,7 +41,7 @@ function fetchActivities () {
 // ==== HTML COMPOSING ====
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div#activity-list'),
+    var listDiv = document.querySelector('div#activity-grid'),
         countDiv = document.querySelector('span.activity-count'),
         filtered = filteredActivities();
     totalPages = Math.floor(filtered.length / pageSize);
@@ -95,13 +95,13 @@ function activityDiv (activity) {
             <div class="c_activity-card__content">
                 <h4 class="c_activity-card__title">${ title }</h4>
                 <div class="c_activity-card__specs">
-                    <div class="c_activity-card__board">
-                        <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${ boards }</div>
+                    <div class="c_activity-card__list">
+                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-elements">${ boards }</div>
                     </div>
-                    <div class="c_activity-card__components ${ components ? '' : 'c_activity-card__components--is-empty'}">
-                        <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${ components ? components : '–'}</div>
+                    <div class="c_activity-card__list ${ components ? '' : 'c_activity-card__components--is-empty'}">
+                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-elements">${ components ? components : '–'}</div>
                     </div>
                 </div>
             </div>
