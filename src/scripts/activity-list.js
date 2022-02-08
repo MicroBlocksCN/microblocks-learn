@@ -68,9 +68,9 @@ function activityDiv (activity) {
     function buildList (arrayOfSpecs) {
         let list = '';
 
-        if (arrayOfSpecs.length == 0) {
-            list = 'None.'
-        }
+        // if (arrayOfSpecs.length == 0) {
+        //     list = 'None.'
+        // }
 
         arrayOfSpecs.forEach( (element, index, array) => {
             list += element;
@@ -88,20 +88,20 @@ function activityDiv (activity) {
     components = buildList(activity.components);
 
     div = `
-        <a href="${link}" class="c_activity-card">
+        <a href="${ link }" class="c_activity-card">
             <div class="c_activity-card__thumb">
-                <img src="${thumb}" alt="${title}">
+                <img src="${ thumb }" alt="${ title }">
             </div>
             <div class="c_activity-card__content">
-                <h4 class="c_activity-card__title">${title}</h4>
+                <h4 class="c_activity-card__title">${ title }</h4>
                 <div class="c_activity-card__specs">
                     <div class="c_activity-card__board">
                         <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${boards}</div>
+                        <div class="c_activity-card__data">${ boards }</div>
                     </div>
                     <div class="c_activity-card__components ${ components ? '' : 'c_activity-card__components--is-empty'}">
                         <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${components}</div>
+                        <div class="c_activity-card__data">${ components ? components : 'None'}</div>
                     </div>
                 </div>
             </div>
