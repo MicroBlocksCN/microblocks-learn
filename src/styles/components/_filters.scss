@@ -4,12 +4,73 @@
 
 
 .c_filters {
-  padding: $space-150;
+  position: fixed;
+  z-index: $zindex-popup;
+  inset: 0;
+  overflow-y: auto;
+
+  padding: $space-200 $space-150;
+
+
+
+
+
+  background-color: rgba( $color-white, 0.75);
+
+  // Responsiveness
+  display: none;
+  visibility: hidden;
+
+  &--is-visible {
+    display: block;
+    visibility: visible;
+  }
+}
+
+
+.c_filters__wrapper {
+  padding: $space-150 $space-150;
 
   border-radius: $borderRadius-050;
   background-color: $color-white;
   box-shadow: $boxShadow-base;
 }
+
+
+
+
+
+// Boardie and So
+// ========================================
+
+
+.c_filters__mobile {
+  margin-bottom: $space-200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.c_filters__mobile-title {
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-150;
+}
+
+
+.c_filters__mobile-close {
+  color: $color-purple;
+  width: $space-125;
+  height: $space-125;
+}
+
+
+
+
+
+// Fields
+// ========================================
 
 
 .c_filters__group {
@@ -126,6 +187,7 @@
   transition: all $trans-0200 $trans-easing;
 
   &:not(:last-of-type) {
+    margin-top: $space-200;
     margin-bottom: $space-050;
   }
 

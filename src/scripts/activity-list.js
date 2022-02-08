@@ -227,3 +227,36 @@ function updatePages () {
         '.page-activities__pagination.pagination').innerHTML = html;
 };
 
+
+
+
+
+/**
+ * UI Responsive functionalities
+ * To refactor (add inline, or keep here, or separated JS file)
+ * 
+ * Bernat, what you think?
+ */
+
+function filtersResponsiveness() {
+    const windowWidth = window.innerWidth;
+    const activityFilters = document.querySelector('.c_filters');
+    const activityFiltersToggle = document.querySelector('.v_home__filters-button');
+    const activityFiltersClose = document.querySelector('.c_filters__mobile-close');
+
+    if ( windowWidth < '768' ) {
+        activityFilters.setAttribute('tabindex', '0');
+    };
+
+    activityFiltersToggle.addEventListener('click', () => {
+        activityFilters.classList.add('c_filters--is-visible');
+        activityFilters.setAttribute('tabindex', '1');
+    });
+
+    activityFiltersClose.addEventListener('click', () => {
+        activityFilters.classList.remove('c_filters--is-visible');
+        activityFilters.setAttribute('tabindex', '0');
+    });
+};
+
+

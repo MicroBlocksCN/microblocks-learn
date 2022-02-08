@@ -1,108 +1,117 @@
 <form id="activity-filters" class="c_filters">
+    <div class="c_filters__wrapper">
 
-
-    {{!-- Language --}}
-    <fieldset class="c_filters__group">
-        <legend class="c_filters__title">Language</legend>
-
-        <div>
-            <label for="filters-language" class="visually-hidden">Language</label>
-            <select id="filters-language"
-                class="locale activity-filter"
-                onchange="applyFilter('locale', this.value)" >
-                <option value="">All</option>
-            </select>
+        <div class="c_filters__mobile">
+            <h3 class="c_filters__mobile-title">Activity Filters</h3>
+            <div class="c_filters__mobile-close" role="button">
+                {{> svg.icon-hide }}
+            </div>
         </div>
 
-    </fieldset>
+
+        {{!-- Language --}}
+        <fieldset class="c_filters__group">
+            <legend class="c_filters__title">Language</legend>
+
+            <div>
+                <label for="filters-language" class="visually-hidden">Language</label>
+                <select id="filters-language"
+                    class="locale activity-filter"
+                    onchange="applyFilter('locale', this.value)" >
+                    <option value="">All</option>
+                </select>
+            </div>
+
+        </fieldset>
 
 
-    {{!-- Board --}}
-    <fieldset class="c_filters__group">
-        <legend class="c_filters__title">Board</legend>
+        {{!-- Board --}}
+        <fieldset class="c_filters__group">
+            <legend class="c_filters__title">Board</legend>
 
+            <div>
+                <label for="filters-board" class="visually-hidden">Board model</label>
+                <select id="filters-board"
+                    class="boards activity-filter"
+                    onchange="applyFilter('boards', this.value)" >
+                    <option value="">All</option>
+                </select>
+            </div>
+
+            <label><input
+                onchange="applyFilter('compatible', this.checked)"
+                class="activity-toggle"
+                type="checkbox"> and compatible boards
+            </label>
+
+        </fieldset>
+
+
+        {{!-- Componenets --}}
+        <fieldset class="c_filters__group">
+            <legend class="c_filters__title">Components</legend>
+
+            <div>
+                <label for="filters-components" class="visually-hidden">Components</label>
+                <select id="filters-compoenents"
+                    class="components activity-filter"
+                    onchange="applyFilter('components', this.value)">
+                    <option value="">Unset</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+        </fieldset>
+
+
+        {{!-- Level and Resources --}}
+        <fieldset class="c_filters__group">
+            <legend class="c_filters__title">Level & Resources</legend>
+
+            <div>
+                <label for="filters-level" class="visually-hidden">Level</label>
+                <select id="filters-level"
+                    class="level activity-filter"
+                    onchange="applyFilter('level', this.value)">
+                    <option value="">All</option>
+                </select>
+            </div>    
+
+            <label><input
+                onchange = "applyFilter('has-card', this.checked)"
+                class = "activity-toggle"
+                type="checkbox"> has activity card
+            </label>
+
+            <label><input
+                onchange = "applyFilter('has-guide', this.checked)"
+                class = "activity-toggle"
+                type="checkbox"> has teacher's guide
+            </label>
+
+        </fieldset>
+        
+
+        {{!-- Topics --}}
+        <fieldset class="c_filters__group">
+            <legend class="c_filters__title">Topics</legend>
+
+            <div>
+                <label for="filters-topic" class="visually-hidden">Topic</label>
+                <select id="filters-topic"
+                    class="topics activity-filter"
+                    onchange="applyFilter('topics', this.value)">
+                    <option value="">All</option>
+                </select> 
+            </div>
+        </fieldset>
+
+
+        {{!-- Buttons --}}
         <div>
-            <label for="filters-board" class="visually-hidden">Board model</label>
-            <select id="filters-board"
-                class="boards activity-filter"
-                onchange="applyFilter('boards', this.value)" >
-                <option value="">All</option>
-            </select>
+            <button class="c_filters__button c_filters__button--filter">Filter</button>
+            <button class="c_filters__button c_filters__button--reset">Reset</button>
         </div>
 
-        <label><input
-            onchange="applyFilter('compatible', this.checked)"
-            class="activity-toggle"
-            type="checkbox"> and compatible boards
-        </label>
 
-    </fieldset>
-
-
-    {{!-- Componenets --}}
-    <fieldset class="c_filters__group">
-        <legend class="c_filters__title">Components</legend>
-
-        <div>
-            <label for="filters-components" class="visually-hidden">Components</label>
-            <select id="filters-compoenents"
-                class="components activity-filter"
-                onchange="applyFilter('components', this.value)">
-                <option value="">Unset</option>
-                <option value="none">None</option>
-            </select>
-        </div>
-    </fieldset>
-
-
-    {{!-- Level and Resources --}}
-    <fieldset class="c_filters__group">
-        <legend class="c_filters__title">Level & Resources</legend>
-
-        <div>
-            <label for="filters-level" class="visually-hidden">Level</label>
-            <select id="filters-level"
-                class="level activity-filter"
-                onchange="applyFilter('level', this.value)">
-                <option value="">All</option>
-            </select>
-        </div>    
-
-        <label><input
-            onchange = "applyFilter('has-card', this.checked)"
-            class = "activity-toggle"
-            type="checkbox"> has activity card
-        </label>
-
-        <label><input
-            onchange = "applyFilter('has-guide', this.checked)"
-            class = "activity-toggle"
-            type="checkbox"> has teacher's guide
-        </label>
-
-    </fieldset>
-    
-
-    {{!-- Topics --}}
-    <fieldset class="c_filters__group">
-        <legend class="c_filters__title">Topics</legend>
-
-        <div>
-            <label for="filters-topic" class="visually-hidden">Topic</label>
-            <select id="filters-topic"
-                class="topics activity-filter"
-                onchange="applyFilter('topics', this.value)">
-                <option value="">All</option>
-            </select> 
-        </div>
-    </fieldset>
-
-
-    {{!-- Buttons --}}
-    <div>
-        <button class="c_filters__button c_filters__button--filter">Filter</button>
-        <button class="c_filters__button c_filters__button--reset">Reset</button>
     </div>
-    
-
 </form>
