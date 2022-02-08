@@ -2,7 +2,7 @@ var activities = null,
     boards = null,
     currentPage = 1,
     totalPages = 1,
-    pageSize = 2,
+    pageSize = 12,
     filters = {};
 
 // ==== FETCHING DATA ====

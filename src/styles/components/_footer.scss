@@ -6,11 +6,16 @@
 
 .footer {
   padding: 48px 0 24px 0;
+  margin-top: $space-500;
   background-color: $color-black;
 
   color: $color-grey-400;
   font-size: 14px;
   line-height: 1.2rem;
+
+  @include breakpoint(lg) {
+    margin-top: $space-800;
+  }
   
 
   h3 {
