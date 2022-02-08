@@ -2,7 +2,7 @@ var activities = null,
     boards = null,
     currentPage = 1,
     totalPages = 1,
-    pageSize = 15,
+    pageSize = 2,
     filters = {};
 
 // ==== FETCHING DATA ====
@@ -233,8 +233,8 @@ function previousPage () {
 
 function pageElementHtml (pageNum) {
     if (typeof pageNum === 'number') {
-        return `<div class="pagination__item
-            ${currentPage === pageNum ?  ' pagination__item--active' : ''}"
+        return `<div class="c_pagination__item
+            ${currentPage === pageNum ?  ' c_pagination__item--active' : ''}"
             onclick="currentPage = ${pageNum}; updateActivityList();"
             role="button" tabindex="0" aria-label="Go to page ${pageNum}"
             ${currentPage === pageNum ? ' aria-current="true"' : ''}>
@@ -246,8 +246,8 @@ function pageElementHtml (pageNum) {
         // Yep, tomorrow I'll have a hard time understanding this code.
         // Nope, sorry. I'm not documenting this. I'll just rewrite it from
         // scratch if need be.
-        return `<div class="pagination__item
-            ${disabled ? ' pagination__item--disabled' : ''}"
+        return `<div class="c_pagination__item
+            ${disabled ? ' c_pagination__item--disabled' : ''}"
             onclick="${['previous','next'][['<','>'].indexOf(pageNum)]}Page();"
             role="button" tabindex="0" ${pageNum === '<' ?
                     ' aria-label="Previous Page"' : ' aria-label="Next Page"' }
@@ -267,8 +267,7 @@ function updatePages () {
         }
         html += pageElementHtml('>');
     }
-    document.querySelector(
-        '.page-activities__pagination.pagination').innerHTML = html;
+    document.querySelector('.c_pagination').innerHTML = html;
 };
 
 
