@@ -87,7 +87,7 @@ function activityDiv (activity) {
     boards = buildList(activity.boards);
     components = buildList(activity.components);
 
-    div = `
+    var div = `
         <a href="${ link }" class="c_activity-card">
             <div class="c_activity-card__thumb">
                 <img src="${ thumb }" alt="${ title }">
@@ -101,7 +101,7 @@ function activityDiv (activity) {
                     </div>
                     <div class="c_activity-card__components ${ components ? '' : 'c_activity-card__components--is-empty'}">
                         <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${ components ? components : 'None'}</div>
+                        <div class="c_activity-card__data">${ components ? components : '–'}</div>
                     </div>
                 </div>
             </div>
