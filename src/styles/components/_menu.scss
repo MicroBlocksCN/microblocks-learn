@@ -5,13 +5,12 @@
 
 .menu {
   position: fixed;
+  top: 0;
+  right: calc( -100vw - 16px );
+  bottom: 0;
   z-index: $zindex-menu;
   height: 100vh;
   width: 100vw;
-  // inset: 0;
-  top: 0;
-  right: -100vw;
-  bottom: 0;
 
   display: flex;
   flex-direction: column;
@@ -31,11 +30,28 @@
   transition: right $trans-0400 $trans-easing;
   
 
-  // Size md - Still responsive
+  // Size MD - Still responsive
   @include breakpoint(md) {
     width: $space-2500;
-    right: calc( -1 * #{$space-2500} );
+    right: calc( -1 * #{$space-2500} - 16px );
   }
+
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    position: relative;
+    inset: auto;
+    z-index: unset;
+    height: 100%;
+    width: auto;
+
+    flex-direction: row;
+
+    font-size: $fontSize-125;
+    background: unset;
+    box-shadow: none;
+  }
+
 
   // Visible
   &--is-visible {
@@ -58,6 +74,12 @@
   position: absolute;
   top: $space-050;
   left: $space-050;
+
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    display: none;
+  }
 }
 
 
@@ -78,6 +100,14 @@
     flex-direction: column;
     justify-content: center;
   }
+
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    padding-right: $space-150;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 
@@ -88,9 +118,111 @@
 // ========================================
 
 
+.menu__links-list {
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    display: flex;
+    gap: $space-150;
+    margin-right: $space-150;
+  }
+}
+
+
 .menu__link {
+  position: relative;
   display: block;
   margin: $space-100 0;
+
+
+  &::after {
+    content: '';
+    display: block;
+  
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: $color-black;
+  
+    transition: width $trans-0400 $trans-easing
+  }
+
+  &:hover,
+  &:focus-visible {
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    margin: unset;
+  } 
+}
+
+
+
+
+
+
+// Language Dropdown
+// ========================================
+
+
+.menu__lang-select {
+
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: $space-025 $space-100 $space-025 $space-025;
+  margin: 0;
+  // width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+
+  // Stack above custom arrow
+  z-index: 1;
+
+  // Remove dropdown arrow in IE10 & IE11
+  // @link https://www.filamentgroup.com/lab/select-css.html
+  &::-ms-expand {
+      display: none;
+  }
+
+  // Remove focus outline, will add an alternate element
+  outline: none;
+
+
+  // Own Styles
+  display: inline-block;
+  position: relative;
+
+  cursor: pointer;
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  border-radius: $borderRadius-025;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='7' viewBox='0 0 9 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7L9 0L0 -3.93402e-07L3 7L6 7Z' fill='black'/%3E%3C/svg%3E");
+  background-position: right $space-050 center;
+  background-repeat: no-repeat;
+  background-color: $color-yellow-light;
+
+  
+  @include breakpoint(xl) {
+    font-size: 20px;
+    line-height: 24px;
+
+    background-color: $color-grey-200;
+  }
 }
 
 
@@ -112,4 +244,20 @@
   background-image: url("assets/img/backgrounds/background-on-black.png");
   background-position: center center;
   border-top: 4px solid $color-yellow-dark;
+
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0 $space-200;
+
+    display: flex;
+    align-items: center;
+
+    border: none;
+    @include block-connector;
+  }
+
 }

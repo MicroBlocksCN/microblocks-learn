@@ -11,16 +11,25 @@
 
   background-color: $color-white;
   box-shadow: $boxShadow-base;
+
+
+  // Size XL - Horizontally laid out
+  @include breakpoint(xl) {
+    display: flex;
+    justify-content: flex-end; // Logo has position absolute
+  }
 }
 
 
 .header__logo {
   display: block;
+  width: 240px;
 
   position: absolute;
   top: $space-050;
   left: $space-050;
 
+  
   @include breakpoint(md) {
     width: 280px;
   }

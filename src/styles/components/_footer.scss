@@ -1,0 +1,99 @@
+// ==========================================================================
+// Layout / Footer
+// ==========================================================================
+
+
+
+.footer {
+  padding: 48px 0 24px 0;
+  background-color: $color-black;
+
+  color: $color-grey-400;
+  font-size: 14px;
+  line-height: 1.2rem;
+  
+
+  h3 {
+    margin-bottom: 12px;
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: 24px;
+    color: $color-white;
+  }
+
+  p {
+    margin-bottom: 12px;
+    line-height: 1.4;
+
+    a:link,
+    a:visited {
+      color: $color-grey-400;
+      text-decoration: underline;
+      transition: color 0.3s ease-out;
+    }
+  
+    a:hover,
+    a:focus-visible {
+      color: $color-yellow;
+    }
+  }
+}
+
+
+
+
+
+
+// Contents
+// ========================================
+
+
+.footer__content {
+  margin-bottom: $space-300;
+}
+
+
+.footer__col {
+  margin-bottom: $space-300;
+}
+
+
+
+
+
+
+// Logo
+// ========================================
+
+
+.footer__logo {
+  display: block;
+  width: 200px;
+
+  @include breakpoint(lg) {
+    width: 240px;
+    transform: translateY(-23px); // Align logo to titles
+  }
+}
+
+
+
+
+
+a.footer__link {
+  display: flex;
+  align-items: center;
+  
+  color: $color-white;
+  transition: color $trans-0200 $trans-easing;
+
+  .circle {
+    flex-shrink: 0;
+    margin-right: 8px;
+    background-color: #FED722; 
+  }
+
+  &:hover {
+    color: $color-yellow;
+  }
+}

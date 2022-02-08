@@ -33,7 +33,7 @@
 
             <ul class="menu__links-list">
                 <li class="menu__list-item">
-                    <a href="/{{@root.locale.code}}/index" class="menu__link">{{@root.locale.index-nav-item}}</a>
+                    <a href="/{{@root.locale.code}}/index" class="menu__link">{{@root.locale.activities-nav-item}}</a>
                 </li>
                 <li class="menu__list-item">
                     <a href="https://microblocks.fun/get-started" class="menu__link" target="_blank">{{@root.locale.get-started-nav-item}}</a>
@@ -42,13 +42,16 @@
                     <a href="/{{@root.locale.code}}/educators" class="menu__link">{{@root.locale.educators-nav-item}}</a>
                 </li>
                 <li class="menu__list-item">
+                    <a href="/{{@root.locale.code}}/other-resources" class="menu__link" target="_blank">{{@root.locale.other-resources-nav-item}}</a>
+                </li>
+                <li class="menu__list-item">
                     <a href="https://microblocks.fun/" class="menu__link" target="_blank">MicroBlocks.fun</a>
                 </li>
             </ul>
 
             <div class="menu__lang">
                 <label for="site-language" class="visually-hidden">Site Language</label>
-                <select id="site-language" class="locale" onchange="setLang(this.value)">
+                <select id="site-language" class="locale menu__lang-select" onchange="setLang(this.value)">
                     {{#each locales}}
                     <option>{{this}}</option>
                     {{/each}}
