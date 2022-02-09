@@ -1,0 +1,48 @@
+//
+// Views / Activity
+// ================================================================================
+
+
+// Side Blocks
+// ========================================
+
+
+.v_activity__side-block {
+
+  &:not(:last-of-type) {
+    margin-bottom: $space-200;
+  }
+
+  p {
+    margin-bottom: $space-100;
+  }
+}
+
+
+.v_activity__side-title {
+  margin-bottom: $space-050;
+
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: $fontSize-125;
+  color: $color-grey-400;
+}
+
+
+.v_activity__side-box {
+  padding: $space-150;
+  @include box;
+}
+
+
+.v_activity__details-group {
+  
+  &:not(:last-of-type) {
+    margin-bottom: $space-100;
+  }
+}
+
+
+.v_activity__details-group-title {
+  margin-bottom: $space-025;
+}

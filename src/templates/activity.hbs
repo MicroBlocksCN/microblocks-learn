@@ -6,6 +6,7 @@
 
 {{#*inline "main-content"}}
 
+
 <!-- Header -->
 <header class="v_activity__hero c_hero-yellow">
 
@@ -23,11 +24,20 @@
     <div class="c_hero-yellow__specs">
 
         <div class="c_hero-yellow__boards">
-            <div class="c_hero-yellow__boards-title c_title-small c_title-small--icon-board">
+            <h3 class="c_hero-yellow__boards-title c_title-small c_title-small--icon-board">
                 Boards:
-            </div>
+            </h3>
             <div class="c_hero-yellow__boards-list">
-                {{boards}}
+                Board 1, Board 2
+            </div>
+        </div>
+
+        <div class="c_hero-yellow__components">
+            <h3 class="c_hero-yellow__components-title c_title-small c_title-small--icon-board">
+                Components:
+            </h3>
+            <div class="c_hero-yellow__components-list">
+                Board 1, Board 2
             </div>
         </div>
 
@@ -36,24 +46,112 @@
 </header><!-- /Header -->
 
 
+<div class="contents">
+    <div class="row">
 
-<div>
-{{#if has-guide}}
-    <a href="./guide">Teacher's Guide</a>
-{{/if}}
-{{#if has-card}}
-    <a href="./card">Activity Card</a>
-{{/if}}
-</div>
-<div>
-    <h3>Available Languages</h3>
-    {{#each translations}}
-    <a href="/{{this.langCode}}/activities/{{this.slug}}">{{this.title}}</a>
-    {{/each}}
-</div>
-{{! insert the compiled markdown for this particular activity }}
 
-{{#markdown markdown}}{{/markdown}}
+        <div class="col col-px col-12 lg col-4">
+
+            <aside class="v_activity__side-block">
+                <h3 class="v_activity__side-title">
+                    Resources
+                </h3>
+                <div>
+
+                    {{#if has-guide}}
+                    <div>
+                        <a class="c_button-icon" href="./guide">Teacher's Guide</a>
+                    </div>
+                    {{/if}}
+
+                    {{#if has-card}}
+                    <div>
+                        <a class="c_button-icon" href="./card">Activity Card</a>
+                    </div>
+                    {{/if}}
+
+                </div>
+            </aside>
+
+            <aside class="v_activity__side-block">
+                <h3 class="v_activity__side-title">
+                    Activity Details
+                </h3>
+                <div class="v_activity__side-box">
+                    
+                    <div class="v_activity__details-group">
+                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-level">
+                            Level
+                        </h4>
+                        <div class="v_activity__details-group-content">
+                            Beginner
+                        </div>
+                    </div>
+
+                    <div class="v_activity__details-group">
+                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
+                            Estimated Time
+                        </h4>
+                        <div class="v_activity__details-group-content">
+                            90-120 minutes
+                        </div>
+                    </div>
+
+                    <div class="v_activity__details-group">
+                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
+                            Topic
+                        </h4>
+                        <div class="v_activity__details-group-content">
+                            Environment
+                        </div>
+                    </div>
+
+                    <div class="v_activity__details-group">
+                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
+                            Available Languages
+                        </h4>
+                        <ul class="v_activity__details-group-content">
+                            {{#each translations}}
+                            <li>
+                                <a href="/{{this.langCode}}/activities/{{this.slug}}">{{this.title}}</a>
+                            </li>
+                            {{/each}}
+                            <li>
+                                <a href="#">Arabic</a>
+                            </li>
+                            <li>
+                                asdasd
+                            </li>
+                            <li>
+                                asdasd
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </aside>
+
+            <aside class="v_activity__side-block">
+                <h3 class="v_activity__side-title">
+                    Printable Version
+                </h3>
+                <div>
+                    <p>You can load a printer friendly version of this page for printing or save it as a PDF file.</p>
+                    <a class="c_button-small" href="#">Printable Version</a>
+                </div>
+            </aside>
+
+        </div><!-- .col -->
+
+
+        <div class="col col-px col-12 lg-col-8">
+            {{! insert the compiled markdown for this particular activity }}
+            {{#markdown markdown}}{{/markdown}}
+        </div><!-- .col -->
+        
+
+    </div>
+</div>
 
 {{/inline}}
 
