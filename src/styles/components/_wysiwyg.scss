@@ -5,69 +5,138 @@
 
 .wysiwyg {
 
-  
-  // Headings
-  // ========================================
 
+  // Main headings
   h3 {
-    font-size: $fontSize-150;
-    line-height: $lineHeight-120;
-    font-weight: 500;
+    margin-bottom: $space-150;
 
-    margin-bottom: $space-100;
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: $fontSize-200;
+    line-height: $lineHeight-120;
+    color: $color-purple;
 
     &:not(:first-child) {
-      margin-top: $space-200;
+      margin-top: $space-300;
     }
   }
 
 
-  // Text
-  // ========================================
+  // Secondary headings
+  h4 {
+    margin-bottom: $space-150;
 
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: $fontSize-150;
+    line-height: $lineHeight-120;
+    color: $color-black;
+
+    &:not(:first-child) {
+      margin-top: $space-300;
+    }
+  }
+
+
+  // Paragraph
   p {
+    margin-bottom: $space-150;
+    line-height: $lineHeight-150;
+    color: $color-grey-900;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  
+  // Anchor
+  a:not(.button) {
+    text-decoration: underline;
+    color: $color-purple;
+    transition: color $trans-0200 $trans-easing;
+
+    &:not(.btn):hover {
+      color: $color-black;
+    }
+  }
+
+
+  // Image
+  p img {
+    // border: 4px solid $color-grey-200;
+  }
+
+
+  // Image w Script
+  p img[src*="render"] {
+    display: inline-block;
+    position: relative;
+    padding: $space-150 $space-075 $space-075 $space-075;
+
+    background-color: $color-script-pane;
+    border: none;
+
+    &::after {
+      content: 'Drag it to the IDE!';
+
+      display: block;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: $space-025;
+      right: $space-025;
+
+      font-size: $fontSize-050;
+      color: $color-grey-700;
+    }
+  }
+
+
+  // Caption
+  p img ~ em {
+    margin-top: -10px;
+    display: block;
+    padding: $space-050 $space-100 $space-050 $space-075;
+
+    background-color: $color-grey-200;
+    font-size: $fontSize-075;
     line-height: $lineHeight-150;
   }
 
-  p:not(:last-of-type) {
-    margin-bottom: $space-150;
+  @supports selector(p:has(em)) {
+    margin-top: 0;
+    line-height: 0;
   }
 
-  a:not(.btn) {
-    text-decoration: underline;
-    // color: $color-burdeaux;
-    transition: color $trans-0200 $trans-easing;
-  }
 
-  a:not(.btn):hover {
-    color: $color-black;
-  }  
 
-  strong {
-    font-weight: 700;
-  }
+
 
 
   // Lists
   // ========================================
 
+  
   ul {
     margin-bottom: $space-150;
     padding-left: $space-100;
     list-style-type: disc;
   }
 
+  
   ol {
     margin-bottom: $space-150;
     padding-left: $space-100;
     list-style-type: decimal;
   }
 
+  
   li {
     margin-bottom: $space-050;
 
     &::marker {
-      // color: $color-burdeaux;
+      color: $color-purple;
     }
   }
 
@@ -81,10 +150,8 @@
   
   &--small {
     font-size: $fontSize-087;
+    margin-bottom: $space-100;
 
-    p:not(:last-of-type) {
-      margin-bottom: $space-100;
-    }
   }
 
 

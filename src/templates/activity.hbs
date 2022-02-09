@@ -50,7 +50,8 @@
     <div class="row">
 
 
-        <div class="col col-px col-12 lg col-4">
+        <!-- Sidebar Contents -->
+        <div class="col col-px col-12 lg-col-4">
 
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
@@ -77,7 +78,7 @@
                 <h3 class="v_activity__side-title">
                     Activity Details
                 </h3>
-                <div class="v_activity__side-box">
+                <div class="v_activity__side-box v_activity__side-box--details">
                     
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-level">
@@ -131,7 +132,7 @@
                 </div>
             </aside>
 
-            <aside class="v_activity__side-block">
+            <aside class="v_activity__side-block v_activity__side-block--printable">
                 <h3 class="v_activity__side-title">
                     Printable Version
                 </h3>
@@ -141,14 +142,19 @@
                 </div>
             </aside>
 
-        </div><!-- .col -->
+        </div><!-- Sidebar Contents -->
 
 
+        <!-- Activity Text -->
         <div class="col col-px col-12 lg-col-8">
-            {{! insert the compiled markdown for this particular activity }}
-            {{#markdown markdown}}{{/markdown}}
-        </div><!-- .col -->
-        
+            <article class="v_activity__contents wysiwyg">
+
+                {{! insert the compiled markdown for this particular activity }}
+                {{#markdown markdown}}{{/markdown}}
+
+            </article>
+        </div><!-- Activity Text -->
+
 
     </div>
 </div>

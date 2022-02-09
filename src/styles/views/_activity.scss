@@ -3,7 +3,7 @@
 // ================================================================================
 
 
-// Side Blocks
+// Sidebar Contents
 // ========================================
 
 
@@ -15,6 +15,18 @@
 
   p {
     margin-bottom: $space-100;
+    color: $color-grey-700;
+  }
+
+
+  // Exceptions
+  &--printable {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+      width: $spacePercentual-80;
+    }
   }
 }
 
@@ -32,17 +44,40 @@
 .v_activity__side-box {
   padding: $space-150;
   @include box;
-}
 
+  &--details {
+    display: grid;
+    gap: $space-100;
+    grid-template-columns: 1fr;
 
-.v_activity__details-group {
-  
-  &:not(:last-of-type) {
-    margin-bottom: $space-100;
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(lg) {
+      width: $spacePercentual-75;
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 
 .v_activity__details-group-title {
   margin-bottom: $space-025;
+}
+
+
+
+
+
+// Activity Text
+// ========================================
+
+
+.v_activity__contents {
+  margin-top: $space-400;
+
+  @include breakpoint(lg) {
+    margin-top: 0;
+  }
 }
