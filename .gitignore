@@ -1,6 +1,5 @@
-node_modules
-
 *.swp
 node_modules
+package-lock.json
 dist/*
 data/activities.json

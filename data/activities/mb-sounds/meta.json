@@ -1,0 +1,7 @@
+{
+    "author": "MicroBlocks",
+    "level": "Beginner",
+    "boards": [ "microbit" ],
+    "time": [ 15, 45 ],
+    "topics": [ "sound", "music" ]
+}
