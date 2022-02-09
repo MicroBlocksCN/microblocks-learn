@@ -50,7 +50,6 @@ function updateActivityList () {
     filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
         (activity) => {
             listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
-            console.log(activity);
         }
     );
     updatePages();
@@ -301,3 +300,12 @@ function filtersResponsiveness() {
         activityFilters.setAttribute('tabindex', '0');
     });
 };
+
+
+
+
+/**
+ * TODO:
+ * Robots.txt to sort out that JS content generation
+ * won't provide search engines a readable structure
+ */
