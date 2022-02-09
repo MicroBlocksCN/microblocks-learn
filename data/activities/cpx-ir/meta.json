@@ -1,7 +1,7 @@
 {
     "author": "MicroBlocks",
     "level": "Beginner",
-    "boards": [ "microbit" ],
+    "boards": [ "Circuit Playground Express" ],
     "time": [ 15, 45 ],
     "topics": [ ],
     "components": [ "IR remote control" ]

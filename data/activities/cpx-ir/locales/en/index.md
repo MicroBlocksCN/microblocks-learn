@@ -9,4 +9,4 @@ which the Circuit Playground Bluefruit does not.
 <br>
 [Source (Google Slides)](https://docs.google.com/presentation/d/1ypXyBYas9o2VXAYhOKEjuikALKP6EYHEahQ6JtNCUXs)
 
-![Kids using a micro:bit](remote-cpx.png)
+![Kids using a micro:bit](thumbnail.png)
