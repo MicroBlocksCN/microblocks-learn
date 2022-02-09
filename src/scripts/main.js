@@ -6,6 +6,8 @@ function autorun(){
 
   console.log('Website is ready!');
 
+  const body = document.getElementsByTagName('body')[0];
+
   /* if (window.innerWidth > 767) {
     console.log("JS - Window > 767px");
   } else {
@@ -13,7 +15,10 @@ function autorun(){
   } */
 
   menuToggle();
-  filtersResponsiveness();
+
+  if ( body.classList.contains('v_home') ) {
+    filtersResponsiveness();
+  }
 
 };
 

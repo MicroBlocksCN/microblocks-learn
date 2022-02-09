@@ -1,5 +1,5 @@
 {{#> layouts._html-shell
-    pageClass="page-activity"
+    pageClass="v_activity"
     pageUrl="https://learn.microblocks.fun/"
     pageDescription="MicroBlocks is a live blocks programming language for physical computing."
 }}
@@ -7,21 +7,36 @@
 {{#*inline "main-content"}}
 
 <!-- Header -->
-<header class="v_home__hero c_hero-yellow">
+<header class="v_activity__hero c_hero-yellow">
 
-    {{!-- <h1 class="c_hero-yellow__title">
-        Contribute
-    </h1> --}}
+    <div class="c_hero-yellow__title-wrapper">
+        <h1 class="c_hero-yellow__title">{{title}}</h1>
+        <address class="c_hero-yellow__author">{{localize "author" author}}</address>
+    </div>
 
-    <div class="v_home__hero-picture">
-        <img src="../assets/img/pictures/home-hero.svg" alt="MicroBlocks LEARN">
+    <div class="c_hero-yellow__picture-wrapper">
+        <div class="c_hero-yellow__picture">
+            <img src="thumbnail.png" alt="{{title}}">
+        </div>
+    </div>
+
+    <div class="c_hero-yellow__specs">
+
+        <div class="c_hero-yellow__boards">
+            <div class="c_hero-yellow__boards-title c_title-small c_title-small--icon-board">
+                Boards:
+            </div>
+            <div class="c_hero-yellow__boards-list">
+                {{boards}}
+            </div>
+        </div>
+
     </div>
 
 </header><!-- /Header -->
 
 
-<h1>{{title}}</h1>
-<small>{{localize "author" author}}</small>
+
 <div>
 {{#if has-guide}}
     <a href="./guide">Teacher's Guide</a>
