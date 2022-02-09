@@ -43,9 +43,17 @@
 }
 
 
-.v_home__activity-list {
+.v_home__activity-count {
+  margin-bottom: $space-100;
+  font-family: $font-display;
+  color: $color-grey-700;
+}
+
+
+.v_home__activity-grid {
+  margin-bottom: $space-200;
   display: grid;
-  gap: $space-100;
+  gap: $space-150;
   grid-template-columns: 1fr;
 
   @include breakpoint(md) {
@@ -56,5 +64,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-

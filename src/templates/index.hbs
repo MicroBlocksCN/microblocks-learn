@@ -47,11 +47,16 @@
 
     <!-- Cards -->
     <div class="col col-px col-12 xl-col-9">
+        
         {{! gets filled from activity-list.js }}
-        <span class="activity-count"></span>
-        <div id="activity-list" class="v_home__activity-list"></div>
-        <div class="page-activities__pagination pagination"></div>
-
+        <div class="v_home__activity-list">
+            <div class="v_home__activity-count"></div>
+            <div id="activity-grid" class="v_home__activity-grid"></div>
+            <div class="v_home__activity-pagination">
+                <div class="c_pagination"></div>
+            </div>
+        </div>
+        
         <script>fetchActivities();</script>
     </div>
 

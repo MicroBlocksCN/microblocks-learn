@@ -2,7 +2,7 @@ var activities = null,
     boards = null,
     currentPage = 1,
     totalPages = 1,
-    pageSize = 15,
+    pageSize = 12,
     filters = {};
 
 // ==== FETCHING DATA ====
@@ -41,8 +41,8 @@ function fetchActivities () {
 // ==== HTML COMPOSING ====
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div#activity-list'),
-        countDiv = document.querySelector('span.activity-count'),
+    var listDiv = document.querySelector('#activity-grid'),
+        countDiv = document.querySelector('.v_home__activity-count'),
         filtered = filteredActivities();
     totalPages = Math.floor(filtered.length / pageSize);
     listDiv.innerHTML = '';
@@ -50,7 +50,6 @@ function updateActivityList () {
     filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
         (activity) => {
             listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
-            console.log(activity);
         }
     );
     updatePages();
@@ -68,9 +67,9 @@ function activityDiv (activity) {
     function buildList (arrayOfSpecs) {
         let list = '';
 
-        if (arrayOfSpecs.length == 0) {
-            list = 'None.'
-        }
+        // if (arrayOfSpecs.length == 0) {
+        //     list = 'None.'
+        // }
 
         arrayOfSpecs.forEach( (element, index, array) => {
             list += element;
@@ -87,21 +86,21 @@ function activityDiv (activity) {
     boards = buildList(activity.boards);
     components = buildList(activity.components);
 
-    div = `
-        <a href="${link}" class="c_activity-card">
+    var div = `
+        <a href="${ link }" title="${ title }" class="c_activity-card">
             <div class="c_activity-card__thumb">
-                <img src="${thumb}" alt="${title}">
+                <img src="${ thumb }" alt="${ title }">
             </div>
             <div class="c_activity-card__content">
-                <h4 class="c_activity-card__title">${title}</h4>
+                <h4 class="c_activity-card__title">${ title }</h4>
                 <div class="c_activity-card__specs">
-                    <div class="c_activity-card__board">
-                        <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${boards}</div>
+                    <div class="c_activity-card__list">
+                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-elements">${ boards }</div>
                     </div>
-                    <div class="c_activity-card__components ${ components ? '' : 'c_activity-card__components--is-empty'}">
-                        <div class="c_activity-card__icon"></div>
-                        <div class="c_activity-card__data">${components}</div>
+                    <div class="c_activity-card__list ${ components ? '' : 'c_activity-card__components--is-empty'}">
+                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-elements">${ components ? components : '–'}</div>
                     </div>
                 </div>
             </div>
@@ -233,8 +232,8 @@ function previousPage () {
 
 function pageElementHtml (pageNum) {
     if (typeof pageNum === 'number') {
-        return `<div class="pagination__item
-            ${currentPage === pageNum ?  ' pagination__item--active' : ''}"
+        return `<div class="c_pagination__item
+            ${currentPage === pageNum ?  ' c_pagination__item--active' : ''}"
             onclick="currentPage = ${pageNum}; updateActivityList();"
             role="button" tabindex="0" aria-label="Go to page ${pageNum}"
             ${currentPage === pageNum ? ' aria-current="true"' : ''}>
@@ -246,8 +245,8 @@ function pageElementHtml (pageNum) {
         // Yep, tomorrow I'll have a hard time understanding this code.
         // Nope, sorry. I'm not documenting this. I'll just rewrite it from
         // scratch if need be.
-        return `<div class="pagination__item
-            ${disabled ? ' pagination__item--disabled' : ''}"
+        return `<div class="c_pagination__item
+            ${disabled ? ' c_pagination__item--disabled' : ''}"
             onclick="${['previous','next'][['<','>'].indexOf(pageNum)]}Page();"
             role="button" tabindex="0" ${pageNum === '<' ?
                     ' aria-label="Previous Page"' : ' aria-label="Next Page"' }
@@ -267,8 +266,7 @@ function updatePages () {
         }
         html += pageElementHtml('>');
     }
-    document.querySelector(
-        '.page-activities__pagination.pagination').innerHTML = html;
+    document.querySelector('.c_pagination').innerHTML = html;
 };
 
 
@@ -302,3 +300,12 @@ function filtersResponsiveness() {
         activityFilters.setAttribute('tabindex', '0');
     });
 };
+
+
+
+
+/**
+ * TODO:
+ * Robots.txt to sort out that JS content generation
+ * won't provide search engines a readable structure
+ */
