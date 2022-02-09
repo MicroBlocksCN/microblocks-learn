@@ -1,0 +1,252 @@
+// 
+// Components / Filters
+// ==========================================================================
+
+
+.c_filters {
+  position: fixed;
+  z-index: $zindex-popup;
+  inset: 0;
+  overflow-y: auto;
+
+  padding: $space-200 $space-150;
+
+  background-color: rgba( $color-white, 0.9);
+
+  // Responsiveness
+  display: none;
+  visibility: hidden;
+
+  &--is-visible {
+    display: block;
+    visibility: visible;
+  }
+
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // End of popup format!
+  @include breakpoint(xl) {
+    position: relative;
+    inset: unset;
+    overflow-y: unset;
+
+    padding: 0 $space-100 0 0;
+    background-color: transparent;
+
+    display: block;
+    visibility: visible;
+  }
+
+  @include breakpoint(xxl) {
+    padding: 0 $space-300 0 0;
+  }
+}
+
+
+.c_filters__wrapper {
+  padding: $space-150 $space-150;
+
+  border-radius: $borderRadius-050;
+  background-color: $color-white;
+  box-shadow: $boxShadow-base;
+
+  @include breakpoint(md) {
+    width: $spacePercentual-66;
+  }
+
+  @include breakpoint(lg) {
+    width: $spacePercentual-40;
+  }
+
+  // End of popup format!
+  @include breakpoint(xl) {
+    width: auto;
+    padding: 0;
+    border-radius: unset;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+
+
+
+
+// Boardie and So
+// ========================================
+
+
+.c_filters__mobile {
+  margin-bottom: $space-200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // End of popup format!
+  @include breakpoint(xl) {
+    display: none;
+  }
+}
+
+
+.c_filters__mobile-title {
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-150;
+}
+
+
+.c_filters__mobile-close {
+  color: $color-purple;
+  width: $space-125;
+  height: $space-125;
+}
+
+
+
+
+
+// Fields
+// ========================================
+
+
+.c_filters__group {
+  margin-bottom: $space-150;
+}
+
+
+.c_filters__title {
+  display: block;
+  margin-bottom: $space-025;
+
+  font-family: $font-display;
+  font-size: $fontSize-087;
+  text-transform: uppercase;
+  color: $color-purple;
+}
+
+
+.c_filters select {
+  appearance: none;
+
+  position: relative;  
+  display: block;
+  width: 100%;
+  padding: $space-050 $space-050;
+  
+  font-size: $fontSize-100;
+
+  border: 1px solid $color-grey-300;
+  border-radius: $borderRadius-025;
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='7' viewBox='0 0 9 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7L9 0L0 -3.93402e-07L3 7L6 7Z' fill='%23BDBDBD'/%3E%3C/svg%3E");
+  background-position: right $space-075 center;
+  background-repeat: no-repeat;
+  background-color: $color-white;
+
+  transition: all $trans-0200 $trans-easing;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-grey-200;
+  }
+}
+
+
+.c_filters label {
+  margin-top: $space-050;
+  display: flex;
+  align-items: center;
+  gap: $space-050;
+
+  color: $color-grey-700;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.c_filters input[type="checkbox"] {
+  appearance: none;
+
+  position: relative;  
+  display: block;
+  height: $space-150;
+  width: $space-150;
+
+  border: 1px solid $color-grey-300;
+  border-radius: $borderRadius-025;
+  background-color: $color-white;
+
+  transition: all $trans-0200 $trans-easing;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-grey-200;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z' fill='%23B1529A'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    opacity: 0;
+    transition: opacity $trans-0200 $trans-easing;
+  }
+
+  &:checked {
+      
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+
+.c_filters__button {
+  appearance: none;
+
+  display: block;
+  width: 100%;
+  padding: $space-050 $space-050;
+  
+  font-size: $fontSize-100;
+  font-weight: 700;
+  
+  border: none;
+  border-radius: $borderRadius-025;
+
+  transition: all $trans-0200 $trans-easing;
+
+  &:not(:last-of-type) {
+    margin-top: $space-200;
+    margin-bottom: $space-050;
+  }
+
+  &--filter {
+    color: $color-white;
+    background-color: $color-purple;
+  }
+
+  &--reset {
+    color: $color-grey-700;
+    background-color: $color-grey-200;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-grey-900;
+  }
+}

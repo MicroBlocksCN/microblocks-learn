@@ -1,11 +1,68 @@
 {{#> layouts._html-shell
-    pageClass="page-home page-has-hero"
+    title=locale.pageTitle
+    pageClass="v_home"
     pageUrl="https://learn.microblocks.fun/"
     pageDescription="MicroBlocks is a live blocks programming language for physical computing."
-    title=locale.pageTitle
 }}
 
 {{#*inline "main-content"}}
-<p>{{ locale.pageIntro }}</p>
+
+
+<!-- Header -->
+<header class="v_home__hero c_hero-yellow">
+    <div class="v_home__hero-picture">
+        <img src="../assets/img/pictures/home-hero.svg" alt="MicroBlocks LEARN">
+    </div>
+</header><!-- /Header -->
+
+
+<!-- Subtitle -->
+<div class="v_home__subtitle">
+    <div class="row">
+        <div class="col col-px col-12">
+            <h2 class="c_title-block c_title-block--purple">Activities</h2>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contents -->
+<div class="row">
+
+
+    <!-- Filters -->
+    <div class="col col-px col-12 xl-col-3">
+        <div class="v_home__filters">
+
+            <div class="v_home__filters-button c_button c_button--filters"
+                role="button" aria-controls="activity-filters" aria-haspopup="true">
+                <span>Filters</span>
+            </div>
+
+            {{> _activity-filters }}
+
+        </div>
+    </div>
+
+
+    <!-- Cards -->
+    <div class="col col-px col-12 xl-col-9">
+        
+        {{! gets filled from activity-list.js }}
+        <div class="v_home__activity-list">
+            <div class="v_home__activity-count"></div>
+            <div id="activity-grid" class="v_home__activity-grid"></div>
+            <div class="v_home__activity-pagination">
+                <div class="c_pagination"></div>
+            </div>
+        </div>
+        
+        <script>fetchActivities();</script>
+    </div>
+
+
+</div>
+
+
 {{/inline}}
 {{/layouts._html-shell }}

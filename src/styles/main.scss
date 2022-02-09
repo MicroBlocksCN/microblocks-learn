@@ -45,12 +45,20 @@
 
 // Components - prefix c_
 // ================================================================================
+@import 'components/activity-card';
+@import 'components/button';
+@import 'components/circle';
 @import 'components/header';
+@import 'components/hero-yellow';
+@import 'components/filters';
+@import 'components/footer';
 @import 'components/menu';
 @import 'components/menu-toggle';
+@import 'components/pagination';
+@import 'components/title-block';
 // @import 'components/wysiwyg';
 
 
 // Views - prefix: v_
 // ================================================================================
-// @import 'views/home';
+@import 'views/home';

@@ -88,3 +88,7 @@ th {
 address {
   font-style: normal;
 }
+
+fieldset {
+  border: 0;
+}

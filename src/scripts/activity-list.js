@@ -2,7 +2,7 @@ var activities = null,
     boards = null,
     currentPage = 1,
     totalPages = 1,
-    pageSize = 15,
+    pageSize = 12,
     filters = {};
 
 // ==== FETCHING DATA ====
@@ -41,29 +41,72 @@ function fetchActivities () {
 // ==== HTML COMPOSING ====
 
 function updateActivityList () {
-    var listDiv = document.querySelector('div.activity-list'),
-        countDiv = document.querySelector('span.activity-count'),
+    var listDiv = document.querySelector('#activity-grid'),
+        countDiv = document.querySelector('.v_home__activity-count'),
         filtered = filteredActivities();
     totalPages = Math.floor(filtered.length / pageSize);
     listDiv.innerHTML = '';
     countDiv.innerHTML = filtered.length + ' results.';
-    filtered.splice((currentPage - 1) * pageSize, pageSize).forEach(
-        (activity) => { listDiv.appendChild(activityDiv(activity));
-    });
+    filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
+        (activity) => {
+            listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
+        }
+    );
     updatePages();
 };
 
 function activityDiv (activity) {
-    var div = document.createElement('div'),
-        thumb = document.createElement('img'),
-        title = document.createElement('span'),
-        link = document.createElement('a');
-    thumb.src = `activities/${activity.slug}/thumbnail.png`;
-    title.innerText = activity.title;
-    link.appendChild(thumb);
-    link.appendChild(title);
-    link.href = `activities/${activity.slug}`;
-    div.appendChild(link);
+
+    var title           = activity.title,
+        link            = `activities/${activity.slug}`,
+        thumb           = `activities/${activity.slug}/thumbnail.png`,
+        boards          = '',
+        components      = '';
+        
+    // create lists out of specs arrays
+    function buildList (arrayOfSpecs) {
+        let list = '';
+
+        // if (arrayOfSpecs.length == 0) {
+        //     list = 'None.'
+        // }
+
+        arrayOfSpecs.forEach( (element, index, array) => {
+            list += element;
+            if (index < (array.length - 1) ){
+                list += ', ';
+            } else {
+                list += '.';
+            }
+        });
+        
+        return list;
+    };
+
+    boards = buildList(activity.boards);
+    components = buildList(activity.components);
+
+    var div = `
+        <a href="${ link }" title="${ title }" class="c_activity-card">
+            <div class="c_activity-card__thumb">
+                <img src="${ thumb }" alt="${ title }">
+            </div>
+            <div class="c_activity-card__content">
+                <h4 class="c_activity-card__title">${ title }</h4>
+                <div class="c_activity-card__specs">
+                    <div class="c_activity-card__list">
+                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-elements">${ boards }</div>
+                    </div>
+                    <div class="c_activity-card__list ${ components ? '' : 'c_activity-card__components--is-empty'}">
+                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-elements">${ components ? components : '–'}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    `;
+
     return div;
 };
 
@@ -74,7 +117,7 @@ function populateFilters () {
 
     var selectElements = Array.from(
             document.querySelector(
-                'div#activity-filters'
+                '#activity-filters'
             ).querySelectorAll('.activity-filter')
         ),
         addOption = function (element, selector, text, meta) {
@@ -189,8 +232,8 @@ function previousPage () {
 
 function pageElementHtml (pageNum) {
     if (typeof pageNum === 'number') {
-        return `<div class="pagination__item
-            ${currentPage === pageNum ?  ' pagination__item--active' : ''}"
+        return `<div class="c_pagination__item
+            ${currentPage === pageNum ?  ' c_pagination__item--active' : ''}"
             onclick="currentPage = ${pageNum}; updateActivityList();"
             role="button" tabindex="0" aria-label="Go to page ${pageNum}"
             ${currentPage === pageNum ? ' aria-current="true"' : ''}>
@@ -202,8 +245,8 @@ function pageElementHtml (pageNum) {
         // Yep, tomorrow I'll have a hard time understanding this code.
         // Nope, sorry. I'm not documenting this. I'll just rewrite it from
         // scratch if need be.
-        return `<div class="pagination__item
-            ${disabled ? ' pagination__item--disabled' : ''}"
+        return `<div class="c_pagination__item
+            ${disabled ? ' c_pagination__item--disabled' : ''}"
             onclick="${['previous','next'][['<','>'].indexOf(pageNum)]}Page();"
             role="button" tabindex="0" ${pageNum === '<' ?
                     ' aria-label="Previous Page"' : ' aria-label="Next Page"' }
@@ -223,7 +266,46 @@ function updatePages () {
         }
         html += pageElementHtml('>');
     }
-    document.querySelector(
-        '.page-activities__pagination.pagination').innerHTML = html;
+    document.querySelector('.c_pagination').innerHTML = html;
 };
 
+
+
+
+
+/**
+ * UI Responsive functionalities
+ * To refactor (add inline, or keep here, or separated JS file)
+ * 
+ * Bernat, what you think?
+ */
+
+function filtersResponsiveness() {
+    const windowWidth = window.innerWidth;
+    const activityFilters = document.querySelector('.c_filters');
+    const activityFiltersToggle = document.querySelector('.v_home__filters-button');
+    const activityFiltersClose = document.querySelector('.c_filters__mobile-close');
+
+    if ( windowWidth < '768' ) {
+        activityFilters.setAttribute('tabindex', '0');
+    };
+
+    activityFiltersToggle.addEventListener('click', () => {
+        activityFilters.classList.add('c_filters--is-visible');
+        activityFilters.setAttribute('tabindex', '1');
+    });
+
+    activityFiltersClose.addEventListener('click', () => {
+        activityFilters.classList.remove('c_filters--is-visible');
+        activityFilters.setAttribute('tabindex', '0');
+    });
+};
+
+
+
+
+/**
+ * TODO:
+ * Robots.txt to sort out that JS content generation
+ * won't provide search engines a readable structure
+ */

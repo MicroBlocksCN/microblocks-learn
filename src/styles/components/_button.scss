@@ -1,0 +1,36 @@
+// 
+// Components / Buttons
+// ==========================================================================
+
+
+.c_button {
+  display: inline-block;
+  padding: $space-050 $space-100 $space-050 $space-300;
+  
+  border-radius: $borderRadius-050;
+  background-color: $color-white;
+  box-shadow: $boxShadow-tight;
+
+  color: $color-purple; // Icon BGs inherits it
+
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: $fontSize-125;
+  letter-spacing: -0.05rem;
+
+  transition: all $trans-0200 $trans-easing;
+
+  span {
+    color: $color-grey-900;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-white;
+    background-color: $color-purple;
+
+    span {
+      color: $color-white;
+    }
+  }
+}

@@ -1,9 +1,10 @@
 <header class="header">
 
-
-    <div class="header__logo">
-        <a href="/{{@root.locale.code}}/index" class="header__link">Logo</a>
-    </div>
+    
+    <!-- Logo -->
+    <a href="/{{@root.locale.code}}/index" class="header__logo">
+        <img src="/assets/img/logos/MicroBlocksLearn.svg" alt="MicroBlocks LEARN">
+    </a>
 
 
     <!-- Menu Toggle -->
@@ -17,39 +18,54 @@
     </div>
 
 
+    <!-- Menu Items -->
     <nav id="menu" class="menu">
 
 
-        <ul class="menu__links-list">
-            <li class="menu__list-item">
-                <a href="/{{@root.locale.code}}/index" class="menu__link">{{@root.locale.index-nav-item}}</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="https://microblocks.fun/get-started" class="menu__link" target="_blank">{{@root.locale.get-started-nav-item}}</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="/{{@root.locale.code}}/educators" class="menu__link">{{@root.locale.educators-nav-item}}</a>
-            </li>
-            <li class="menu__list-item">
-                <a href="https://microblocks.fun/" class="menu__link" target="_blank">MicroBlocks.fun</a>
-            </li>
-        </ul>
+        <!-- Menu Logo -->
+        <a href="/{{@root.locale.code}}/index" class="menu__logo">
+            <img src="/assets/img/logos/MicroBlocksLearn.svg" alt="MicroBlocks LEARN">
+        </a>
 
 
-        <div class="menu__lang">
-            <label for="site-language" class="visually-hidden">Site Language</label>
-            <select id="site-language" class="locale" onchange="setLang(this.value)">
-                {{#each locales}}
-                <option>{{this}}</option>
-                {{/each}}
-            </select>
-            <script>
-                document.querySelector('select.locale').value =
-                    document.documentElement.lang;
-            </script>
+        <!-- Yellow area contents -->
+        <div class="menu__yellow">
+
+            <ul class="menu__links-list">
+                <li class="menu__list-item">
+                    <a href="/{{@root.locale.code}}/index" class="menu__link">{{@root.locale.activities-nav-item}}</a>
+                </li>
+                <li class="menu__list-item">
+                    <a href="https://microblocks.fun/get-started" class="menu__link" target="_blank">{{@root.locale.get-started-nav-item}}</a>
+                </li>
+                <li class="menu__list-item">
+                    <a href="/{{@root.locale.code}}/educators" class="menu__link">{{@root.locale.educators-nav-item}}</a>
+                </li>
+                <li class="menu__list-item">
+                    <a href="/{{@root.locale.code}}/other-resources" class="menu__link" target="_blank">{{@root.locale.other-resources-nav-item}}</a>
+                </li>
+                <li class="menu__list-item">
+                    <a href="https://microblocks.fun/" class="menu__link" target="_blank">MicroBlocks.fun</a>
+                </li>
+            </ul>
+
+            <div class="menu__lang">
+                <label for="site-language" class="visually-hidden">Site Language</label>
+                <select id="site-language" class="locale menu__lang-select" onchange="setLang(this.value)">
+                    {{#each locales}}
+                    <option>{{this}}</option>
+                    {{/each}}
+                </select>
+                <script>
+                    document.querySelector('select.locale').value =
+                        document.documentElement.lang;
+                </script>
+            </div>
+
         </div>
 
 
+        <!-- Black area contents -->
         <div class="menu__black">
             <a href="https://microblocks.fun/run" class="header__link" target="_blank">{{@root.locale.run-nav-item}}</a>
         </div>
