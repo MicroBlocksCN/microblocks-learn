@@ -14,21 +14,17 @@
 	</head>
 
 
-	<body>
+	<body class="{{ pageClass }}">
 
-		<div class="page {{ pageClass }}">
+		{{> _header }}
 
-			{{> _header }}
+		<main class="main">
+			{{#> main-content }}
+			{{! Page contents will end up here }}
+			{{/main-content }}
+		</main>
 
-			<main class="main">
-				{{#> main-content }}
-				{{! Page contents will end up here }}
-				{{/main-content }}
-			</main>
-
-			{{> _footer }}
-
-		</div>
+		{{> _footer }}
 
 		{{#if livereload}}
 		<script>
