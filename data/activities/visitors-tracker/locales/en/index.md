@@ -7,8 +7,26 @@ Index:
 - [Assets and Resources](#assets-and-resources)
 
 
+### Testing the Tips and Comments
 
-## Overview
+[[fact]]
+#### My Fun Fact
+Write your fun fact here
+[[/fact]]
+
+[[note]]
+#### My Serious Note
+Write your generic note or tip here
+[[/note]]
+
+[[safety]]
+#### My Safety Notice
+Write your safety note here
+[[/safety]]
+
+
+
+### Overview
 
 This activity takes us through the conceptualization and development of an app to monitor visitors in a shop, or a different place, using a micro:bit board. 
 
@@ -16,7 +34,7 @@ The guidance follows the steps taken in a real app or physical computing project
 
 
 
-## Parts
+### Parts
 
 We will need two micro:bit boards. But depending on the decisions taken by the students, there will be more needs to build the mechanism (tape, cardboard,...).
 
@@ -29,23 +47,23 @@ We will need two micro:bit boards. But depending on the decisions taken by the s
 
 
 
-## Knowledge
+### Knowledge
 
 The recommended concepts to perform this activity are [variables](#lesson), [sensors](#lesson) and [radio](#lesson). You can browse the different [lessons](#lessons) to gather more resources about them.
 
 
 
-## Setup
+### Setup
 
 The usual chapter helping to set up the required parts is different in this activity. Since there are several approaches, we mixed this information directly in the process.
 
 
 
-## Process
+### Process
 
 The process is divided in different sections, depending on what solution do you choose. Regardless of your choice, all options share the problem analysis and the radio variable sharing.
 
-### 1. Problem Analysis
+#### 1. Problem Analysis
 
 To know the number of visitors, we need to find an action that they all perform when they come to our shop and we can somehow track.
 
@@ -55,7 +73,7 @@ But, when does a client opens our door? We know that every time a customer gets 
 
 So, we now have a physical computing problem to solve: **We want to create a system that detects when a door is opened (and closed), and then, keep track of it**. At the end of the day, we want to know how many visitors we had.
 
-### 2. Tracking the door's movements
+#### 2. Tracking the door's movements
 
 Let's imagine how to detect when a door is open. Using the board's sensors our code can communicate with the "real" physical world. We can use the sensors in the micro:bit board in several ways. Some options are:
 
@@ -66,7 +84,7 @@ Let's imagine how to detect when a door is open. Using the board's sensors our c
 
 This time, we have chosen to use the light sensor.
 
-### 3. Option A: Light Sensor
+#### 3. Option A: Light Sensor
 
 We will build a mechanism that will block the board's light sensors when the door is closed, but as soon as it is opened, it will receive light.
 
@@ -102,12 +120,12 @@ Our final program looks like this:
 
 We are done with the main functionality now! But our board showing the amount of visitors is covered by cardboard, and we can't see it. We will sort this out by sending the data to another board.
 
-### 3. Option B: Acceleration
-### 3. Option C: Acceleration
-### 3. Option C: Electricity
+#### 3. Option B: Acceleration
+#### 3. Option C: Acceleration
+#### 3. Option C: Electricity
 
 
-### 4. Sending Radio Data
+#### 4. Sending Radio Data
 
 Since some of our options for creating a visitors tracker require that the main board remains covered or can't be seen, or just for fun... We want to show our results in a different board.
 
@@ -145,7 +163,7 @@ It looks like this:
 
 
 
-## Assets and Resources
+### Assets and Resources
 
 These assets can be useful in class:
 - [Teachers Guide](https://gitlab.com/kram08980/microblocks-docs/-/blob/main/activities/visitors-tracker/visitors-tracker--teachers-guide.md)
@@ -154,7 +172,7 @@ These assets can be useful in class:
 - File: Script for one option
 
 
-#### Automatized options offered
+##### Automatized options offered
 - Print this page
 - PDF of this page
 - Share it

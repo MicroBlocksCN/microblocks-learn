@@ -108,11 +108,15 @@ $color-grey-400:     #BDBDBD;
 $color-grey-700:     #616161;
 $color-grey-900:     #212121;
 $color-black:        #000000;
+$color-script-pane:  #DCDCDC;
 
 $color-yellow-light: #FFEEA0;
 $color-yellow:       #FFDF48;
 $color-yellow-dark:  #FFC632; 
 $color-purple:       #B1529A; 
+$color-red:          #E84C45;
+$color-green:        #52A546;
+$color-blue:         #009ECE;
 
 // Old Ones Test
 $color-yellow:        #FED722;
@@ -127,6 +131,7 @@ $background-white-transparent: rgba(255,255,255,0.9);
 // Font Sizes
 // ================================================================================
 
+$fontSize-050:    0.5rem; //  8px
 $fontSize-075:   0.75rem; // 12px
 $fontSize-087:  0.875rem; // 14px
 $fontSize-100:      1rem; // 16px

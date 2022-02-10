@@ -1,4 +1,4 @@
-# Introduction
+### Introduction
 
 The Maya civilization used two different representations for numbers. One of them used very elaborate and ornate depictions of deity heads to represent digits, and has been found in stone engravings, mural paintings and manuscripts.
 
@@ -19,17 +19,17 @@ The first digit at the top left of the grid represents *zero*. To its right, we 
 
 Two horizontal lines make for two groups of *five*, that is, *ten*, after which we keep adding dots until the largest digit, that represent *nineteen*.
 
-# Materials needed
+### Materials needed
 
 For this activity you just need a micro:bit, although having two micro:bits would allow you to count over 20.
 
-# Procedure
+### Procedure
 
 We will write a MicroBlocks program that uses the micro:bit 5x5 LED display to represent Maya digits. The top row of the display is going to represent the dots, while the lower three rows are going to represent the lines.
 
 ![Number 17 represented in the micro:bit 5x5 LED display](microbit-17.png)
 
-## Drawing Zero
+#### Drawing Zero
 
 The natural thing to do would be to create a new block named *draw Maya digit* that takes in a decimal number under 20 and outputs its Maya representation on the 5x5 LED display.
 
@@ -57,7 +57,7 @@ We can now test our new block with the digit value *0*:
 
 Click on the new block to test it and see the result on your micro:bit.
 
-## Between One and Five
+#### Between One and Five
 
 Digit values between *one* and *five* are represented in Maya numerals as dots. We will use the top row of the micro:bit display to represent these.
 
@@ -86,7 +86,7 @@ Now test the newly updated block to draw digits between zero and five, but add a
 
 ![Drawing digit 3](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%203;%7D%20%22%7D)
 
-## Between Five and Ten
+#### Between Five and Ten
 
 For digits between five and ten, we aim to reuse the code we've just composed, but additionally drawing the corresponding line. Let us take a look again at the grid of Maya digits:
 
@@ -120,7 +120,7 @@ You can now test the newly extended block for all digits between 0 and 9, but ma
 
 If you have tried all the values, you'll have noticed that those that 5 does not work! Keep on reading to learn how to fix this issue.
 
-## Drawing All of Them
+#### Drawing All of Them
 
 If we were to continue the trend to draw digits between 10 and 15, this is the kind of code that we may come up with:
 
@@ -153,7 +153,7 @@ An easy way to fix this is to only draw smaller parts of the digit for digit val
 
 You can now test every single digit between 0 and 19, and it should all work!
 
-## A Maya Digital Counter
+#### A Maya Digital Counter
 
 Now that we have a block that can draw Maya digits, we could use the two micro:bit buttons to increment and decrement a digit shown on screen.
 
@@ -168,7 +168,7 @@ Button *B* will increment the value and draw it to the screen, while button *A* 
 ![MicroBlocks script](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27B%27;if%20%28value%20%3C%2020%29%20%7B%20value%20+=%201;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%7D;%7D%20%22%7D)
 ![MicroBlocks script](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;if%20%28value%20%3E%200%29%20%7B%20value%20+=%20-1;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%7D;%7D%20%22%7D)
 
-## To Learn More: Going Over 19
+#### To Learn More: Going Over 19
 
 Of course, a single micro:bit can only display one digit, but if you happen to have an additional micro:bit you could use it to represent a second digit.
 

@@ -1,0 +1,17 @@
+//
+// Components / Contents
+// ================================================================================
+
+
+.contents {
+  position: relative;
+  padding-top: $space-300;
+
+  @include breakpoint(md) {
+    padding-top: $space-400;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $space-500;
+  }
+}
