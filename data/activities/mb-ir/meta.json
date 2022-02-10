@@ -1,7 +1,7 @@
 {
     "author": "MicroBlocks",
     "level": "Beginner",
-    "boards": [ "microbit" ],
+    "boards": [ "micro:bit" ],
     "time": [ 15, 45 ],
     "topics": [ ],
     "components": [ ]

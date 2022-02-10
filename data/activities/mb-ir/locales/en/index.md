@@ -6,4 +6,4 @@ This activity card shows how to use an infrared remote control to control your M
 <br>
 [Source (Google Slides)](https://docs.google.com/presentation/d/1B6MB9fPwlVyvrlwRmEPF4ZAr0f3f2nKwqcMP2Zeam_E)
 
-![Kids using a micro:bit](ir-remote.png)
+![Kids using a micro:bit](thumbnail.png)

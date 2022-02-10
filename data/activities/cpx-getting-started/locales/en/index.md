@@ -7,4 +7,4 @@ or Circuit Playground Bluefruit.
 <br>
 [Source (Google Slides)](https://docs.google.com/presentation/d/1OacU9T9mCmBms2YmMArSR_3rwvj-sLD38ib8Hasnhss)
 
-![Kids using a micro:bit](getting-started.png)
+![Kids using a micro:bit](thumbnail.png)

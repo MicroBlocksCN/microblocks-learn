@@ -6,4 +6,4 @@ This activity card shows how collect data on one micro:bit overnigher (or longer
 <br>
 [Source (Google Slides)](https://docs.google.com/presentation/d/1OKMej5Fjy0bV-xNHSvW-8GH2wHyoeHk4zNJlOpwT8RY)
 
-![Kids using a micro:bit](night-data.png)
+![Kids using a micro:bit](thumbnail.png)
