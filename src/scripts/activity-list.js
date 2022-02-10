@@ -44,7 +44,7 @@ function updateActivityList () {
     var listDiv = document.querySelector('#activity-grid'),
         countDiv = document.querySelector('.v_home__activity-count'),
         filtered = filteredActivities();
-    totalPages = Math.floor(filtered.length / pageSize);
+    totalPages = Math.ceil(filtered.length / pageSize);
     listDiv.innerHTML = '';
     countDiv.innerHTML = filtered.length + ' results.';
     filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
