@@ -1,5 +1,7 @@
 //
 // Components / WYSIWYG
+// 
+// Basically changes at the breakpoint "LG", increasing base text size
 // ================================================================================
 
 
@@ -18,6 +20,10 @@
 
     &:not(:first-child) {
       margin-top: $space-300;
+
+      @include breakpoint(lg) {
+        margin-top: $space-400;
+      }
     }
   }
 
@@ -34,6 +40,10 @@
 
     &:not(:first-child) {
       margin-top: $space-300;
+
+      @include breakpoint(lg) {
+        margin-top: $space-400;
+      }
     }
   }
 
@@ -46,6 +56,10 @@
 
     strong {
       font-weight: 700;
+    }
+
+    @include breakpoint(lg) {
+      font-size: $fontSize-125;
     }
   }
 
@@ -64,7 +78,9 @@
 
   // Image
   p img {
-    // border: 4px solid $color-grey-200;
+    // Space added besides the p margin
+    margin-top: $space-150;
+    margin-bottom: $space-150;
   }
 
 
