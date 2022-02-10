@@ -20,7 +20,8 @@ Write your generic note or tip here
 [[/note]]
 
 [[safety]]
-#### My Safety Notice
+#### DEADLY
+### My Safety Notice
 Write your safety note here
 [[/safety]]
 

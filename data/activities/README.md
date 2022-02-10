@@ -69,7 +69,7 @@ define _fun facts_, _notes_ and _safety notes_. Here's how to use it:
 
 ```
 [[fact]]
-Write your fun fact here
+Write your fact here
 [[/fact]]
 
 [[note]]
