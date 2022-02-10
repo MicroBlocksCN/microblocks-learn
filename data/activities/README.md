@@ -55,6 +55,15 @@ that you can also copy and rename for your other locales.
 The actual activity content for each locale is read from the `index.md` file,
 and is formatted in MarkDown.
 
+#### Titles
+
+There are two possible headings to be used in the markdown:
+
+- *H3*: `### Section Title`
+- *H4*: `#### Section Subtitle`
+
+#### Tips and Facts
+
 Our particular implementation of MarkDown has an additional feature that lets us
 define _fun facts_, _notes_ and _safety notes_. Here's how to use it:
 

@@ -20,12 +20,21 @@
 
 
   // Exceptions
+
   &--printable {
     display: none;
 
     @include breakpoint(lg) {
       display: block;
       // width: $spacePercentual-80;
+    }
+  }
+
+  .c_button-icon {
+    // display: in;
+
+    &:not(:last-of-type) {
+      margin-bottom: $space-050;
     }
   }
 }

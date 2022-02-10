@@ -7,6 +7,24 @@ Index:
 - [Assets and Resources](#assets-and-resources)
 
 
+### Testing the Tips and Comments
+
+[[fact]]
+#### My Fun Fact
+Write your fun fact here
+[[/fact]]
+
+[[note]]
+#### My Serious Note
+Write your generic note or tip here
+[[/note]]
+
+[[safety]]
+#### My Safety Notice
+Write your safety note here
+[[/safety]]
+
+
 
 ### Overview
 
