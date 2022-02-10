@@ -110,7 +110,7 @@
 
 
   // Caption
-  p img ~ em {
+  p img + em {
     margin-top: -10px;
     display: block;
     padding: $space-050 $space-100 $space-050 $space-075;
