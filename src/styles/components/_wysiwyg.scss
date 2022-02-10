@@ -223,14 +223,14 @@
 
     border-radius: $borderRadius-025;
 
-    &::before {
-      content: '';
-      display: block;
-      margin-bottom: $space-025;
+    // &::before {
+    //   content: '';
+    //   display: block;
+    //   margin-bottom: $space-025;
 
-      font-family: $font-display;
-      font-weight: 700;
-    }
+    //   font-family: $font-display;
+    //   font-weight: 700;
+    // }
 
     &::after {
       content: '';
@@ -262,10 +262,10 @@
   .fact {
     background-color: rgba($color-blue, 0.1);
 
-    &::before {
-      content: 'FUN FACT';
-      color: $color-blue;
-    }
+    // &::before {
+    //   content: 'FUN FACT';
+    //   color: $color-blue;
+    // }
 
     &::after {
       background-color: $color-blue;
@@ -276,10 +276,10 @@
   .note {
     background-color: rgba($color-green, 0.1);
 
-    &::before {
-      content: 'NOTE';
-      color: $color-green;
-    }
+    // &::before {
+    //   content: 'NOTE';
+    //   color: $color-green;
+    // }
 
     &::after {
       background-color: $color-green;
@@ -290,10 +290,10 @@
   .safety {
     background-color: rgba($color-red, 0.1);
 
-    &::before {
-      content: 'SAFETY NOTE';
-      color: $color-red;
-    }
+    // &::before {
+    //   content: 'SAFETY NOTE';
+    //   color: $color-red;
+    // }
 
     &::after {
       background-color: $color-red;

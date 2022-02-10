@@ -77,6 +77,8 @@ Write your generic note or tip here
 [[/note]]
 
 [[safety]]
+#### SAFETY NOTE
+### Be careful with the batteries
 Write your safety note here
 [[/safety]]
 ```
