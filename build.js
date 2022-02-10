@@ -178,7 +178,18 @@ handlebars.registerHelper('localize', function () {
         localized = localized.replace(`@${index + 1}`, param);
     });
 
-    return localized
+    return localized;
+});
+
+// Thanks to kevlened at StackOverflow for the following boolean helpers
+// https://stackoverflow.com/a/31632215
+
+handlebars.registerHelper('and', function () {
+    return Array.prototype.ever.call(arguments, Boolean);
+});
+
+handlebars.registerHelper('or', function () {
+    return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
 });
 
 // Build script functions

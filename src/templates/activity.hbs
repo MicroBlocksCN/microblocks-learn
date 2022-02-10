@@ -60,7 +60,7 @@
 
         <!-- Sidebar Contents -->
         <div class="col col-px col-12 lg-col-3 xl-col-3">
-
+            {{#if (or has-guide has-card)}}
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
                     Resources
@@ -75,6 +75,7 @@
                     {{/if}}
                 </div>
             </aside>
+            {{/if}}
 
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
