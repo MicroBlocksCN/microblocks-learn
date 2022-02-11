@@ -12,7 +12,10 @@
 		<link rel="stylesheet" href="/main.css" type="text/css">
 		<script src="/main.js"></script>
                 {{! Make locales for this page available from the client side }}
-		<script> locale = {{{json locale}}}; </script>
+		<script>
+                    var locale = {{{json locale}}},
+                        languages = {{{json languages}}};
+                </script>
 	</head>
 
 

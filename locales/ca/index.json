@@ -1,5 +1,13 @@
 {
     "pageTitle": "Aprèn MicroBlocks",
-    "pageSlug": "index",
-    "pageIntro": "Benvingut a MicroBlocks!"
+    "pageIntro": "Benvingut a MicroBlocks!",
+    "result-count": "@1 resultats.",
+    "result-count-one": "1 resultat.",
+    "no-components": "Cap",
+    "components-unset": "Indiferent",
+    "levels-all": "Tots",
+    "components-all": "Tots",
+    "locales-all": "Tots",
+    "boards-all": "Totes",
+    "topics-all": "Tots"
 }

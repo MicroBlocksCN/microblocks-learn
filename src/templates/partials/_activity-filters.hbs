@@ -18,7 +18,7 @@
                 <select id="filters-language"
                     class="locale activity-filter"
                     onchange="applyFilter('locale', this.value)" >
-                    <option value="">All</option>
+                    <option value="">{{localize "locales-all"}}</option>
                 </select>
             </div>
 
@@ -34,7 +34,7 @@
                 <select id="filters-board"
                     class="boards activity-filter"
                     onchange="applyFilter('boards', this.value)" >
-                    <option value="">All</option>
+                    <option value="">{{localize "boards-all"}}</option>
                 </select>
             </div>
 
@@ -56,8 +56,8 @@
                 <select id="filters-compoenents"
                     class="components activity-filter"
                     onchange="applyFilter('components', this.value)">
-                    <option value="">Unset</option>
-                    <option value="none">None</option>
+                    <option value="">{{localize "components-unset"}}</option>
+                    <option value="none">{{localize "no-components"}}</option>
                 </select>
             </div>
         </fieldset>
@@ -77,7 +77,7 @@
                             this.value :
                             parseInt(this.value));"
                 >
-                    <option value="">All</option>
+                    <option value="">{{localize "levels-all"}}</option>
                 </select>
             </div>    
 
@@ -105,7 +105,7 @@
                 <select id="filters-topic"
                     class="topics activity-filter"
                     onchange="applyFilter('topics', this.value)">
-                    <option value="">All</option>
+                    <option value="">{{localize "topics-all"}}</option>
                 </select> 
             </div>
         </fieldset>

@@ -46,7 +46,9 @@ function updateActivityList () {
         filtered = filteredActivities();
     totalPages = Math.ceil(filtered.length / pageSize);
     listDiv.innerHTML = '';
-    countDiv.innerHTML = filtered.length + ' results.';
+    countDiv.innerHTML = filtered.length > 1 ?
+        localize('result-count', filtered.length) :
+        localize('result-count-one');
     filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
         (activity) => {
             listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
@@ -71,7 +73,7 @@ function activityDiv (activity) {
         // }
 
         arrayOfSpecs.forEach( (element, index, array) => {
-            list += element;
+            list += localize(element);
             if (index < (array.length - 1) ){
                 list += ', ';
             } else {
@@ -108,7 +110,7 @@ function activityDiv (activity) {
                         <div class="c_activity-card__list-elements">${
                             components ?
                                 components :
-                                '–'
+                                localize('no-components')
                         }</div>
                     </div>
                 </div>
@@ -136,7 +138,15 @@ function populateFilters () {
                 if (meta) { option.dataset['meta'] = JSON.stringify(meta); }
                 element.appendChild(option);
             }
-        };
+        },
+        atomText = function (selector, value) {
+            if (selector === 'level') {
+                return localize('lvl_' + value);
+            } else if (selector === 'locale') {
+                return languages[value];
+            }
+            return value;
+        }
 
     activities.forEach((activity) => {
         Object.keys(activity).forEach((selector) => {
@@ -150,12 +160,8 @@ function populateFilters () {
                         addOption(element, value, localize(value));
                     });
                 } else {
-                    // atom, i.e. 1
-                    var text =
-                        (selector === 'level') ?
-                            'lvl_' + value :
-                            value;
-                    addOption(element, value, localize(text));
+                    // atom, i.e. 1, "en"
+                    addOption(element, value, atomText(selector, value));
                 }
             });
         });

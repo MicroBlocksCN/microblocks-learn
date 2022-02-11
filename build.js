@@ -9,7 +9,14 @@ var fs = require('fs'),
     markdown = new (require('showdown')).Converter(),
     args = process.argv.slice(2),
     debugMode = args.includes('--debug'),
-    locales = {};
+    locales = { },
+    languages =
+        JSON.parse(
+            fs.readFileSync(
+                `${__dirname}/locales/languages.json`,
+                'utf8'
+            )
+        );
 
 markdown.setOption('strikethrough', true);
 markdown.setOption('tables', true);
@@ -115,6 +122,7 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
 
     // make the locale list available to all pages
     descriptor.locales = Object.keys(locales);
+    descriptor.languages = languages;
 
     // store the template name in the descriptor, to be used by "localize"
     descriptor['template-name'] = templateName;
@@ -194,6 +202,10 @@ handlebars.registerHelper('localize', function () {
     });
 
     return localized;
+});
+
+handlebars.registerHelper('language-name', function (context) {
+    return languages[context];
 });
 
 handlebars.registerHelper('json', function (context) {
@@ -569,7 +581,7 @@ function watch () {
     watchDirs(
         [
             'src/templates', 'src/styles', 'src/scripts',
-            'data'
+            'data', 'locales'
         ],
         () => {
             clients.forEach(client => {

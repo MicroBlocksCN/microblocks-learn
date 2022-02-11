@@ -1,4 +1,13 @@
 {
     "pageTitle": "Welcome",
-    "pageIntro": "Welcome to MicroBlocks!"
+    "pageIntro": "Welcome to MicroBlocks!",
+    "result-count": "@1 results.",
+    "result-count-one": "1 result.",
+    "no-components": "None",
+    "components-unset": "Unset",
+    "levels-all": "All",
+    "components-all": "All",
+    "locales-all": "All",
+    "boards-all": "All",
+    "topics-all": "All"
 }
