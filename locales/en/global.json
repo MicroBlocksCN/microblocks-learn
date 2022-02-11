@@ -22,6 +22,7 @@
     "cmp_alligators": "Alligator clips",
     "cmp_ir_remote": "IR remote control",
     "cmp_neopixels": "NeoPixels",
+    "cmp_dht22": "DHT22 (environmental)",
     "tpc_art": "Art",
     "tpc_maths": "Maths",
     "tpc_history": "History",

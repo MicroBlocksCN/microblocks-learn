@@ -147,11 +147,15 @@ function populateFilters () {
                 if (Array.isArray(value)) {
                     // i.e. boards: [ 'micro:bit', 'ed1' ]
                     value.forEach((value) => {
-                        addOption(element, value, value);
+                        addOption(element, value, localize(value));
                     });
                 } else {
                     // atom, i.e. 1
-                    addOption(element, value, value);
+                    var text =
+                        (selector === 'level') ?
+                            'lvl_' + value :
+                            value;
+                    addOption(element, value, localize(text));
                 }
             });
         });
