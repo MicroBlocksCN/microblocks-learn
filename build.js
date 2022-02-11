@@ -196,6 +196,10 @@ handlebars.registerHelper('localize', function () {
     return localized;
 });
 
+handlebars.registerHelper('json', function (context) {
+    return JSON.stringify(context);
+});
+
 // Thanks to kevlened at StackOverflow for the following boolean helpers
 // https://stackoverflow.com/a/31632215
 
