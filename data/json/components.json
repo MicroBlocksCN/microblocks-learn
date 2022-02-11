@@ -5,5 +5,7 @@
     "cmp_led",
     "cmp_led_rgb",
     "cmp_speaker",
-    "cmp_alligators"
+    "cmp_alligators",
+    "cmp_ir_remote",
+    "cmp_ir_receiver"
 ]

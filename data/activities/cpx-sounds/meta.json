@@ -1,7 +1,7 @@
 {
     "author": "MicroBlocks",
     "level": 1,
-    "boards": [ "board_cpx" ],
+    "boards": [ "board_cpx", "board_cpxbf" ],
     "time": [ 15, 45 ],
     "topics": [ "tpc_art" ],
     "components": [ ]
