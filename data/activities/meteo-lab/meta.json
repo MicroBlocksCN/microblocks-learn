@@ -1,10 +1,6 @@
 {
     "author": "Marc Campreciós",
-    "boards": [
-        "ed1", "clue"
-    ],
-    "level": "Intermediate",
-    "components": [
-        "dht22", "servo"
-    ]
+    "boards": [ "board_ed1", "board_clue" ],
+    "level": 2,
+    "components": [ "cmp_dht22", "cmp_cr_servo" ]
 }

@@ -116,6 +116,9 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
     // make the locale list available to all pages
     descriptor.locales = Object.keys(locales);
 
+    // store the template name in the descriptor, to be used by "localize"
+    descriptor['template-name'] = templateName;
+
     if (debugMode) { descriptor.livereload = true; }
 
     // find locale data for this template
@@ -126,13 +129,13 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         Object.assign(descriptor.locale, locales.en.pages[templateName]);
     }
 
-    // add global layout strings to all page locales
-    Object.keys(locales.en.pages.layout).forEach((key) => {
-        if (locales[langCode].pages.layout &&
-                locales[langCode].pages.layout[key]) {
-            descriptor.locale[key] = locales[langCode].pages.layout[key];
+    // add global strings to all page locales
+    Object.keys(locales.en.pages.global).forEach((key) => {
+        if (locales[langCode].pages.global &&
+                locales[langCode].pages.global[key]) {
+            descriptor.locale[key] = locales[langCode].pages.global[key];
         } else {
-            descriptor.locale[key] = locales.en.pages.layout[key];
+            descriptor.locale[key] = locales.en.pages.global[key];
         }
     });
 
@@ -168,11 +171,23 @@ handlebars.registerHelper('markdown', (context, options) => {
     return html;
 });
 
+handlebars.registerHelper('join', function () {
+    return Array.prototype.slice.call(arguments, 0, -1).join('');
+});
+
 handlebars.registerHelper('localize', function () {
-    var locale = arguments[arguments.length - 1].data.root.locale,
+    var data = arguments[arguments.length - 1].data.root,
+        templateName = data['template-name'],
+        locale = data.locale,
         key = arguments[0],
-        params = [].slice.call(arguments, 1, arguments.length - 1),
+        params = [].slice.call(arguments, 1, -1),
         localized = locale[key];
+
+    if (!localized) {
+        // missing locale string, return EN one
+        localized = locales.en.pages[templateName][key] || 
+            locales.en.pages.global[key];
+    }
 
     params.forEach((param, index) => {
         localized = localized.replace(`@${index + 1}`, param);
@@ -295,9 +310,13 @@ function buildActivities () {
                         descriptor = {};
                     activity.title = activity.title || meta.title;
                     activity.author = activity.author || meta.author;
+                    activity.level = activity.level || meta.level || 1;
                     activity.translations = meta.translations.filter(
                         (each) => { return each.langCode !== langCode });
                     activity.components = meta.components || [];
+                    activity.topics = meta.topics || [];
+                    activity.time = meta.time || [30, 45];
+                    activity.boards = meta.boards || [];
                     activity.slug = slugify(activity.title);
                     activity.locale = langCode;
                     activity.href = 'index';

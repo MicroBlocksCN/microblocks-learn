@@ -1,8 +1,8 @@
 {
     "author": "MicroBlocks",
-    "level": "Beginner",
-    "boards": [ "Circuit Playground Express", "Circuit Playground Bluefruit" ],
+    "level": 1,
+    "boards": [ "board_cpx", "board_cpxbf" ],
     "time": [ 15, 45 ],
-    "topics": [ "art" ],
-    "components": [ "Neopixels" ]
+    "topics": [ "tpc_art" ],
+    "components": [ "cmp_neopixels" ]
 }

@@ -34,7 +34,9 @@
                         Boards:
                     </h3>
                     <div class="c_hero-yellow__boards-list">
-                        Board 1, Board 2
+                        {{#each boards}}
+                        <span class="comma-separated">{{localize this}}</span>
+                        {{/each}}
                     </div>
                 </div>
 
@@ -43,7 +45,9 @@
                         Components:
                     </h3>
                     <div class="c_hero-yellow__components-list">
-                        Board 1, Board 2
+                        {{#each components}}
+                        <span class="comma-separated">{{localize this}}</span>
+                        {{/each}}
                     </div>
                 </div>
 
@@ -88,7 +92,7 @@
                             Level
                         </h4>
                         <div class="v_activity__details-group-content">
-                            Beginner
+                            {{localize (join "lvl_" level)}}
                         </div>
                     </div>
 
@@ -97,16 +101,18 @@
                             Estimated Time
                         </h4>
                         <div class="v_activity__details-group-content">
-                            90-120 minutes
+                            {{localize "duration" time.[0] time.[1]}}
                         </div>
                     </div>
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
-                            Topic
+                            Topics
                         </h4>
                         <div class="v_activity__details-group-content">
-                            Environment
+                            {{#each topics}}
+                            <span class="comma-separated">{{localize this}}</span>
+                            {{/each}}
                         </div>
                     </div>
 
@@ -117,7 +123,7 @@
                         <ul class="v_activity__details-group-content">
                             {{#each translations}}
                             <li>
-                                <a href="/{{this.langCode}}/activities/{{this.slug}}">{{this.title}}</a>
+                                <a href="/{{this.langCode}}/activities/{{this.slug}}">{{this.langCode}}</a>
                             </li>
                             {{/each}}
                         </ul>

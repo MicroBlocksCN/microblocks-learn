@@ -1,7 +1,7 @@
 {
     "author": "MicroBlocks",
-    "level": "Beginner",
-    "boards": [ "microbit" ],
+    "level": 1,
+    "boards": [ "board_microbit" ],
     "time": [ 60, 90 ],
-    "topics": [ "game" ]
+    "topics": [ "tpc_game" ]
 }

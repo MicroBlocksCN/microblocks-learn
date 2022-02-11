@@ -1,8 +1,8 @@
 {
     "author": "MicroBlocks",
-    "level": "Beginner",
-    "boards": [ "Circuit Playground Express" ],
+    "level": 1,
+    "boards": [ "board_cpx" ],
     "time": [ 15, 45 ],
     "topics": [ ],
-    "components": [ "IR remote control" ]
+    "components": [ "cmp_ir_remote" ]
 }

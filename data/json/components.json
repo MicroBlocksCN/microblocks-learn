@@ -1,9 +1,9 @@
-{
-    "cr_servo": "Servo (CR)",
-    "angle_servo": "Servo (angle)",
-    "ext_board": "Extension board",
-    "led": "LED",
-    "led_rgb": "RGB LED",
-    "speaker": "Speaker",
-    "alligators": "Alligator clips"
-}
+[
+    "cmp_cr_servo",
+    "cmp_angle_servo",
+    "cmp_ext_board",
+    "cmp_led",
+    "cmp_led_rgb",
+    "cmp_speaker",
+    "cmp_alligators"
+]

@@ -1,8 +1,8 @@
 {
     "author": "MicroBlocks",
-    "level": "Beginner",
-    "boards": [ "microbit" ],
+    "level": 1,
+    "boards": [ "board_cpx" ],
     "time": [ 15, 45 ],
-    "topics": [ "art" ],
-    "components": [ "servo" ]
+    "topics": [ "tpc_art" ],
+    "components": [ ]
 }

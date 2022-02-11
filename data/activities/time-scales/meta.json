@@ -1,8 +1,8 @@
 {
     "author": "MicroBlocks",
-    "level": "Beginner",
-    "boards": [ "microbit" ],
+    "level": 1,
+    "boards": [ "board_microbit" ],
     "time": [ 90, 120 ],
-    "topics": [ "music" ],
-    "components": [ "led", "speaker", "alligators" ]
+    "topics": [ "tpc_music" ],
+    "components": [ "cmp_led", "cmp_speaker", "cmp_alligators" ]
 }

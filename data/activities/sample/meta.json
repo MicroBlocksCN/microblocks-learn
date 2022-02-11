@@ -1,9 +1,9 @@
 {
     "draft": true,
     "author": "Jane Doe",
-    "level": "Beginner",
-    "boards": [ "microbit", "cpx" ],
+    "level": 1,
+    "boards": [ "board_microbit", "board_cpx" ],
     "time": [ 90, 120 ],
-    "topics": [ "music", "colors" ],
-    "components": [ "led_rgb", "piezzo" ]
+    "topics": [ "tpc_music", "tpc_colors" ],
+    "components": [ "cmp_led_rgb", "cmp_piezzo" ]
 }

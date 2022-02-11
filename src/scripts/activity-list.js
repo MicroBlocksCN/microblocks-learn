@@ -56,7 +56,6 @@ function updateActivityList () {
 };
 
 function activityDiv (activity) {
-
     var title           = activity.title,
         link            = `activities/${activity.slug}`,
         thumb           = `activities/${activity.slug}/thumbnail.png`,
@@ -96,11 +95,21 @@ function activityDiv (activity) {
                 <div class="c_activity-card__specs">
                     <div class="c_activity-card__list">
                         <div class="c_activity-card__list-icon"></div>
-                        <div class="c_activity-card__list-elements">${ boards }</div>
+                        <div class="c_activity-card__list-elements">${
+                            boards
+                        }</div>
                     </div>
-                    <div class="c_activity-card__list ${ components ? '' : 'c_activity-card__components--is-empty'}">
+                    <div class="c_activity-card__list ${
+                        components ?
+                            '' :
+                            'c_activity-card__components--is-empty'
+                    }">
                         <div class="c_activity-card__list-icon"></div>
-                        <div class="c_activity-card__list-elements">${ components ? components : '–'}</div>
+                        <div class="c_activity-card__list-elements">${
+                            components ?
+                                components :
+                                '–'
+                        }</div>
                     </div>
                 </div>
             </div>
@@ -141,7 +150,7 @@ function populateFilters () {
                         addOption(element, value, value);
                     });
                 } else {
-                    // atom, i.e. "beginner"
+                    // atom, i.e. 1
                     addOption(element, value, value);
                 }
             });
@@ -283,8 +292,10 @@ function updatePages () {
 function filtersResponsiveness() {
     const windowWidth = window.innerWidth;
     const activityFilters = document.querySelector('.c_filters');
-    const activityFiltersToggle = document.querySelector('.v_home__filters-button');
-    const activityFiltersClose = document.querySelector('.c_filters__mobile-close');
+    const activityFiltersToggle =
+        document.querySelector('.v_home__filters-button');
+    const activityFiltersClose =
+        document.querySelector('.c_filters__mobile-close');
 
     if ( windowWidth < '768' ) {
         activityFilters.setAttribute('tabindex', '0');

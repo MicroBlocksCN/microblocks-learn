@@ -1,7 +1,5 @@
 {
     "author": "MicroBlocks",
-    "level": "Beginner",
-    "boards": [
-        "microbit"
-    ]
+    "level": 1,
+    "boards": [ "board_microbit" ]
 }

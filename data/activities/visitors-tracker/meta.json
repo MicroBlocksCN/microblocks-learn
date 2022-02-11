@@ -1,7 +1,5 @@
 {
     "author": "Marc Campreciós",
-    "level": "Beginner",
-    "boards": [
-        "microbit", "cpx"
-    ]
+    "level": 1,
+    "boards": [ "board_microbit", "board_cpx" ]
 }
