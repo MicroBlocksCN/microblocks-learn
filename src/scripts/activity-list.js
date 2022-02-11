@@ -215,7 +215,7 @@ function filteredActivities() {
                     (filters[selector] && activity[selector]) ||
                     !filters[selector]
             } else {
-                // other atoms, i.e. "beginner", 5
+                // other atoms, i.e. 2
                 return filters[selector] === '' ||
                     activity[selector] === filters[selector];
             }
