@@ -16,7 +16,7 @@ all the fields:
 
 * **author:**           Who wrote the activity.
 
-* **level:**            Either "Beginner" or "Experienced" 
+* **level:**            Either 1 (beginner) or 2 (experienced).
 
 * **boards:**           An array of board codenames for which this activity has
                         been designed. You can see and modify the list of boards
@@ -30,7 +30,7 @@ all the fields:
                         (i.e. Art, Sustainability, Music, Physics)
 
 * **components:**       An array of component keys. These keys can be found and
-                        added at data/json/components.json.  
+                        added at data/json/components.json.
 
 ## Files
 
