@@ -1,0 +1,13 @@
+// 
+// Components / Comma Separated
+// ==========================================================================
+
+
+.c_comma-separated::after {
+  content: ',';
+}
+
+
+.c_comma-separated:last-of-type::after {
+  content: '.';
+}
