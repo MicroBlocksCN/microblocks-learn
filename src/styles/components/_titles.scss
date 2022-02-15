@@ -8,4 +8,8 @@
   font-size: $fontSize-087;
   text-transform: uppercase;
   color: $color-purple;
+
+  svg {
+    transform: translateY(5px);
+  }
 }
