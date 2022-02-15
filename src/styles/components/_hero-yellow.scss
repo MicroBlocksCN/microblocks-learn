@@ -27,42 +27,19 @@
 
 
 
-// Title
-// ========================================
-
-
-.c_hero-yellow__title-wrapper {
-  margin: $space-150 0;
-}
-
-
-.c_hero-yellow__title {
-  font-family: $font-display;
-  font-weight: 700;
-  font-size: $fontSize-250;
-  line-height: $lineHeight-100;
-  color: $color-black;
-}
-
-
-.c_hero-yellow__author {
-  margin-top: $space-050;
-  // font-weight: 700;
-}
-
-
-
-
-
 // Picture
 // ========================================
 
 
 .c_hero-yellow__picture-wrapper {
-  margin: $space-150 0;
+  margin-bottom: $space-100; // always have a picture underneath
   
   transform: rotate(-2deg);
   box-shadow: $boxShadow-base;
+
+  @include breakpoint(xxl) {
+    margin-bottom: $space-150;
+  }
 }
 
 
@@ -85,10 +62,57 @@
 
 
 
+// Title
+// ========================================
+
+
+.c_hero-yellow__title-wrapper {
+  // margin: $space-150 0;
+}
+
+
+.c_hero-yellow__title {
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-250;
+  line-height: $lineHeight-100;
+  color: $color-black;
+
+  @include breakpoint(xxl) {
+    font-size: $fontSize-250;
+  }
+}
+
+
+.c_hero-yellow__author {
+  margin-top: $space-025;
+
+  font-weight: 700;
+}
+
+
+
+
+
 // Specs
 // ========================================
 
 
-.c_hero-yellow__details {
+.c_hero-yellow__specs {
+  margin-top: $space-150;
 
+  h3 {
+    display: inline-block;
+  }
+}
+
+
+.c_hero-yellow__boards {
+  margin-bottom: $space-025;
+}
+
+
+.c_hero-yellow__boards-list,
+.c_hero-yellow__components-list {
+  display: inline-block;
 }
