@@ -18,6 +18,9 @@ var fs = require('fs'),
             )
         );
 
+
+// MarkDown additions
+
 markdown.setOption('strikethrough', true);
 markdown.setOption('tables', true);
 
@@ -34,7 +37,70 @@ markdown.addExtension({
     }
 });
 
-// Data
+
+// Handlebars additions
+
+handlebars.registerHelper('markdown', (context, options) => {
+    var mdPath = `${__dirname}/data/markdown/${context}.md`,
+        md =  options ?
+            (options.data.root.markdown || options.fn(this)) :
+            context.fn(this),
+        html;
+    if (fs.existsSync(mdPath)) {
+        md = fs.readFileSync(mdPath, 'utf8');
+    }
+    try {
+        html = markdown.makeHtml(md);
+    } catch (err) {
+        html = `<p>PARSING MARKDOWN FAILED:</p><pre>${md}</pre><br>`;
+    }
+    return html;
+});
+
+handlebars.registerHelper('join', function () {
+    return Array.prototype.slice.call(arguments, 0, -1).join('');
+});
+
+handlebars.registerHelper('localize', function () {
+    var data = arguments[arguments.length - 1].data.root,
+        templateName = data['template-name'],
+        locale = data.locale,
+        key = arguments[0],
+        params = [].slice.call(arguments, 1, -1),
+        localized = locale[key];
+
+    if (!localized) {
+        // missing locale string, return EN one
+        localized = locales.en.pages[templateName][key] || 
+            locales.en.pages.global[key];
+    }
+
+    params.forEach((param, index) => {
+        localized = localized.replace(`@${index + 1}`, param);
+    });
+
+    return localized;
+});
+
+handlebars.registerHelper('language-name', function (context) {
+    return languages[context];
+});
+
+handlebars.registerHelper('json', function (context) {
+    return JSON.stringify(context);
+});
+
+// Thanks to kevlened at StackOverflow for the following boolean helpers
+// https://stackoverflow.com/a/31632215
+
+handlebars.registerHelper('and', function () {
+    return Array.prototype.ever.call(arguments, Boolean);
+});
+
+handlebars.registerHelper('or', function () {
+    return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
+});
+
 
 // Useful functions
 
@@ -75,6 +141,7 @@ function slugify (string) {
         char => char.toLowerCase().replace(' ','-')
     ).join('').replaceAll(/[^\p{L}-]/gu,''); // \p{L} → letter in any locale
 };
+
 
 // Handlebars processing
 
@@ -162,68 +229,6 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         `${descriptor.slug ? (' ' + descriptor.slug) : ''} (${langCode})`);
 };
 
-// Handlebars additions
-
-handlebars.registerHelper('markdown', (context, options) => {
-    var mdPath = `${__dirname}/data/markdown/${context}.md`,
-        md =  options ?
-            (options.data.root.markdown || options.fn(this)) :
-            context.fn(this),
-        html;
-    if (fs.existsSync(mdPath)) {
-        md = fs.readFileSync(mdPath, 'utf8');
-    }
-    try {
-        html = markdown.makeHtml(md);
-    } catch (err) {
-        html = `<p>PARSING MARKDOWN FAILED:</p><pre>${md}</pre><br>`;
-    }
-    return html;
-});
-
-handlebars.registerHelper('join', function () {
-    return Array.prototype.slice.call(arguments, 0, -1).join('');
-});
-
-handlebars.registerHelper('localize', function () {
-    var data = arguments[arguments.length - 1].data.root,
-        templateName = data['template-name'],
-        locale = data.locale,
-        key = arguments[0],
-        params = [].slice.call(arguments, 1, -1),
-        localized = locale[key];
-
-    if (!localized) {
-        // missing locale string, return EN one
-        localized = locales.en.pages[templateName][key] || 
-            locales.en.pages.global[key];
-    }
-
-    params.forEach((param, index) => {
-        localized = localized.replace(`@${index + 1}`, param);
-    });
-
-    return localized;
-});
-
-handlebars.registerHelper('language-name', function (context) {
-    return languages[context];
-});
-
-handlebars.registerHelper('json', function (context) {
-    return JSON.stringify(context);
-});
-
-// Thanks to kevlened at StackOverflow for the following boolean helpers
-// https://stackoverflow.com/a/31632215
-
-handlebars.registerHelper('and', function () {
-    return Array.prototype.ever.call(arguments, Boolean);
-});
-
-handlebars.registerHelper('or', function () {
-    return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
-});
 
 // Build script functions
 
@@ -599,6 +604,7 @@ function watch () {
         client.send('LiveReload connected to server');
     });
 };
+
 
 // Build, watch, and serve
 
