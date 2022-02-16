@@ -96,7 +96,12 @@ function activityDiv (activity) {
                 <h4 class="c_activity-card__title">${ title }</h4>
                 <div class="c_activity-card__specs">
                     <div class="c_activity-card__list">
-                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <title>Boards</title>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 6.875V8.125H16.25V11.875H18.75V13.125H16.25V15C16.25 15.6904 15.6904 16.25 15 16.25H13.125V18.75H11.875V16.25H8.125V18.75H6.875V16.25H5C4.30964 16.25 3.75 15.6904 3.75 15V13.125H1.25V11.875H3.75V8.125H1.25V6.875H3.75V5C3.75 4.30964 4.30964 3.75 5 3.75H6.875V1.25H8.125V3.75H11.875V1.25H13.125V3.75H15C15.6904 3.75 16.25 4.30964 16.25 5V6.875H18.75ZM5 15H15V5H5V15ZM6.875 6.875V13.125H13.125V6.875H6.875ZM8.125 11.875H11.875V8.125H8.125V11.875Z" fill="#B6519D"/>
+                            </svg>
+                        </div>
                         <div class="c_activity-card__list-elements">${
                             boards
                         }</div>
@@ -106,7 +111,12 @@ function activityDiv (activity) {
                             '' :
                             'c_activity-card__components--is-empty'
                     }">
-                        <div class="c_activity-card__list-icon"></div>
+                        <div class="c_activity-card__list-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <title>Component/s</title>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.875 15H13.125V16.25H6.875V15ZM8.125 17.5H11.875V18.75H8.125V17.5ZM10 1.25C6.54822 1.25 3.75 4.04822 3.75 7.5C3.66426 9.34265 4.46873 11.1144 5.9125 12.2625C6.5375 12.8438 6.875 13.175 6.875 13.75H8.125C8.125 12.6 7.43125 11.9562 6.75625 11.3375C5.57011 10.4292 4.9121 8.99139 5 7.5C5 4.73858 7.23857 2.5 10 2.5C12.7614 2.5 15 4.73858 15 7.5C15.0864 8.99252 14.426 10.4305 13.2375 11.3375C12.5687 11.9625 11.875 12.5875 11.875 13.75H13.125C13.125 13.175 13.4562 12.8438 14.0875 12.2563C15.5303 11.1101 16.3347 9.34069 16.25 7.5C16.25 5.8424 15.5915 4.25269 14.4194 3.08058C13.2473 1.90848 11.6576 1.25 10 1.25Z" fill="#B6519D"/>
+                            </svg>
+                        </div>
                         <div class="c_activity-card__list-elements">${
                             components ?
                                 components :
