@@ -53,7 +53,7 @@
                 <label for="site-language" class="visually-hidden">Site Language</label>
                 <select id="site-language" class="locale menu__lang-select" onchange="setLang(this.value)">
                     {{#each locales}}
-                    <option value={{this}}>{{language-name this}}</option>
+                    <option value={{this}}>{{this}}</option>
                     {{/each}}
                 </select>
                 <script>
