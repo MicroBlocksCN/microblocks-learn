@@ -84,11 +84,11 @@ Write your safety note here
 ```
 
 Another particularity of our rendering of MarkDown files is that you can add
-footnotes to images by adding an italic text right after them, like so:
+footnotes to images using similar syntax, like so:
 
 ```
 ![Image alt text](image.png)
-* A footnote for this image, including its licence - CC-BY-SA Somebody *
+[[caption]]Pretty image - CC-BY-SA Somebody[[/caption]]
 ```
 
 #### Teacher's Guide

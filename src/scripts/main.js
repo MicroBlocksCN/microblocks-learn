@@ -20,6 +20,10 @@ function autorun(){
     filtersResponsiveness();
   }
 
+  // until browsers add support for :has in css...
+  document.querySelectorAll('.caption').forEach(
+    span => span.parentElement.classList.add('captioned')
+  );
 };
 
 if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);

@@ -25,10 +25,12 @@ markdown.addExtension({
     type: 'output',
     filter: function (html) {
         return html.replace(
+            /\[\[(.+?)\]\](.*)\[\[\/.*\]\]/g, '<span class="$1">$2</span>'
+        ).replace(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replace(
             /\[\[\/.*?\]\]<\/p>/g, `</div>`
-        );
+        )
     }
 });
 

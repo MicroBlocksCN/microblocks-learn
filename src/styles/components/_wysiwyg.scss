@@ -114,7 +114,7 @@
 
 
   // Caption
-  p img + em {
+  p img + .caption {
     margin-top: -10px;
     display: block;
     padding: $space-050 $space-100 $space-050 $space-075;
@@ -124,7 +124,8 @@
     line-height: $lineHeight-150;
   }
 
-  @supports selector(p:has(em)) {
+  // @supports selector(p:has(span))
+  p.captioned {
     margin-top: 0;
     line-height: 0;
   }
