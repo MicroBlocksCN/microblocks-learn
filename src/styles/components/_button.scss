@@ -5,8 +5,9 @@
 
 .c_button {
   padding: $space-050 $space-100 $space-050 $space-075;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: fit-content;
   
   @include box;
   color: $color-purple; // Icon BGs inherits it
@@ -37,10 +38,7 @@
     color: $color-white;
     background-color: $color-purple;
 
-    svg {
-      color: $color-white;
-    }
-
+    svg,
     span {
       color: $color-white;
     }
