@@ -134,12 +134,29 @@ function doForFilesInDir (dir, extension, action, recursive) {
     });
 };
 
-function slugify (string) {
+function slugify (string, langCode) {
     // make all lowercase, allow only alpha characters, and replace spaces with
     // hyphens
-    return string.split('').map(
+    var slug = string.split('').map(
         char => char.toLowerCase().replace(' ','-')
     ).join('').replaceAll(/[^\p{L}-]/gu,''); // \p{L} → letter in any locale
+
+    if (fs.existsSync(`${__dirname}/dist/${langCode}/activities/${slug}`)) {
+        // there's another activity with this same slug, let's
+        // add a numeric suffix
+        if (slug.match(/[0-9]$/)) {
+            // this slug already had a numeric suffix, let's
+            // increment it
+            slug = slug.replace(
+                /[0-9]$/,
+                slug.match(/[0-9]$/[0] + 1));
+        } else {
+            // let's add a number prefix to this slug
+            slug = slug + '-1';
+        }
+    }
+
+    return slug;
 };
 
 
@@ -288,20 +305,19 @@ function buildActivities () {
     doForFilesInDir(
         'data/activities',
         '/',
-        (slug, activityPath) => {
+        (activityDir, activityPath) => {
             // new activity
             var meta = JSON.parse(
                     fs.readFileSync(
                         `${activityPath}/meta.json`, 'utf8'
                     )
                 );
-            meta.slug = slug;
 
             // get the slugs for each locale
             // unfortunately we need to do two passes over the directory
             meta.translations = [];
             doForFilesInDir(
-                `data/activities/${slug}/locales/`,
+                `data/activities/${activityDir}/locales/`,
                 '/',
                 (langCode, localePath) => {
                     var json = JSON.parse(
@@ -309,18 +325,19 @@ function buildActivities () {
                                 `${localePath}/meta.json`,
                                 'utf8'
                             )
-                        );
+                        ),
+                        slug = slugify(json.title || meta.title, langCode);
 
                     meta.translations.push({
                         langCode: langCode,
-                        slug: slugify(json.title || meta.title),
+                        slug: slug,
                         title: json.title || meta.title
                     });
                 }
             );
             // process locales, under subdirs
             doForFilesInDir(
-                `data/activities/${slug}/locales/`,
+                `data/activities/${activityDir}/locales/`,
                 '/',
                 (langCode, localePath) => {
                     // activities stores the list of all activity descriptors
@@ -340,7 +357,7 @@ function buildActivities () {
                     activity.topics = meta.topics || [];
                     activity.time = meta.time || [30, 45];
                     activity.boards = meta.boards || [];
-                    activity.slug = slugify(activity.title);
+                    activity.slug = slugify(activity.title, langCode);
                     activity.locale = langCode;
                     activity.href = 'index';
                     activity['has-card'] =
@@ -362,7 +379,7 @@ function buildActivities () {
                         activityDescriptors.push(descriptor);
                     }
 
-                    debug(`processed activity: ${slug} (${langCode})`);
+                    debug(`processed activity: ${activityDir} (${langCode})`);
 
                     buildActivity(activity, langCode, activityPath);
                 }
