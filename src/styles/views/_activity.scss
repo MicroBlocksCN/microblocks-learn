@@ -30,8 +30,7 @@
     }
   }
 
-  .c_button-icon {
-    // display: in;
+  .c_button {
 
     &:not(:last-of-type) {
       margin-bottom: $space-050;

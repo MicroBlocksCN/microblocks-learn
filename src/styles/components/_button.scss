@@ -3,9 +3,11 @@
 // ==========================================================================
 
 
-.c_button-icon {
-  display: inline-block;
-  padding: $space-050 $space-100 $space-050 $space-300;
+.c_button {
+  padding: $space-050 $space-100 $space-050 $space-075;
+  display: flex;
+  align-items: center;
+  width: fit-content;
   
   @include box;
   color: $color-purple; // Icon BGs inherits it
@@ -17,8 +19,18 @@
 
   transition: all $trans-0200 $trans-easing;
 
+  svg {
+    height: $space-150;
+    width: $space-150;
+    margin-right: $space-050;
+
+    color: $color-purple;
+    transition: color $trans-0200 $trans-easing;
+  }
+
   span {
     color: $color-grey-900;
+    transition: color $trans-0200 $trans-easing;
   }
 
   &:hover {
@@ -26,6 +38,7 @@
     color: $color-white;
     background-color: $color-purple;
 
+    svg,
     span {
       color: $color-white;
     }
