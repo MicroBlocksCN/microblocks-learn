@@ -135,7 +135,7 @@
     margin-right: $space-025;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoint(xl) {
     transform: translateX( calc( -1 * #{$space-125} ) );
   }
 }
@@ -145,7 +145,7 @@
   // aligning elements due to icons
   padding-left: $space-125;
 
-  @include breakpoint(lg) {
+  @include breakpoint(xl) {
     padding-left: 0;
   }
 }
