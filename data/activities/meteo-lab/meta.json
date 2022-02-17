@@ -1,4 +1,5 @@
 {
+    "draft": true,
     "author": "Marc Campreciós",
     "boards": [ "board_ed1", "board_clue" ],
     "level": 2,
