@@ -121,13 +121,33 @@
 
 
 .c_filters__title {
-  display: block;
   margin-bottom: $space-025;
+
+  display: flex;
+  align-items: center;
 
   font-family: $font-display;
   font-size: $fontSize-087;
   text-transform: uppercase;
   color: $color-purple;
+
+  svg {
+    margin-right: $space-025;
+  }
+
+  @include breakpoint(lg) {
+    transform: translateX( calc( -1 * #{$space-125} ) );
+  }
+}
+
+
+.c_filters__input-wrapper {
+  // aligning elements due to icons
+  padding-left: $space-125;
+
+  @include breakpoint(lg) {
+    padding-left: 0;
+  }
 }
 
 
