@@ -19,7 +19,7 @@ function checkForCode (img) {
                 var data = new Uint8Array(buffer),
                     check = ('GP Script').split('').map(c => c.charCodeAt(0));
                 if (data.containsSubArray(check)) {
-                    img.classList.add('code');
+                    img.parentElement.classList.add('code');
                 };
             }
         );
