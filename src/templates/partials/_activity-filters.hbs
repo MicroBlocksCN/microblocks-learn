@@ -11,9 +11,12 @@
 
         {{!-- Language --}}
         <fieldset class="c_filters__group">
-            <legend class="c_filters__title">Language</legend>
+            <legend class="c_filters__title">
+                {{> svg.icon-language-16x16 }}
+                Language
+            </legend>
 
-            <div>
+            <div class="c_filters__input-wrapper">
                 <label for="filters-language" class="visually-hidden">Language</label>
                 <select id="filters-language"
                     class="locale activity-filter"
@@ -27,31 +30,37 @@
 
         {{!-- Board --}}
         <fieldset class="c_filters__group">
-            <legend class="c_filters__title">Board</legend>
+            <legend class="c_filters__title">
+                {{> svg.icon-board-16x16 }}
+                Board
+            </legend>
 
-            <div>
+            <div class="c_filters__input-wrapper">
                 <label for="filters-board" class="visually-hidden">Board model</label>
                 <select id="filters-board"
                     class="boards activity-filter"
                     onchange="applyFilter('boards', this.value)" >
                     <option value="">{{localize "boards-all"}}</option>
                 </select>
-            </div>
 
-            <label><input
-                onchange="applyFilter('compatible', this.checked)"
-                class="activity-toggle"
-                type="checkbox"> and compatible boards
-            </label>
+                <label><input
+                    onchange="applyFilter('compatible', this.checked)"
+                    class="activity-toggle"
+                    type="checkbox"> and compatible boards
+                </label>
+            </div>
 
         </fieldset>
 
 
         {{!-- Componenets --}}
         <fieldset class="c_filters__group">
-            <legend class="c_filters__title">Components</legend>
+            <legend class="c_filters__title">
+                {{> svg.icon-components-16x16 }}
+                Components
+            </legend>
 
-            <div>
+            <div class="c_filters__input-wrapper">
                 <label for="filters-components" class="visually-hidden">Components</label>
                 <select id="filters-compoenents"
                     class="components activity-filter"
@@ -65,9 +74,12 @@
 
         {{!-- Level and Resources --}}
         <fieldset class="c_filters__group">
-            <legend class="c_filters__title">Level & Resources</legend>
+            <legend class="c_filters__title">
+                {{> svg.icon-level-and-resources-16x16 }}
+                Level & Resources
+            </legend>
 
-            <div>
+            <div class="c_filters__input-wrapper">
                 <label for="filters-level" class="visually-hidden">Level</label>
                 <select id="filters-level"
                     class="level activity-filter"
@@ -79,28 +91,31 @@
                 >
                     <option value="">{{localize "levels-all"}}</option>
                 </select>
-            </div>    
 
-            <label><input
-                onchange = "applyFilter('has-card', this.checked)"
-                class = "activity-toggle"
-                type="checkbox"> has activity card
-            </label>
+                <label><input
+                    onchange = "applyFilter('has-card', this.checked)"
+                    class = "activity-toggle"
+                    type="checkbox"> has activity card
+                </label>
 
-            <label><input
-                onchange = "applyFilter('has-guide', this.checked)"
-                class = "activity-toggle"
-                type="checkbox"> has teacher's guide
-            </label>
+                <label><input
+                    onchange = "applyFilter('has-guide', this.checked)"
+                    class = "activity-toggle"
+                    type="checkbox"> has teacher's guide
+                </label>
+            </div>
 
         </fieldset>
         
 
         {{!-- Topics --}}
         <fieldset class="c_filters__group">
-            <legend class="c_filters__title">Topics</legend>
+            <legend class="c_filters__title">
+                {{> svg.icon-topics-16x16 }}
+                Topics
+            </legend>
 
-            <div>
+            <div class="c_filters__input-wrapper">
                 <label for="filters-topic" class="visually-hidden">Topic</label>
                 <select id="filters-topic"
                     class="topics activity-filter"

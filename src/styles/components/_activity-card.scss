@@ -72,7 +72,7 @@
 
 .c_activity-card__list {
   display: flex;
-  justify-content: center;
+  align-items: center;
 
   &:not(:last-of-type) {
     margin-bottom: $space-050;
@@ -80,28 +80,18 @@
 }
 
 
-// ADD ICONS!
-// ADD ICONS!
-// ADD ICONS!
-// .c_activity-card__board,
-// .c_activity-card__components {
-
-
 .c_activity-card__list-icon {
   flex-shrink: 0;
-  margin-right: $space-050;
+  margin-right: $space-025;
   display: block;
   width: $space-125;
   height: $space-125;
-
-  // temp
-  background-color: $color-grey-200;
 }
 
 
 .c_activity-card__list-elements {
   flex-grow: 1;
-  height: $space-125;
+  height: $space-100;
 
   font-size: $fontSize-087;
   line-height: $lineHeight-120;
