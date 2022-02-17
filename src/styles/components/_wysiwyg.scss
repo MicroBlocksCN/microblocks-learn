@@ -92,23 +92,50 @@
   p.code {
     display: inline-block;
     position: relative;
-    padding: $space-150 $space-075 $space-075 $space-075;
+    margin-bottom: $space-200;
 
     background-color: $color-script-pane;
     border: none;
+    border-radius: $borderRadius-025;
+    line-height: 0;
+
+    img {
+      margin: 0;
+      padding: $space-100 $space-100 $space-075 $space-100;
+
+      transition: opacity $trans-0200 $trans-easing;
+
+      &:hover {
+        opacity: 0.75;
+        cursor: grab;
+      }
+    }
 
     &::after {
-      content: 'Drag it to the IDE!';
 
-      display: block;
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      top: $space-025;
-      right: $space-025;
+      // only makes sense in computers
+      @include breakpoint(lg) {
+        content: 'Drag to the IDE';
 
-      font-size: $fontSize-050;
-      color: $color-grey-700;
+        display: block;
+        position: absolute;
+        bottom: calc( #{$space-125} * -1 );
+        left: $space-025;
+  
+        font-family: $font-display;
+        font-size: $fontSize-087;
+        line-height: $lineHeight-100;
+        color: $color-grey-400;
+
+        transition: color $trans-0200 $trans-easing;
+      }
+    }
+
+    &:hover {
+
+      &::after {
+        color: $color-grey-900;
+      }
     }
   }
 
