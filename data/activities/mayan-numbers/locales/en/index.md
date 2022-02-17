@@ -45,7 +45,7 @@ By looking at the grid of Maya digits, we notice that *zero* (![Maya digit zero]
 
 We could represent the *zero digit* by approximating it like this in the micro:bit display:
 
-![Maya digit zero in the display block](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbDisplay%5D%27%2015269312;%7D%20%22%7D)
+![Maya digit zero in the display block](display-0.png)
 
 So, our first iteration of this block will look like this:
 
@@ -53,7 +53,7 @@ So, our first iteration of this block will look like this:
 
 We can now test our new block with the digit value *0*:
 
-![Drawing the Maya digit 0](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27draw%20Maya%20digit%27%200;%7D%20%22%7D)
+![Drawing the Maya digit 0](draw-0.png)
 
 Click on the new block to test it and see the result on your micro:bit.
 
@@ -63,20 +63,20 @@ Digit values between *one* and *five* are represented in Maya numerals as dots. 
 
 To automate this process, we can use the `plot` block, that takes two different inputs: *x* and *y*:
 
-![MicroBlocks script](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbPlot%5D%27%203%203;%7D%20%22%7D)
+![Plotting x:3 , y:3](plot-3-3.png)
 
 The amount of dots we will have to draw will be the exact value of the digit, when its value is under five. A trick we can use is to iterate over the digit value, and draw a dot into each *x* position until we reach the digit value, all that while keeping *y* position fixed to the top row.
 
 For example, if the digit value is *4*, we will want to run the following operations:
 
-![Plotting x:1 , y:1](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbPlot%5D%27%201%201;%7D%20%22%7D)
-![Plotting x:2 , y:1](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbPlot%5D%27%202%201;%7D%20%22%7D)
-![Plotting x:3 , y:1](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbPlot%5D%27%203%201;%7D%20%22%7D)
-![Plotting x:4 , y:1](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbPlot%5D%27%204%201;%7D%20%22%7D)
+![Plotting x:1 , y:1](plot-1-1.png)
+![Plotting x:2 , y:1](plot-2-1.png)
+![Plotting x:3 , y:1](plot-3-1.png)
+![Plotting x:4 , y:1](plot-4-1.png)
 
 We can automate the process by using a `for` loop, as follows:
 
-![Plotting digit four](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20for%20i%204%20%7B%20%27%5Bdisplay:mbPlot%5D%27%20i%201;%7D;%7D%20%22%7D)
+![Plotting digit four](plot-loop.png)
 
 Now, *4* was just an example, but the amount of iterations will need to depend on the digit value passed to the `draw Maya digit` block. We thus need a new case in our block that checks whether the digit is lower than five, and draws dots accordingly. Click twice on the right-pointing arrow at the bottom of the `if` block to add two additional cases, and extend the definition of the block as follows:
 
@@ -84,7 +84,7 @@ Now, *4* was just an example, but the amount of iterations will need to depend o
 
 Now test the newly updated block to draw digits between zero and five, but add a `clear display` block before your `draw digit` one, or your new dots will be mixed up with the `zero` symbol:
 
-![Drawing digit 3](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%203;%7D%20%22%7D)
+![Drawing digit 3](clear-and-draw.png)
 
 #### Between Five and Ten
 
@@ -96,7 +96,7 @@ Notice how the second row of digits is very similar to the first one, save for t
 
 In the same way that we've used a `for` loop to draw dots, we can loop five times over a particular row to fill it up completely, like this:
 
-![Drawing a line at row 3](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20for%20i%205%20%7B%20%27%5Bdisplay:mbPlot%5D%27%20i%203;%7D;%7D%20%22%7D)
+![Drawing a line at row 3](plot-line-loop.png)
 
 Click on the script to see how it draws a line at row 3 of the 5x5 LED display.
 
@@ -116,7 +116,7 @@ It may look weird to define something in terms of itself, but that's actually ve
 
 You can now test the newly extended block for all digits between 0 and 9, but making sure to clear the display between drawing each one:
 
-![Drawing digit 7](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%207;%7D%20%22%7D)
+![Drawing digit 7](draw-7.png)
 
 If you have tried all the values, you'll have noticed that those that 5 does not work! Keep on reading to learn how to fix this issue.
 
@@ -139,7 +139,7 @@ Let's look at the numbers. We need to add a line every five digits after digit *
 
 Notice how the number of lines is equal to the integer part of the digit value divided by five, and since we should start drawing lines at the third row of the micro:bit display we can just add 2 to the calculation to get the *y* coordinate of each line, like this:
 
-![Drawing lines depending on the digit value](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20for%20i%205%20%7B%20%27%5Bdisplay:mbPlot%5D%27%20i%20%28%28%28v%20%27digit%20value%27%29%20%2F%205%29%20%2B%202%29;%7D;%7D%20%22%7D)
+![Drawing lines depending on the digit value](draw-lines.png)
 
 So, the generic code would look like this:
 
@@ -161,12 +161,12 @@ To begin, let us define a variable that will hold the value by clicking on the *
 
 When the project starts, we'll fix that value to *0*:
 
-![Initialize value to zero](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenStarted;%20value%20=%200;%7D%20%22%7D)
+![Initialize value to zero](init-0.png)
 
 Button *B* will increment the value and draw it to the screen, while button *A* will decrement it. We will also make sure to stay between boundaries!
 
-![MicroBlocks script](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27B%27;if%20%28value%20%3C%2020%29%20%7B%20value%20+=%201;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%7D;%7D%20%22%7D)
-![MicroBlocks script](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;if%20%28value%20%3E%200%29%20%7B%20value%20+=%20-1;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%7D;%7D%20%22%7D)
+![MicroBlocks script](button-b.png)
+![MicroBlocks script](button-a.png)
 
 #### To Learn More: Going Over 19
 
@@ -178,11 +178,11 @@ To begin, import the *Radio* library by looking for it in the library browser, t
 
 The idea here is to send the *groups of twenty* digit to another board once our value has overflown one single digit. That is:
 
-![Sending groups of twenty to the other board](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27B%27;if%20%28value%20%3C%2020%29%20%7B%20value%20+=%201;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%7D%20else%20%7B%20%27%5Bradio:sendInteger%5D%27%20%28value%20/%2020%29;%7D;%7D%20%22%7D)
+![Sending groups of twenty to the other board](radio-button-b.png)
 
 The other board will receive a value that it has to draw on screen, and it can do so like follows:
 
-![Drawing a digit when receiving it over radio](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenCondition%20%28%27%5Bradio:messageReceived%5D%27%29;%20%27draw%20Maya%20digit%27%20%28%27%5Bradio:receivedInteger%5D%27%29;%7D%20%22%7D)
+![Drawing a digit when receiving it over radio](radio-receive.png)
 
 Note that this block will need to be "turned on" to work. That is, we either need to click on it or click on the "play" button at the top right of the MicroBlocks window.
 
@@ -190,15 +190,15 @@ This does work, but now the sender board also needs to draw the remainder of the
 
 To do so, we can use the arithmetic function `modulo`, that gives us the remainder of dividing two numbers together. In this case, we want the remainder of the value divided by twenty:
 
-![Sender incrementer](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27B%27;%20value%20+=%201;if%20%28value%20%3C%2020%29%20%7B%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%7D%20else%20%7B%20%27%5Bradio:sendInteger%5D%27%20%28value%20/%2020%29;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20%28value%20%25%2020%29;%7D;%7D%20%22%7D)
+![Sender incrementer](radio-send-incrementer.png)
 
 But, actually, we could simplify this script a lot by always sending the groups of five to the other board and drawing the remainder, without taking in consideration whether we're over 19 or not. Regardless of the value, this board is always going to show the lowest digit:
 
-![Simplified sender incrementer](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27B%27;%20value%20+=%201;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20%28value%20%25%2020%29;%20%27%5Bradio:sendInteger%5D%27%20%28value%20/%2020%29;%7D%20%22%7D)
+![Simplified sender incrementer](simplified-sender.png)
 
 Finally, we should also send the groups of twenty from the script that decrements the value:
 
-![Finalized sender decrementer](https://microblocks.fun/render?json=%7B%22libs%22:%20%5B%22Radio%22%2C%20%22LED%20Display%22%5D%2C%20%22locale%22:%20%22English%22%2C%20%22scale%22:%201.15%2C%20%22script%22:%20%22script%2010%2010%20%7B%20whenButtonPressed%20%27A%27;if%20%28value%20%3E%200%29%20%7B%20value%20+=%20-1;%20%27%5Bdisplay:mbDisplayOff%5D%27;%20%27draw%20Maya%20digit%27%20value;%20%27%5Bradio:sendInteger%5D%27%20%28value%20/%2020%29;%7D;%7D%20%22%7D)
+![Finalized sender decrementer](radio-send-decrementer.png)
 
 With this setup, you can now print numbers as big as 399 in Maya!
 
