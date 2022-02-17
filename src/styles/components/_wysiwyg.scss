@@ -60,6 +60,7 @@
 
     @include breakpoint(lg) {
       font-size: $fontSize-125;
+      margin-bottom: $space-200;
     }
 
     &:empty {
@@ -82,9 +83,9 @@
 
   // Image
   p img {
-    // Space added besides the p margin
-    margin-top: $space-150;
-    margin-bottom: $space-150;
+    // Extra space added besides the p margin
+    // margin-top: $space-150;
+    // margin-bottom: $space-150;
   }
 
 
@@ -141,20 +142,38 @@
 
 
   // Caption
-  p img + .caption {
-    margin-top: -10px;
-    display: block;
-    padding: $space-050 $space-100 $space-050 $space-075;
-
-    background-color: $color-grey-200;
-    font-size: $fontSize-075;
-    line-height: $lineHeight-150;
-  }
-
-  // @supports selector(p:has(span))
   p.captioned {
+    display: inline-flex; // so it takes the width of the img
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 0;
     line-height: 0;
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+
+    // display: inline-grid;
+    // grid-template-columns: 1fr;
+
+    img {
+      line-height: 0;
+      display: block;
+    }
+
+    .caption {
+      display: inline-block;
+      padding: $space-050 $space-100 $space-050 $space-075;
+  
+      background-color: $color-grey-200;
+      font-size: $fontSize-075;
+      line-height: $lineHeight-150;
+
+      // this is overriden by JS declared width
+      // but not working...
+      // width: 10px;
+      // flex-grow: 1;
+    }
   }
 
 
