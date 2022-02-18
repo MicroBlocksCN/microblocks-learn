@@ -21,9 +21,9 @@ function autorun(){
   }
 
   // until browsers add support for :has in css...
-  // document.querySelectorAll('.caption').forEach(
-  //   span => span.parentElement.classList.add('captioned')
-  // );
+  document.querySelectorAll('.caption').forEach(
+    span => span.parentElement.classList.add('captioned')
+  );
 
   // Captions are wrapped in a <span> element,
   // that have a minimum width styles with CSS.

@@ -141,11 +141,11 @@
 
   // Caption
   p.captioned {
-    display: inline-flex; // so it takes the width of the img
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0;
-    line-height: 0;
+    // display: inline-flex; // so it takes the width of the img
+    // flex-direction: column;
+    // align-items: flex-start;
+    // margin-top: 0;
+    // line-height: 0;
 
     // display: flex;
     // flex-direction: column;
@@ -154,13 +154,16 @@
     // display: inline-grid;
     // grid-template-columns: 1fr;
 
+    width: min-content;
+    max-width: 100%;
+
     img {
       line-height: 0;
-      display: block;
+      // display: block;
     }
 
     .caption {
-      display: inline-block;
+      display: block;
       padding: $space-050 $space-100 $space-050 $space-075;
   
       background-color: $color-grey-200;
