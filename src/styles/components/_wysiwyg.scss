@@ -263,30 +263,22 @@
   .safety {
     position: relative;
     display: block;
-    margin: $space-300 0 $space-100;
-    padding: $space-300 $space-100 $space-100 $space-100;
+    margin: $space-300 0 $space-175;
+    padding: $space-200 $space-100 $space-100 $space-100;
 
     border-radius: $borderRadius-025;
-
-    // &::before {
-    //   content: '';
-    //   display: block;
-    //   margin-bottom: $space-025;
-
-    //   font-family: $font-display;
-    //   font-weight: 700;
-    // }
+    line-height: $lineHeight-150;
 
     &::after {
       content: '';
       
       display: block;
-      height: $space-400;
-      width: $space-400;
+      height: $space-300;
+      width: $space-300;
 
       position: absolute;
-      top: calc( #{$space-200} * -1);
-      right: $space-200;
+      top: calc( #{$space-150} * -1);
+      right: $space-100;
       z-index: $zindex-above;
 
       border-radius: $borderRadius-max;
@@ -294,23 +286,42 @@
 
     @include breakpoint(lg) {
       padding: $space-200;
+      font-size: $fontSize-125;
+      margin-bottom: $space-200;
     }
 
 
     // Elements
-    h3, h4 {
+
+    
+    h4 {
       margin-top: 0;
+      margin-bottom: $space-050;
+      font-size: $fontSize-100;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: $fontSize-150;
+      color: $color-grey-900;
+      margin-bottom: $space-200;
+    }
+
+    h4 + p {
+      margin-top: $space-200;
     }
   }
 
 
   .fact {
+    color: $color-blue-dark;
     background-color: rgba($color-blue, 0.1);
 
-    // &::before {
-    //   content: 'FUN FACT';
-    //   color: $color-blue;
-    // }
+    h4 {
+      color: $color-blue;
+    }
 
     &::after {
       background-color: $color-blue;
@@ -319,12 +330,12 @@
 
 
   .note {
+    color: $color-green-dark;
     background-color: rgba($color-green, 0.1);
 
-    // &::before {
-    //   content: 'NOTE';
-    //   color: $color-green;
-    // }
+    h4 {
+      color: $color-green;
+    }
 
     &::after {
       background-color: $color-green;
@@ -333,12 +344,12 @@
 
 
   .safety {
+    color: $color-red-dark;
     background-color: rgba($color-red, 0.1);
 
-    // &::before {
-    //   content: 'SAFETY NOTE';
-    //   color: $color-red;
-    // }
+    h4 {
+      color: $color-red;
+    }
 
     &::after {
       background-color: $color-red;

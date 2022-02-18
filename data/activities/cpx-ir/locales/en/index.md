@@ -1,6 +1,25 @@
 This activity card shows how to get use an infrared remote control with a Circuit Playground Express.
 
 [[note]]
+#### Correct Card
+This card requires a Circuit Playground Express, which has a built-in IR receiver,
+which the Circuit Playground Bluefruit does not.
+[[/note]]
+
+[[note]]
+#### Correct Card
+### The CPExpress
+This card requires a Circuit Playground Express, which has a built-in IR receiver,
+which the Circuit Playground Bluefruit does not.
+[[/note]]
+
+[[note]]
+#### Correct Card
+### The CPExpress
+
+This card requires a Circuit Playground Express, which has a built-in IR receiver,
+which the Circuit Playground Bluefruit does not.
+
 This card requires a Circuit Playground Express, which has a built-in IR receiver,
 which the Circuit Playground Bluefruit does not.
 [[/note]]

@@ -83,6 +83,10 @@ Write your safety note here
 [[/safety]]
 ```
 
+The `h4` produces an uppercase coloured small title. The `h3` produces a standard black title. They can be used individually or combined. When they are usedtogether, the `h4` must appear on top, expressing the nature of the note ('fact', 'safety', etc.).
+
+#### Footnotes
+
 Another particularity of our rendering of MarkDown files is that you can add
 footnotes to images using similar syntax, like so:
 
