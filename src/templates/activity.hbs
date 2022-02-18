@@ -47,9 +47,13 @@
                         Components:
                     </h3>
                     <div class="c_hero-yellow__components-list">
-                        {{#each components}}
-                        <span class="c_comma-separated">{{localize this}}</span>
-                        {{/each}}
+                        {{#if components}}
+                            {{#each components}}
+                            <span class="c_comma-separated">{{localize this}}</span>
+                            {{/each}}
+                        {{else}}
+                            <span>{{localize 'no-components'}}</span>
+                        {{/if}}
                     </div>
                 </div>
 

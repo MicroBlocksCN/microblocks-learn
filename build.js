@@ -27,12 +27,13 @@ markdown.setOption('tables', true);
 markdown.addExtension({
     type: 'output',
     filter: function (html) {
-        return html.replace(
-            /\[\[(.+?)\]\](.*)\[\[\/.*\]\]/g, '<span class="$1">$2</span>'
-        ).replace(
+        return html.replaceAll(
+            /<p>(<img.*)title="(.*)" \/><\/p>/g,
+            '<figure>$1\/><figcaption>$2</figcaption></figure>'
+        ).replaceAll(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
-        ).replace(
-            /\[\[\/.*?\]\]<\/p>/g, `</div>`
+        ).replaceAll(
+            /\[\[\/.*\]\]<\/p>/g, `</div>`
         )
     }
 });

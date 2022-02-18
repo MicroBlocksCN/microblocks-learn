@@ -30,6 +30,7 @@ function autorun(){
   // The picture is set to block, and the 
   // common parent <p> is set to inline-block.
   // The <p> then gets the pictures' CSS width. 
+    /*
   document.querySelectorAll('.caption').forEach(
     span => {
       let parentWidth = span.parentElement.offsetWidth;
@@ -47,7 +48,7 @@ function autorun(){
       newDiv.innerHTML = span.innerHTML;
       span.parentElement.replaceChild(newDiv, span);
     }
-  );
+  );*/
 
 
 };
