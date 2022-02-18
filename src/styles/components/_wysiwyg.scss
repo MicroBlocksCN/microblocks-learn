@@ -140,26 +140,29 @@
 
 
   // Caption
+  // weird hack: https://www.reddit.com/r/Frontend/comments/svll3v/stupid_problem_div_with_two_child_and_the_second/
   p.captioned {
-    // display: inline-flex; // so it takes the width of the img
-    // flex-direction: column;
-    // align-items: flex-start;
-    // margin-top: 0;
-    // line-height: 0;
-
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
-
-    // display: inline-grid;
-    // grid-template-columns: 1fr;
-
     width: min-content;
-    max-width: 100%;
+    line-height: 0;
 
     img {
-      line-height: 0;
-      // display: block;
+      max-width: Min(640px, calc( 100vw - 32px ));
+
+      @include breakpoint(md) {
+        max-width: Min(672px, 95vw);
+      }
+      
+      @include breakpoint(lg) {
+        max-width: Min(624px, 95vw);
+      }
+
+      @include breakpoint(xl) {
+        max-width: Min(757px, 95vw);
+      }
+
+      @include breakpoint(xxl) {
+        max-width: Min(821px, 95vw);
+      }
     }
 
     .caption {
@@ -169,11 +172,6 @@
       background-color: $color-grey-200;
       font-size: $fontSize-075;
       line-height: $lineHeight-150;
-
-      // this is overriden by JS declared width
-      // but not working...
-      // width: 10px;
-      // flex-grow: 1;
     }
   }
 
