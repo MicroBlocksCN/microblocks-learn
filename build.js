@@ -29,7 +29,7 @@ markdown.addExtension({
     filter: function (html) {
         return html.replaceAll(
             /<p>(<img.*)title="(.*)" \/><\/p>/g,
-            '<figure>$1\/><figcaption>$2</figcaption></figure>'
+            '<figure class="captioned">$1\/><figcaption class="caption">$2</figcaption></figure>'
         ).replaceAll(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replaceAll(

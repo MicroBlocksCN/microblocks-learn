@@ -141,13 +141,14 @@
 
   // Caption
   // weird hack: https://www.reddit.com/r/Frontend/comments/svll3v/stupid_problem_div_with_two_child_and_the_second/
-  p.captioned {
+  .captioned {
+    margin-bottom: $space-150; // p like
     width: min-content;
     line-height: 0;
 
     img {
-      // max-width: 100%; breaks it, so we add
-      // max-container size manually
+      // max-width: 100%; breaks it... 
+      // adding container size manually...
       max-width: Min(640px, calc( 100vw - 32px ));
 
       @include breakpoint(md) {
