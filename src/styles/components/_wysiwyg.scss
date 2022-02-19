@@ -146,22 +146,24 @@
     line-height: 0;
 
     img {
+      // max-width: 100%; breaks it, so we add
+      // max-container size manually
       max-width: Min(640px, calc( 100vw - 32px ));
 
       @include breakpoint(md) {
-        max-width: Min(672px, 95vw);
+        max-width: Min(672px, 100vw);
       }
       
       @include breakpoint(lg) {
-        max-width: Min(624px, 95vw);
+        max-width: Min(624px, 100vw);
       }
 
       @include breakpoint(xl) {
-        max-width: Min(757px, 95vw);
+        max-width: Min(757px, 100vw);
       }
 
       @include breakpoint(xxl) {
-        max-width: Min(821px, 95vw);
+        max-width: Min(821px, 100vw);
       }
     }
 
