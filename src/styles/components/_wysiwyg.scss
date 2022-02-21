@@ -231,6 +231,47 @@
 
 
 
+
+  // Tables
+  // https://codepen.io/lukepeters/pen/JjoVWd
+  // ========================================
+
+  table {
+    margin-bottom: $space-150;
+    border-collapse: collapse;
+  }
+
+  table thead tr {
+    background-color: $color-yellow;
+    border: 1px solid $color-yellow-dark;
+    text-align: left;
+  }
+
+  table th,
+  table td {
+    padding: $space-075;
+  }
+
+  table tbody tr {
+    border-right: 1px solid $color-grey-400;
+    border-bottom: 1px solid $color-grey-400;
+    border-left: 1px solid $color-grey-400;
+  }
+
+  table tbody tr:nth-of-type(even) {
+    background-color: $color-grey-200;
+  }
+
+  // table tbody tr:last-of-type {
+  //   border-bottom: 2px solid $color-yellow-dark;
+  // }
+
+  table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+
+
   
   // Exceptions
   // ========================================
