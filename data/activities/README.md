@@ -5,6 +5,7 @@
 Copy the "sample" directory, renaming it to something similar to your activity
 title, changing spaces for dashes and removing other special characters.
 
+
 ## Metadata
 
 Edit the `meta.json` file and add all the metadata. Below is an explanation of
@@ -32,6 +33,7 @@ all the fields:
 * **components:**       An array of component keys. These keys can be found and
                         added at data/json/components.json.
 
+
 ## Files
 
 Add all the files that the activity needs (that is, all the images, libraries,
@@ -41,6 +43,25 @@ projects, etc) into the `files` directory.
 
 The thumbnail for your activity should be named `thumbnail.png` and live in the
 `files` directory. It should be at least 420 pixels wide and 240 pixels high.
+
+### Activity Card
+
+Your activity could additionally have an activity card to hand to your students.
+
+Please store it as PDF under the `files` folder. You can have different
+localized versions of your activity card under the `files` folders of each
+locale, or a global one under the root `files` folder.
+
+### Project File
+
+If you want, you can provide a MicroBlocks project file for your activity. This
+could contain the full solution to the activity, or maybe be a starter project
+for students to begin from.
+
+Please name it `project.ubp` and store it in the `files` folder. You can have
+different localized versions of your project file under the `files` folders of
+each locale, or a global one under the root `files` folder.
+
 
 ## Locales
 
@@ -102,14 +123,6 @@ If your activity has a teacher's guide, please write it also in MarkDown on the
 
 > **Note:** To reference files from this markdown file, you'll need to prefix
 > your path with `../`, since all files live in the root directory.
-
-#### Activity Card
-
-Your activity could additionally have an activity card to hand to your students.
-
-Please store it as PDF under the `files` folder. You can have different
-localized versions of your activity card under the `files` folders of each
-locale, or a global one under the root `files` folder.
 
 ### Metadata
 

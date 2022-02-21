@@ -366,6 +366,11 @@ function buildActivities () {
                             `${localePath}/files/activity-card.pdf`) ||
                         fs.existsSync(
                             `${activityPath}/files/activity-card.pdf`);
+                    activity['has-project'] =
+                        fs.existsSync(
+                            `${localePath}/files/project.ubp`) ||
+                        fs.existsSync(
+                            `${activityPath}/files/project.ubp`);
                     activity['has-guide'] =
                         fs.existsSync(`${localePath}/teachers-guide.md`);
 

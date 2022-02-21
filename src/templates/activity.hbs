@@ -70,7 +70,7 @@
 
         <!-- Sidebar Contents -->
         <div class="col col-px col-12 lg-col-3 xl-col-3">
-            {{#if (or has-guide has-card)}}
+            {{#if (or has-guide has-card has-project)}}
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
                     {{localize "resources"}}
@@ -91,19 +91,12 @@
                     </a>
                     {{/if}}
 
-                    {{!-- {{ #if has-guide}}
-                    <a class="c_button" href="./guide">
-                        {{> svg.icon-slides-20x20 }}
-                        Slides
-                    </a>
-                    {{ /if}} --}}
-                    
-                    {{!-- {{ #if has-guide}}
-                    <a class="c_button" href="./guide">
+                    {{#if has-project}}
+                    <a class="c_button" href="./project.ubp" download>
                         {{> svg.icon-scripts-20x20 }}
-                        Scripts
+                        MicroBlocks Project
                     </a>
-                    {{ /if}} --}}
+                    {{/if}}
 
                 </div>
             </aside>
@@ -133,6 +126,7 @@
                         </div>
                     </div>
 
+                    {{#if topics}}
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
                             {{localize "lbl-topics"}}
@@ -143,6 +137,7 @@
                             {{/each}}
                         </div>
                     </div>
+                    {{/if}}
 
                     {{#if translations}}
                     <div class="v_activity__details-group">
