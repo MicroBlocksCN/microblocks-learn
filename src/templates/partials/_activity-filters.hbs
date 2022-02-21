@@ -128,8 +128,10 @@
 
         {{!-- Buttons --}}
         <div>
-            <button class="c_filters__button c_filters__button--filter">{{localize "btn-filter"}}</button>
-            <button class="c_filters__button c_filters__button--reset">{{localize "btn-reset"}}</button>
+            <button
+                onclick="event.preventDefault(); resetFilters();"
+                class="c_filters__button c_filters__button--reset"
+            >{{localize "btn-reset"}}</button>
         </div>
 
 

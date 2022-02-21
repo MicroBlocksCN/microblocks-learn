@@ -44,11 +44,15 @@ function updateActivityList () {
     var listDiv = document.querySelector('#activity-grid'),
         countDiv = document.querySelector('.v_home__activity-count'),
         filtered = filteredActivities();
+
     totalPages = Math.ceil(filtered.length / pageSize);
     listDiv.innerHTML = '';
     countDiv.innerHTML = filtered.length > 1 ?
         localize('result-count', filtered.length) :
-        localize('result-count-one');
+        (filtered.length === 0 ?
+            localize('result-count-zero') :
+            localize('result-count-one')
+        );
     filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
         (activity) => {
             listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
@@ -191,6 +195,17 @@ function applyFilter (selector, value) {
     updateActivityList();
 }; 
 
+function resetFilters () {
+    document.querySelectorAll('.activity-filter').forEach((select) => {
+        select.value = '';
+    });
+    document.querySelectorAll('.activity-toggle').forEach((check) => {
+        check.checked = false;
+    });
+    filters = {};
+    updateActivityList();
+};
+
 function filteredActivities() {
     var filtered = [];
 
@@ -300,13 +315,13 @@ function updatePages () {
 
 
 
-
-
 /**
  * UI Responsive functionalities
  * To refactor (add inline, or keep here, or separated JS file)
  * 
- * Bernat, what you think?
+ * MC: Bernat, what you think?
+ * 
+ * BR: Looks fine to me here. Feel free to delete this comment :)
  */
 
 function filtersResponsiveness() {
@@ -331,8 +346,6 @@ function filtersResponsiveness() {
         activityFilters.setAttribute('tabindex', '0');
     });
 };
-
-
 
 
 /**
