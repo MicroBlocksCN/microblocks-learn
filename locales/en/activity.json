@@ -1,5 +1,18 @@
 {
     "author": "by @1",
+    "boards": "Boards",
+    "components": "Components",
+    "no-components": "None",
+    "resources": "Resources",
+    "activity-card": "Activity Card",
+    "teachers-guide": "Teacher's Guide",
+    "activity-details": "Activity Details",
+    "lbl-level": "Level",
+    "lbl-duration": "Estimated Time",
     "duration": "@1-@2 minutes",
-    "no-components": "None"
+    "lbl-topics": "Topics",
+    "lbl-languages": "Available Languages",
+    "lbl-printable": "Printable Version",
+    "printable-txt": "You can load a printer friendly version of this page for printing or save it as a PDF file.",
+    "btn-printable": "Printable Version"
 }

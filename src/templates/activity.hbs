@@ -32,7 +32,7 @@
                 <div class="c_hero-yellow__boards">
                     <h3 class="c_hero-yellow__boards-title c_title-small">
                         {{> svg.icon-board-20x20 }}
-                        Boards:
+                        {{localize "boards"}}:
                     </h3>
                     <div class="c_hero-yellow__boards-list">
                         {{#each boards}}
@@ -44,7 +44,7 @@
                 <div class="c_hero-yellow__components">
                     <h3 class="c_hero-yellow__components-title c_title-small">
                         {{> svg.icon-component-20x20 }}
-                        Components:
+                        {{localize "components"}}:
                     </h3>
                     <div class="c_hero-yellow__components-list">
                         {{#if components}}
@@ -73,21 +73,21 @@
             {{#if (or has-guide has-card)}}
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
-                    Resources
+                    {{localize "resources"}}
                 </h3>
                 <div>
                     
                     {{#if has-card}}
                     <a class="c_button" href="./activity-card.pdf">
                         {{> svg.icon-document-20x20 }}
-                        Activity Card
+                        {{localize "activity-card"}}
                     </a>
                     {{/if}}
 
                     {{#if has-guide}}
                     <a class="c_button" href="./guide">
                         {{> svg.icon-student-16x16 }}
-                        Teacher's Guide
+                        {{localize "teachers-guide"}}
                     </a>
                     {{/if}}
 
@@ -111,13 +111,13 @@
 
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
-                    Activity Details
+                    {{localize "activity-details"}}
                 </h3>
                 <div class="v_activity__side-box v_activity__side-box--details">
                     
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-level">
-                            Level
+                            {{localize "lbl-level"}}
                         </h4>
                         <div class="v_activity__details-group-content">
                             {{localize (join "lvl_" level)}}
@@ -126,7 +126,7 @@
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
-                            Estimated Time
+                            {{localize "lbl-duration"}}
                         </h4>
                         <div class="v_activity__details-group-content">
                             {{localize "duration" time.[0] time.[1]}}
@@ -135,18 +135,19 @@
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
-                            Topics
+                            {{localize "lbl-topics"}}
                         </h4>
                         <div class="v_activity__details-group-content">
                             {{#each topics}}
-                            <span class="comma-separated">{{localize this}}</span>
+                            <span class="c_comma-separated">{{localize this}}</span>
                             {{/each}}
                         </div>
                     </div>
 
+                    {{#if translations}}
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
-                            Available Languages
+                            {{localize "lbl-languages"}}
                         </h4>
                         <ul class="v_activity__details-group-content">
                             {{#each translations}}
@@ -156,17 +157,18 @@
                             {{/each}}
                         </ul>
                     </div>
+                    {{/if}}
 
                 </div>
             </aside>
 
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 <h3 class="v_activity__side-title">
-                    Printable Version
+                    {{localize "lbl-printable"}}
                 </h3>
                 <div>
-                    <p>You can load a printer friendly version of this page for printing or save it as a PDF file.</p>
-                    <a class="c_button-small" href="#">Printable Version</a>
+                    <p>{{localize "printable-txt"}}</p>
+                    <a class="c_button-small" href="#">{{localize "btn-printable"}}</a>
                 </div>
             </aside>
 
