@@ -1,0 +1,50 @@
+{
+    "index-nav-item": "Índice",
+    "activities-nav-item": "Actividades",
+    "get-started-nav-item": "Primeros Pasos",
+    "educators-nav-item": "Educadores",
+    "other-resources-nav-item": "Otros Recursos",
+    "run-nav-item": "Programa",
+
+    "contribute": "Contribuye",
+    "contribute-txt": "Nos puedes ayudar a @1, @2, @3 y con @4.",
+    "lnk-translators": "traducir",
+    "lnk-content-creators": "crear contenidos",
+    "lnk-ambassadors": "correr la voz",
+    "lnk-patrons": "apoyo económico",
+
+    "report-issue": "Infórmanos de un problema",
+    "report-issue-txt": "Infórmanos sobre errores o pide nuevas funcionalidades en nuestro registro de problemas.",
+    "repo": "Repositorio de BitBucket",
+
+    "contact": "Escríbenos",
+    "contact-txt": "¿Tienes preguntas o quieres colaborar con nosotros? ¡Escríbenos!",
+
+    "copyright": "por @1, @2 y @3.",
+    "license": "MicroBlocks es @1 bajo las condiciones de la @2.",
+    "free-software": "software libre",
+    "mpl2": "Licencia Pública de Mozilla v2.0",
+
+    "cmp_alligators": "Pinzas de cocodrilo",
+    "cmp_angle_servo": "Servo (ángulo)",
+    "cmp_cr_servo": "Servo (RC)",
+    "cmp_dht22": "DHT22 (ambiental)",
+    "cmp_ext_board": "Placa de extensión",
+    "cmp_ir_remote": "Control remoto (IR)",
+    "cmp_led": "LED",
+    "cmp_led_rgb": "LED RGB",
+    "cmp_neopixels": "NeoPíxeles",
+    "cmp_speaker": "Altavoz",
+
+    "tpc_art": "Arte",
+    "tpc_data": "Datos",
+    "tpc_game": "Juego",
+    "tpc_history": "Historia",
+    "tpc_maths": "Matemáticas",
+    "tpc_music": "Música",
+    "tpc_robotics": "Robótica",
+    "tpc_sound": "Sonido",
+
+    "lvl_1": "Principiante",
+    "lvl_2": "Iniciado"
+}

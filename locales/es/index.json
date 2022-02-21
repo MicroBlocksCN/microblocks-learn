@@ -1,0 +1,23 @@
+{
+    "page-title": "Aprende MicroBlocks",
+    "top-label": "Actividades",
+    "result-count": "@1 resultados.",
+    "result-count-one": "1 resultado.",
+    "no-components": "Ninguno",
+    "components-unset": "Indiferente",
+    "levels-all": "Todos",
+    "components-all": "Todos",
+    "locales-all": "Todos",
+    "boards-all": "Todas",
+    "topics-all": "Todos",
+    "language": "Idioma",
+    "board": "Placa",
+    "chk-compatible": "y placas compatibles",
+    "components": "Componentes",
+    "level+resources": "Nivel y recursos",
+    "chk-card": "con targeta de actividad",
+    "chk-guide": "con guía docente",
+    "topics": "Temas",
+    "btn-filter": "Filtra",
+    "btn-reset": "Reinicializa"
+}
