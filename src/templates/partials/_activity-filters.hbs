@@ -13,7 +13,7 @@
         <fieldset class="c_filters__group">
             <legend class="c_filters__title">
                 {{> svg.icon-language-16x16 }}
-                Language
+                {{localize "language"}}
             </legend>
 
             <div class="c_filters__input-wrapper">
@@ -32,7 +32,7 @@
         <fieldset class="c_filters__group">
             <legend class="c_filters__title">
                 {{> svg.icon-board-16x16 }}
-                Board
+                {{localize "board"}}
             </legend>
 
             <div class="c_filters__input-wrapper">
@@ -46,7 +46,7 @@
                 <label><input
                     onchange="applyFilter('compatible', this.checked)"
                     class="activity-toggle"
-                    type="checkbox"> and compatible boards
+                    type="checkbox"> {{localize "chk-compatible"}}
                 </label>
             </div>
 
@@ -57,7 +57,7 @@
         <fieldset class="c_filters__group">
             <legend class="c_filters__title">
                 {{> svg.icon-components-16x16 }}
-                Components
+                {{localize "components"}}
             </legend>
 
             <div class="c_filters__input-wrapper">
@@ -76,7 +76,7 @@
         <fieldset class="c_filters__group">
             <legend class="c_filters__title">
                 {{> svg.icon-student-16x16 }}
-                Level & Resources
+                {{localize "level+resources"}}
             </legend>
 
             <div class="c_filters__input-wrapper">
@@ -95,13 +95,13 @@
                 <label><input
                     onchange = "applyFilter('has-card', this.checked)"
                     class = "activity-toggle"
-                    type="checkbox"> has activity card
+                    type="checkbox"> {{localize "chk-card"}}
                 </label>
 
                 <label><input
                     onchange = "applyFilter('has-guide', this.checked)"
                     class = "activity-toggle"
-                    type="checkbox"> has teacher's guide
+                    type="checkbox"> {{localize "chk-guide"}}
                 </label>
             </div>
 
@@ -112,7 +112,7 @@
         <fieldset class="c_filters__group">
             <legend class="c_filters__title">
                 {{> svg.icon-topics-16x16 }}
-                Topics
+                {{localize "topics"}}
             </legend>
 
             <div class="c_filters__input-wrapper">
@@ -128,8 +128,8 @@
 
         {{!-- Buttons --}}
         <div>
-            <button class="c_filters__button c_filters__button--filter">Filter</button>
-            <button class="c_filters__button c_filters__button--reset">Reset</button>
+            <button class="c_filters__button c_filters__button--filter">{{localize "btn-filter"}}</button>
+            <button class="c_filters__button c_filters__button--reset">{{localize "btn-reset"}}</button>
         </div>
 
 

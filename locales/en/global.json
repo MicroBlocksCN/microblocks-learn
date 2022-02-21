@@ -6,6 +6,25 @@
     "other-resources-nav-item": "Other Resources",
     "run-nav-item": "Run",
 
+    "contribute": "Contribute",
+    "contribute-txt": "We are actively searching for @1, @2, @3 and @4.",
+    "lnk-translators": "translators",
+    "lnk-content-creators": "content creators",
+    "lnk-ambassadors": "spreading the word",
+    "lnk-patrons": "financial support",
+
+    "report-issue": "Report an Issue",
+    "report-issue-txt": "Report a bug or request a feature on our issue tracker.", 
+    "repo": "BitBucket Repository",
+
+    "contact": "Get in Touch",
+    "contact-txt": "Have a question or want to colaborate? Drop us a line!",
+
+    "copyright": "by @1, @2 and @3.",
+    "license": "Microblocks is @1, released under the @2.",
+    "free-software": "free software",
+    "mpl2": "Mozilla Public License v2.0",
+
     "board_calliope": "Calliope",
     "board_clue": "Adafruit Clue",
     "board_cpx": "Circuit Playground Express",

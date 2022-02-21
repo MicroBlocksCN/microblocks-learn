@@ -12,33 +12,36 @@
 
         <!-- Contribute -->
         <div class="footer__col col-12 col-px md-col-6 lg-col-5 lg-offset-1 xl-col-3 xl-offset-0">
-            <h3>Contribute</h3>
-            <p>
-                We are actively searching for <a href="/contribute#translate">translators</a>, <a href="/contribute#content-creation">content creators</a>, <a href="/about#ambassadors">spreading  the word</a> and <a href="/contribute#financial-contribution">financial support</a>.
-            </p>
+            <h3>{{localize "contribute"}}</h3>
+{{#markdown}}{{localize "contribute-txt"
+    (join "[" (localize "lnk-translators") "](https://microblocks.fun/contribute#translate)")
+    (join "[" (localize "lnk-content-creators") "](https://microblocks.fun/contribute#content-creation)")
+    (join "[" (localize "lnk-ambassadors") "](https://microblocks.fun/about#ambassadors)")
+    (join "[" (localize "lnk-patrons") "](https://microblocks.fun/contribute#financial-contribution)")
+}}{{/markdown}}
         </div>
 
         <!-- Report an Issue -->
         <div class="footer__col col-12 col-px md-col-6 lg-col-5 xl-col-3">
-            <h3>Report an Issue</h3>
+            <h3>{{localize "report-issue"}}</h3>
             <p>
-                Report a bug or request a feature on our issue tracker.
+            {{localize "report-issue-txt"}}
             </p>
             <a class="footer__link" href="https://bitbucket.org/john_maloney/smallvm/issues" target="_blank">
                 <div class="circle">
                     {{> svg.icon-bitbucket }}
                 </div>
                 <div class="link-circle-w-text__text">
-                    BitBucket Repository
+                    {{localize "repo"}}
                 </div>
             </a>
         </div>
 
         <!-- Get in Touch -->
         <div class="footer__col col-12 col-px md-col-6 lg-col-5 offset-lg-1 xl-col-3 xl-offset-0">
-            <h3>Get in Touch</h3>
+            <h3>{{localize "contact"}}</h3>
             <p>
-                Have a question or want to colaborate? Drop us a line!
+            {{localize "contact-txt"}}
             </p>
             <a class="footer__link" href="mailto:interest@microblocks.fun" target="_blank">
                 <div class="circle">
@@ -56,9 +59,14 @@
     <!-- Legal -->
     <div class="footer__legal row">
         <div class="col-12 col-px md-col-10">
-            <p>
-                © <span class="year">2022</span> by <a href="https://harc.ycr.org/member/john_maloney/" target="_blank">John Maloney</a>, <a href="https://github.com/jmoenig" target="_blank">Jens Mönig</a> and <a href="http://romagosa.work" target="_blank">Bernat Romagosa</a>.<br />
-                MicroBlocks is <a href="https://bitbucket.org/john_maloney/smallvm" target="_bklank">free software</a>, released under the <a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank">Mozilla Public License v2.0</a>.
+{{#markdown}}© <span class="year">2022</span> {{localize "copyright" 
+    "[John Maloney](http://harc.ypr.org/member/john_maloney)"
+    "[Jens Mönig](https://github.com/jmoenig)"
+    "[Bernat Romagosa](https://romagosa.work)"}}
+<br/>{{localize "license"
+    (join "[" (localize 'free-software') "](https://bitbucket.org/john_maloney/smallvm)")
+    (join "[" (localize 'mpl2') "](https://www.mozilla.org/en-US/MPL/2.0/)")}}
+{{/markdown}}
             </p>
         </div>
     </div>

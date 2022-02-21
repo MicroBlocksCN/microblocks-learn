@@ -1,6 +1,6 @@
 {
-    "pageTitle": "Welcome",
-    "pageIntro": "Welcome to MicroBlocks!",
+    "page-title": "Welcome",
+    "top-label": "Activities",
     "result-count": "@1 results.",
     "result-count-one": "1 result.",
     "no-components": "None",
@@ -9,5 +9,15 @@
     "components-all": "All",
     "locales-all": "All",
     "boards-all": "All",
-    "topics-all": "All"
+    "topics-all": "All",
+    "language": "Language",
+    "board": "Board",
+    "chk-compatible": "and compatible boards",
+    "components": "Components",
+    "level+resources": "Level & Resources",
+    "chk-card": "has activity card",
+    "chk-guide": "has teacher's guide",
+    "topics": "Topics",
+    "btn-filter": "Filter",
+    "btn-reset": "Reset"
 }

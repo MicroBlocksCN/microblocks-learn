@@ -4,5 +4,47 @@
     "get-started-nav-item": "Primers Passos",
     "educators-nav-item": "Educadors",
     "other-resources-nav-item": "Altres Recursos",
-    "run-nav-item": "Obre"
+    "run-nav-item": "Programa",
+
+    "contribute": "Contribueix",
+    "contribute-txt": "Ens pots ajudar a @1, @2, @3 i amb @4.",
+    "lnk-translators": "traduir",
+    "lnk-content-creators": "crear continguts",
+    "lnk-ambassadors": "fer córrer la veu",
+    "lnk-patrons": "suport econòmic",
+
+    "report-issue": "Informa'ns d'un problema",
+    "report-issue-txt": "Informa'ns sobre errors o demana noves funcionalitats al nostre registre de problemes.",
+    "repo": "Repositori de BitBucket",
+
+    "contact": "Escriu-nos",
+    "contact-txt": "Tens preguntes o vols col·laborar amb nosaltres? Escriu-nos!",
+
+    "copyright": "per @1, @2 i @3.",
+    "license": "Microblocks és @1 sota les condicions de la @2.",
+    "free-software": "programari lliure",
+    "mpl2": "Llicència Pública de Mozilla v2.0",
+
+    "cmp_alligators": "Pinces de cocodril",
+    "cmp_angle_servo": "Servo (angle)",
+    "cmp_cr_servo": "Servo (RC)",
+    "cmp_dht22": "DHT22 (ambiental)",
+    "cmp_ext_board": "Placa d'extensió",
+    "cmp_ir_remote": "Control remot (IR)",
+    "cmp_led": "LED",
+    "cmp_led_rgb": "LED RGB",
+    "cmp_neopixels": "NeoPixels",
+    "cmp_speaker": "Altaveu",
+
+    "tpc_art": "Art",
+    "tpc_data": "Dades",
+    "tpc_game": "Joc",
+    "tpc_history": "Història",
+    "tpc_maths": "Matemàtiques",
+    "tpc_music": "Música",
+    "tpc_robotics": "Robòtica",
+    "tpc_sound": "So",
+
+    "lvl_1" : "Principiant",
+    "lvl_2" : "Iniciat"
 }

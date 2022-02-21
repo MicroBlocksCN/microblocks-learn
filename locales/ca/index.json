@@ -1,6 +1,6 @@
 {
-    "pageTitle": "Aprèn MicroBlocks",
-    "pageIntro": "Benvingut a MicroBlocks!",
+    "page-title": "Aprèn MicroBlocks",
+    "top-label": "Activitats",
     "result-count": "@1 resultats.",
     "result-count-one": "1 resultat.",
     "no-components": "Cap",
@@ -9,5 +9,15 @@
     "components-all": "Tots",
     "locales-all": "Tots",
     "boards-all": "Totes",
-    "topics-all": "Tots"
+    "topics-all": "Tots",
+    "language": "Idioma",
+    "board": "Placa",
+    "chk-compatible": "i plaques compatibles",
+    "components": "Components",
+    "level+resources": "Nivell i recursos",
+    "chk-card": "amb tarja d'activitat",
+    "chk-guide": "amb guia docent",
+    "topics": "Temes",
+    "btn-filter": "Filtra",
+    "btn-reset": "Reinicialitza"
 }
