@@ -62,9 +62,10 @@
   display: inline-flex;
   align-items: center;
   
-  @include box;
-  color: $color-purple; // Icon BGs inherits it
+  background-color: $color-blue-dark;
+  border-radius: $borderRadius-025;
 
+  color: $color-white; 
   font-family: $font-display;
   font-weight: 500;
   font-size: $fontSize-100;
@@ -73,13 +74,13 @@
 
   svg {
     margin-right: $space-050;
-    color: $color-purple;
+    color: $color-blue-light;
 
     transition: all $trans-0200 $trans-easing;
   }
 
   span {
-    color: $color-grey-900;
+    color: $color-white;
   }
 
   &:hover {
