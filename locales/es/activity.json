@@ -12,6 +12,10 @@
     "duration": "@1-@2 minutos",
     "lbl-topics": "Temas",
     "lbl-languages": "Idiomas disponibles",
+    "no-translations": "No hay traducciones disponibles",
+    "lbl-translate": "Traduccion",
+    "translate-txt": "¡Ayúdanos a traducir el contenido de la targeta de actividad a tu idioma!",
+    "btn-card-slides": "Abre en Google Slides",
     "lbl-printable": "Versión imprimible",
     "printable-txt": "Puedes ver una versión imprimible de esta página para imprimirla o guardarla como PDF.",
     "btn-printable": "Versión imprimible"

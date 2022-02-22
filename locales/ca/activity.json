@@ -12,6 +12,10 @@
     "duration": "@1-@2 minuts",
     "lbl-topics": "Temes",
     "lbl-languages": "Idiomes disponibles",
+    "no-translations": "Cap traducció disponible",
+    "lbl-translate": "Traducció",
+    "translate-txt": "Ajuda'ns a traduir el contingut de la tarja d'activitat al teu idioma!",
+    "btn-card-slides": "Obre a Google Slides",
     "lbl-printable": "Versió imprimible",
     "printable-txt": "Pots veure una versió imprimible d'aquesta pàgina per a imprimir-la o desar-la com a PDF.",
     "btn-printable": "Versió imprimible"

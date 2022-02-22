@@ -161,7 +161,7 @@
                                 {{/each}}
                             </ul>
                         {{else}}
-                            <span class="v_activity__details-none">No translations available</span>
+                            <span class="v_activity__details-none">{{localize "no-translations"}}</span>
                         {{/if}}
                         </div>
                         
@@ -173,15 +173,15 @@
             {{#if card-slides-url}}
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 <h3 class="v_activity__side-title">
-                    Translate
+                    {{localize "lbl-translate"}}
                 </h3>
                 <div>
                     <p>
-                        Help us translating the contents of the actvity card to your language!
+                        {{localize "translate-txt"}}
                     </p>
                     <a class="c_button-small" href="{{card-slides-url}}">
                         {{> svg.icon-slides-16x16 }}
-                        <span>Open in Google Slides</span>
+                        <span>{{localize "btn-card-slides"}}</span>
                     </a>
                 </div>
             </aside>
