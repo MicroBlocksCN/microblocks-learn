@@ -1,0 +1,11 @@
+{{!-- 
+ -- Button
+ -- Requires: href, icon, title, arrow
+ -- Optional: download
+--}}
+
+<a class="c_button" href="{{ href }}" {{#if download}}download{{/if}}>
+    <div class="c_button__icon">{{> (lookup . 'icon') }}</div>
+    <span>{{ title }}</span>
+    <div class="c_button__arrow">{{> (lookup . 'arrow') }}</div>
+</a>

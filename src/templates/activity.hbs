@@ -76,6 +76,14 @@
                     {{localize "resources"}}
                 </h3>
                 <div>
+
+                    {{> _button
+                        href='./activity-card.pdf'
+                        title='Hola'
+                        icon='svg.icon-scripts-20x20'
+                        arrow='svg.icon-arrow-right-16x16'
+                        download=false
+                    }}
                     
                     {{#if has-card}}
                     <a class="c_button"
@@ -89,6 +97,13 @@
                         {{> svg.icon-document-20x20 }}
                         {{localize "activity-card"}}
                     </a>
+                    {{> _button
+                        href='./activity-card.pdf'
+                        title={{localize "activity-card"}}
+                        icon='svg.icon-scripts-20x20'
+                        arrow='svg.icon-arrow-right-16x16'
+                        download=false
+                    }}
                     {{/if}}
 
                     {{#if has-guide}}
