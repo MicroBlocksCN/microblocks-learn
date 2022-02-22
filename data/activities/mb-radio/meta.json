@@ -4,5 +4,6 @@
     "boards": [ "board_microbit" ],
     "time": [ 15, 45 ],
     "topics": [ ],
-    "components": [ ]
+    "components": [ ],
+    "card-slides-url": "https://docs.google.com/presentation/d/1-dQ90NOJr5mID3Azx22tbJmwSkD34PgH_v0Z68QzzIA"
 }

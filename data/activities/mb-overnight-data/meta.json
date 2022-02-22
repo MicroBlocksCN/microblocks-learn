@@ -3,5 +3,6 @@
     "level": 1,
     "boards": [ "board_microbit" ],
     "time": [ 15, 45 ],
-    "topics": [ "tpc_data"]
+    "topics": [ "tpc_data"],
+    "card-slides-url": "https://docs.google.com/presentation/d/1OKMej5Fjy0bV-xNHSvW-8GH2wHyoeHk4zNJlOpwT8RY"
 }
