@@ -4,35 +4,45 @@
 
 
 .c_button {
-  padding: $space-050 $space-100 $space-050 $space-075;
+  height: $space-250;
+  padding: $space-050 $space-075;
   display: flex;
   align-items: center;
   width: fit-content;
   
-  @include box;
-  color: $color-purple; // Icon BGs inherits it
-
-  font-family: $font-display;
-  font-weight: 500;
-  font-size: $fontSize-125;
-  // letter-spacing: -0.05rem;
+  background-color: $color-blue;
+  border-radius: $borderRadius-025;
 
   transition: all $trans-0200 $trans-easing;
 
   svg {
-    height: $space-150;
-    width: $space-150;
-    margin-right: $space-050;
-
-    color: $color-purple;
+    color: $color-blue-light;
     transition: color $trans-0200 $trans-easing;
+    font-size: 0;
+  }
+
+  &__icon {
+    height: $space-125;
+    width: $space-125;
+    margin-right: $space-050;
   }
 
   span {
     color: $color-grey-900;
     transition: color $trans-0200 $trans-easing;
+    color: $color-white; // Icon BGs inherits it
+    font-family: $font-display;
+    font-weight: 500;
+    font-size: $fontSize-125;
   }
 
+  &__arrow {
+    height: $space-100;
+    width: $space-100;
+    margin-left: $space-100;
+  }
+
+  // Effects
   &:hover {
     cursor: pointer;
     color: $color-white;
