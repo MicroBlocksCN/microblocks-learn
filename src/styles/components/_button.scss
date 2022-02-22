@@ -57,12 +57,12 @@
 
 
 .c_button-small {
-  height: $space-200;
-  padding: $space-025 $space-075 $space-025 $space-050;
+  // height: $space-200;
+  padding: $space-025 $space-075;
   display: inline-flex;
   align-items: center;
   
-  background-color: $color-blue-dark;
+  background-color: $color-blue;
   border-radius: $borderRadius-025;
 
   color: $color-white; 
