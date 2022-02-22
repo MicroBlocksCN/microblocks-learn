@@ -33,6 +33,10 @@ all the fields:
 * **components:**       An array of component keys. These keys can be found and
                         added at data/json/components.json.
 
+* **card-url:**         The URL to the activity card, if any.
+
+* **card-slides-url:**  The URL to the translatable source of the activity card.
+
 
 ## Files
 
@@ -46,7 +50,8 @@ The thumbnail for your activity should be named `thumbnail.png` and live in the
 
 ### Activity Card
 
-Your activity could additionally have an activity card to hand to your students.
+If you prefer to do so, you can host the activity card as a PDF file in the site
+directly, instead of linking to an external URL.
 
 Please store it as PDF under the `files` folder. You can have different
 localized versions of your activity card under the `files` folders of each

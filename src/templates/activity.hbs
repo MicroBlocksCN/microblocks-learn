@@ -78,7 +78,14 @@
                 <div>
                     
                     {{#if has-card}}
-                    <a class="c_button" href="./activity-card.pdf">
+                    <a class="c_button"
+                        href=
+                            {{#if card-url}}
+                                "{{card-url}}"
+                            {{else}}
+                                "./activity-card.pdf"
+                            {{/if}}
+                    >
                         {{> svg.icon-document-20x20 }}
                         {{localize "activity-card"}}
                     </a>
@@ -167,6 +174,7 @@
                 </div>
             </aside>
 
+            {{#if card-slides-url}}
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 <h3 class="v_activity__side-title">
                     Translate
@@ -175,12 +183,13 @@
                     <p>
                         Help us translating the contents of the actvity card to your language!
                     </p>
-                    <a class="c_button-small" href="#">
+                    <a class="c_button-small" href="{{card-slides-url}}">
                         {{> svg.icon-slides-16x16 }}
                         <span>Open in Google Slides</span>
                     </a>
                 </div>
             </aside>
+            {{/if}}
 
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 {{!-- <h3 class="v_activity__side-title">

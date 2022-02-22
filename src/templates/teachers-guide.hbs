@@ -102,32 +102,10 @@
                             {{/each}}
                         </div>
                     </div>
-
-                    <div class="v_activity__details-group">
-                        <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-language-16x16 }}
-                            {{localize "lbl-languages"}}
-                        </h4>
-                        
-                        <div class="v_activity__details-group-content">
-                        {{#if translations}}
-                            <ul class="v_activity__details-group-content">
-                                {{#each translations}}
-                                <li>
-                                    <a href="../{{this.slug}}">{{language-name this.langCode}}</a>
-                                </li>
-                                {{/each}}
-                            </ul>
-                        {{else}}
-                            <span class="v_activity__details-none">No translations available</span>
-                        {{/if}}
-                        </div>
-                        
-                    </div>
-
                 </div>
             </aside>
 
+            {{#if card-slides-url}}
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 <h3 class="v_activity__side-title">
                     Translate
@@ -136,12 +114,13 @@
                     <p>
                         Help us translating the contents of the actvity card to your language!
                     </p>
-                    <a class="c_button-small" href="#">
+                    <a class="c_button-small" href="{{card-slides-url}}">
                         {{> svg.icon-slides-16x16 }}
                         <span>Open in Google Slides</span>
                     </a>
                 </div>
             </aside>
+            {{/if}}
 
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 <div>

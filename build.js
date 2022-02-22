@@ -105,7 +105,8 @@ handlebars.registerHelper('or', function () {
 
 // Useful functions
 
-function debug (string) { if (debugMode) { console.info(string); } };
+function debug () { if (debugMode) { console.info(...arguments); } };
+
 
 function doForFilesInDir (dir, extension, action, recursive) {
     // does something for each file of a particular extension in a directory
@@ -365,7 +366,12 @@ function buildActivities () {
                         fs.existsSync(
                             `${localePath}/files/activity-card.pdf`) ||
                         fs.existsSync(
-                            `${activityPath}/files/activity-card.pdf`);
+                            `${activityPath}/files/activity-card.pdf`) ||
+                        meta['card-url'];
+                    activity['card-url'] =
+                        activity['card-url'] || meta['card-url'];
+                    activity['card-slides-url'] =
+                        activity['card-slides-url'] || meta['card-slides-url'];
                     activity['has-project'] =
                         fs.existsSync(
                             `${localePath}/files/project.ubp`) ||
@@ -441,8 +447,12 @@ function buildActivity (descriptor, langCode, activityPath) {
                         ),
                     title: descriptor.title,
                     href: 'index',
-                    slug: descriptor.slug
-                }
+                    slug: descriptor.slug,
+                    time: descriptor.time,
+                    level: descriptor.level,
+                    topics: descriptor.topics
+                };
+//TODO add necessary stuff to guideDescriptor
                 compileTemplate(
                     'teachers-guide',
                     guideDescriptor,
