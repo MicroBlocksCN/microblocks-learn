@@ -343,48 +343,50 @@ function buildActivities () {
                 '/',
                 (langCode, localePath) => {
                     // activities stores the list of all activity descriptors
-                    var activity = JSON.parse(
+                    var localeDescriptor = JSON.parse(
                             fs.readFileSync(
                                 `${localePath}/meta.json`,
                                 'utf8'
                             )
                         ),
                         descriptor = {};
-                    activity.title = activity.title || meta.title;
-                    activity.author = activity.author || meta.author;
-                    activity.level = activity.level || meta.level || 1;
-                    activity.translations = meta.translations.filter(
+                    localeDescriptor.title = localeDescriptor.title || meta.title;
+                    localeDescriptor.author = localeDescriptor.author || meta.author;
+                    localeDescriptor.level = localeDescriptor.level || meta.level || 1;
+                    localeDescriptor.translations = meta.translations.filter(
                         (each) => { return each.langCode !== langCode });
-                    activity.components = meta.components || [];
-                    activity.topics = meta.topics || [];
-                    activity.time = meta.time || [30, 45];
-                    activity.boards = meta.boards || [];
-                    activity.slug = slugify(activity.title, langCode);
-                    activity.locale = langCode;
-                    activity.href = 'index';
-                    activity['has-card'] =
+                    localeDescriptor.components = meta.components || [];
+                    localeDescriptor.topics = meta.topics || [];
+                    localeDescriptor.time = meta.time || [30, 45];
+                    localeDescriptor.boards = meta.boards || [];
+                    localeDescriptor.slug = slugify(localeDescriptor.title, langCode);
+                    localeDescriptor.locale = langCode;
+                    localeDescriptor.href = 'index';
+                    localeDescriptor['has-card'] =
                         fs.existsSync(
                             `${localePath}/files/activity-card.pdf`) ||
                         fs.existsSync(
                             `${activityPath}/files/activity-card.pdf`) ||
                         meta['card-url'];
-                    activity['card-url'] =
-                        activity['card-url'] || meta['card-url'];
-                    activity['card-slides-url'] =
-                        activity['card-slides-url'] || meta['card-slides-url'];
-                    activity['has-project'] =
+                    localeDescriptor['card-url'] =
+                        localeDescriptor['card-url'] ||
+                        meta['card-url'] ||
+                        './activity-card.pdf';
+                    localeDescriptor['card-slides-url'] =
+                        localeDescriptor['card-slides-url'] || meta['card-slides-url'];
+                    localeDescriptor['has-project'] =
                         fs.existsSync(
                             `${localePath}/files/project.ubp`) ||
                         fs.existsSync(
                             `${activityPath}/files/project.ubp`);
-                    activity['has-guide'] =
+                    localeDescriptor['has-guide'] =
                         fs.existsSync(`${localePath}/teachers-guide.md`);
 
                     Object.assign(descriptor, meta);
                     // overwrite top-level meta fields with their values in the
                     // locale descriptor
-                    Object.keys(activity).forEach((key) => {
-                        descriptor[key] = activity[key];
+                    Object.keys(localeDescriptor).forEach((key) => {
+                        descriptor[key] = localeDescriptor[key];
                     });
 
                     if (!descriptor.draft) {
@@ -393,7 +395,7 @@ function buildActivities () {
 
                     debug(`processed activity: ${activityDir} (${langCode})`);
 
-                    buildActivity(activity, langCode, activityPath);
+                    buildActivity(localeDescriptor, langCode, activityPath);
                 }
             );
         }
