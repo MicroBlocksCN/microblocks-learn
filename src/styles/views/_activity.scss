@@ -11,6 +11,14 @@
 
   &:not(:last-of-type) {
     margin-bottom: $space-200;
+
+    @include breakpoint(lg) {
+      margin-bottom: $space-250;
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: $space-300;
+    }
   }
 
   p {
@@ -40,7 +48,10 @@
 
 
 .v_activity__side-title {
-  margin-bottom: $space-050;
+  margin-bottom: $space-100;
+  padding-bottom: $space-025;
+
+  border-bottom: 2px solid $color-grey-200;
 
   font-family: $font-display;
   font-weight: 500;
@@ -49,29 +60,45 @@
 }
 
 
-.v_activity__side-box {
-  padding: $space-150;
-  @include box;
+// .v_activity__side-box {
+//   padding: $space-150;
+//   @include box;
 
-  &--details {
-    display: grid;
-    gap: $space-100;
-    grid-template-columns: 1fr;
+//   &--details {
+//     display: grid;
+//     gap: $space-100;
+//     grid-template-columns: 1fr;
 
-    @include breakpoint(md) {
-      grid-template-columns: 1fr 1fr;
-    }
+//     @include breakpoint(md) {
+//       grid-template-columns: 1fr 1fr;
+//     }
 
-    @include breakpoint(lg) {
-      // width: $spacePercentual-75;
-      grid-template-columns: 1fr;
-    }
-  }
+//     @include breakpoint(lg) {
+//       // width: $spacePercentual-75;
+//       grid-template-columns: 1fr;
+//     }
+//   }
+// }
+
+
+.v_activity__details-group {
+  margin-bottom: $space-100;
 }
 
 
 .v_activity__details-group-title {
   margin-bottom: $space-025;
+  transform: translateX( calc( -1 * #{$space-125} ) );
+}
+
+
+.v_activity__details-group-content {
+  font-size: $fontSize-125;
+}
+
+
+.v_activity__details-none {
+  color: $color-grey-400;
 }
 
 

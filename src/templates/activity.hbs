@@ -106,10 +106,11 @@
                 <h3 class="v_activity__side-title">
                     {{localize "activity-details"}}
                 </h3>
-                <div class="v_activity__side-box v_activity__side-box--details">
+                <div class="__v_activity__side-box __v_activity__side-box--details">
                     
                     <div class="v_activity__details-group">
-                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-level">
+                        <h4 class="v_activity__details-group-title c_title-small">
+                            {{> svg.icon-student-16x16 }}
                             {{localize "lbl-level"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -118,7 +119,8 @@
                     </div>
 
                     <div class="v_activity__details-group">
-                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
+                        <h4 class="v_activity__details-group-title c_title-small">
+                            {{> svg.icon-duration-16x16 }}
                             {{localize "lbl-duration"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -128,7 +130,8 @@
 
                     {{#if topics}}
                     <div class="v_activity__details-group">
-                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
+                        <h4 class="v_activity__details-group-title c_title-small">
+                            {{> svg.icon-topics-16x16 }}
                             {{localize "lbl-topics"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -139,31 +142,56 @@
                     </div>
                     {{/if}}
 
-                    {{#if translations}}
                     <div class="v_activity__details-group">
-                        <h4 class="v_activity__details-group-title c_title-small c-title-small--icon-time">
+                        <h4 class="v_activity__details-group-title c_title-small">
+                            {{> svg.icon-language-16x16 }}
                             {{localize "lbl-languages"}}
                         </h4>
-                        <ul class="v_activity__details-group-content">
-                            {{#each translations}}
-                            <li>
-                                <a href="../{{this.slug}}">{{language-name this.langCode}}</a>
-                            </li>
-                            {{/each}}
-                        </ul>
+                        
+                        <div class="v_activity__details-group-content">
+                        {{#if translations}}
+                            <ul class="v_activity__details-group-content">
+                                {{#each translations}}
+                                <li>
+                                    <a href="../{{this.slug}}">{{language-name this.langCode}}</a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        {{else}}
+                            <span class="v_activity__details-none">No translations available</span>
+                        {{/if}}
+                        </div>
+                        
                     </div>
-                    {{/if}}
 
                 </div>
             </aside>
 
             <aside class="v_activity__side-block v_activity__side-block--printable">
                 <h3 class="v_activity__side-title">
-                    {{localize "lbl-printable"}}
+                    Translate
                 </h3>
                 <div>
+                    <p>
+                        Help us translating the contents of the actvity card to your language!
+                    </p>
+                    <a class="c_button-small" href="#">
+                        {{> svg.icon-slides-16x16 }}
+                        <span>Open in Google Slides</span>
+                    </a>
+                </div>
+            </aside>
+
+            <aside class="v_activity__side-block v_activity__side-block--printable">
+                {{!-- <h3 class="v_activity__side-title">
+                    {{localize "lbl-printable"}}
+                </h3> --}}
+                <div>
                     <p>{{localize "printable-txt"}}</p>
-                    <a class="c_button-small" href="#">{{localize "btn-printable"}}</a>
+                    <a class="c_button-small" href="#">
+                        {{> svg.icon-printer-16x16 }}
+                        <span>{{localize "btn-printable"}}</span>
+                    </a>
                 </div>
             </aside>
 

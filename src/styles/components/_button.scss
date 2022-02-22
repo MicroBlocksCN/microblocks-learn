@@ -15,7 +15,7 @@
   font-family: $font-display;
   font-weight: 500;
   font-size: $fontSize-125;
-  letter-spacing: -0.05rem;
+  // letter-spacing: -0.05rem;
 
   transition: all $trans-0200 $trans-easing;
 
@@ -47,8 +47,10 @@
 
 
 .c_button-small {
-  display: inline-block;
-  padding: $space-025 $space-200 $space-025 $space-050;
+  height: $space-200;
+  padding: $space-025 $space-075 $space-025 $space-050;
+  display: inline-flex;
+  align-items: center;
   
   @include box;
   color: $color-purple; // Icon BGs inherits it
@@ -56,9 +58,15 @@
   font-family: $font-display;
   font-weight: 500;
   font-size: $fontSize-100;
-  letter-spacing: -0.05rem;
 
   transition: all $trans-0200 $trans-easing;
+
+  svg {
+    margin-right: $space-050;
+    color: $color-purple;
+
+    transition: all $trans-0200 $trans-easing;
+  }
 
   span {
     color: $color-grey-900;
@@ -69,7 +77,7 @@
     color: $color-white;
     background-color: $color-purple;
 
-    span {
+    svg, span {
       color: $color-white;
     }
   }

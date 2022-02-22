@@ -1,0 +1,18 @@
+{
+    "author": "por @1",
+    "boards": "Placas",
+    "components": "Componentes",
+    "no-components": "Ninguno",
+    "resources": "Recursos",
+    "activity-card": "Targeta de actividad",
+    "teachers-guide": "Guía docente",
+    "activity-details": "Detalles",
+    "lbl-level": "Nivel",
+    "lbl-duration": "Tiempo estimado",
+    "duration": "@1-@2 minutos",
+    "lbl-topics": "Temas",
+    "lbl-languages": "Idiomas disponibles",
+    "lbl-printable": "Versión imprimible",
+    "printable-txt": "Puedes ver una versión imprimible de esta página para imprimirla o guardarla como PDF.",
+    "btn-printable": "Versión imprimible"
+}

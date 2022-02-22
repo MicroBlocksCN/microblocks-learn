@@ -71,16 +71,24 @@
 }
 
 
+.c_hero-yellow__subtitle {
+  margin-bottom: $space-050;
+
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-125;
+  line-height: $lineHeight-100;
+  color: $color-purple;
+  text-transform: uppercase;
+}
+
+
 .c_hero-yellow__title {
   font-family: $font-display;
   font-weight: 700;
   font-size: $fontSize-250;
   line-height: $lineHeight-100;
   color: $color-black;
-
-  @include breakpoint(xxl) {
-    font-size: $fontSize-250;
-  }
 }
 
 

@@ -4,12 +4,16 @@
 
 
 .c_title-small {
+  display: flex;
+  align-items: center;
+
   font-family: $font-display;
   font-size: $fontSize-087;
   text-transform: uppercase;
   color: $color-purple;
 
   svg {
-    transform: translateY(5px);
+    _transform: translateY(5px);
+    margin-right: $space-025;
   }
 }
