@@ -6,12 +6,12 @@
     "resources": "Resources",
     "activity-card": "Activity Card",
     "teachers-guide": "Teacher's Guide",
+    "back-to-activity": "View Activity",
     "activity-details": "Activity Details",
     "lbl-level": "Level",
     "lbl-duration": "Estimated Time",
     "duration": "@1-@2 minutes",
     "lbl-topics": "Topics",
-    "lbl-languages": "Available Languages",
     "lbl-printable": "Printable Version",
     "printable-txt": "You can load a printer friendly version of this page for printing or save it as a PDF file.",
     "btn-printable": "Printable Version"

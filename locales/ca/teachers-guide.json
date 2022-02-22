@@ -6,12 +6,12 @@
     "resources": "Recursos",
     "activity-card": "Tarja d'activitat",
     "teachers-guide": "Guia docent",
+    "back-to-activity": "Veure activitat",
     "activity-details": "Detalls",
     "lbl-level": "Nivell",
     "lbl-duration": "Temps estimat",
     "duration": "@1-@2 minuts",
     "lbl-topics": "Temes",
-    "lbl-languages": "Idiomes disponibles",
     "lbl-printable": "Versió imprimible",
     "printable-txt": "Pots veure una versió imprimible d'aquesta pàgina per a imprimir-la o desar-la com a PDF.",
     "btn-printable": "Versió imprimible"
