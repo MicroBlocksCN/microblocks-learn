@@ -22,9 +22,14 @@
   }
 
   &__icon {
+    flex-shrink: 0;
     height: $space-125;
     width: $space-125;
     margin-right: $space-050;
+
+    svg {
+      width: 100%;
+    }
   }
 
   span {
@@ -33,10 +38,11 @@
     color: $color-white; // Icon BGs inherits it
     font-family: $font-display;
     font-weight: 500;
-    font-size: $fontSize-125;
+    // font-size: $fontSize-125;
   }
 
   &__arrow {
+    flex-shrink: 0;
     height: $space-100;
     width: $space-100;
     margin-left: $space-100;
@@ -47,6 +53,7 @@
     cursor: pointer;
     color: $color-white;
     background-color: $color-purple;
+    background-color: $color-black;
 
     svg,
     span {
@@ -72,11 +79,19 @@
 
   transition: all $trans-0200 $trans-easing;
 
-  svg {
+  .c_button-small__icon {
+    width: $space-100;
     margin-right: $space-050;
+
+    display: flex;
+    justify-content: center;
     color: $color-blue-light;
 
     transition: all $trans-0200 $trans-easing;
+
+    svg {
+      width: 100%;
+    }
   }
 
   span {
@@ -86,7 +101,7 @@
   &:hover {
     cursor: pointer;
     color: $color-white;
-    background-color: $color-purple;
+    background-color: $color-black;
 
     svg, span {
       color: $color-white;

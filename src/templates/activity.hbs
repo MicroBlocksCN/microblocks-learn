@@ -31,7 +31,9 @@
 
                 <div class="c_hero-yellow__boards">
                     <h3 class="c_hero-yellow__boards-title c_title-small">
-                        {{> svg.icon-board-20x20 }}
+                        <div class="c_title-small__icon">
+                            {{> svg.icon-board-20x20 }}
+                        </div>
                         {{localize "boards"}}:
                     </h3>
                     <div class="c_hero-yellow__boards-list">
@@ -43,7 +45,9 @@
 
                 <div class="c_hero-yellow__components">
                     <h3 class="c_hero-yellow__components-title c_title-small">
-                        {{> svg.icon-component-20x20 }}
+                        <div class="c_title-small__icon">
+                            {{> svg.icon-components-16x16 }}
+                        </div>
                         {{localize "components"}}:
                     </h3>
                     <div class="c_hero-yellow__components-list">
@@ -83,22 +87,26 @@
                         title=(localize "activity-card")
                         icon='svg.icon-scripts-20x20'
                         arrow='svg.icon-arrow-right-16x16'
-                        download=false
                     }}
                     {{/if}}
 
                     {{#if has-guide}}
-                    <a class="c_button" href="./guide">
-                        {{> svg.icon-student-16x16 }}
-                        {{localize "teachers-guide"}}
-                    </a>
+                    {{> _button
+                        href="./guide"
+                        title=(localize "teachers-guide")
+                        icon='svg.icon-student-16x16'
+                        arrow='svg.icon-arrow-right-16x16'
+                    }}
                     {{/if}}
 
                     {{#if has-project}}
-                    <a class="c_button" href="./project.ubp" download>
-                        {{> svg.icon-scripts-20x20 }}
-                        MicroBlocks Project
-                    </a>
+                    {{> _button
+                        href="./project.ubp"
+                        title=(localize "microblocks-project")
+                        icon='svg.icon-scripts-20x20'
+                        arrow='svg.icon-arrow-down-16x16'
+                        download=true
+                    }}
                     {{/if}}
 
                 </div>
@@ -113,7 +121,9 @@
                     
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-student-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-student-16x16 }}
+                            </div>
                             {{localize "lbl-level"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -123,7 +133,9 @@
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-duration-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-duration-16x16 }}
+                            </div>
                             {{localize "lbl-duration"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -134,7 +146,9 @@
                     {{#if topics}}
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-topics-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-topics-16x16 }}
+                            </div>
                             {{localize "lbl-topics"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -147,13 +161,15 @@
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-language-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-language-16x16 }}
+                            </div>
                             {{localize "lbl-languages"}}
                         </h4>
                         
                         <div class="v_activity__details-group-content">
                         {{#if translations}}
-                            <ul class="v_activity__details-group-content">
+                            <ul>
                                 {{#each translations}}
                                 <li>
                                     <a href="../{{this.slug}}">{{language-name this.langCode}}</a>
@@ -194,7 +210,9 @@
                 <div>
                     <p>{{localize "printable-txt"}}</p>
                     <a class="c_button-small" href="#">
-                        {{> svg.icon-printer-16x16 }}
+                        <div class="c_button-small__icon">
+                            {{> svg.icon-printer-16x16 }}
+                        </div>
                         <span>{{localize "btn-printable"}}</span>
                     </a>
                 </div>
