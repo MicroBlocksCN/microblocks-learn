@@ -106,10 +106,6 @@
 
 .c_hero-yellow__specs {
   margin-top: $space-150;
-
-  h3 {
-    display: inline-flex;
-  }
 }
 
 
@@ -118,9 +114,23 @@
 }
 
 
+// override and fix c_title-small for inline components?
+.c_hero-yellow__specs .c_title-small {
+  display: inline-flex;
+  align-items: baseline;
+  // font-weight: 700;
+  color: $color-purple-dark;
+
+  &__icon {
+    transform: translateY(2px);
+  }
+}
+
+
 .c_hero-yellow__boards-list,
 .c_hero-yellow__components-list {
   display: inline-block;
+  font-weight: 700;
 }
 
 
