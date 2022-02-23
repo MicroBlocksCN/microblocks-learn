@@ -1,0 +1,65 @@
+// 
+// Components / Resource Card
+// ==========================================================================
+
+
+.c_resource-card {
+  padding: $space-100;
+  @include box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakpoint(md) {
+    padding: $space-150;
+  }
+}
+
+
+.c_resource-card__text-wrapper {
+  margin-bottom: $space-200;
+}
+
+
+.c_resource-card__title {
+  margin-bottom: $space-100;
+
+  font-family: $font-display;
+  font-size: $fontSize-150;
+  font-weight: 700;
+}
+
+
+.c_resource-card__desc {
+  line-height: $lineHeight-150;
+  color: $color-grey-700;
+}
+
+
+.c_resource-card__link {
+  display: flex;
+  align-items: center;
+
+  color: $color-blue;
+  line-height: 1;
+  transition: color $trans-0200 $trans-easing;
+
+  &-icon {
+    margin-left: $space-025;
+    width: $space-100;
+    height: $space-100;
+
+    color: $color-grey-400;
+    transition: color $trans-0200 $trans-easing;
+  }
+
+  &:hover {
+    color: $color-black;
+    cursor: pointer;
+
+    .c_resource-card__link-icon {
+      color: $color-black;
+    }
+  }
+}

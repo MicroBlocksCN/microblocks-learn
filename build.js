@@ -102,6 +102,13 @@ handlebars.registerHelper('or', function () {
     return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
 });
 
+handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
+});
+
 
 // Useful functions
 

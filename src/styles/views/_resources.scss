@@ -1,0 +1,68 @@
+//
+// Views / Other Resources
+// ================================================================================
+
+
+.v_resources__intro {
+  margin-bottom: $space-300;
+
+  font-size: $fontSize-150;
+  line-height: $lineHeight-120;
+
+  @include breakpoint(xl) {
+    margin-bottom: $space-400;
+  }
+}
+
+
+
+
+
+// Section
+// ========================================
+
+
+.v_resources__section {
+  margin-bottom: $space-400;
+}
+
+
+.v_resources__section-border {
+  margin-bottom: $space-050;
+
+  border-top: 1px solid $color-grey-300;
+
+  @include breakpoint(md) {
+    margin-bottom: $space-100;
+  }
+}
+
+
+.v_resources__section-title {
+  padding-right: $space-050;
+  margin-bottom: $space-200;
+
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: $fontSize-150;
+  color: $color-purple;
+
+  @include breakpoint(md) {
+    font-size: $fontSize-200;
+  }
+}
+
+
+.v_resources__section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-100;
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
