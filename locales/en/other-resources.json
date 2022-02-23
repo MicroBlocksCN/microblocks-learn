@@ -1,4 +1,6 @@
 {
     "other-resources": "Other Resources",
-    "intro-text": "Browse explorations of concepts from computer science (e.g. loops or variables) or physical computing (analog sensors)."
+    "intro-text": "Browse through a collection of resources created by the global MicroBlocks community.",
+    "courses-lbl": "Curricula and Courses",
+    "manuals-lbl": "Manuals and HowTos"
 }
