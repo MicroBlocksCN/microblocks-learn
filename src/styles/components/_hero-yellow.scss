@@ -122,3 +122,22 @@
 .c_hero-yellow__components-list {
   display: inline-block;
 }
+
+
+.c_hero-yellow__links {
+  display: flex;
+  justify-content: center;
+  gap: $space-200;
+
+  a:link,
+  a:visited {
+    font-weight: 700;
+    color: $color-blue;
+    
+    transition: color $trans-0200 $trans-easing;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}

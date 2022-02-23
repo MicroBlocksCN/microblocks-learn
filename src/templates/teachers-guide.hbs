@@ -40,7 +40,7 @@
 
         <!-- Sidebar Contents -->
         <div class="col col-px col-12 lg-col-3 xl-col-3">
-            {{#if (or has-guide has-card)}}
+            {{#if (or has-project has-card)}}
             <aside class="v_activity__side-block">
                 <h3 class="v_activity__side-title">
                     {{localize "resources"}}
@@ -48,17 +48,22 @@
                 <div>
                     
                     {{#if has-card}}
-                    <a class="c_button" href="./activity-card.pdf">
-                        {{> svg.icon-document-20x20 }}
-                        {{localize "activity-card"}}
-                    </a>
+                    {{> _button
+                        href=card-url
+                        title=(localize "activity-card")
+                        icon='svg.icon-scripts-20x20'
+                        arrow='svg.icon-arrow-right-16x16'
+                    }}
                     {{/if}}
 
-                    {{#if has-guide}}
-                    <a class="c_button" href="./guide">
-                        {{> svg.icon-student-16x16 }}
-                        {{localize "teachers-guide"}}
-                    </a>
+                    {{#if has-project}}
+                    {{> _button
+                        href="./project.ubp"
+                        title=(localize "microblocks-project")
+                        icon='svg.icon-scripts-20x20'
+                        arrow='svg.icon-arrow-down-16x16'
+                        download=true
+                    }}
                     {{/if}}
 
                 </div>
@@ -73,7 +78,9 @@
                     
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-student-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-student-16x16 }}
+                            </div>
                             {{localize "lbl-level"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -83,7 +90,9 @@
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-duration-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-duration-16x16 }}
+                            </div>
                             {{localize "lbl-duration"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -93,7 +102,9 @@
 
                     <div class="v_activity__details-group">
                         <h4 class="v_activity__details-group-title c_title-small">
-                            {{> svg.icon-topics-16x16 }}
+                            <div class="c_title-small__icon">
+                                {{> svg.icon-topics-16x16 }}
+                            </div>
                             {{localize "lbl-topics"}}
                         </h4>
                         <div class="v_activity__details-group-content">
@@ -126,7 +137,9 @@
                 <div>
                     <p>{{localize "printable-txt"}}</p>
                     <a class="c_button-small" href="#">
-                        {{> svg.icon-printer-16x16 }}
+                        <div class="c_button-small__icon">
+                            {{> svg.icon-printer-16x16 }}
+                        </div>
                         <span>{{localize "btn-printable"}}</span>
                     </a>
                 </div>
