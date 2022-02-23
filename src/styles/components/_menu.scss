@@ -161,6 +161,7 @@
   // Size XL - Horizontally laid out
   @include breakpoint(xl) {
     margin: unset;
+    font-size: $fontSize-125;
   } 
 }
 
@@ -258,6 +259,8 @@
 
     border: none;
     @include block-connector;
+
+    font-size: $fontSize-125;
   }
 
 }
