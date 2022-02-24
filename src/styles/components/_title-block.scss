@@ -5,8 +5,8 @@
 
 .c_title-block {
   display: inline-block;
-  padding: 6px 12px 10px;
-  border-radius: $borderRadius-050;
+  padding: $space-050 $space-100 $space-075;
+  border-radius: $borderRadius-025;
   margin-bottom: $space-150;
 
   font-family: $font-display;
@@ -22,8 +22,8 @@
 
   // Large Screens
 
-  @include breakpoint(md) {
-    font-size: $fontSize-300;
+  @include breakpoint(lg) {
+    font-size: $fontSize-250;
   }
 
 
