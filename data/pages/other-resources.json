@@ -1,0 +1,55 @@
+{
+    "courses": [
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        },
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        },
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        }
+    ],
+    "manuals": [
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        },
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        },
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        },
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        },
+        {
+            "title": "bjc-title",
+            "description": "bjc-description",
+            "langCode": "en",
+            "href": "https://bjc.berkeley.edu/middle"
+        }
+    ]
+
+}

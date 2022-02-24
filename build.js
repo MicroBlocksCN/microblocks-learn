@@ -29,7 +29,8 @@ markdown.addExtension({
     filter: function (html) {
         return html.replaceAll(
             /<p>(<img.*)title="(.*)" \/><\/p>/g,
-            '<figure class="captioned">$1\/><figcaption class="caption">$2</figcaption></figure>'
+            '<figure class="captioned">$1\/>' +
+                '<figcaption class="caption">$2</figcaption></figure>'
         ).replaceAll(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replaceAll(
@@ -114,7 +115,6 @@ handlebars.registerHelper('times', function(n, block) {
 
 function debug () { if (debugMode) { console.info(...arguments); } };
 
-
 function doForFilesInDir (dir, extension, action, recursive) {
     // does something for each file of a particular extension in a directory
     var path = `${__dirname}/${dir}`;
@@ -167,7 +167,6 @@ function slugify (string, langCode) {
 
     return slug;
 };
-
 
 // Handlebars processing
 
@@ -357,16 +356,20 @@ function buildActivities () {
                             )
                         ),
                         descriptor = {};
-                    localeDescriptor.title = localeDescriptor.title || meta.title;
-                    localeDescriptor.author = localeDescriptor.author || meta.author;
-                    localeDescriptor.level = localeDescriptor.level || meta.level || 1;
+                    localeDescriptor.title =
+                        localeDescriptor.title || meta.title;
+                    localeDescriptor.author =
+                        localeDescriptor.author || meta.author;
+                    localeDescriptor.level =
+                        localeDescriptor.level || meta.level || 1;
                     localeDescriptor.translations = meta.translations.filter(
                         (each) => { return each.langCode !== langCode });
                     localeDescriptor.components = meta.components || [];
                     localeDescriptor.topics = meta.topics || [];
                     localeDescriptor.time = meta.time || [30, 45];
                     localeDescriptor.boards = meta.boards || [];
-                    localeDescriptor.slug = slugify(localeDescriptor.title, langCode);
+                    localeDescriptor.slug =
+                            slugify(localeDescriptor.title, langCode);
                     localeDescriptor.locale = langCode;
                     localeDescriptor.href = 'index';
                     localeDescriptor['has-card'] =
@@ -380,7 +383,8 @@ function buildActivities () {
                         meta['card-url'] ||
                         './activity-card.pdf';
                     localeDescriptor['card-slides-url'] =
-                        localeDescriptor['card-slides-url'] || meta['card-slides-url'];
+                        localeDescriptor['card-slides-url'] ||
+                        meta['card-slides-url'];
                     localeDescriptor['has-project'] =
                         fs.existsSync(
                             `${localePath}/files/project.ubp`) ||
@@ -461,7 +465,6 @@ function buildActivity (descriptor, langCode, activityPath) {
                     level: descriptor.level,
                     topics: descriptor.topics
                 };
-//TODO add necessary stuff to guideDescriptor
                 compileTemplate(
                     'teachers-guide',
                     guideDescriptor,

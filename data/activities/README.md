@@ -113,14 +113,12 @@ The `h4` produces an uppercase coloured small title. The `h3` produces a standar
 
 #### Footnotes
 
-Another particularity of our rendering of MarkDown files is that you can add
-footnotes to images using similar syntax, like so:
+Another particularity of our rendering of MarkDown files is that titles get
+transformed into captions, like this:
 
 ```
-![Image alt text](image.png)
-[[caption]]Pretty image - CC-BY-SA Somebody[[/caption]]
+![Image alt text](image.png "Pretty image - CC-BY-SA Somebody")
 ```
-
 #### Teacher's Guide
 
 If your activity has a teacher's guide, please write it also in MarkDown on the

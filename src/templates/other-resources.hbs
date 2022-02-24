@@ -51,9 +51,9 @@
             <div class="col col-12 col-px lg-col-8 xl-col-9">
                 <div class="v_resources__section-grid">
                     
-                    {{#times 4}}
-                        {{> _resource-card }}
-                    {{/times}}
+                    {{#each courses}}
+                        {{> _resource-card}}
+                    {{/each}}
 
                 </div>
             </div>
@@ -76,9 +76,9 @@
             <div class="col col-12 col-px lg-col-8 xl-col-9">
                 <div class="v_resources__section-grid">
                     
-                    {{#times 4}}
+                    {{#each manuals}}
                         {{> _resource-card }}
-                    {{/times}}
+                    {{/each}}
 
                 </div>
             </div>

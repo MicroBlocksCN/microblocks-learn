@@ -1,13 +1,16 @@
 <div class="c_resource-card">
     <div class="c_resource-card__text-wrapper">
         <div class="c_resource-card__title">
-            Resource Title
+            {{localize title}}
         </div>
         <div class="c_resource-card__desc">
-            They focus on how something works independently of how it might be used in applications and with more emphasis on theoretical understanding.
+            {{localize description}}
+        </div>
+        <div class="c_resource-card__lang">
+            {{language-name langCode}}
         </div>
     </div>
-    <a class="c_resource-card__link" target="_blank">
+    <a class="c_resource-card__link" target="_blank" href="{{href}}">
         Resource Link
         <div class="c_resource-card__link-icon">
             {{> svg.icon-arrow-up-right-16x16 }}
