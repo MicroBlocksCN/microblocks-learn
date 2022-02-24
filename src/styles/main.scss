@@ -9,22 +9,22 @@
 // 6. Components: Styles for reusable components
 // 7. Views: Styles for specific pages
 // 8. Vendors: External components styles or overrides
-// ================================================================================
+// ========================================
 
 
 // Config
-// ================================================================================
+// ========================================
 @import 'config/config';
 @import 'config/fonts';
 
 
 // Generic
-// ================================================================================
+// ========================================
 @import 'generic/minireset';
 
 
 // Mixins
-// ================================================================================
+// ========================================
 @import 'mixins/block-connector';
 @import 'mixins/breakpoint';
 @import 'mixins/ratios';
@@ -38,14 +38,14 @@
 
 
 // Utilities - prefix u_
-// ================================================================================
+// ========================================
 @import 'utilities/box';
 @import 'utilities/grid';
 @import 'utilities/visibility';
 
 
 // Components - prefix c_
-// ================================================================================
+// ========================================
 @import 'components/activity-card';
 @import 'components/button';
 @import 'components/circle';
@@ -65,7 +65,12 @@
 
 
 // Views - prefix: v_
-// ================================================================================
+// ========================================
 @import 'views/activity';
 @import 'views/home';
 @import 'views/resources';
+
+
+// Vendors
+// ========================================
+@import 'vendors/print';

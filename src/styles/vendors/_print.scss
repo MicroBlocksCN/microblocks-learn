@@ -1,0 +1,93 @@
+//
+// Vendors / Print Styles
+// ================================================================================
+
+
+@media print {
+
+
+  body {
+    // padding: 0 $space-200;
+    background-color: unset;
+  }
+
+
+  // Rows and Columns
+
+  .row {
+    display: block;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .col-px {
+    padding: 0;
+  }
+
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @for $i from 0 to ($col-total + 1) {
+      .#{$breakpoint-name}-offset-#{$i} {
+        margin-left: 0;
+      };
+    }
+  }
+
+  
+  // Top
+  
+  .header {
+    box-shadow: none;
+  }
+
+  .header .menu-toggle {
+    display: none;
+  }
+
+
+  // Footer
+
+  .footer {
+    display: none;
+  }
+
+
+  // Heros
+
+  .c_hero-yellow {
+    background: unset;
+    border: 0; // reset
+    border-bottom: 2px solid $color-grey-300;
+  }
+
+
+  // Activities
+
+  .c_hero-yellow__picture-wrapper {
+    display: none;
+  }
+
+  .v_activity__side-block {
+    display: none;
+  }
+
+  .wysiwyg p {
+    font-size: $fontSize-087;
+    margin-bottom: $space-100;
+  }
+
+  .wysiwyg p.script {
+    padding: 0;
+    background: unset;
+
+    img {
+      padding: 0;
+      margin: 0;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
