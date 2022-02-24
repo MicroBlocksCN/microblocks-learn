@@ -6,6 +6,8 @@
 .c_button {
   height: $space-250;
   padding: $space-050 $space-075;
+  line-height: 1;
+
   display: flex;
   align-items: center;
   width: fit-content;
@@ -64,8 +66,9 @@
 
 
 .c_button-small {
-  // height: $space-200;
-  padding: $space-025 $space-075;
+  padding: $space-050 $space-075;
+  line-height: $lineHeight-100;
+
   display: inline-flex;
   align-items: center;
   
@@ -75,7 +78,7 @@
   color: $color-white; 
   font-family: $font-display;
   font-weight: 500;
-  font-size: $fontSize-100;
+  font-size: $fontSize-087;
 
   transition: all $trans-0200 $trans-easing;
 

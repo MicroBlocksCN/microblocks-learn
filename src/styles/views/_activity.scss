@@ -31,6 +31,49 @@
 
   // Exceptions
 
+  &--details {
+
+    .v_activity__side-contents {
+
+      @include breakpoint(sm) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-200;
+      }
+  
+      @include breakpoint(md) {
+        display: block;
+      }
+      
+    }
+
+    a.v_activity__details-link {
+      display: inline-flex;
+      align-items: center;
+
+      transition: color $trans-0200 $trans-easing;
+
+      .v_activity__details-link-svg {
+        margin-left: $space-025;
+        width: $space-100;
+        height: $space-100;
+
+        line-height: 0;
+
+        color: $color-grey-400;
+        transition: color $trans-0200 $trans-easing;
+      }
+
+      &:hover {
+        color: $color-blue;
+
+        .v_activity__details-link-svg {
+          color: $color-blue;
+        }
+      }
+    }
+  }
+
   &--printable {
     display: none;
 
