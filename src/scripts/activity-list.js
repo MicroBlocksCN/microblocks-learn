@@ -113,7 +113,7 @@ function activityDiv (activity) {
                     <div class="c_activity-card__list ${
                         components ?
                             '' :
-                            'c_activity-card__components--is-empty'
+                            'c_activity-card__list--is-empty'
                     }">
                         <div class="c_activity-card__list-icon">
                             <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -77,6 +77,10 @@
   &:not(:last-of-type) {
     margin-bottom: $space-050;
   }
+
+  &--is-empty {
+    opacity: 0.5;
+  }
 }
 
 
