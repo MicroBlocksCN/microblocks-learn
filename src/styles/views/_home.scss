@@ -20,20 +20,13 @@
 // ========================================
 
 
-.v_home__subtitle {
+.v_home__subtitle .c_title-block {
   // margin-top: calc( #{$space-200} * -1 );
   // margin-bottom: $space-200;
   transform: 
     translateY( calc(-1 * #{ $space-200 } ) )
     rotate( -2deg )
   ;
-
-  @include breakpoint(lg) {
-    transform: 
-      translateY( calc(-1 * #{ $space-250 } ) )
-      rotate( -2deg )
-    ;
-  }
 }
 
 
