@@ -1,5 +1,15 @@
 # MicroBlocks Learning Site
 
+## Installation
+
+Install NodeJS (v16 recommended) and npm for your operating system, then clone this repository and run:
+
+```
+npm install
+```
+
+In the root of the repository directory. This will install all dependencies for you.
+
 ## Building
 
 ### For developing
