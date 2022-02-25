@@ -104,7 +104,7 @@
 
   // Size XL - Horizontally laid out
   @include breakpoint(xl) {
-    padding-right: $space-150;
+    padding-right: $space-200;
     flex-direction: row;
     align-items: center;
   }
@@ -123,8 +123,8 @@
   // Size XL - Horizontally laid out
   @include breakpoint(xl) {
     display: flex;
-    gap: $space-150;
-    margin-right: $space-150;
+    gap: $space-200;
+    margin-right: $space-200;
   }
 }
 
@@ -134,27 +134,12 @@
   display: block;
   margin: $space-100 0;
 
+  color: $color-grey-900;
+  transition: color $trans-0400 $trans-easing;
 
-  &::after {
-    content: '';
-    display: block;
-  
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    height: 2px;
-    width: 0%;
-    background-color: $color-black;
-  
-    transition: width $trans-0400 $trans-easing
-  }
 
-  &:hover,
-  &:focus-visible {
-
-    &::after {
-      width: 100%;
-    }
+  &:hover {
+    color: $color-purple-dark;
   }
 
 
@@ -182,7 +167,6 @@
   border: none;
   padding: $space-025 $space-100 $space-025 $space-025;
   margin: 0;
-  // width: 100%;
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
@@ -263,4 +247,14 @@
     font-size: $fontSize-125;
   }
 
+}
+
+
+.menu__black-link {
+  color: $color-white;
+  transition: color $trans-0400 $trans-easing;
+
+  &:hover {
+    color: $color-yellow;
+  }
 }
