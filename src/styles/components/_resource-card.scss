@@ -23,26 +23,47 @@
 
 
 .c_resource-card__title {
-  margin-bottom: $space-100;
+  margin-bottom: $space-025;
 
   font-family: $font-display;
   font-size: $fontSize-150;
+  line-height: $lineHeight-120;
   font-weight: 700;
 }
 
 
+.c_resource-card__lang {
+  margin-bottom: $space-200;
+  display: flex;
+  align-items: center;
+  color: $color-grey-700;
+  
+  _font-weight: 700;
+}
+
+
+.c_resource-card__lang-icon {
+  width: $space-100;
+  height: $space-100;
+  margin-right: $space-025;
+
+  color: $color-purple;
+}
+
+
 .c_resource-card__desc {
+  font-size: $fontSize-087;
   line-height: $lineHeight-150;
   color: $color-grey-700;
 }
 
 
 .c_resource-card__link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
-  color: $color-blue;
-  line-height: 1;
+  font-family: $font-display;
+  color: $color-grey-900;
   transition: color $trans-0200 $trans-easing;
 
   &-icon {
@@ -50,16 +71,16 @@
     width: $space-100;
     height: $space-100;
 
-    color: $color-grey-400;
+    color: $color-blue;
     transition: color $trans-0200 $trans-easing;
   }
 
   &:hover {
-    color: $color-black;
+    color: $color-blue;
     cursor: pointer;
 
     .c_resource-card__link-icon {
-      color: $color-black;
+      color: $color-blue;
     }
   }
 }

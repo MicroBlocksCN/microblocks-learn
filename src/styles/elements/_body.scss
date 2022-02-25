@@ -5,13 +5,13 @@
 
 body {
     font-family: $font-regular;
+    font-weight: 500;
     font-size: 16px;
-    // line-height: $lineHeight-120;
-    // word-break: break-word; why? clashes with wysiwyg captions
     color: $color-grey-900;
     background-color: $color-background;
 
     & *::selection {
-        // color: $color-black;
+        color: $color-black;
+        background-color: $color-yellow;
     }
 }
