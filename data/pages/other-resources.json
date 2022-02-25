@@ -1,8 +1,8 @@
 {
     "courses": [
         {
-            "title": "bjc-title",
-            "description": "bjc-description",
+            "title": "resource-test-title",
+            "description": "resource-test-desc",
             "langCode": "en",
             "href": "https://bjc.berkeley.edu/middle"
         },

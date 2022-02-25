@@ -4,5 +4,7 @@
     "courses-lbl": "Curricula and Courses",
     "manuals-lbl": "Manuals and HowTos",
     "bjc-title": "The Beauty and Joy of Computing (middle school)",
-    "bjc-description": "This is a curriculum developed by UC Berkeley"
+    "bjc-description": "This is a curriculum developed by UC Berkeley",
+    "resource-test-title": "The Beauty and Joy of Computing",
+    "resource-test-desc": "The Beauty and Joy of Computing (BJC) is an introductory computer science curriculum developed at the University of California, Berkeley, intended for non-CS majors at the high school junior through undergraduate freshman level."
 }

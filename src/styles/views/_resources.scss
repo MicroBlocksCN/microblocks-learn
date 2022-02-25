@@ -7,10 +7,11 @@
   margin-bottom: $space-300;
 
   font-size: $fontSize-150;
-  line-height: $lineHeight-120;
+  line-height: $lineHeight-150;
+  text-align: center;
 
   @include breakpoint(xl) {
-    margin-bottom: $space-400;
+    margin-bottom: $space-500;
   }
 }
 
@@ -33,7 +34,7 @@
   border-top: 1px solid $color-grey-300;
 
   @include breakpoint(md) {
-    margin-bottom: $space-100;
+    margin-bottom: $space-150;
   }
 }
 
@@ -45,6 +46,7 @@
   font-family: $font-display;
   font-weight: 700;
   font-size: $fontSize-150;
+  line-height: $lineHeight-120;
   color: $color-purple;
 
   @include breakpoint(md) {
@@ -56,7 +58,7 @@
 .v_resources__section-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-100;
+  gap: $space-150;
 
   @include breakpoint(md) {
     grid-template-columns: repeat(2, 1fr);

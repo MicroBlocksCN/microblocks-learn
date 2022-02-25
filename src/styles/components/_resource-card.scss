@@ -14,11 +14,6 @@
   @include breakpoint(md) {
     padding: $space-150;
   }
-
-  // &:hover {
-  //   background-color: $color-grey-200;
-  //   background-color: $color-yellow;
-  // }
 }
 
 
@@ -28,7 +23,7 @@
 
 
 .c_resource-card__title {
-  margin-bottom: $space-050;
+  margin-bottom: $space-025;
 
   font-family: $font-display;
   font-size: $fontSize-150;
@@ -67,8 +62,8 @@
   display: inline-flex;
   align-items: center;
 
-  color: $color-blue;
-  line-height: 1;
+  font-family: $font-display;
+  color: $color-grey-900;
   transition: color $trans-0200 $trans-easing;
 
   &-icon {
