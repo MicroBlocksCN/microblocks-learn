@@ -193,12 +193,16 @@
 
             {{#if card-slides-url}}
             <aside class="v_activity__side-block v_activity__side-block--translate">
-                <h3 class="v_activity__side-title">
+                {{!-- <h3 class="v_activity__side-title">
                     {{localize "lbl-translate"}}
-                </h3>
+                </h3> --}}
                 <div class="v_activity__side-contents">
                     <p>
-                        {{localize "translate-txt"}}
+                        {{!-- {{#markdown}} --}}
+                        {{localize "translate-txt" 
+                            (join "[" (localize "translate-guidelines") "](https://microblocks.fun/contribute#translate)") 
+                        }}
+                        {{!-- {{/markdown}} --}}
                     </p>
                     <a class="c_button-small" href="{{card-slides-url}}">
                         <div class="c_button-small__icon">
@@ -206,28 +210,9 @@
                         </div>
                         <span>{{localize "btn-card-slides"}}</span>
                     </a>
-                    <p>
-                        Follow these guidelines to translate the activity and the card!
-                        Add a link
-                    </p>
                 </div>
             </aside>
             {{/if}}
-
-            <aside class="v_activity__side-block v_activity__side-block--printable">
-                {{!-- <h3 class="v_activity__side-title">
-                    {{localize "lbl-printable"}}
-                </h3> --}}
-                <div class="v_activity__side-contents">
-                    <p>{{localize "printable-txt"}}</p>
-                    <a class="c_button-small" href="#">
-                        <div class="c_button-small__icon">
-                            {{> svg.icon-printer-16x16 }}
-                        </div>
-                        <span>{{localize "btn-printable"}}</span>
-                    </a>
-                </div>
-            </aside>
 
         </div><!-- Sidebar Contents -->
 

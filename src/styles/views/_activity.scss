@@ -105,25 +105,10 @@
 }
 
 
-// .v_activity__side-box {
-//   padding: $space-150;
-//   @include box;
-
-//   &--details {
-//     display: grid;
-//     gap: $space-100;
-//     grid-template-columns: 1fr;
-
-//     @include breakpoint(md) {
-//       grid-template-columns: 1fr 1fr;
-//     }
-
-//     @include breakpoint(lg) {
-//       // width: $spacePercentual-75;
-//       grid-template-columns: 1fr;
-//     }
-//   }
-// }
+.v_activity__side-contents a:link,
+.v_activity__side-contents a:visited {
+  color: $color-blue;
+}
 
 
 .v_activity__details-group {
