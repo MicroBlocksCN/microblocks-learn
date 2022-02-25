@@ -51,6 +51,8 @@
       display: inline-flex;
       align-items: center;
 
+      color: $color-grey-900;
+
       transition: color $trans-0200 $trans-easing;
 
       .v_activity__details-link-svg {
@@ -105,26 +107,31 @@
 }
 
 
-.v_activity__side-contents a:link,
-.v_activity__side-contents a:visited {
+.v_activity__side-contents p a:link,
+.v_activity__side-contents p a:visited {
   color: $color-blue;
 }
 
 
 .v_activity__details-group {
   margin-bottom: $space-100;
+
+  @include breakpoint(xl) {
+    margin-bottom: $space-150;
+  }
 }
 
 
 .v_activity__details-group-title {
   margin-bottom: $space-025;
-  // transform: translateX( calc( -1 * #{$space-125} ) );
 }
 
 
 .v_activity__details-group-content {
   font-size: $fontSize-125;
   margin-left: $space-125;
+
+  line-height: $lineHeight-120;
 }
 
 
