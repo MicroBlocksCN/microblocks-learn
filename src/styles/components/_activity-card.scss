@@ -63,6 +63,7 @@
   font-family: $font-display;
   font-weight: 700;
   font-size: $fontSize-150;
+  color: $color-grey-900;
   line-height: $lineHeight-120;
   letter-spacing: -0.05rem;
 
@@ -99,7 +100,7 @@
 
   font-size: $fontSize-087;
   line-height: $lineHeight-120;
-  color: $color-grey-700;
+  color: $color-grey-900;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
