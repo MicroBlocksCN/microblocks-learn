@@ -1,11 +1,11 @@
 function homeHero () {
 
     const letters = [
-        letterL = document.querySelector('svg #letter-l'),
-        letterE = document.querySelector('svg #letter-e'),
-        letterA = document.querySelector('svg #letter-a'),
-        letterR = document.querySelector('svg #letter-r'),
-        letterN = document.querySelector('svg #letter-n')
+        L = document.querySelector('svg #letter-l'),
+        E = document.querySelector('svg #letter-e'),
+        A = document.querySelector('svg #letter-a'),
+        R = document.querySelector('svg #letter-r'),
+        N = document.querySelector('svg #letter-n')
     ]
 
     console.log(letters);
