@@ -1,0 +1,44 @@
+// 
+// Hero / Hero Home
+// ==========================================================================
+
+
+.c_hero-home  {
+  width: 100%;
+  // margin-top: $space-200;
+  // margin-bottom: $space-200;
+  height: $space-1500;
+  position: relative;
+}
+
+
+.c_hero-home__logo {
+  display: inline-block;
+  margin: 0 auto;
+  transform: translateY($space-300);
+}
+
+
+.c_hero-home__bubble {
+  position: absolute;
+  z-index: $zindex-above;
+
+  display: none;
+
+  &-a {
+    top: -56px;
+    left: 48px;
+  }
+}
+
+
+.c_hero-home__text {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  & > div {
+    display: none;
+  }
+}
