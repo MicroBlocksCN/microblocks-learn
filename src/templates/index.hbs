@@ -13,17 +13,18 @@
     <div class="c_hero-home">
 
         <div class="c_hero-home__logo">
-            {{> svg.learn-microblocks }}
-            <div class="c_hero-home__bubble c_hero-home__bubble-a">
-                {{> svg.home-hero-bubble-a }}
+            {{> svg.learn-microblocks-block }}
+            <div class="c_hero-home__bubble c_hero-home__bubble--a">
+                <img src="/assets/img/pictures/adele-goldberg.svg" alt="Adele Goldberg">
             </div>
         </div>
 
-        {{!-- <div class="c_hero-home__bubbles">
-        </div> --}}
-
-        <div class="c_hero-home__text">
-            <div class="c_hero-home__text-a"><b>Adele Goldberg</b>: Computer pioneer.<br /> Second ever African-American to earn a Ph.D in mathematics.</div>
+        <div class="c_hero-home__descriptions">
+            <div class="c_hero-home__desc c_hero-home__desc--a">
+{{#markdown}}{{localize "adele-txt"
+    (join "**" (localize "adele-name") "**")
+}}{{/markdown}}
+            </div>
         </div>
         
     </div>

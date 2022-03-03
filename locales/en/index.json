@@ -19,5 +19,8 @@
     "chk-card": "has activity card",
     "chk-guide": "has teacher's guide",
     "topics": "Topics",
-    "btn-reset": "Reset"
+    "btn-reset": "Reset",
+
+    "adele-name": "Adele Goldberg",
+    "adele-txt": "@1 is an american computer scientist and educator and co-developer of the Smalltalk programming language."
 }
