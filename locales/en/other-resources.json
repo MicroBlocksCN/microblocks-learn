@@ -1,10 +1,31 @@
 {
-    "other-resources": "Other Resources",
-    "intro-text": "Browse through a collection of resources created by the global MicroBlocks community.",
-    "courses-lbl": "Curricula and Courses",
-    "manuals-lbl": "Manuals and HowTos",
-    "bjc-title": "The Beauty and Joy of Computing (middle school)",
-    "bjc-description": "This is a curriculum developed by UC Berkeley",
-    "resource-test-title": "The Beauty and Joy of Computing",
-    "resource-test-desc": "The Beauty and Joy of Computing (BJC) is an introductory computer science curriculum developed at the University of California, Berkeley, intended for non-CS majors at the high school junior through undergraduate freshman level."
+	"other-resources": "Other Resources",
+	"intro-text": "Useful resources for educators, many contributed by the global MicroBlocks community.",
+	"activities-lbl": "Activites",
+	"articles-lbl": "Articles",
+	"courses-lbl": "Curricula and Courses",
+	"manuals-lbl": "Manuals and HowTos",
+
+	"sensor-examples-title": "Examples of Sensors in Action",
+	"sensor-examples-desc": "Many examples of using sensors with the micro:bit from John Hegarty. Use the menu in top left corner to select pages.",
+
+	"citilab-microblocks-intro-title": "Introduction to MicroBlocks",
+	"citilab-microblocks-intro-desc": "Using MicroBlocks with the Citilab ED1 board (old screenshots).",
+
+	"cobie-cards-title": "Cobie's MicroBlocks Cards",
+	"cobie-cards-desc": "Nice set of activity cards from Cobie van de Ven.",
+
+	"classroom-steam-activites-title": "Design of Classroom STEAM Activities",
+	"classroom-steam-activites-desc": "Simple examples using an ESP32 with a breadboard and a few electronic components. Includes wiring diagrams and scripts.",
+
+	"black-inventors-title": "Black Innovators and Inventors",
+	"black-inventors-desc": "A list of inspiring African American inventors and innovators including the inventor of the modern traffic signal and one of the first doctors to perform a successful heart transplant.",
+
+	"girls-robotics-kit-title": "Low Cost Robotics Kit – Great for Girls",
+	"girls-robotics-kit-desc": "Describes using MicroBlocks, the micro:bit, and a few additional components in creative robotics activities that can inspire and engage girls, as well as boys.",
+
+	"bjc-title": "The Beauty and Joy of Computing (middle school)",
+	"bjc-desc": "This is a curriculum developed by UC Berkeley",
+	"resource-test-title": "The Beauty and Joy of Computing",
+	"resource-test-desc": "The Beauty and Joy of Computing (BJC) is an introductory computer science curriculum developed at the University of California, Berkeley, intended for non-CS majors at the high school junior through undergraduate freshman level."
 }

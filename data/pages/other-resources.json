@@ -1,55 +1,61 @@
 {
-    "courses": [
-        {
-            "title": "resource-test-title",
-            "description": "resource-test-desc",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        }
-    ],
-    "manuals": [
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        }
-    ]
+	"activities": [
+		{
+			"title": "citilab-microblocks-intro-title",
+			"description": "citilab-microblocks-intro-desc",
+			"langCode": "ca",
+			"href": "http://wiki.edutec.citilab.eu/Introducci%C3%B3_a_MicroBlocks"
+		},
+		{
+			"title": "cobie-cards-title",
+			"description": "cobie-cards-desc",
+			"langCode": "nl",
+			"href": "https://digi-lab.org/downloads/microblocks%20kaarten%20digilab.pdf"
+		},
+		{
+			"title": "sensor-examples-title",
+			"description": "sensor-examples-desc",
+			"langCode": "en",
+			"href": "https://sites.google.com/clongowes.net/microblocksbasicexamples/home"
+		},
+		{
+			"title": "classroom-steam-activites-title",
+			"description": "classroom-steam-activites-desc",
+			"langCode": "es",
+			"href": "https://wiki.microblocks.fun/publications/diseno_de_actividades_steam_en_el_aula.pdf"
+		}
+	],
 
+	"articles": [
+		{
+			"title": "black-inventors-title",
+			"description": "black-inventors-desc",
+			"langCode": "en",
+			"href": "https://www.milkeneducatorawards.org/connections/articles/view/black-inventors-stem-curriculum"
+		},
+		{
+			"title": "girls-robotics-kit-title",
+			"description": "girls-robotics-kit-desc",
+			"langCode": "en",
+			"href": "https://katiedays.com/blog/2020/02/24/a-robotics-kit-for-the-every-day-teacher/"
+		}
+	],
+
+	"courses": [
+		{
+			"title": "resource-test-title",
+			"description": "resource-test-desc",
+			"langCode": "en",
+			"href": "https://bjc.berkeley.edu/middle"
+		}
+	],
+
+	"manuals": [
+		{
+			"title": "bjc-title",
+			"description": "bjc-desc",
+			"langCode": "en",
+			"href": "https://bjc.berkeley.edu/middle"
+		}
+	]
 }
