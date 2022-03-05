@@ -27,7 +27,7 @@
 
     "cmp_alligators": "Pinzas de cocodrilo",
     "cmp_angle_servo": "Servo (ángulo)",
-    "cmp_cr_servo": "Servo (RC)",
+    "cmp_cr_servo": "Servo (360°)",
     "cmp_dht22": "DHT22 (ambiental)",
     "cmp_ext_board": "Placa de extensión",
     "cmp_ir_remote": "Control remoto (IR)",
