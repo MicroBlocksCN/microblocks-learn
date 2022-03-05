@@ -1,16 +1,22 @@
 {
 	"activities": [
 		{
-			"title": "citilab-microblocks-intro-title",
-			"description": "citilab-microblocks-intro-desc",
-			"langCode": "ca",
-			"href": "http://wiki.edutec.citilab.eu/Introducci%C3%B3_a_MicroBlocks"
-		},
-		{
 			"title": "cobie-cards-title",
 			"description": "cobie-cards-desc",
 			"langCode": "nl",
 			"href": "https://digi-lab.org/downloads/microblocks%20kaarten%20digilab.pdf"
+		},
+		{
+			"title": "finch-title",
+			"description": "finch-desc",
+			"langCode": "en",
+			"href": "https://www.birdbraintechnologies.com/finch/microblocks/"
+		},
+		{
+			"title": "hummingbird-title",
+			"description": "hummingbird-desc",
+			"langCode": "en",
+			"href": "https://www.birdbraintechnologies.com/hummingbirdbit/microblocks/"
 		},
 		{
 			"title": "sensor-examples-title",
@@ -23,6 +29,12 @@
 			"description": "classroom-steam-activites-desc",
 			"langCode": "es",
 			"href": "https://wiki.microblocks.fun/publications/diseno_de_actividades_steam_en_el_aula.pdf"
+		},
+		{
+			"title": "cpx-ornament-title",
+			"description": "cpx-ornament-desc",
+			"langCode": "en",
+			"href": "https://learn.adafruit.com/microblocks-circuitplayground-express-ornament"
 		}
 	],
 
@@ -38,24 +50,6 @@
 			"description": "girls-robotics-kit-desc",
 			"langCode": "en",
 			"href": "https://katiedays.com/blog/2020/02/24/a-robotics-kit-for-the-every-day-teacher/"
-		}
-	],
-
-	"courses": [
-		{
-			"title": "resource-test-title",
-			"description": "resource-test-desc",
-			"langCode": "en",
-			"href": "https://bjc.berkeley.edu/middle"
-		}
-	],
-
-	"manuals": [
-		{
-			"title": "bjc-title",
-			"description": "bjc-desc",
-			"langCode": "en",
-			"href": "https://bjc.berkeley.edu/middle"
 		}
 	]
 }
