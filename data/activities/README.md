@@ -16,7 +16,7 @@ The possible fields are:
 * **author:**           Who wrote the activity.
                         For example, "MicroBlocks" for cards created by the MicroBlocks team.
 
-* **level:**            Either `lvl_1` (beginner) or `lvl_2` (experienced).
+* **level:**            Either 1 (beginner) or 2 (experienced).
 
 * **boards:**           An array of board keys for which this activity was designed.
                         The list of board keys is in data/json/boards.json.

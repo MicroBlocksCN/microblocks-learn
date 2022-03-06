@@ -1,6 +1,6 @@
 {
     "author": "MicroBlocks",
-    "level": "lvl_1",
+    "level": 1,
     "boards": [ "board_microbit" ],
     "time": [ 15, 30 ],
     "topics": [ ],
