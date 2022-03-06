@@ -43,7 +43,7 @@
     "cmp_ir_remote": "IR remote control",
     "cmp_led": "LED",
     "cmp_led_rgb": "RGB LED",
-    "cmp_neopixels": "Neopixels",
+    "cmp_neopixels": "NeoPixels",
     "cmp_speaker": "Speaker",
 
     "tpc_art": "Art",
