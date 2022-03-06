@@ -7,9 +7,10 @@ your activity, plus the activity meta data and any images or other supporting fi
 
 `interest (at) microblocks (dot) fun`
 
-We may reject activities that we feel are not a good match for the MicroBlocks community, do not follow our formatting or presentation conventions, duplicate existing activites,
-or for other reasons. Feel free to check with us at the above email before writing a new
-activity.
+We may reject activities that we feel are not a good match for the MicroBlocks community,
+do not follow our formatting or presentation conventions, duplicate existing activites,
+or for other reasons.
+Feel free to check with us at the above email before writing a new activity.
 
 ## Markdown Formatting
 
@@ -23,11 +24,13 @@ Sections should use level 4 headings (i.e. `#### Step 1`).
 
 You can also use headings levels 5 and up.
 
-**Note:** Do not use heading levels 1 and 2. Those are reserved for other content on the activities page.
+**Note:** Do not use heading levels 1 and 2.
+Those are reserved for other content on the activities page.
 
 ### Images
 
-Always use relative paths to your images (i.e. `![An Image](image.png)` rather than `![An Image](/some/directory/image.png)`.
+Always use relative paths to your images (i.e. `![An Image](image.png)`
+rather than `![An Image](/some/directory/image.png)`.
 
 If an image needs a caption, add a Markdown title attribute in double quotes like this:
 
@@ -59,13 +62,17 @@ while level 3 is reserved for the notice title (i.e. Dealing With Electricity).
 
 ## Teacher's Guide
 
-If your activity includes a teacher's guide, please write it in Markdown as well, using the same formatting conventions used for the activity content.
+If your activity includes a teacher's guide, please write it in Markdown as well,
+using the same formatting conventions used for the activity content.
 
 ## Activity Card
 
-If your activity includes a student-facing activity card designed to be printed, please send us the PDF file. Such cards are typically created using Google Slides, which allows one to do precise page layout.
+If your activity includes a student-facing activity card designed to be printed,
+please send us the PDF file. Such cards are typically created using Google Slides,
+which allows one to do precise page layout.
 
-**Optional activity card source:** If you want others to be able to translate your activity card, please provide a URL to the source file, ideally a Google Slides document.
+**Optional activity card source:** If you want others to be able to translate your
+activity card, please provide a URL to the source file, ideally a Google Slides document.
 
 ## Activity Metadata
 

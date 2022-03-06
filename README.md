@@ -2,13 +2,15 @@
 
 ## Submitting Activities
 
-We welcome high-quality activity submissions from the MicroBlocks community. See [submitting activities](SUBMITTING_ACTIVITIES.md) for more information.
+We welcome high-quality activity submissions from the MicroBlocks community.
+See [submitting activities](SUBMITTING_ACTIVITIES.md) for more information.
 
 The rest of this README is for developers who want build, test, debug, or extend the website.
 
 ## Installation
 
-Install NodeJS (v16 recommended) and npm for your operating system, then clone this repository and run:
+Install NodeJS (v16 recommended) and npm for your operating system,
+then clone this repository and run:
 
 ```
 npm install
