@@ -1,3 +1,5 @@
+### IR Remote Control
+
 This activity card shows how to get use an infrared remote control with a Circuit Playground Express.
 
 [[note]]

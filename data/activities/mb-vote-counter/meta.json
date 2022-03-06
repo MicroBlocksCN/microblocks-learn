@@ -1,8 +1,8 @@
 {
     "author": "MicroBlocks",
-    "level": 1,
+    "level": "lvl_1",
     "boards": [ "board_microbit" ],
-    "time": [ 15, 45 ],
+    "time": [ 15, 30 ],
     "topics": [ ],
-    "components": [ "cmp_ir_remote" ]
+    "components": [ ]
 }

@@ -1,4 +1,4 @@
-## Doorbell
+### Doorbell
 
 This activity card shows how to create a doorbell that display different images
 an plays different tones depending on which button is pressed.

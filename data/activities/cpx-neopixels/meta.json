@@ -4,6 +4,5 @@
     "boards": [ "board_cpx", "board_cpxbf" ],
     "time": [ 15, 45 ],
     "topics": [ "tpc_art" ],
-    "components": [ "cmp_neopixels" ],
-    "card-slides-url": "https://docs.google.com/presentation/d/1etoK32aKWcoYuzvjTqHhX4Mv-PE07qdNwsAYccef6VA"
+    "components": [ "cmp_neopixels" ]
 }

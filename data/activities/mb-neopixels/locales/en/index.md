@@ -1,3 +1,5 @@
+### NeoPixels - micro:bit
+
 Connect the micro:bit to MicroBlocks and add the NeoPixel library.
 
 ![](greenCircle.jpg =60x*) ![](neopixel-library.png =150x*)
@@ -12,7 +14,7 @@ Start with an **attach LED NeoPixel strip to pin** block.  Input both the number
 
 ![Initialize the NeoPixel strip](init-neopixels.png)
 
-Change the color by selecting the green circles and customizing them. 
+Change the color by selecting the green circles and customizing them.
 
 ![](edit-colors.png =250x*) ![script](set-neopixels.png)
 

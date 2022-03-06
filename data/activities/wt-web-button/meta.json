@@ -5,6 +5,5 @@
     "time": [ 15, 30 ],
     "topics": [ "tpc_iot" ],
     "components": [ "cmp_webthings-gateway" ],
-    "card-slides-url": "https://docs.google.com/presentation/d/1FLnWMXIRL54OHks7tOdh1dkAsLCB4FfcO2W-29O6P_c",
     "video-url": "https://diode.zone/videos/watch/6c40d8c4-4a7a-43d4-aa21-181bc547933e"
 }

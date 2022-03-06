@@ -1,10 +1,8 @@
 {
     "author": "MicroBlocks",
     "level": "lvl_1",
-    "boards": [ "microbit" ],
+    "boards": [ "board_microbit" ],
     "time": [ 15, 45 ],
     "topics": [ ],
-    "components": [ ],
-    "card-slides-url": "https://docs.google.com/presentation/d/18bSy3sEun4CpNeV3R-zIRkl-hjZieS8sUi2in3GqFqg",
-    "video-url": "https://www.youtube.com/watch?v=KIOewCLBb3U"
+    "components": [ ]
 }

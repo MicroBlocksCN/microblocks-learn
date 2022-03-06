@@ -4,6 +4,5 @@
     "boards": [ "microbit" ],
     "time": [ 15, 45 ],
     "topics": [ ],
-    "components": [ "cmp_alligators" ],
-    "card-slides-url": "https://docs.google.com/presentation/d/1TMSMhAFulIAgnk9ksNQh2NsFfv28du21MD4PYGLz_WA"
+    "components": [ "cmp_alligators" ]
 }
