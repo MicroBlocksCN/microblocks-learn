@@ -165,7 +165,7 @@ function slugify (string, langCode) {
         }
     }
 
-    return slug;
+    return encodeURI(slug);
 };
 
 // Handlebars processing
