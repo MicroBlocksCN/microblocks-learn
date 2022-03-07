@@ -11,6 +11,7 @@ function autorun(){
 
   if ( body.classList.contains('v_home') ) {
     filtersResponsiveness();
+    homeHero();
   }
 
   // until browsers add support for :has in css...

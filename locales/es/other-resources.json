@@ -1,0 +1,35 @@
+{
+	"other-resources": "Otros Recursos",
+	"intro-text": "Recursos útiles para educadores, muchos de ellos aportados por la comunidad global de MicroBlocks.",
+	"activities-lbl": "Actividades y Tutoriales",
+	"articles-lbl": "Artículos",
+	"courses-lbl": "Cursos",
+	"manuals-lbl": "Manuales e Instrucciones",
+
+	"sensor-examples-title": "Sensores en Acción",
+	"sensor-examples-desc": "Muchos ejemplos del uso de sensores con el micro:bit, por John Hegarty. Utilizad el menú en la esquina superior izquierda para seleccionar páginas.",
+
+	"cobie-cards-title": "Las Fichas de MicroBlocks de Cobie",
+	"cobie-cards-desc": "Buen conjunto de fichas de actividades de Cobie van de Ven.",
+
+	"classroom-steam-activites-title": "Clase de Tecnologia con la ESP32",
+	"classroom-steam-activites-desc": "Ejemplos simples usando una ESP32 con una placa de pruebas y algunos componentes electrónicos. Incluye esquemas eléctricos y scripts.",
+
+	"finch-title": "Finch y MicroBlocks",
+	"finch-desc": "Cómo utilizar el robot Finch de Birdbrain Technologies con Microblocks.",
+
+	"hummingbird-title": "Hummingbird y MicroBlocks",
+	"hummingbird-desc": "Cómo utilizar el kit de robótica Hummingbird de Birdbrain Technologies con Microblocks.",
+
+	"cpx-ornament-title": "Circuit Playground Express Ornament",
+	"cpx-ornament-desc": "Crea una colorida decoración con MicroBlocks y Adafruit Circuit Playground Express.",
+
+	"black-inventors-title": "Innovadores e Enventores Negros",
+	"black-inventors-desc": "Una lista de inventores e innovadores afroamericanos inspiradores, incluido el inventor de la señal de tráfico moderna y uno de los primeros médicos en realizar un trasplante de corazón con éxito.",
+
+	"girls-robotics-kit-title": "Kit de robótica de bajo coste - Enfocado a niñas",
+	"girls-robotics-kit-desc": "Describe el uso de MicroBlocks, la micro:bit y algunos componentes adicionales en actividades de robótica creativa que pueden inspirar e involucrar a las niñas, así como a los niños.",
+
+	"bjc-title": "The Beauty and Joy of Computing (escuela secundaria)",
+	"bjc-desc": "'La belleza y la alegría de la informática' es un curso desarrollado por la UC Berkeley "
+}

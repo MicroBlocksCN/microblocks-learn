@@ -1,7 +1,7 @@
 {
 	"other-resources": "Other Resources",
 	"intro-text": "Useful resources for educators, many contributed by the global MicroBlocks community.",
-	"activities-lbl": "Activites and Tutorials",
+	"activities-lbl": "Activities and Tutorials",
 	"articles-lbl": "Articles",
 	"courses-lbl": "Curricula and Courses",
 	"manuals-lbl": "Manuals and HowTos",
@@ -31,7 +31,5 @@
 	"girls-robotics-kit-desc": "Describes using MicroBlocks, the micro:bit, and a few additional components in creative robotics activities that can inspire and engage girls, as well as boys.",
 
 	"bjc-title": "The Beauty and Joy of Computing (middle school)",
-	"bjc-desc": "This is a curriculum developed by UC Berkeley",
-	"resource-test-title": "The Beauty and Joy of Computing",
-	"resource-test-desc": "The Beauty and Joy of Computing (BJC) is an introductory computer science curriculum developed at the University of California, Berkeley, intended for non-CS majors at the high school junior through undergraduate freshman level."
+	"bjc-desc": "This is a curriculum developed by UC Berkeley"
 }

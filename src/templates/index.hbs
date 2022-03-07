@@ -10,8 +10,23 @@
 
 <!-- Header -->
 <header class="v_home__hero c_hero-yellow">
-    <div class="v_home__hero-picture">
-        <img src="../assets/img/logos/MicroBlocksLearnBlock.svg" alt="MicroBlocks LEARN">
+    <div class="c_hero-home">
+
+        <div class="c_hero-home__logo">
+            {{> svg.learn-microblocks-block }}
+            <div class="c_hero-home__bubble c_hero-home__bubble--a">
+                <img src="/assets/img/pictures/adele-goldberg.svg" alt="Adele Goldberg">
+            </div>
+        </div>
+
+        <div class="c_hero-home__descriptions">
+            <div class="c_hero-home__desc c_hero-home__desc--a">
+{{#markdown}}{{localize "adele-txt"
+    (join "**" (localize "adele-name") "**")
+}}{{/markdown}}
+            </div>
+        </div>
+        
     </div>
 </header><!-- /Header -->
 
