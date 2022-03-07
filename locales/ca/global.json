@@ -4,7 +4,7 @@
     "get-started-nav-item": "Primers Passos",
     "educators-nav-item": "Educadors",
     "other-resources-nav-item": "Altres Recursos",
-    "run-nav-item": "Programa",
+    "run-nav-item": "Obre",
 
     "contribute": "Contribueix",
     "contribute-txt": "Ens pots ajudar a @1, @2, @3 i amb @4.",
@@ -27,7 +27,7 @@
 
     "cmp_alligators": "Pinces de cocodril",
     "cmp_angle_servo": "Servo (angle)",
-    "cmp_cr_servo": "Servo (RC)",
+    "cmp_cr_servo": "Servo (360°)",
     "cmp_dht22": "DHT22 (ambiental)",
     "cmp_ext_board": "Placa d'extensió",
     "cmp_ir_remote": "Control remot (IR)",

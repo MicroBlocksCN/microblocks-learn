@@ -1,55 +1,55 @@
 {
-    "courses": [
-        {
-            "title": "resource-test-title",
-            "description": "resource-test-desc",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        }
-    ],
-    "manuals": [
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        },
-        {
-            "title": "bjc-title",
-            "description": "bjc-description",
-            "langCode": "en",
-            "href": "https://bjc.berkeley.edu/middle"
-        }
-    ]
+	"activities": [
+		{
+			"title": "cobie-cards-title",
+			"description": "cobie-cards-desc",
+			"langCode": "nl",
+			"href": "https://digi-lab.org/downloads/microblocks%20kaarten%20digilab.pdf"
+		},
+		{
+			"title": "finch-title",
+			"description": "finch-desc",
+			"langCode": "en",
+			"href": "https://www.birdbraintechnologies.com/finch/microblocks/"
+		},
+		{
+			"title": "hummingbird-title",
+			"description": "hummingbird-desc",
+			"langCode": "en",
+			"href": "https://www.birdbraintechnologies.com/hummingbirdbit/microblocks/"
+		},
+		{
+			"title": "sensor-examples-title",
+			"description": "sensor-examples-desc",
+			"langCode": "en",
+			"href": "https://sites.google.com/clongowes.net/microblocksbasicexamples/home"
+		},
+		{
+			"title": "classroom-steam-activites-title",
+			"description": "classroom-steam-activites-desc",
+			"langCode": "es",
+			"href": "https://docs.google.com/presentation/d/1xAg0W0o3ge5c6KzwqmIXiBm6ChAMDaCqUY-IXRlXnyY"
+		},
+		{
+			"title": "cpx-ornament-title",
+			"description": "cpx-ornament-desc",
+			"langCode": "en",
+			"href": "https://learn.adafruit.com/microblocks-circuitplayground-express-ornament"
+		}
+	],
 
+	"articles": [
+		{
+			"title": "black-inventors-title",
+			"description": "black-inventors-desc",
+			"langCode": "en",
+			"href": "https://www.milkeneducatorawards.org/connections/articles/view/black-inventors-stem-curriculum"
+		},
+		{
+			"title": "girls-robotics-kit-title",
+			"description": "girls-robotics-kit-desc",
+			"langCode": "en",
+			"href": "https://katiedays.com/blog/2020/02/24/a-robotics-kit-for-the-every-day-teacher/"
+		}
+	]
 }

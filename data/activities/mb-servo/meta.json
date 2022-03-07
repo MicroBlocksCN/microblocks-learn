@@ -4,6 +4,5 @@
     "boards": [ "board_microbit" ],
     "time": [ 15, 45 ],
     "topics": [ "tpc_art" ],
-    "components": [ "cmp_cr_servo", "cmp_angle_servo" ],
-    "card-slides-url": "https://docs.google.com/presentation/d/1igLfIWmnuYkQVBakyiNOMSoZIIQX18VzluyX_wOFQDo"
+    "components": [ "cmp_cr_servo", "cmp_angle_servo" ]
 }

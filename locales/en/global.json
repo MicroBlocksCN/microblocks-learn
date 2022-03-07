@@ -14,7 +14,7 @@
     "lnk-patrons": "financial support",
 
     "report-issue": "Report an Issue",
-    "report-issue-txt": "Report a bug or request a feature on our issue tracker.", 
+    "report-issue-txt": "Report a bug or request a feature on our issue tracker.",
     "repo": "BitBucket Repository",
 
     "contact": "Get in Touch",
@@ -36,9 +36,10 @@
 
     "cmp_alligators": "Alligator clips",
     "cmp_angle_servo": "Servo (angle)",
-    "cmp_cr_servo": "Servo (CR)",
+    "cmp_cr_servo": "Servo (360°)",
     "cmp_dht22": "DHT22 (environmental)",
     "cmp_ext_board": "Extension board",
+    "cmp_webthings-gateway": "WebThings Gateway",
     "cmp_ir_remote": "IR remote control",
     "cmp_led": "LED",
     "cmp_led_rgb": "RGB LED",
@@ -48,6 +49,7 @@
     "tpc_art": "Art",
     "tpc_data": "Data",
     "tpc_game": "Game",
+    "tpc_iot": "IoT",
     "tpc_history": "History",
     "tpc_maths": "Maths",
     "tpc_music": "Music",

@@ -1,0 +1,9 @@
+{
+    "author": "MicroBlocks",
+    "level": "lvl_2",
+    "boards": [ "microbit" ],
+    "time": [ 30, 60 ],
+    "topics": [ "tpc_iot" ],
+    "components": [ "cmp_webthings-gateway" ],
+    "video-url": "https://diode.zone/videos/watch/eb535dfe-09a3-4d6c-9455-ed7cf56751c3"
+}

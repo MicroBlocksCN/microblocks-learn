@@ -1,3 +1,5 @@
+### Sounds
+
 Connect the micro:bit to MicroBlocks and add the Tone library.
 
 ![](greenCircle.jpg =60x*) ![](tone-library.png =150x*)
@@ -24,7 +26,7 @@ Using a variable for note durations lets you change the speed.  Click on the var
 
 ![](variables.png =120x*) ![](variables-button.png =120x*) ![](variable-name.png =200x*)
 
-Now you can customize the length of the note easily in the play note block. Use the repeat block for parts of the song that repeat. 
+Now you can customize the length of the note easily in the play note block. Use the repeat block for parts of the song that repeat.
 
 ![script](play-song.png)
 

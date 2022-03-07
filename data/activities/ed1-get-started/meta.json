@@ -1,0 +1,8 @@
+{
+    "author": "MicroBlocks",
+    "level": "lvl_1",
+    "boards": [ "board_ed1" ],
+    "time": [ 15, 45 ],
+    "topics": [ ],
+    "components": [ ]
+}

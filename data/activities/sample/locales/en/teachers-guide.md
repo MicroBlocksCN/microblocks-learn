@@ -1,9 +1,9 @@
-# Introduction
+### Introduction
 
 What this activity is about.
 
 ![An image](../image.png)
 
-# Goal
+### Goal
 
 What are you going to accomplish.

@@ -1,12 +1,12 @@
-# Materials needed
+### Materials needed
 
 * stuff
 * more stuff
 * some more stuff
 
-# Procedure
+### Procedure
 
-## Subtitle 1
+#### Subtitle 1
 
 Do some stuff.
 
@@ -14,7 +14,7 @@ Do some stuff.
 Don't run with scissors!
 [[/safety]]
 
-## Subtitle 2
+#### Subtitle 2
 
 Do some more stuff.
 
@@ -24,7 +24,7 @@ Do some more stuff.
 Did you know that scissors can be used for good, too?
 [[/tip]]
 
-## Subtitle 3
+#### Subtitle 3
 
 Do even more stuff.
 

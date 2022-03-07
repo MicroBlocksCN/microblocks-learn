@@ -4,6 +4,5 @@
     "boards": [ "board_microbit" ],
     "time": [ 15, 45 ],
     "topics": [ ],
-    "components": [ "cmp_ir_remote" ],
-    "card-slides-url": "https://docs.google.com/presentation/d/1B6MB9fPwlVyvrlwRmEPF4ZAr0f3f2nKwqcMP2Zeam_E"
+    "components": [ "cmp_ir_remote" ]
 }
