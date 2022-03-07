@@ -1,6 +1,35 @@
 {
-    "other-resources": "Altres recursos",
-    "intro-text": "Fes una ullada als recursos creats per la comunitat global de MicroBlocks.",
-    "courses-lbl": "Cursos",
-    "manuals-lbl": "Manuals i tutorials"
+    "other-resources": "Altres Recursos",
+    "intro-text": "Recursos útils per a educadors, molts d'ells creats per la comunitat global de MicroBlocks.",
+    "activities-lbl": "Activitats i Tutorials",
+	"articles-lbl": "Articles",
+	"courses-lbl": "Cursos",
+	"manuals-lbl": "Manuals i Instruccions",
+
+    "sensor-examples-title": "Sensors en Acció",
+	"sensor-examples-desc": "Molts exemples d'utilització de sensors amb la micro:bit, per John Hegarty. Utilitzeu el menu de dalt a l'esquerra per seleccionar les pàgines.",
+    
+	"cobie-cards-title": "Les Fitxes de MicroBlocks d'en Cobie",
+	"cobie-cards-desc": "Un bon conjunt de fitxes d'activitats d'en Cobie van de Ven.",
+
+	"classroom-steam-activites-title": "Classe de tecnologia amb la ESP32",
+	"classroom-steam-activites-desc": "Exemples simples utilitzant una ESP32 amb una placa de proves i alguns components electrònics. Inclou esquemes elèctrics i scripts.",
+
+	"finch-title": "Finch i MicroBlocks",
+	"finch-desc": "Com utilitzar el robot Birdbrain Technologies Finch amb Microblocks.",
+
+	"hummingbird-title": "Hummingbird i MicroBlocks",
+	"hummingbird-desc": "Com utilitzar el kit de robòtica de Birdbrain Technologies Hummingbird amb Microblocks.",
+
+	"cpx-ornament-title": "Circuit Playground Express Ornament",
+	"cpx-ornament-desc": "Crea un decoració colorida amb MicroBlocks i l'Adafruit Circuit Playground Express.",
+
+	"black-inventors-title": "Innovadors i Inventors Negres",
+	"black-inventors-desc": "Una llista d'inventors i innovadors afroamericans inspiradors, inclòs l'inventor del senyal de trànsit modern i un dels primers metges a realitzar un trasplantament cardíac amb èxit.",
+
+	"girls-robotics-kit-title": "Kit de robòtica de baix cost - Enfocat a nenes",
+	"girls-robotics-kit-desc": "Descriu l'ús de MicroBlocks, la micro:bit i uns quants components addicionals en activitats de robòtica creativa que poden inspirar i implicar les noies, així com els nens.",
+
+	"bjc-title": "The Beauty and Joy of Computing (escola secundària)",
+	"bjc-desc": "'La Bellesa i l'Alegria de la Informàtica' és un curs desenvolupat per la UC Berkeley"
 }
