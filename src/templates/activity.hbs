@@ -74,7 +74,7 @@
 
         <!-- Sidebar Contents -->
         <div class="col col-px col-12 lg-col-3 xl-col-3">
-            {{#if (or has-guide has-card has-project)}}
+            {{#if (or has-guide has-card has-project has-video)}}
             <aside class="v_activity__side-block v_activity__side-block--resources">
                 <h3 class="v_activity__side-title">
                     {{localize "resources"}}
@@ -105,6 +105,16 @@
                         title=(localize "microblocks-project")
                         icon='svg.icon-scripts-20x20'
                         arrow='svg.icon-arrow-down-16x16'
+                        download=true
+                    }}
+                    {{/if}}
+
+                    {{#if has-video}}
+                    {{> _button
+                        href=video-url
+                        title=(localize "video")
+                        icon='svg.icon-video-20x20'
+                        arrow='svg.icon-arrow-up-right-16x16'
                         download=true
                     }}
                     {{/if}}

@@ -392,6 +392,12 @@ function buildActivities () {
                             `${activityPath}/files/project.ubp`);
                     localeDescriptor['has-guide'] =
                         fs.existsSync(`${localePath}/teachers-guide.md`);
+                    localeDescriptor['has-video'] = 
+                        ( localeDescriptor['video-url'] || meta['video-url'] ) ? true : false;
+                    localeDescriptor['video-url'] = 
+                        localeDescriptor['video-url'] ||
+                        meta['video-url'] ||
+                        [];
 
                     Object.assign(descriptor, meta);
                     // overwrite top-level meta fields with their values in the
