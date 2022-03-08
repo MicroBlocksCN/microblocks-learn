@@ -313,17 +313,6 @@ function updatePages () {
     document.querySelector('.c_pagination').innerHTML = html;
 };
 
-
-
-/**
- * UI Responsive functionalities
- * To refactor (add inline, or keep here, or separated JS file)
- * 
- * MC: Bernat, what you think?
- * 
- * BR: Looks fine to me here. Feel free to delete this comment :)
- */
-
 function filtersResponsiveness() {
     const windowWidth = window.innerWidth;
     const activityFilters = document.querySelector('.c_filters');
