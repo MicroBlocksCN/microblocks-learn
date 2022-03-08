@@ -81,7 +81,7 @@ function activityDiv (activity) {
             if (index < (array.length - 1) ){
                 list += ', ';
             } else {
-                list += '.';
+                list += '';
             }
         });
         
