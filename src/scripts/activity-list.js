@@ -192,6 +192,7 @@ function populateFilters () {
 
 function applyFilter (selector, value) {
     filters[selector] = value;
+    currentPage = 1; // always starts on page 1
     updateActivityList();
 }; 
 
