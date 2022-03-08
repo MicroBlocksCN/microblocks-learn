@@ -192,6 +192,7 @@ function populateFilters () {
 
 function applyFilter (selector, value) {
     filters[selector] = value;
+    currentPage = 1; // always starts on page 1
     updateActivityList();
 }; 
 
@@ -278,7 +279,7 @@ function pageElementHtml (pageNum) {
     if (typeof pageNum === 'number') {
         return `<div class="c_pagination__item
             ${currentPage === pageNum ?  ' c_pagination__item--active' : ''}"
-            onclick="currentPage = ${pageNum}; updateActivityList();"
+            onclick="currentPage = ${pageNum}; updateActivityList(); scrollToTop();"
             role="button" tabindex="0" aria-label="Go to page ${pageNum}"
             ${currentPage === pageNum ? ' aria-current="true"' : ''}>
             ${pageNum}</div>`;
@@ -291,7 +292,7 @@ function pageElementHtml (pageNum) {
         // scratch if need be.
         return `<div class="c_pagination__item
             ${disabled ? ' c_pagination__item--disabled' : ''}"
-            onclick="${['previous','next'][['<','>'].indexOf(pageNum)]}Page();"
+            onclick="${['previous','next'][['<','>'].indexOf(pageNum)]}Page(); scrollToTop();"
             role="button" tabindex="0" ${pageNum === '<' ?
                     ' aria-label="Previous Page"' : ' aria-label="Next Page"' }
             ${disabled ? ' aria-disabled="true"' : ''}
@@ -299,8 +300,19 @@ function pageElementHtml (pageNum) {
     }
 };
 
+function scrollToTop () {
+    var filtersDiv = document.querySelector('.v_home__filters'); // for scrolling to it
+    var filtersYPos = filtersDiv.getBoundingClientRect().top;
+    var scroollTo = filtersYPos + window.pageYOffset - 40;
+    window.scrollTo({
+        top: scroollTo,
+        left: 0,
+        behavior: 'smooth'
+    })
+}
+
 function updatePages () {
-    var html;
+    var html;    
     if (totalPages < 2) {
         html = '';
     } else {
@@ -312,17 +324,6 @@ function updatePages () {
     }
     document.querySelector('.c_pagination').innerHTML = html;
 };
-
-
-
-/**
- * UI Responsive functionalities
- * To refactor (add inline, or keep here, or separated JS file)
- * 
- * MC: Bernat, what you think?
- * 
- * BR: Looks fine to me here. Feel free to delete this comment :)
- */
 
 function filtersResponsiveness() {
     const windowWidth = window.innerWidth;
