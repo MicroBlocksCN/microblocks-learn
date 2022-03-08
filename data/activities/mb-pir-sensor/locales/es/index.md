@@ -1,4 +1,4 @@
 ### Sensor de Presencia P.I.R.
 
-This activity card shows how to use a passive infrared (P.I.R.) sensor
-to detect human and animal motion.
+Esta tarjeta de actividad muestra cómo usar un sensor infrarrojo pasivo (P.I.R.)
+para detectar el movimiento humano y animal.
