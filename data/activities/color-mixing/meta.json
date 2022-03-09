@@ -1,0 +1,9 @@
+{
+    "draft": true,
+    "author": "MicroBlocks",
+    "level": 1,
+    "boards": [ "board_microbit" ],
+    "time": [ 90, 120 ],
+    "topics": [ "tpc_music" ],
+    "components": [ "cmp_led", "cmp_alligators" ]
+}
