@@ -1,21 +1,21 @@
 {
     "board_ed1": {
-        "compatible": [ "clue", "m5stack", "microbit", "nodemcu", "pico" ]
+        "compatible": [ "board_clue", "board_m5stack", "board_microbit", "board_nodemcu", "board_pico" ]
     },
     "board_clue": {
-        "compatible": [ "microbit", "pico" ]
+        "compatible": [ "board_microbit", "board_pico" ]
     },
     "board_cpxbf": {
-        "compatible": [ "cpx", "pico" ]
+        "compatible": [ "board_cpx", "board_pico" ]
     },
     "board_cpx": {
-        "compatible": [ "pico" ]
+        "compatible": [ "board_pico" ]
     },
     "board_calliope": {
-        "compatible": [ "microbit", "pico" ]
+        "compatible": [ "board_microbit", "board_pico" ]
     },
     "board_microbit": {
-        "compatible": [ "pico" ]
+        "compatible": [ "board_pico" ]
     },
     "board_pico": {
         "compatible": [ ]
