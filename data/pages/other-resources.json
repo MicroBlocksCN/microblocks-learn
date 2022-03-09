@@ -35,6 +35,12 @@
 			"description": "cpx-ornament-desc",
 			"langCode": "en",
 			"href": "https://learn.adafruit.com/microblocks-circuitplayground-express-ornament"
+		},
+		{
+			"title": "okdo-card-set-title",
+			"description": "okdo-card-set-desc",
+			"langCode": "en",
+			"href": "https://drive.google.com/drive/u/0/folders/1RLumKi6cFZnT9hierxR3J_MEzO8eGXIu"
 		}
 	],
 
