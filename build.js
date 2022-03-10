@@ -165,7 +165,9 @@ function slugify (string, langCode) {
         }
     }
 
-    return encodeURI(slug.normalize('NFD'));
+	// remove accented characters from the slug to avoid folder path issues
+	// see: https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
+	return slug.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
 // Handlebars processing
