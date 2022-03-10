@@ -57,5 +57,8 @@
     "tpc_sound": "Sound",
 
     "lvl_1" : "Beginner",
-    "lvl_2" : "Experienced"
+    "lvl_2" : "Experienced",
+
+    "og_description": "Activities and resources to learn and teach MicroBlocks." ,
+    "og_image_alt": "Microblocks logo and a leds board smiling"
 }

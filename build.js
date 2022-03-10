@@ -204,6 +204,8 @@ function compileTemplates () {
         }
     );
 
+    // Marc - Execcute initial sitemap creation
+
 };
 
 function compileTemplate (templateName, descriptor, langCode, destinationDir) {
@@ -231,6 +233,8 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         Object.assign(descriptor.locale, locales.en.pages[templateName]);
     }
 
+    // Marc - Add URL to Sitemap
+
     // add global strings to all page locales
     Object.keys(locales.en.pages.global).forEach((key) => {
         if (locales[langCode].pages.global &&
@@ -241,7 +245,14 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         }
     });
 
+    // add local strings to pages ? - Bernat, correct?
     descriptor.locale.code = langCode;
+
+    // collect URLs for sitemap and pass it to the template    
+    descriptor.pageUrl = `https://learn.microblocks.fun/${langCode}/`
+        + (destinationDir ? `${destinationDir}/` : ``)
+        + `${descriptor.href || descriptor.slug || templateName}.html`;
+    // debug(`url: ${descriptor.pageUrl}`);
 
     // compile the template
     fse.ensureDirSync(`${__dirname}/dist/${langCode}/${destinationDir}`);

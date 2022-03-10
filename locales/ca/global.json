@@ -46,5 +46,8 @@
     "tpc_sound": "So",
 
     "lvl_1" : "Principiant",
-    "lvl_2" : "Iniciat"
+    "lvl_2" : "Iniciat",
+
+    "og_description": "Activitats i recursos per a aprendre i ensenyar MicroBlocks.",
+    "og_image_alt": "Logo de Microblocks i una placa de leds somrient"
 }

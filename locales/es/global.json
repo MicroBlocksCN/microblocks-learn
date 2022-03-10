@@ -46,5 +46,8 @@
     "tpc_sound": "Sonido",
 
     "lvl_1": "Principiante",
-    "lvl_2": "Iniciado"
+    "lvl_2": "Iniciado",
+
+    "og_description": "Actividades y recursos para aprender y enseñar MicroBlocks.",
+    "og_image_alt": "Logo de Microblocks y una placa de leds sonriendo"
 }

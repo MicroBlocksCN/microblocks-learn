@@ -19,7 +19,7 @@
         url('assets/fonts/Inter-Regular.woff') format('woff');
   font-weight: 400; // Regular
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -28,7 +28,7 @@
         url('assets/fonts/Inter-Bold.woff') format('woff');
   font-weight: 700; // Bold
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 
@@ -44,7 +44,7 @@
         url('assets/fonts/SpaceGrotesk-Medium.woff') format('woff');
   font-weight: 500; // Medium
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -53,7 +53,7 @@
         url('assets/fonts/SpaceGrotesk-Bold.woff') format('woff');
   font-weight: 700; // Medium
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 
