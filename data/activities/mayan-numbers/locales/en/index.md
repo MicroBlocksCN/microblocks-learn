@@ -16,7 +16,9 @@ Let us take a look at these digits:
 
 The first digit at the top left of the grid represents *zero*. To its right, we find increasing digits from *one* to *four*. After *four*, we use a horizontal line to represent one group of *five*, and then keep adding dots to it to represent *six*, *seven*, *eight* and *nine*.
 
-Two horizontal lines make for two groups of *five*, that is, *ten*, after which we keep adding dots until the largest digit, that represent *nineteen*.
+Two horizontal lines mean two groups of *five*, that is, *ten*.
+Similarly, three horizontal lines represent fifteen.
+After that, we keep adding dots until we have three lines and four dots, which add up to *nineteen*, the largest digit.
 
 ### Materials needed
 
@@ -202,3 +204,37 @@ Finally, we should also send the groups of twenty from the script that decrement
 With this setup, you can now print numbers as big as 399 in Maya!
 
 As an exercise left for the reader, could you think of a way to chain an arbitrary number of micro:bits to be able to draw even bigger numbers?
+
+#### IGNORE: Rendering Tests (will be deleted)
+
+55%:
+
+![](render-55.png)
+
+85%:
+
+![](render-85.png)
+
+100%:
+
+![](render-100.png)
+
+110%:
+
+![](render-110.png)
+
+125%:
+
+![](render-125.png)
+
+150%:
+
+![](render-150.png)
+
+200%:
+
+![](render-200.png)
+
+250%:
+
+![](render-250.png)
