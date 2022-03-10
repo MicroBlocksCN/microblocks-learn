@@ -204,6 +204,8 @@ function compileTemplates () {
         }
     );
 
+    // Marc - Execcute initial sitemap creation
+
 };
 
 function compileTemplate (templateName, descriptor, langCode, destinationDir) {
@@ -230,6 +232,8 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         descriptor.locale = {};
         Object.assign(descriptor.locale, locales.en.pages[templateName]);
     }
+
+    // Marc - Add URL to Sitemap
 
     // add global strings to all page locales
     Object.keys(locales.en.pages.global).forEach((key) => {
