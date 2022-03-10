@@ -53,7 +53,7 @@ function updateActivityList () {
             localize('result-count-zero') :
             localize('result-count-one')
         );
-    filtered.splice((currentPage - 1) * pageSize, pageSize).forEach( 
+    filtered.splice((currentPage - 1) * pageSize, pageSize).forEach(
         (activity) => {
             listDiv.insertAdjacentHTML('beforeend', activityDiv(activity));
         }
@@ -67,7 +67,7 @@ function activityDiv (activity) {
         thumb           = `activities/${activity.slug}/thumbnail.png`,
         boards          = '',
         components      = '';
-        
+
     // create lists out of specs arrays
     function buildList (arrayOfSpecs) {
         let list = '';
@@ -84,7 +84,7 @@ function activityDiv (activity) {
                 list += '';
             }
         });
-        
+
         return list;
     };
 
@@ -194,7 +194,7 @@ function applyFilter (selector, value) {
     filters[selector] = value;
     currentPage = 1; // always starts on page 1
     updateActivityList();
-}; 
+};
 
 function resetFilters () {
     document.querySelectorAll('.activity-filter').forEach((select) => {
@@ -312,7 +312,7 @@ function scrollToTop () {
 }
 
 function updatePages () {
-    var html;    
+    var html;
     if (totalPages < 2) {
         html = '';
     } else {
