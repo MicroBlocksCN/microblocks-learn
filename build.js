@@ -241,7 +241,14 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         }
     });
 
+    // add local strings to pages ? - Bernat, correct?
     descriptor.locale.code = langCode;
+
+    // collect URLs for sitemap and pass it to the template    
+    descriptor.pageUrl = `https://learn.microblocks.fun/${langCode}/`
+        + (destinationDir ? `${destinationDir}/` : ``)
+        + `${descriptor.href || descriptor.slug || templateName}.html`;
+    // debug(`url: ${descriptor.pageUrl}`);
 
     // compile the template
     fse.ensureDirSync(`${__dirname}/dist/${langCode}/${destinationDir}`);
