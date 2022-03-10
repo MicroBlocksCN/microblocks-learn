@@ -165,7 +165,7 @@ function slugify (string, langCode) {
         }
     }
 
-    return encodeURI(slug);
+    return encodeURI(slug.normalize('NFD'));
 };
 
 // Handlebars processing
