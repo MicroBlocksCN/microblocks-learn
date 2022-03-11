@@ -1,4 +1,5 @@
 ### Sonido con micro:bit
 
-Esta actividad muestra cómo hacer sonido y música con un micro:bit.
-(Nota: el micro: bit v2 tiene un altavoz incorporado, por lo que no necesita conectar uno externo).
+Esta actividad muestra cómo reproducir sonido y música con una micro:bit.
+
+(Nota: La micro:bit v2 tiene un altavoz incorporado, por lo que no necesita conectar uno externo).

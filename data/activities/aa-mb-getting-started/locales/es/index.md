@@ -1,4 +1,3 @@
-### Comience con micro:bit
+### Primeros pasos con micro:bit
 
-Esta tarjeta de actividad muestra cómo comenzar con MicroBlocks en el micro:bit,
-incluyendo cómo usar los botones y la pantalla LED.
+Esta ficha de actividad muestra cómo iniciarse con MicroBlocks en una micro:bit, incluyendo cómo usar los botones y la pantalla LED.
