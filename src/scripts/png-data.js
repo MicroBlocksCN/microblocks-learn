@@ -26,7 +26,7 @@ function checkForCode (img) {
 
                     // images are exported from the IDE at XXX their size,
                     // for a better image quality, so they need to be reduced
-                    img.style.width =  img.naturalWidth * 0.5 + 'px';
+                    img.style.width =  img.naturalWidth * 0.34 + 'px';
                 };
             }
         );
