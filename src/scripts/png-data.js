@@ -20,6 +20,9 @@ function checkForCode (img) {
                     check = ('GP Script').split('').map(c => c.charCodeAt(0));
                 if (data.containsSubArray(check)) {
                     img.parentElement.classList.add('script');
+                    // images are exported from the IDE at XXX their size,
+                    // for a better image quality, so they need to be reduced
+                    img.style.width =  img.naturalWidth * 0.34 + 'px';
                 };
             }
         );
