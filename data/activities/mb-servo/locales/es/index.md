@@ -1,3 +1,3 @@
 ### Servos
 
-Esta tarjeta de actividades muestra cómo empezar a usar servos con el micro:bit.
+Esta ficha de actividades muestra cómo empezar a usar Servos con el micro:bit.

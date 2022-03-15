@@ -72,7 +72,7 @@
   // Anchor
   a:not(.button) {
     text-decoration: underline;
-    color: $color-purple;
+    color: $color-blue;
     transition: color $trans-0200 $trans-easing;
 
     &:not(.btn):hover {
@@ -133,7 +133,7 @@
     &:hover {
 
       &::after {
-        color: $color-purple;
+        color: $color-black;
       }
     }
   }
@@ -267,16 +267,6 @@
   table tbody tr:nth-of-type(even) {
     background-color: $color-grey-200;
   }
-
-  // table tbody tr:last-of-type {
-  //   border-bottom: 2px solid $color-yellow-dark;
-  // }
-
-  table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-  }
-
 
   
   // Exceptions

@@ -6,6 +6,9 @@
 // bytes in decimal, then doing the same for the string "GP Script" and checking
 // whether the first contains the second.
 
+// Besides this, images are exported from the IDE at a large size for a better quality,
+// so we are applying a CSS width based on the image's natural pixels real size
+
 function processImagesForCode () {
     document.querySelectorAll('img').forEach( img => checkForCode(img));
 };

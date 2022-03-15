@@ -9,15 +9,16 @@ function autorun(){
 
   menuToggle();
 
+  // Page Home
   if ( body.classList.contains('v_home') ) {
     filtersResponsiveness();
     homeHero();
   }
 
-  // until browsers add support for :has in css...
-  document.querySelectorAll('.caption').forEach(
-    span => span.parentElement.classList.add('captioned')
-  );
+  // Page has WYSIWYG elements
+  if ( document.querySelector('.wysiwyg') ) {
+    wysiwyg();
+  }
 
 };
 
