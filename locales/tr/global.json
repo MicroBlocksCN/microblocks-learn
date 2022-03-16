@@ -1,0 +1,64 @@
+{
+    "index-nav-item": "Ana sayfa",
+    "activities-nav-item": "Etkinlikler",
+    "get-started-nav-item": "Başlayın",
+    "educators-nav-item": "Eğitimciler",
+    "other-resources-nav-item": "Other Resources",
+    "run-nav-item": "Çalıştır",
+
+    "contribute": "Katkıda bulun",
+    "contribute-txt": "Aktif olarak @1, @2, @3 ve @4 arıyoruz.",
+    "lnk-translators": "çevirmenler",
+    "lnk-content-creators": "içerik yaratıcıları",
+    "lnk-ambassadors": "duyuracaklar",
+    "lnk-patrons": "finansal destek",
+
+    "report-issue": "Sorun Bildir",
+    "report-issue-txt": "Sorun izleyicimizde bir hatayı bildirin veya bir özellik isteyin.",
+    "repo": "BitBucket Deposu",
+
+    "contact": "İletişim",
+    "contact-txt": "Bir sorunuz mu var veya işbirliği yapmak mı istiyorsunuz? Bize bir satır bırakın!",
+
+    "copyright": "by @1, @2 and @3.",
+    "license": "Microblocks @1 dır, @2 altında yayınlanmıştır.",
+    "free-software": "ücretsiz yazılım",
+    "mpl2": "Mozilla Public License v2.0",
+
+    "board_calliope": "Calliope",
+    "board_clue": "Adafruit Clue",
+    "board_cpx": "Circuit Playground Express",
+    "board_cpxbf": "Circuit Playground Bluefruit",
+    "board_ed1": "Citilab ED1",
+    "board_microbit": "micro:bit",
+    "board_nodemcu": "NodeMCU",
+    "board_pico": "RaspberryPi Pico",
+
+    "cmp_alligators": "Timsah klipsleri",
+    "cmp_angle_servo": "Servo (açı)",
+    "cmp_cr_servo": "Servo (360°)",
+    "cmp_dht22": "DHT22 (çevresel)",
+    "cmp_ext_board": "Uzatma kartı",
+    "cmp_webthings-gateway": "WebThings Ağ Geçidi",
+    "cmp_ir_remote": "IR uzaktan kumanda",
+    "cmp_led": "LED",
+    "cmp_led_rgb": "RGB LED",
+    "cmp_neopixels": "NeoPixels",
+    "cmp_speaker": "Hoparlör",
+
+    "tpc_art": "Sanat",
+    "tpc_data": "Veri",
+    "tpc_game": "Oyun",
+    "tpc_iot": "IoT",
+    "tpc_history": "Tarih",
+    "tpc_maths": "Matematik",
+    "tpc_music": "Müzik",
+    "tpc_robotics": "Robotik",
+    "tpc_sound": "Ses",
+
+    "lvl_1" : "Acemi",
+    "lvl_2" : "Tecrübeli",
+
+    "og_description": "MicroBlocks ı öğrenmek ve öğretmek için etkinlikler ve kaynaklar." ,
+    "og_image_alt": "MicroBlocks logosu ve gülümseyen bir led panosu"
+}

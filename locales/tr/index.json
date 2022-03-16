@@ -1,0 +1,26 @@
+{
+    "page-title": "Hoş geldiniz",
+    "top-label": "Etkinlikler",
+    "result-count": "@1 sonuçlar.",
+    "result-count-one": "1 sonuç.",
+    "result-count-zero": "Sonuç yok.",
+    "no-components": "Yok",
+    "components-unset": "Ayarı kaldır",
+    "levels-all": "Tüm",
+    "components-all": "Tüm",
+    "locales-all": "Tüm",
+    "boards-all": "Tüm",
+    "topics-all": "Tüm",
+    "language": "Dil",
+    "board": "Kart",
+    "chk-compatible": "ve uyumlu kartlar",
+    "components": "Bileşenler",
+    "level+resources": "Seviye ve Kaynaklar",
+    "chk-card": "aktivite kartı var",
+    "chk-guide": "öğretmen kılavuzu var",
+    "topics": "Konular",
+    "btn-reset": "Sıfırla",
+
+    "adele-name": "Adele Goldberg",
+    "adele-txt": "@1 Amerikalı bir bilgisayar bilimcisi ve eğitimcisi ve Smalltalk programlama dilinin ortak geliştiricisidir."
+}

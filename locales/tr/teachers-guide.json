@@ -1,0 +1,18 @@
+{
+    "author": "@1 tarafından",
+    "boards": "Kartlar",
+    "components": "Bileşenler",
+    "no-components": "Yok",
+    "resources": "Kaynaklar",
+    "activity-card": "Aktivite Kartı",
+    "teachers-guide": "Öğretmen Kılavuzu",
+    "back-to-activity": "Etkinliği Görüntüle",
+    "activity-details": "Etkinlik Ayrıntıları",
+    "lbl-level": "Seviye",
+    "lbl-duration": "Tahmini süresi",
+    "duration": "@1-@2 dakika",
+    "lbl-topics": "Konular",
+    "lbl-printable": "Basılabilir versiyon",
+    "printable-txt": "Yazdırmak için bu sayfanın yazıcı dostu bir sürümünü yükleyebilir veya bir PDF dosyası olarak kaydedebilirsiniz.",
+    "btn-printable": "Basılabilir versiyon"
+}
