@@ -112,8 +112,9 @@
 
     &::after {
 
-      // only makes sense in computers
-      @include breakpoint(lg) {
+      // only makes sense in computers, but
+      // it is used at half screen size
+      @include breakpoint(sm) {
         content: 'Drag to the IDE';
 
         display: block;
@@ -276,7 +277,6 @@
   &--small {
     font-size: $fontSize-087;
     margin-bottom: $space-100;
-
   }
 
 
