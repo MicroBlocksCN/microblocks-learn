@@ -76,7 +76,7 @@ handlebars.registerHelper('localize', function () {
 
     if (!localized) {
         // missing locale string, return EN one
-        localized = locales.en.pages[templateName][key] || 
+        localized = locales.en.pages[templateName][key] ||
             locales.en.pages.global[key];
     }
 
@@ -170,7 +170,7 @@ function slugify (string, langCode) {
 
 	// remove accented characters from the slug to avoid folder path issues
 	// see: https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
-	return slug.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	return encodeURI(slug.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
 };
 
 // Handlebars processing
@@ -253,7 +253,7 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
     // add local strings to pages ? - Bernat, correct?
     descriptor.locale.code = langCode;
 
-    // collect URLs for sitemap and pass it to the template    
+    // collect URLs for sitemap and pass it to the template
     descriptor.pageUrl = `https://learn.microblocks.fun/${langCode}/`
         + (destinationDir ? `${destinationDir}/` : ``)
         + `${descriptor.href || descriptor.slug || templateName}.html`;
@@ -408,9 +408,9 @@ function buildActivities () {
                             `${activityPath}/files/project.ubp`);
                     localeDescriptor['has-guide'] =
                         fs.existsSync(`${localePath}/teachers-guide.md`);
-                    localeDescriptor['has-video'] = 
+                    localeDescriptor['has-video'] =
                         ( localeDescriptor['video-url'] || meta['video-url'] ) ? true : false;
-                    localeDescriptor['video-url'] = 
+                    localeDescriptor['video-url'] =
                         localeDescriptor['video-url'] ||
                         meta['video-url'] ||
                         [];
