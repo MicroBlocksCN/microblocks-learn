@@ -10,25 +10,31 @@
 // so we are applying a CSS width based on the image's natural pixels real size
 
 function processImagesForCode () {
-    document.querySelectorAll('img').forEach( img => checkForCode(img));
+    document.querySelectorAll('img').forEach( (img) => {
+        img.setAttribute('loading', 'lazy');
+
+        img.addEventListener('load', () => {
+            checkForCode(img);
+        });
+    });
 };
 
 function checkForCode (img) {
-    if (img.src.endsWith('png')) {
+    if (img.src.endsWith('png')) {        
         fetch(img.src)
-            .then(response => response.blob())
-            .then(blob => blob.arrayBuffer())
-            .then(buffer => {
-                var data = new Uint8Array(buffer),
-                    check = ('GP Script').split('').map(c => c.charCodeAt(0));
-                if (data.containsSubArray(check)) {
-                    img.parentElement.classList.add('script');
-                    // images are exported from the IDE at XXX their size,
-                    // for a better image quality, so they need to be reduced
-                    img.style.width = Math.round(0.34 * img.naturalWidth) + 'px';
-                }
+        .then(response => response.blob())
+        .then(blob => blob.arrayBuffer())
+        .then(buffer => {
+            var data = new Uint8Array(buffer),
+                check = ('GP Script').split('').map(c => c.charCodeAt(0));
+            if (data.containsSubArray(check)) {
+                img.parentElement.classList.add('script');
+                
+                // images are exported from the IDE at 0.34 their size,
+                // for a better image quality, so they need to be reduced
+                img.style.width = Math.round(0.34 * img.naturalWidth) + 'px';
             }
-        );
+        });
     }
 };
 
