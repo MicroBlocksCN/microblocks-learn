@@ -32,6 +32,9 @@ markdown.addExtension({
             '<figure class="captioned">$1\/>' +
                 '<figcaption class="caption">$2</figcaption></figure>'
         ).replaceAll(
+            /<img(.*)>/g,
+            `<img loading="lazy" $1\/>`
+        ).replaceAll(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replaceAll(
             /\[\[\/.*\]\]<\/p>/g, `</div>`

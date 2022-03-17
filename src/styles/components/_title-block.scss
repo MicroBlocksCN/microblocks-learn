@@ -14,7 +14,7 @@
   color: $color-white;
   font-size: $fontSize-200;
   line-height: 1;
-  letter-spacing: -0.05%;
+  letter-spacing: -0.05em;
   // text-transform: lowercase;
 
   @include block-connector;

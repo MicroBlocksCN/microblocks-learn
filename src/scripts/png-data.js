@@ -10,9 +10,9 @@
 // so we are applying a CSS width based on the image's natural pixels real size
 
 function processImagesForCode () {
-    document.querySelectorAll('img').forEach( (img) => {
-        img.setAttribute('loading', 'lazy');
-
+    // process just images included via markdown
+    const pageContents = document.querySelector('.contents .wysiwyg');
+    pageContents.querySelectorAll('img').forEach( (img) => {
         img.addEventListener('load', () => {
             checkForCode(img);
         });
