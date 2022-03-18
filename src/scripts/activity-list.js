@@ -64,7 +64,7 @@ function updateActivityList () {
 function activityDiv (activity) {
     var title           = activity.title,
         link            = `activities/${activity.slug}`,
-        thumb           = `activities/${activity.slug}/thumbnail.png`,
+        thumb           = `activities/${activity.slug}/thumbnail.jpg`,
         boards          = '',
         components      = '';
 
