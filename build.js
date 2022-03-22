@@ -146,6 +146,11 @@ function doForFilesInDir (dir, extension, action, recursive) {
     });
 };
 
+function slugForPath(activityPath, langCode) {
+	var pathParts = activityPath.split('/');
+	return pathParts[pathParts.length - 4] + '-' + langCode;
+}
+
 function slugify (string, langCode) {
     // make all lowercase, allow only alpha characters, and replace spaces with
     // hyphens
@@ -350,7 +355,8 @@ function buildActivities () {
                                 'utf8'
                             )
                         ),
-                        slug = slugify(json.title || meta.title, langCode);
+//                      slug = slugify(json.title || meta.title, langCode);
+                        slug = slugForPath(localePath, langCode);
 
                     meta.translations.push({
                         langCode: langCode,
@@ -384,8 +390,8 @@ function buildActivities () {
                     localeDescriptor.topics = meta.topics || [];
                     localeDescriptor.time = meta.time || [30, 45];
                     localeDescriptor.boards = meta.boards || [];
-                    localeDescriptor.slug =
-                            slugify(localeDescriptor.title, langCode);
+//                  localeDescriptor.slug = slugify(localeDescriptor.title, langCode);
+                    localeDescriptor.slug = slugForPath(localePath, langCode);
                     localeDescriptor.locale = langCode;
                     localeDescriptor.href = 'index';
                     localeDescriptor['has-card'] =
@@ -428,6 +434,7 @@ function buildActivities () {
 
                     debug(`processed activity: ${activityDir} (${langCode})`);
 
+                    collectActivityAssets(localeDescriptor, langCode, activityPath);
                     buildActivity(localeDescriptor, langCode, activityPath);
                 }
             );
@@ -436,6 +443,45 @@ function buildActivities () {
     fs.writeFileSync(
         'dist/activities.json',
         JSON.stringify(activityDescriptors)
+    );
+};
+
+function collectActivityAssets (descriptor, langCode, activityPath) {
+    // Create a folder containing the assets of each translation of the given ativity.
+
+    Object.keys(locales).forEach(
+        (localeCode) => {
+            // copy image files from both the activity root and locale
+            if (fs.existsSync(`${activityPath}/files/`)) {
+                fse.copySync(
+                    `${activityPath}/files/`,
+                    `${__dirname}/dist/activity-assets/${descriptor.slug}/`
+                );
+            }
+            if (fs.existsSync(`${activityPath}/locales/${langCode}/files/`)) {
+                fse.copySync(
+                    `${activityPath}/locales/${langCode}/files/`,
+                    `${__dirname}/dist/activity-assets/${descriptor.slug}/`
+                );
+            }
+        }
+    );
+};
+
+function linkActivityAssets(activityDir, assetsDir) {
+	// Add links in activityDir to each file in assetsDir.
+
+    var assetFiles = fs.readdirSync(assetsDir);
+    assetFiles.forEach(
+        (assetPath) => {
+            fName = assetPath.split('/').pop();
+            if (fName[0] != '.') { // skip .DS_Store on MacOS
+                fse.ensureSymlinkSync(
+                	`${assetsDir}/${fName}`,
+                	`${activityDir}/${fName}`
+                );
+            }
+        }
     );
 };
 
@@ -458,20 +504,26 @@ function buildActivity (descriptor, langCode, activityPath) {
             );
 
             // copy image files from both the activity root and locale
-            if (fs.existsSync(`${activityPath}/files/`)) {
-                fse.copySync(
-                    `${activityPath}/files/`,
-                    `${__dirname}/dist/${localeCode}/` +
-                        `activities/${descriptor.slug}/`
-                );
-            }
-            if (fs.existsSync(`${activityPath}/locales/${langCode}/files/`)) {
-                fse.copySync(
-                    `${activityPath}/locales/${langCode}/files/`,
-                    `${__dirname}/dist/${localeCode}/` +
-                        `activities/${descriptor.slug}/`
-                );
-            }
+//             if (fs.existsSync(`${activityPath}/files/`)) {
+//                 fse.copySync(
+//                     `${activityPath}/files/`,
+//                     `${__dirname}/dist/${localeCode}/` +
+//                         `activities/${descriptor.slug}/`
+//                 );
+//             }
+//             if (fs.existsSync(`${activityPath}/locales/${langCode}/files/`)) {
+//                 fse.copySync(
+//                     `${activityPath}/locales/${langCode}/files/`,
+//                     `${__dirname}/dist/${localeCode}/` +
+//                         `activities/${descriptor.slug}/`
+//                 );
+//             }
+
+            // add links to shared activity assets
+            linkActivityAssets(
+                `${__dirname}/dist/${localeCode}/activities/${descriptor.slug}`,
+                `${__dirname}/dist/activity-assets/${descriptor.slug}`);
+
             if (descriptor['has-guide']) {
                 var guideDescriptor = {
                     markdown:
