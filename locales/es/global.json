@@ -35,6 +35,7 @@
     "cmp_led_rgb": "LED RGB",
     "cmp_neopixels": "NeoPíxeles",
     "cmp_speaker": "Altavoz",
+    "cmp_pir": "sensor PIR",
 
     "tpc_art": "Arte",
     "tpc_data": "Datos",

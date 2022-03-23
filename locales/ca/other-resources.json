@@ -5,10 +5,11 @@
 	"articles-lbl": "Articles",
 	"courses-lbl": "Cursos",
 	"manuals-lbl": "Manuals i Instruccions",
+	"visit-resource": "Obrir Recurs",
 
     "sensor-examples-title": "Sensors en Acció",
 	"sensor-examples-desc": "Molts exemples d'utilització de sensors amb la micro:bit, per John Hegarty. Utilitzeu el menu de dalt a l'esquerra per seleccionar les pàgines.",
-    
+
 	"cobie-cards-title": "Les Fitxes de MicroBlocks d'en Cobie",
 	"cobie-cards-desc": "Un bon conjunt de fitxes d'activitats d'en Cobie van de Ven.",
 
@@ -30,8 +31,6 @@
 	"girls-robotics-kit-title": "Kit de robòtica de baix cost - Enfocat a nenes",
 	"girls-robotics-kit-desc": "Descriu l'ús de MicroBlocks, la micro:bit i uns quants components addicionals en activitats de robòtica creativa que poden inspirar i implicar les noies, així com els nens.",
 
-	"bjc-title": "The Beauty and Joy of Computing (escola secundària)",
-	"bjc-desc": "'La Bellesa i l'Alegria de la Informàtica' és un curs desenvolupat per la UC Berkeley",
-
-	"visit-resource": "Obrir Recurs"
+	"okdo-card-set-title": "Fitxes d'activitats d'OKdo Classroom Kit",
+	"okdo-card-set-desc": "Aquest conjunt de deu targetes es va desenvolupar per anar amb el paquet d'aula micro:bit d'OKdo MicroBlocks, però les targetes es poden utilitzar sense el kit."
 }

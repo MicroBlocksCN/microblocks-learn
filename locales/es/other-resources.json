@@ -5,6 +5,7 @@
 	"articles-lbl": "Artículos",
 	"courses-lbl": "Cursos",
 	"manuals-lbl": "Manuales e Instrucciones",
+	"visit-resource": "Abrir Recurso",
 
 	"sensor-examples-title": "Sensores en Acción",
 	"sensor-examples-desc": "Muchos ejemplos del uso de sensores con el micro:bit, por John Hegarty. Utilizad el menú en la esquina superior izquierda para seleccionar páginas.",
@@ -30,8 +31,6 @@
 	"girls-robotics-kit-title": "Kit de robótica de bajo coste - Enfocado a niñas",
 	"girls-robotics-kit-desc": "Describe el uso de MicroBlocks, la micro:bit y algunos componentes adicionales en actividades de robótica creativa que pueden inspirar e involucrar a las niñas, así como a los niños.",
 
-	"bjc-title": "The Beauty and Joy of Computing (escuela secundaria)",
-	"bjc-desc": "'La belleza y la alegría de la informática' es un curso desarrollado por la UC Berkeley",
-
-	"visit-resource": "Abrir Recurso"
+	"okdo-card-set-title": "Tarjetas de actividades de OKdo Classroom Kit",
+	"okdo-card-set-desc": "Este conjunto de diez tarjetas se desarrolló para combinar con el paquete de clase micro:bit MicroBlocks de OKdo, pero las tarjetas se pueden usar sin el kit."
 }

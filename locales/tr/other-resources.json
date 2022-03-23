@@ -1,10 +1,11 @@
 {
-	"other-resources": "Diğer kaynaklar",
+	"other-resources": "Başka Kaynaklar",
 	"intro-text": "Birçoğu küresel MicroBlocks topluluğu tarafından sağlanan, eğitimciler için faydalı kaynaklar.",
 	"activities-lbl": "Aktiviteler ve Eğitimler",
 	"articles-lbl": "Makaleler",
 	"courses-lbl": "Müfredat ve Dersler",
 	"manuals-lbl": "Kılavuzlar ve Nasıl Yapılır",
+	"visit-resource": "Kaynağı Görüntüle",
 
 	"sensor-examples-title": "Sensör Kullanımı",
 	"sensor-examples-desc": "John Hegarty'den micro:bit ile sensörlerin kullanımına ilişkin birçok örnek. Sayfaları seçmek için sol üst köşedeki menüyü kullanın.",

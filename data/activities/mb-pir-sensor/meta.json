@@ -4,5 +4,6 @@
     "boards": [ "board_microbit" ],
     "time": [ 30, 45 ],
     "topics": [ ],
-    "components": [ ]
+    "components": [ ],
+    "video-url": "https://www.youtube.com/watch?v=xpKf2UXBx0Q"
 }

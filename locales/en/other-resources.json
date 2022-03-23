@@ -5,6 +5,7 @@
 	"articles-lbl": "Articles",
 	"courses-lbl": "Curricula and Courses",
 	"manuals-lbl": "Manuals and HowTos",
+	"visit-resource": "Visit Resource",
 
 	"sensor-examples-title": "Sensors in Action",
 	"sensor-examples-desc": "Many examples of using sensors with the micro:bit from John Hegarty. Use the menu in top left corner to select pages.",
@@ -31,7 +32,5 @@
 	"girls-robotics-kit-desc": "Describes using MicroBlocks, the micro:bit, and a few additional components in creative robotics activities that can inspire and engage girls, as well as boys.",
 
 	"okdo-card-set-title": "Activity Cards from OKdo Classroom Kit",
-	"okdo-card-set-desc": "This set of ten cards was developed to go with the OKdo MicroBlocks micro:bit Classroom Pack but the cards can be used without the kit.",
-
-	"visit-resource": "Visit Resource"
+	"okdo-card-set-desc": "This set of ten cards was developed to go with the OKdo MicroBlocks micro:bit Classroom Pack but the cards can be used without the kit."
 }
