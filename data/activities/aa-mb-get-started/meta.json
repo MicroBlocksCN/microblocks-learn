@@ -2,7 +2,7 @@
     "author": "MicroBlocks",
     "level": 1,
     "boards": [ "board_microbit" ],
-    "time": [ 15, 45 ],
+    "time": [ 10, 20 ],
     "topics": [ ],
     "components": [ ]
 }
