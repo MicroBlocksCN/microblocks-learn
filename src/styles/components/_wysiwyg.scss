@@ -89,7 +89,8 @@
 
   // Image w Script
   p.script {
-    display: inline-block;
+    display: block;
+    width: max-content;
     position: relative;
     margin-bottom: $space-250;
 
