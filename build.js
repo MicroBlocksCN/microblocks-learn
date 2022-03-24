@@ -33,8 +33,10 @@ markdown.addExtension({
             '<figure class="captioned">$1\/>' +
                 '<figcaption class="caption">$2</figcaption></figure>'
         ).replaceAll(
-            /<img(.*)\/>/g,
-            `<img $1 loading="lazy" \/>`
+            // fix
+            // https://stackoverflow.com/questions/1919982/regex-smallest-possible-match-or-nongreedy-match
+            /<img (.*?)\/>/g,
+            `<img $1 loading="lazy"\/>`
         ).replaceAll(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replaceAll(
@@ -740,6 +742,16 @@ function buildSitemap () {
     } catch(err) {
         console.error(err);
     }
+
+    console.log(languages);
+    console.log(languages.length);
+    // languages.forEach( language, () => {
+    //     console.log('language: ' + language)
+    // })
+
+    // delete files at the end
+
+
 };
 
 // Build, watch, and serve
