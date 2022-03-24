@@ -17,6 +17,7 @@ var fs = require('fs'),
                 'utf8'
             )
         );
+    sitemapUrls = [];
 
 
 // MarkDown additions
@@ -213,9 +214,6 @@ function compileTemplates () {
             );
         }
     );
-
-    // Marc - Execcute initial sitemap creation
-
 };
 
 function compileTemplate (templateName, descriptor, langCode, destinationDir) {
@@ -243,8 +241,6 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         Object.assign(descriptor.locale, locales.en.pages[templateName]);
     }
 
-    // Marc - Add URL to Sitemap
-
     // add global strings to all page locales
     Object.keys(locales.en.pages.global).forEach((key) => {
         if (locales[langCode].pages.global &&
@@ -263,6 +259,7 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         + (destinationDir ? `${destinationDir}/` : ``)
         + `${descriptor.href || descriptor.slug || templateName}.html`;
     // debug(`url: ${descriptor.pageUrl}`);
+    sitemapUrls.push(descriptor.pageUrl);
 
     // compile the template
     fse.ensureDirSync(`${__dirname}/dist/${langCode}/${destinationDir}`);
@@ -307,6 +304,9 @@ function build () {
 
     // compile all templates
     compileTemplates();
+
+    // build sitemap
+    buildSitemap();
 };
 
 function processLocales () {
@@ -724,6 +724,23 @@ function watch () {
     });
 };
 
+function buildSitemap () {
+    // building a sitemap with all the URLs and referencing it with robots.txt
+    let sitemapContents = '';
+    let robotsContents = 'Sitemap: https://learn.microblocks.fun/sitemap.txt'
+
+    sitemapUrls.forEach( url => {
+        sitemapContents = sitemapContents + url + '\n';
+    })
+    
+    try {
+        fs.writeFileSync('dist/sitemap.txt', sitemapContents);
+        fs.writeFileSync('dist/robots.txt', robotsContents);
+        console.log(`Sitemap generated: ${sitemapUrls.length} URLs`);
+    } catch(err) {
+        console.error(err);
+    }
+};
 
 // Build, watch, and serve
 
