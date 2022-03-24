@@ -39,8 +39,6 @@ markdown.addExtension({
             '<figure class="captioned">$1\/>' +
                 '<figcaption class="caption">$2</figcaption></figure>'
         ).replaceAll(
-            // fix
-            // https://stackoverflow.com/questions/1919982/regex-smallest-possible-match-or-nongreedy-match
             /<img (.*?)\/>/g,
             `<img $1 loading="lazy"\/>`
         ).replaceAll(
