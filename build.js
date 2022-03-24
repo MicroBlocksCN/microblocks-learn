@@ -49,18 +49,13 @@ markdown.addExtension({
     }
 });
 
-
 // Handlebars additions
 
 handlebars.registerHelper('markdown', (context, options) => {
-    var mdPath = `${__dirname}/data/markdown/${context}.md`,
-        md =  options ?
+    var md = options ?
             (options.data.root.markdown || options.fn(this)) :
             context.fn(this),
         html;
-    if (fs.existsSync(mdPath)) {
-        md = fs.readFileSync(mdPath, 'utf8');
-    }
     try {
         html = markdown.makeHtml(md);
     } catch (err) {
@@ -157,33 +152,6 @@ function slugForPath(activityPath, langCode) {
 	var pathParts = activityPath.split('/');
 	return pathParts[pathParts.length - 4] + '-' + langCode;
 }
-
-function slugify (string, langCode) {
-    // make all lowercase, allow only alpha characters, and replace spaces with
-    // hyphens
-    var slug = string.split('').map(
-        char => char.toLowerCase().replace(' ','-')
-    ).join('').replaceAll(/[^\p{L}-]/gu,''); // \p{L} → letter in any locale
-
-    if (fs.existsSync(`${__dirname}/dist/${langCode}/activities/${slug}`)) {
-        // there's another activity with this same slug, let's
-        // add a numeric suffix
-        if (slug.match(/[0-9]$/)) {
-            // this slug already had a numeric suffix, let's
-            // increment it
-            slug = slug.replace(
-                /[0-9]$/,
-                slug.match(/[0-9]$/[0] + 1));
-        } else {
-            // let's add a number prefix to this slug
-            slug = slug + '-1';
-        }
-    }
-
-	// remove accented characters from the slug to avoid folder path issues
-	// see: https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
-	return encodeURI(slug.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
-};
 
 // Handlebars processing
 
@@ -365,7 +333,6 @@ function buildActivities () {
                                 'utf8'
                             )
                         ),
-//                      slug = slugify(json.title || meta.title, langCode);
                         slug = slugForPath(localePath, langCode);
 
                     meta.translations.push({
@@ -400,7 +367,6 @@ function buildActivities () {
                     localeDescriptor.topics = meta.topics || [];
                     localeDescriptor.time = meta.time || [30, 45];
                     localeDescriptor.boards = meta.boards || [];
-//                  localeDescriptor.slug = slugify(localeDescriptor.title, langCode);
                     localeDescriptor.slug = slugForPath(localePath, langCode);
                     localeDescriptor.locale = langCode;
                     localeDescriptor.href = 'index';
@@ -513,22 +479,6 @@ function buildActivity (descriptor, langCode, activityPath) {
                 `activities/${descriptor.slug}`
             );
 
-            // copy image files from both the activity root and locale
-//             if (fs.existsSync(`${activityPath}/files/`)) {
-//                 fse.copySync(
-//                     `${activityPath}/files/`,
-//                     `${__dirname}/dist/${localeCode}/` +
-//                         `activities/${descriptor.slug}/`
-//                 );
-//             }
-//             if (fs.existsSync(`${activityPath}/locales/${langCode}/files/`)) {
-//                 fse.copySync(
-//                     `${activityPath}/locales/${langCode}/files/`,
-//                     `${__dirname}/dist/${localeCode}/` +
-//                         `activities/${descriptor.slug}/`
-//                 );
-//             }
-
             // add links to shared activity assets
             linkActivityAssets(
                 `${__dirname}/dist/${localeCode}/activities/${descriptor.slug}`,
@@ -613,7 +563,7 @@ function compileSass () {
             }
             );
         };
-        
+
 function buildSitemap () {
     // building a sitemap with all the URLs and referencing it with robots.txt
     let sitemapContents = 'https://learn.microblocks.fun/\n'; // initial
@@ -634,7 +584,7 @@ function buildSitemap () {
             sitemapContents += url + '\n';
         }
     })
-    
+
     try {
         fs.writeFileSync('dist/sitemap.txt', sitemapContents);
         fs.writeFileSync('dist/robots.txt', robotsContents);
