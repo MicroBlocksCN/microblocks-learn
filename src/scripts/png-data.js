@@ -12,11 +12,21 @@
 function processImagesForCode () {
     // process just images included via markdown
     const pageContents = document.querySelector('.contents .wysiwyg');
-    pageContents.querySelectorAll('img').forEach( (img) => {
-        img.addEventListener('load', () => {
-            checkForCode(img);
-        });
-    });
+    let images = pageContents.querySelectorAll('img');
+
+    // pageContents.querySelectorAll('img').forEach( (img) => {
+    //     img.addEventListener('load', () => {
+    //         checkForCode(img);
+    //         // console.log(img);
+    //     });
+    // });
+
+    // because the previous forEach isn't indexing all images,
+    // it's just checking on the first img of a paragraph
+    for (i=0; i < images.length; i++) {
+        console.log(images[i]);
+        checkForCode(images[i]);
+    }
 };
 
 function checkForCode (img) {
