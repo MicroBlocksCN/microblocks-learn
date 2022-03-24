@@ -311,11 +311,12 @@ function build () {
     // compile all templates
     compileTemplates();
 
-    // build sitemap
-    buildSitemap();
-
-    // delete unwanted html files generated
-    deleteUnwantedPages();
+    if (!debugMode) {
+        // build sitemap
+        buildSitemap();
+        // delete unwanted html files generated
+        deleteUnwantedPages();
+    }
 };
 
 function processLocales () {
