@@ -119,6 +119,7 @@
 
         display: block;
         position: absolute;
+        min-width: max-content;
         bottom: calc( #{$space-125} * -1 );
         left: $space-025;
   
