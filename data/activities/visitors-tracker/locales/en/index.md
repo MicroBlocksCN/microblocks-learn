@@ -29,7 +29,7 @@ Write your safety note here
 
 ### Overview
 
-This activity takes us through the conceptualization and development of an app to monitor visitors in a shop, or a different place, using a micro:bit board. 
+This activity takes us through the conceptualization and development of an app to monitor visitors in a shop, or a different place, using a micro:bit board.
 
 The guidance follows the steps taken in a real app or physical computing project. During the activity, we will initially analyze the problem to brainstorm potential solutions, with their pros and cons. The solutions will rely on concepts like variables, sensors, acceleration and radio wireless communication.
 
@@ -43,7 +43,7 @@ We will need two micro:bit boards. But depending on the decisions taken by the s
 - A micro:bit board (battery optional)
 - Class materials (cardboard, scissors, tape, etc.)
 
-![Boards for light sensor tracker](https://gitlab.com/kram08980/microblocks-docs/-/raw/main/activities/visitors-tracker/media/building-with-clips.jpg)
+![Boards for light sensor tracker](building-with-clips.jpg)
 
 
 
@@ -93,7 +93,7 @@ In order to do that, we need to understand the data that it receives. Sensors ra
 
 The light sensors of a micro:bit board are in its LED display. We want to know the different values it gets when it is covered with a cardboard, and when it isn't and receives light. And track it every 500ms.
 
-![Tracking light in a room](https://gitlab.com/kram08980/microblocks-docs/-/raw/main/activities/visitors-tracker/media/picture-researching-light-sensor.jpg)
+![Tracking light in a room](picture-researching-light-sensor.jpg)
 
 As we can see in the screenshot, when it receives light the value aproximately oscillates from 50 to 75. And when it's covered with a cardboard, the value gets down to 0. We could consider then, that if the sensor returns a value higher of 5, the sensor is receiving light. These values though, work for the specific conditions of the room in where we experimented. Light conditions surely change from place to place, and you will have to test yours.
 
@@ -105,7 +105,7 @@ This will register when the door has been opened. But we also want to pause the 
 
 We built it like this:
 
-![Testing script for tracking door openings](https://gitlab.com/kram08980/microblocks-docs/-/raw/main/activities/visitors-tracker/media/option-light-tracking.jpg)
+![Testing script for tracking door openings](option-light-tracking.jpg)
 
 In the screenshot above, we added a couple of things to understand the performance of our program:
 
@@ -117,7 +117,7 @@ To finally know the number of visitors we just have to divide it by two. For tha
 
 Our final program looks like this:
 
-![Final script before radio](https://gitlab.com/kram08980/microblocks-docs/-/raw/main/activities/visitors-tracker/media/main-script-without-radio.png)
+![Final script before radio](main-script-without-radio.png)
 
 We are done with the main functionality now! But our board showing the amount of visitors is covered by cardboard, and we can't see it. We will sort this out by sending the data to another board.
 
@@ -140,7 +140,7 @@ We will essentially send numbers (although we could also send a text string). Ma
 
 This addition to our main script for the light based tracker, leaves us with:
 
-![Final script](https://gitlab.com/kram08980/microblocks-docs/-/raw/main/activities/visitors-tracker/media/main-script-with-radio.png)
+![Final script](main-script-with-radio.png)
 
 We are now broadcasting the amount of visitors, and even when the door is opened. It's time to take care of the board receiving the data and announcing it live in the LED display.
 
@@ -150,7 +150,7 @@ In addition to the `wait until` block, the `Radio` library provides another hand
 
 And we have to take in consideration the initial state too, right before our tracking board didn't send any data.
 
-So: 
+So:
 
 1. We wait until we receive the first data.
 2. When we receive our data, we check if it is:<br />
@@ -160,7 +160,7 @@ B. A whole number, representing the number of visitors.
 
 It looks like this:
 
-![Display script](https://gitlab.com/kram08980/microblocks-docs/-/raw/main/activities/visitors-tracker/media/display-script.png)
+![Display script](display-script.png)
 
 
 
