@@ -1,6 +1,5 @@
 {
     "author": "Marc Campreciós",
     "level": 1,
-    "boards": [ "board_microbit" ],
-    "card-slides-url": "https://docs.google.com/presentation/d/1OacU9T9mCmBms2YmMArSR_3rwvj-sLD38ib8Hasnhss"
+    "boards": [ "board_microbit" ]
 }
