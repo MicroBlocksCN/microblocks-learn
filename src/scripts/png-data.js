@@ -1,7 +1,7 @@
 function setScriptImageScale(img) {
     // Set the scale for a script image when it is loaded.
 console.log('setScriptImageScale:', img.src);
-    img.style.width = Math.round(0.34 * img.naturalWidth) + 'px';
+    img.style.width = Math.round(0.4 * img.naturalWidth) + 'px';
 }
 
 // Find "GP Script" inside all PNGs, and apply the "code" class to all the img

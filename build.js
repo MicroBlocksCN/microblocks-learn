@@ -24,7 +24,7 @@ var fs = require('fs'),
         'teachers-guide.html',
         'activity-card.html'
     ],
-    scriptPNGs = {},
+    scriptPNGs = [],
     activityBeingBuilt = undefined;
 
 // MarkDown additions
@@ -40,9 +40,6 @@ markdown.addExtension({
             '<figure class="captioned">$1\/>' +
                 '<figcaption class="caption">$2</figcaption></figure>'
         ).replaceAll(
-            /<img (.*?)\/>/g,
-            `<img $1 loading="lazy"\/>`
-        ).replaceAll(
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replaceAll(
             /\[\[\/.*\]\]<\/p>/g, `</div>`
@@ -55,26 +52,19 @@ markdown.addExtension({
 });
 
 function markScriptParagraphs(match, pngName) {
-    // If a paragraph start with a script <img>, set the paragraph class to "script".
+    // If a paragraph starts with a script image, set the paragraph's class to "script".
 
-    var pngWidth = scriptPNGs[activityBeingBuilt][pngName] || -1;
-    return (pngWidth > 0) ?
+    return scriptPNGs[activityBeingBuilt].includes(pngName) ?
         '<p class="script"> <img src="' + pngName + '"' :
         '<p><img src="' + pngName + '"';
 }
 
 function setImageAttributes(match, pngName) {
-    // Set all images to load lazily. Scale width of script images.
+    // Set all images to load lazily. Add an onload handler to script images.
 
-    var pngWidth = scriptPNGs[activityBeingBuilt][pngName] || -1;
-    return (pngWidth > 0) ?
+    return scriptPNGs[activityBeingBuilt].includes(pngName) ?
         '<img src="' + pngName + '" ' + 'loading="lazy" onload="setScriptImageScale(this)"' :
-        '<img src="' + pngName + '" ' + 'loading="lazy" ';
-
-//     var pngWidth = scriptPNGs[activityBeingBuilt][pngName] || -1;
-//     return (pngWidth > 0) ?
-//         '<img src="' + pngName + '" ' + 'loading="lazy" ' + 'width="' + Math.round(0.4 * pngWidth) + 'px"' :
-//         '<img src="' + pngName + '" ' + 'loading="lazy" ';
+        '<img src="' + pngName + '" ' + 'loading="lazy"';
 }
 
 // Handlebars additions
@@ -466,19 +456,16 @@ function collectActivityAssets (descriptor, langCode, activityPath) {
     );
 
     // collect PNG's containing scripts
-    var pngsWithScripts = {};
+    var pngsWithScripts = [];
     var assetFiles = fs.readdirSync(assetsDir);
     assetFiles.forEach((fileName) => {
-        var width = widthOfScriptPNG(assetsDir + fileName, fileName);
-        if (width > 0) {
-            pngsWithScripts[fileName] = width;
-        }
+        if (pngHasScript(assetsDir + fileName)) pngsWithScripts.push(fileName);
     });
     scriptPNGs[descriptor.slug] = pngsWithScripts;
 };
 
-function widthOfScriptPNG(filePath, fileName) {
-	// If the given PNG file includes a script, return it's width. Otherwise, return 0.
+function pngHasScript(filePath) {
+	// Return true if the given PNG file includes a script.
 
     if (!filePath.endsWith('.png')) return 0;
 
@@ -492,19 +479,7 @@ function widthOfScriptPNG(filePath, fileName) {
     }
 
     // search PNG data for the string 'GP Script'
-    var hasScript = (indexOfStringInData('GP Script', data) >= 0);
-    if (!hasScript) return 0;
-
-    // PNG has a script so get its width
-	var i = indexOfStringInData('IHDR', data); // find PNG header chunk
-	if (i < 0) return 0; // bad PNG file; header chunk is required
-
-	i += 4; // skip 'IHDR'
-	var widthEnd = i + 4; // width field is four bytes, big-endian
-	var width = 0;
-	while (i < widthEnd) width = (width << 8) + data[i++];
-
-    return width; // width of script-containing PNG
+    return (indexOfStringInData('GP Script', data) >= 0);
 }
 
 function indexOfStringInData(aString, data) {
