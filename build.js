@@ -23,8 +23,9 @@ var fs = require('fs'),
         'activity.html',
         'teachers-guide.html',
         'activity-card.html'
-    ];
-
+    ],
+    scriptPNGs = {},
+    activityBeingBuilt = undefined;
 
 // MarkDown additions
 
@@ -45,9 +46,36 @@ markdown.addExtension({
             /<p>\[\[(.+?)\]\]/g, `<div class="$1">`
         ).replaceAll(
             /\[\[\/.*\]\]<\/p>/g, `</div>`
-        )
+        ).replaceAll(
+            /\<p>\<img src="(.*?)"/g, markScriptParagraphs
+        ).replaceAll(
+            /\<img src="(.*?)"/g, setImageAttributes
+        );
     }
 });
+
+function markScriptParagraphs(match, pngName) {
+    // If a paragraph start with a script <img>, set the paragraph class to "script".
+
+    var pngWidth = scriptPNGs[activityBeingBuilt][pngName] || -1;
+    return (pngWidth > 0) ?
+        '<p class="script"> <img src="' + pngName + '"' :
+        '<p><img src="' + pngName + '"';
+}
+
+function setImageAttributes(match, pngName) {
+    // Set all images to load lazily. Scale width of script images.
+
+    var pngWidth = scriptPNGs[activityBeingBuilt][pngName] || -1;
+    return (pngWidth > 0) ?
+        '<img src="' + pngName + '" ' + 'loading="lazy" onload="setScriptImageScale(this)"' :
+        '<img src="' + pngName + '" ' + 'loading="lazy" ';
+
+//     var pngWidth = scriptPNGs[activityBeingBuilt][pngName] || -1;
+//     return (pngWidth > 0) ?
+//         '<img src="' + pngName + '" ' + 'loading="lazy" ' + 'width="' + Math.round(0.4 * pngWidth) + 'px"' :
+//         '<img src="' + pngName + '" ' + 'loading="lazy" ';
+}
 
 // Handlebars additions
 
@@ -246,7 +274,6 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
         `${descriptor.slug ? (' ' + descriptor.slug) : ''} (${langCode})`);
 };
 
-
 // Build script functions
 
 function build () {
@@ -425,24 +452,77 @@ function buildActivities () {
 function collectActivityAssets (descriptor, langCode, activityPath) {
     // Create a folder containing the assets of each translation of the given ativity.
 
+	var assetsDir = `${__dirname}/dist/activity-assets/${descriptor.slug}/`;
     Object.keys(locales).forEach(
         (localeCode) => {
             // copy image files from both the activity root and locale
             if (fs.existsSync(`${activityPath}/files/`)) {
-                fse.copySync(
-                    `${activityPath}/files/`,
-                    `${__dirname}/dist/activity-assets/${descriptor.slug}/`
-                );
+                fse.copySync(`${activityPath}/files/`,assetsDir);
             }
             if (fs.existsSync(`${activityPath}/locales/${langCode}/files/`)) {
-                fse.copySync(
-                    `${activityPath}/locales/${langCode}/files/`,
-                    `${__dirname}/dist/activity-assets/${descriptor.slug}/`
-                );
+                fse.copySync(`${activityPath}/locales/${langCode}/files/`, assetsDir);
             }
         }
     );
+
+    // collect PNG's containing scripts
+    var pngsWithScripts = {};
+    var assetFiles = fs.readdirSync(assetsDir);
+    assetFiles.forEach((fileName) => {
+        var width = widthOfScriptPNG(assetsDir + fileName, fileName);
+        if (width > 0) {
+            pngsWithScripts[fileName] = width;
+        }
+    });
+    scriptPNGs[descriptor.slug] = pngsWithScripts;
 };
+
+function widthOfScriptPNG(filePath, fileName) {
+	// If the given PNG file includes a script, return it's width. Otherwise, return 0.
+
+    if (!filePath.endsWith('.png')) return 0;
+
+    // read the PNG file
+    var data;
+    try {
+        data = fs.readFileSync(filePath);
+    } catch(err) {
+        console.error(err);
+        return 0;
+    }
+
+    // search PNG data for the string 'GP Script'
+    var hasScript = (indexOfStringInData('GP Script', data) >= 0);
+    if (!hasScript) return 0;
+
+    // PNG has a script so get its width
+	var i = indexOfStringInData('IHDR', data); // find PNG header chunk
+	if (i < 0) return 0; // bad PNG file; header chunk is required
+
+	i += 4; // skip 'IHDR'
+	var widthEnd = i + 4; // width field is four bytes, big-endian
+	var width = 0;
+	while (i < widthEnd) width = (width << 8) + data[i++];
+
+    return width; // width of script-containing PNG
+}
+
+function indexOfStringInData(aString, data) {
+    // Return the index of the given string in the given byte array or -1 if not found.
+
+    var tag = new TextEncoder('utf-8').encode(aString);
+    for (var i = 0; i >= 0; i = data.indexOf(tag[0], i + 1)) {
+        var match = true;
+        for (var j = 0; j < tag.length; j++) {
+            if (data[i + j] != tag[j]) {
+                match = false;
+                break;
+            }
+        }
+        if (match) return i;
+    }
+    return -1;
+}
 
 function linkActivityAssets(activityDir, assetsDir) {
 	// Add links in activityDir to each file in assetsDir.
@@ -465,6 +545,8 @@ function buildActivity (descriptor, langCode, activityPath) {
     // we need to build the activity page for all available page locales, even
     // though the activity may not be available in all of these languages
     // TODO refactor this humongous thing
+
+    activityBeingBuilt = descriptor.slug;
     Object.keys(locales).forEach(
         (localeCode) => {
             descriptor.markdown =
@@ -734,4 +816,3 @@ if (debugMode) {
     watch();
     serve();
 }
-

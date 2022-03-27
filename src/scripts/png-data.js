@@ -1,3 +1,9 @@
+function setScriptImageScale(img) {
+    // Set the scale for a script image when it is loaded.
+console.log('setScriptImageScale:', img.src);
+    img.style.width = Math.round(0.34 * img.naturalWidth) + 'px';
+}
+
 // Find "GP Script" inside all PNGs, and apply the "code" class to all the img
 // tags that contain it.
 
@@ -10,6 +16,8 @@
 // so we are applying a CSS width based on the image's natural pixels real size
 
 function processImagesForCode () {
+    return; // disabled; trying an alternate approach
+
     // process just images included via markdown
     const pageContents = document.querySelector('.contents .wysiwyg');
     let images = pageContents.querySelectorAll('img');
@@ -30,7 +38,7 @@ function processImagesForCode () {
 };
 
 function checkForCode (img) {
-    if (img.src.endsWith('png')) {        
+    if (img.src.endsWith('png')) {
         fetch(img.src)
         .then(response => response.blob())
         .then(blob => blob.arrayBuffer())
@@ -39,7 +47,7 @@ function checkForCode (img) {
                 check = ('GP Script').split('').map(c => c.charCodeAt(0));
             if (data.containsSubArray(check)) {
                 img.parentElement.classList.add('script');
-                
+
                 // images are exported from the IDE at 0.34 their size,
                 // for a better image quality, so they need to be reduced
                 img.style.width = Math.round(0.34 * img.naturalWidth) + 'px';
