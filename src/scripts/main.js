@@ -17,7 +17,6 @@ function autorun(){
 
   // Page has WYSIWYG elements
   if ( document.querySelector('.wysiwyg') ) {
-    processImagesForCode();
     wysiwyg();
   }
 
