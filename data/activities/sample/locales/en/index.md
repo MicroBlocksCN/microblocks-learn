@@ -11,6 +11,8 @@
 Do some stuff.
 
 [[safety]]
+#### DEADLY
+### My Safety Notice
 Don't run with scissors!
 [[/safety]]
 
@@ -20,9 +22,10 @@ Do some more stuff.
 
 ![The description of this image](image-file.png)
 
-[[tip]]
+[[note]]
+#### My Serious Note
 Did you know that scissors can be used for good, too?
-[[/tip]]
+[[/note]]
 
 #### Subtitle 3
 

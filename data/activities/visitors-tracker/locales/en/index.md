@@ -1,32 +1,3 @@
-Index:
-- [Overview](#overview)
-- [Parts](#parts)
-- [Knowledge](#knowledge)
-- [Setup](#setup)
-- [Process](#process)
-- [Assets and Resources](#assets-and-resources)
-
-
-### Testing the Tips and Comments
-
-[[fact]]
-#### My Fun Fact
-Write your fun fact here
-[[/fact]]
-
-[[note]]
-#### My Serious Note
-Write your generic note or tip here
-[[/note]]
-
-[[safety]]
-#### DEADLY
-### My Safety Notice
-Write your safety note here
-[[/safety]]
-
-
-
 ### Overview
 
 This activity takes us through the conceptualization and development of an app to monitor visitors in a shop, or a different place, using a micro:bit board.
@@ -50,7 +21,7 @@ We will need two micro:bit boards. But depending on the decisions taken by the s
 
 ### Knowledge
 
-The recommended concepts to perform this activity are [variables](#lesson), [sensors](#lesson) and [radio](#lesson). You can browse the different [lessons](#lessons) to gather more resources about them.
+The recommended concepts to perform this activity are variables, sensors and radio.
 
 
 
@@ -117,14 +88,9 @@ To finally know the number of visitors we just have to divide it by two. For tha
 
 Our final program looks like this:
 
-![Final script before radio](main-script-without-radio.png)
+![Final script before radio](script-basic-program.png)
 
 We are done with the main functionality now! But our board showing the amount of visitors is covered by cardboard, and we can't see it. We will sort this out by sending the data to another board.
-
-#### 3. Option B: Acceleration
-#### 3. Option C: Acceleration
-#### 3. Option C: Electricity
-
 
 #### 4. Sending Radio Data
 
@@ -161,20 +127,3 @@ B. A whole number, representing the number of visitors.
 It looks like this:
 
 ![Display script](display-script.png)
-
-
-
-### Assets and Resources
-
-These assets can be useful in class:
-- [Teachers Guide](https://gitlab.com/kram08980/microblocks-docs/-/blob/main/activities/visitors-tracker/visitors-tracker--teachers-guide.md)
-- Slides: Creative process in class
-- Slides: Solution for one option
-- File: Script for one option
-
-
-##### Automatized options offered
-- Print this page
-- PDF of this page
-- Share it
-- Help to translating

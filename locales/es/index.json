@@ -18,5 +18,16 @@
     "chk-card": "con ficha de actividad",
     "chk-guide": "con guía docente",
     "topics": "Temas",
-    "btn-reset": "Reinicializa"
+    "btn-reset": "Reinicializa",
+
+    "le-name": "Duy-Loan Le",
+    "le-txt": "@1 es ingeniera y la primera mujer y asiática elegida como Senior Fellow en Texas Instruments.",
+    "evelyn-name": "Evelyn Boyd Granville",
+    "evelyn-txt": "@1 es una pionera de la informática y la segunda persona afroamericana en obtener un doctorado en matemáticas.",
+    "adele-name": "Adele Goldberg",
+    "adele-txt": "@1 is an american computer scientist and educator and co-developer of the Smalltalk programming language.",
+    "rosza-name": "Rósza Péter",
+    "rosza-txt": "@1 was an hungarian mathematician. Founding mother of recursion.",
+    "nashlie-name": "Nashlie H. Sephus",
+    "nashlie-txt": "@1 is an American computer engineer and entrepreneur specialized in machine learning and algorithmic bias identification."
 }

@@ -14,15 +14,47 @@
 
         <div class="c_hero-home__logo">
             {{> svg.learn-microblocks-block }}
+            <div class="c_hero-home__bubble c_hero-home__bubble--l">
+                <img src="/assets/img/pictures/duy-loan-le.svg" alt="Duy-Loan Le">
+            </div>
+            <div class="c_hero-home__bubble c_hero-home__bubble--e">
+                <img src="/assets/img/pictures/evelyn-boyd-granville.svg" alt="Evelyn Boyd Granville">
+            </div>
             <div class="c_hero-home__bubble c_hero-home__bubble--a">
                 <img src="/assets/img/pictures/adele-goldberg.svg" alt="Adele Goldberg">
+            </div>
+            <div class="c_hero-home__bubble c_hero-home__bubble--r">
+                <img src="/assets/img/pictures/rosza-peter.svg" alt="Rósza Péter">
+            </div>
+            <div class="c_hero-home__bubble c_hero-home__bubble--n">
+                <img src="/assets/img/pictures/nashlie-sephus.svg" alt="Nashlie Sephus">
             </div>
         </div>
 
         <div class="c_hero-home__descriptions">
+            <div class="c_hero-home__desc c_hero-home__desc--l">
+{{#markdown}}{{localize "le-txt"
+    (join "**" (localize "le-name") "**")
+}}{{/markdown}}
+            </div>
+            <div class="c_hero-home__desc c_hero-home__desc--e">
+{{#markdown}}{{localize "evelyn-txt"
+    (join "**" (localize "evelyn-name") "**")
+}}{{/markdown}}
+            </div>
             <div class="c_hero-home__desc c_hero-home__desc--a">
 {{#markdown}}{{localize "adele-txt"
     (join "**" (localize "adele-name") "**")
+}}{{/markdown}}
+            </div>
+            <div class="c_hero-home__desc c_hero-home__desc--r">
+{{#markdown}}{{localize "rosza-txt"
+    (join "**" (localize "rosza-name") "**")
+}}{{/markdown}}
+            </div>
+            <div class="c_hero-home__desc c_hero-home__desc--n">
+{{#markdown}}{{localize "nashlie-txt"
+    (join "**" (localize "nashlie-name") "**")
 }}{{/markdown}}
             </div>
         </div>

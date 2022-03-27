@@ -56,9 +56,26 @@
     opacity: 1;
   }
   
+  &--l {
+    top: -35%;
+    left: -14%;
+  }
+
+  &--e {
+    top: -48%;
+    left: 3%;
+  }
   &--a {
     top: -45%;
-    left: 15%;
+    left: 18%;
+  }
+  &--r {
+    top: -38%;
+    left: 45%;
+  }
+  &--n {
+    top: -35%;
+    right: -15%;
   }
 }
 
@@ -72,25 +89,64 @@
 
 
 .c_hero-home__desc {
+  position: absolute;
+  right: $spacePercentual-25;
+  bottom: 0;
+  left: $spacePercentual-25;
+  
   width: $spacePercentual-50;
   margin: 0 auto;
   
   font-weight: 700;
   opacity: 0;
   transition: opacity $trans-0400 $trans-easing;
-
+  
   @include breakpoint(xl) {
     width: $spacePercentual-40;
+    right: $spacePercentual-30;
+    left: $spacePercentual-30;
   }
 
 
   // Text details
 
-  &--a {
+  &--l {
     transform: rotate(-1deg);
 
     strong {
+      color: $color-green;
+    }
+  }
+
+  &--e {
+    transform: rotate(1deg);
+
+    strong {
+      color: $color-blue;
+    }
+  }
+
+  &--a {
+    transform: rotate(-0.5deg);
+
+    strong {
       color: #4458C1;
+    }
+  }
+
+  &--r {
+    transform: rotate(1deg);
+
+    strong {
+      color: $color-purple;
+    }
+  }
+
+  &--n {
+    transform: rotate(0.5deg);
+
+    strong {
+      color: $color-red;
     }
   }
 

@@ -21,6 +21,14 @@
     "topics": "Topics",
     "btn-reset": "Reset",
 
+    "le-name": "Duy-Loan Le",
+    "le-txt": "@1 is an engineer and the first woman and Asian elected as a Texas Instruments Senior Fellow.",
+    "evelyn-name": "Evelyn Boyd Granville",
+    "evelyn-txt": "@1 is a computer pioneer. Second ever African-American to earn a Ph.D in mathematics.",
     "adele-name": "Adele Goldberg",
-    "adele-txt": "@1 is an american computer scientist and educator and co-developer of the Smalltalk programming language."
+    "adele-txt": "@1 es una ingeniera informática y educadora estadounidense y co-desarrolladora del lenguaje de programación Smalltalk.",
+    "rosza-name": "Rósza Péter",
+    "rosza-txt": "@1 fue una matemática húngara. Madre fundadora de la recursividad.",
+    "nashlie-name": "Nashlie H. Sephus",
+    "nashlie-txt": "@1 es una ingeniera informática y emprendedora estadounidense especializada en aprendizaje automático e identificación de sesgos algorítmicos."
 }

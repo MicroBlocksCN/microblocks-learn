@@ -19,5 +19,16 @@
     "chk-card": "amb tarja d'activitat",
     "chk-guide": "amb guia docent",
     "topics": "Temes",
-    "btn-reset": "Reinicialitza"
+    "btn-reset": "Reinicialitza",
+
+    "le-name": "Duy-Loan Le",
+    "le-txt": "@1 és enginyera i la primera dona i asiàtica elegida com a Senior Fellow a Texas Instruments.",
+    "evelyn-name": "Evelyn Boyd Granville",
+    "evelyn-txt": "@1 és una pionera de la informàtica i la segona persona afroamericana que obté un doctorat en matemàtiques.",
+    "adele-name": "Adele Goldberg",
+    "adele-txt": "@1 és una enginyera i educadora nord-americana i co-desenvolupadora del llenguatge de programació Smalltalk.",
+    "rosza-name": "Rósza Péter",
+    "rosza-txt": "@1 va ser una matemàtica hongaresa. Mare fundadora de la recursivitat.",
+    "nashlie-name": "Nashlie H. Sephus",
+    "nashlie-txt": "@1 és una enginyera informàtica i emprenedora nord-americana especialitzada en aprenentatge automàtic i identificació de biaixos algorísmics."
 }
