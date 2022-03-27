@@ -1,6 +1,5 @@
 function homeHero () {
 
-    
     const microblocksText = document.querySelector('svg #MicroBlocks');
     const letters = [
         L = document.querySelector('svg #letter-l'),
@@ -14,12 +13,12 @@ function homeHero () {
         L: {
             text: document.querySelector('.c_hero-home__desc--l'),
             bubble: document.querySelector('.c_hero-home__bubble--l'),
-            url: "https://en.wikipedia.org/wiki/Adele_Goldberg_(computer_scientist)"
+            url: "https://en.wikipedia.org/wiki/Duy-Loan_Le"
         },
         E: {
             text: document.querySelector('.c_hero-home__desc--e'),
             bubble: document.querySelector('.c_hero-home__bubble--e'),
-            url: "https://en.wikipedia.org/wiki/Adele_Goldberg_(computer_scientist)"
+            url: "https://en.wikipedia.org/wiki/Evelyn_Boyd_Granville"
         },
         A: {
             text: document.querySelector('.c_hero-home__desc--a'),
@@ -29,21 +28,18 @@ function homeHero () {
         R: {
             text: document.querySelector('.c_hero-home__desc--r'),
             bubble: document.querySelector('.c_hero-home__bubble--r'),
-            url: "https://en.wikipedia.org/wiki/Adele_Goldberg_(computer_scientist)"
+            url: "https://en.wikipedia.org/wiki/R%C3%B3zsa_P%C3%A9ter"
         },
         N: {
             text: document.querySelector('.c_hero-home__desc--n'),
             bubble: document.querySelector('.c_hero-home__bubble--n'),
-            url: "https://en.wikipedia.org/wiki/Adele_Goldberg_(computer_scientist)"
+            url: "https://en.wikipedia.org/wiki/Nashlie_Sephus"
         }
     }
 
-
-    // console.log(letters);
-
     letters.forEach( (letter) => {
         let letterName = letter.dataset.letter;
-                
+
         // console.log(letter);
         letter.addEventListener('mouseover', function(e) {
             letterAction(e);
@@ -77,7 +73,7 @@ function homeHero () {
         letterBubble.classList.add('c_hero-home__bubble--is-visible');
         letterText.classList.add('c_hero-home__desc--is-visible');
         microblocksText.classList.add('c_home-hero__microblocks-text--hidden');
-        
+
         // letter states
         letters.forEach( (letter) => {
             if (letter != theLetter) {
