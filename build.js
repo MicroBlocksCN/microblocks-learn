@@ -268,40 +268,43 @@ function compileTemplate (templateName, descriptor, langCode, destinationDir) {
 
 function build () {
     // builds the whole thing
+    console.time("Building site in");
 
     // remove and remake dist directory
     fse.removeSync(`${__dirname}/dist`);
     fse.ensureDirSync(`${__dirname}/dist`);
-
+    
     // register all handlebars partials
     registerPartials('svg');
     registerPartials('layouts');
     registerPartials();
-
+    
     // concat all JS
     concatJS();
-
+    
     // compile sass stylesheets, autoprefixing the resulting CSS
     compileSass();
-
+    
     // copy assets and JSON files
     copyAssets();
-
+    
     // process localization files
     processLocales();
-
+    
     // process all activity descriptors and build pages for each of them
     buildActivities();
-
+    
     // compile all templates
     compileTemplates();
-
+    
     if (!debugMode) {
         // build sitemap
         buildSitemap();
         // delete unwanted html files generated
         deleteUnwantedPages();
     }
+    
+    console.timeEnd("Building site in");
 };
 
 function processLocales () {
@@ -315,7 +318,7 @@ function processLocales () {
                 'json',
                 (fileName, fileContents) => {
                     locales[dirName].pages[fileName] =
-                        JSON.parse(fileContents);
+                    JSON.parse(fileContents);
                 },
                 true // recursive
             )
