@@ -3,6 +3,7 @@
     "top-label": "Actividades",
     "result-count": "@1 resultados.",
     "result-count-one": "1 resultado.",
+    "result-count-zero": "No hay resultados.",
     "no-components": "Ninguno",
     "components-unset": "Indiferente",
     "levels-all": "Todos",
