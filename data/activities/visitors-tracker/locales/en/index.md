@@ -88,7 +88,7 @@ To finally know the number of visitors we just have to divide it by two. For tha
 
 Our final program looks like this:
 
-![Final script before radio](script-basic-program.png)
+![Final script before radio](main-script-without-radio.png)
 
 We are done with the main functionality now! But our board showing the amount of visitors is covered by cardboard, and we can't see it. We will sort this out by sending the data to another board.
 
