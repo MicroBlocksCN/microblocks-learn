@@ -107,7 +107,11 @@
 
     img {
       padding: 0;
-      margin: 0;
+      margin: 0 $space-100 0 0;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
 
     &::after {
