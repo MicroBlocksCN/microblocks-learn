@@ -238,3 +238,15 @@ As an exercise left for the reader, could you think of a way to chain an arbitra
 250%:
 
 ![](render-250.png)
+
+display block @72dpi:
+
+![](displayBlock-72dpi.png)
+
+display block @144dpi:
+
+![](displayBlock-144dpi.png)
+
+display block @288dpi:
+
+![](displayBlock-288dpi.png)
