@@ -70,6 +70,10 @@
     padding-top: $space-200;
   }
 
+  .v_activity__contents {
+    margin: 0; // weird margin only on print is created
+  }
+
 
 
   // Activities
