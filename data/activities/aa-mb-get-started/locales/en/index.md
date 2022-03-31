@@ -13,18 +13,19 @@ A green circle will appear, showing that the micro:bit is connected.
 
 ### Buttons
 
-From *Control*, drag two button blocks into the scripting area.
+From *Control*, drag two **when button pressed** blocks into the scripting area.
 
-![](controlCategory.png =150x*)
+![](controlCategory.png =140x*)
+
+Use the menu to change A to B in one of them.
 
 ![](buttonAHat.png) ![](buttonBHat.png)
 
-Use the menu to change A to B in one of them.
 
 
 Select the LED Display library.
 
-![](LEDDisplayLibrary.png =180x*)
+![](LEDDisplayLibrary.png =160x*)
 
 Use these scripts to make the buttons on the micro:bit turn the LED display on and off:
 
