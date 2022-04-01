@@ -23,8 +23,8 @@ Change the color by selecting the green circles and customizing them.
 
 ![](edit-colors.png =250x*)
 
-![script](set-neopixels.png)
+![Set NeoPixel Colors](set-neopixels.png)
 
 To make it look like the rainbow is moving, rotate the NeoPixels by one forever after the program has started.
 
-![script](moving-rainbow.png)
+![Moving Rainbow](moving-rainbow.png)
