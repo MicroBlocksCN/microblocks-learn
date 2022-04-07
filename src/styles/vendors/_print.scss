@@ -4,12 +4,13 @@
 
 
 // https://fruty.io/2020/12/24/css-hack-print-repeating-headers-and-footers-in-chrome/
-@page {
-  // size: auto;
-  margin-top: 1cm;
-  margin-bottom: 1cm;
-}
-// @page { size:auto; margin:5mm;}
+//@page {
+//  // size: auto;
+//  margin-top: 1cm;
+//  margin-bottom: 1cm;
+//}
+
+@page { size:auto; margin:17mm; }
 
 
 @media print {
