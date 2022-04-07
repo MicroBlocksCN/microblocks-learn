@@ -1,5 +1,8 @@
 # ToDo
 
+## Bugs
+[ ] some script images (small ones?) displayed at wrong scale scale in the browser (but okay when printed)
+
 ## Activity list
 [x] Activity toggles
 [x] Activity filters
