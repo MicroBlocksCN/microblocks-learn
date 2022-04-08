@@ -1,7 +1,16 @@
 function setScriptImageScale(img) {
     // Set scale for the given script image when it is loaded.
 
-    img.style.width = Math.round(0.35 * img.naturalWidth) + 'px';
+// var fName = img.src.split('/').pop();
+// if (fName.startsWith('test')) {
+//   console.log(fName, img.naturalWidth, Math.round(0.35 * img.naturalWidth));
+// }
+
+	if (img.naturalWidth < 450) {
+    	img.style.width = Math.round(0.41 * img.naturalWidth) + 'px';
+	} else {
+    	img.style.width = Math.round(0.35 * img.naturalWidth) + 'px';
+    }
 }
 
 window.onbeforeprint = function() {
