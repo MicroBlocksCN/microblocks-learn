@@ -1,11 +1,3 @@
-### Local Variables A local variable is a variable defined using a local block and used only within the script where it is defined. It lets you set or compute the value in a single place, then use it in several places within the script. Giving your local variable a meaningful name such as "delay" also helps you remember how your script works and what numbers you may want to adjust to change its behavior.
-
-### Local Variables A local variable is a variable defined using a local block and used only within the script where it is defined. It lets you set or compute the value in a single place, then use it in several places within the script. Giving your local variable a meaningful name such as "delay" also helps you remember how your script works and what numbers you may want to adjust to change its behavior.
-
-### Local Variables A local variable is a variable defined using a local block and used only within the script where it is defined. It lets you set or compute the value in a single place, then use it in several places within the script. Giving your local variable a meaningful name such as "delay" also helps you remember how your script works and what numbers you may want to adjust to change its behavior.Giving your local variable a meaningful name such as "delay" also helps you remember how your script works and what numbers you may want to adjust to change its behavior.
-
-### Local Variables A local variable is a variable defined using a local block and used only within the script where it is defined. It lets you set or compute the value in a single place, then use it in several places within the script. Giving your local variable a meaningful name such as "delay" also helps you remember how your script works and what numbers you may want to adjust to change its behavior.
-
 ### Introduction
 
 In this series of experiments, you will explore the speed of your eyes, ears, and

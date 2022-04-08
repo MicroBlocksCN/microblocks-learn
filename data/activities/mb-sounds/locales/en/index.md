@@ -56,5 +56,3 @@ Middle C is always 60. The lowest key on an 88 key piano is 21 and the highest i
 MIDI (musical instrument digital interface) is an industry standard created to
 control keyboards and other electronic instruments.
 [[/fact]]
-
-[[
