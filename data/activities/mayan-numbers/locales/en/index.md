@@ -2,11 +2,11 @@
 
 The Maya civilization used two different representations for numbers. One of them used very elaborate and ornate depictions of deity heads to represent digits, and has been found in stone engravings, mural paintings and manuscripts.
 
-![Engraved ornamental Maya numerals](engraved-numerals.png "Engraved ornamental Maya numerals in Copán, Honduras - CC-BY-2.0 Adalberto Hernandez Vega")
+![Engraved ornamental Maya numerals](engraved-numerals.jpg "Engraved ornamental Maya numerals in Copán, Honduras - CC-BY-2.0 Adalberto Hernandez Vega")
 
 The second numeral representation was the one commonly used in the day-to-day activities and consisted only of dots and lines, plus a special representation for the digit *zero*. This is the system that we are going to explore in this activity.
 
-![Written Maya numerals](written-numbers.png)
+![Written Maya numerals](written-numbers.jpg)
 
 The Maya number system used twenty digits. That is, instead of the ten digits that we use (0 to 9), they had twenty symbols that represented the quantities of zero to twenty.
 
