@@ -19,10 +19,10 @@
     color: $color-purple;
 
     &:not(:first-child) {
-      margin-top: $space-300;
+      margin-top: $space-250;
 
       @include breakpoint(lg) {
-        margin-top: $space-400;
+        margin-top: $space-300;
       }
     }
   }
@@ -30,6 +30,7 @@
 
   // Secondary headings
   h4 {
+    margin-top: $space-250;
     margin-bottom: $space-150;
 
     font-family: $font-display;
@@ -38,12 +39,17 @@
     line-height: $lineHeight-120;
     color: $color-black;
 
-    &:not(:first-child) {
+    @include breakpoint(lg) {
       margin-top: $space-300;
+    }
+  }
 
-      @include breakpoint(lg) {
-        margin-top: $space-400;
-      }
+
+  h3 + h4 {
+    margin-top: $space-200;
+
+    @include breakpoint(lg) {
+      margin-top: $space-200;
     }
   }
 
