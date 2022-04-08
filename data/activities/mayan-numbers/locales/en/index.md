@@ -205,48 +205,24 @@ With this setup, you can now print numbers as big as 399 in Maya!
 
 As an exercise left for the reader, could you think of a way to chain an arbitrary number of micro:bits to be able to draw even bigger numbers?
 
-#### IGNORE: Rendering Tests (will be deleted)
+### Test (please ignore; will be deleted)
 
-55%:
+![test](test0.png)
 
-![](render-55.png)
+![test](test5.png)
 
-85%:
+![test](test20.png)
 
-![](render-85.png)
+![test](test10.png)
 
-100%:
+![test](test11.png)
 
-![](render-100.png)
+![test](test12.png)
 
-110%:
+![test](test13.png)
 
-![](render-110.png)
+![test](test14.png)
 
-125%:
+![test](test15.png)
 
-![](render-125.png)
-
-150%:
-
-![](render-150.png)
-
-200%:
-
-![](render-200.png)
-
-250%:
-
-![](render-250.png)
-
-display block @72dpi:
-
-![](displayBlock-72dpi.png)
-
-display block @144dpi:
-
-![](displayBlock-144dpi.png)
-
-display block @288dpi:
-
-![](displayBlock-288dpi.png)
+![test](test20.png)
