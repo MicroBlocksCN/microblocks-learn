@@ -99,11 +99,13 @@
   .wysiwyg h3 {
     font-size: $fontSize-150;
     margin-bottom: $space-100;
+    break-inside: avoid-page;
   }
 
   .wysiwyg h4 {
     font-size: $fontSize-125;
     margin-bottom: $space-075;
+    break-inside: avoid-page;
   }
 
   .wysiwyg h4:not(:first-child) {
@@ -113,11 +115,13 @@
   .wysiwyg p {
     font-size: $fontSize-087;
     margin-bottom: $space-075;
+    break-inside: avoid-page;
   }
 
   .wysiwyg p.script {
     padding: 0;
     background: unset;
+    break-inside: avoid-page;
 
     img {
       padding: 0;
@@ -139,6 +143,7 @@
     font-size: $fontSize-087;
     padding: 0 0 0 $space-100;
     border-left: 2px solid $color-grey-700;
+    break-inside: avoid-page;
 
     &::after {
       display: none;
