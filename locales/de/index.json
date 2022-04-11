@@ -1,0 +1,26 @@
+{
+    "page-title": "Willkommen",
+    "top-label": "Aktivitäten",
+    "result-count": "@1 Ergebnisse.",
+    "result-count-one": "1 Ergebnis.",
+    "result-count-zero": "Kein Ergebnis.",
+    "no-components": "None",
+    "components-unset": "Zurücksetzen",
+    "levels-all": "Alle",
+    "components-all": "Alle",
+    "locales-all": "Alle",
+    "boards-all": "Alle",
+    "topics-all": "Alle",
+    "language": "Sprache",
+    "board": "Board",
+    "chk-compatible": "und kompatible Boards",
+    "components": "Bestandteile",
+    "level+resources": "Level & Materialien",
+    "chk-card": "Projektanleitung vorhanden",
+    "chk-guide": "Lehrkräftehandreichung vorhanden",
+    "topics": "Themen",
+    "btn-reset": "Zurücksetzen",
+
+    "adele-name": "Adele Goldberg",
+    "adele-txt": "@1 ist eine amerikanische Informatikerin und Pädagogin. Sie ist Mitentwicklerin der Programmiersprache Smalltalk."
+}

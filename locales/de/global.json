@@ -1,0 +1,65 @@
+{
+    "index-nav-item": "Home",
+    "activities-nav-item": "Aktivitäten",
+    "get-started-nav-item": "Erste Schritte",
+    "educators-nav-item": "Pädagog*innen",
+    "other-resources-nav-item": "Weitere Materialien",
+    "run-nav-item": "Starten",
+
+    "contribute": "Mitmachen",
+    "contribute-txt": "Wir sind aktiv auf der Suche nach @1, @2, @3 und @4.",
+    "lnk-translators": "Übersetzer*innen",
+    "lnk-content-creators": "Personen, die Inhalte erstellen",
+    "lnk-ambassadors": "die, die Botschaft weitertragen",
+    "lnk-patrons": "finanzieller Unterstützung",
+
+    "report-issue": "Melde ein Problem",
+    "report-issue-txt": "Melde ein Problem oder frage ein Feature an in unserem Issue Tracker.",
+    "repo": "BitBucket Repository",
+
+    "contact": "Kontaktiere uns",
+    "contact-txt": "Du hast eine Frage oder möchtest mit uns zusammenarbeiten? Melde dich!", 
+
+    "copyright": "von @1, @2 und @3.",
+    "license": "Microblocks ist @1, veröffentlicht unter der @2.",
+    "free-software": "freie Software",
+    "mpl2": "Mozilla Public License v2.0",
+
+    "board_calliope": "Calliope",
+    "board_clue": "Adafruit Clue",
+    "board_cpx": "Circuit Playground Express",
+    "board_cpxbf": "Circuit Playground Bluefruit",
+    "board_ed1": "Citilab ED1",
+    "board_microbit": "micro:bit",
+    "board_nodemcu": "NodeMCU",
+    "board_pico": "RaspberryPi Pico",
+
+    "cmp_alligators": "Krokodilklemmen",
+    "cmp_angle_servo": "Servo (Winkel)",
+    "cmp_cr_servo": "Servo (360°)",
+    "cmp_dht22": "DHT22 (Umwelt)",
+    "cmp_ext_board": "Erweiterungsboard",
+    "cmp_webthings-gateway": "WebThings Gateway",
+    "cmp_ir_remote": "IR Fernbedienung",
+    "cmp_led": "LED",
+    "cmp_led_rgb": "RGB LED",
+    "cmp_neopixels": "NeoPixels",
+    "cmp_speaker": "Lautsprecher",
+    "cmp_pir": "PIR Sensor",
+
+    "tpc_art": "Kunst",
+    "tpc_data": "Daten",
+    "tpc_game": "Spiele",
+    "tpc_iot": "IoT",
+    "tpc_history": "Geschichte",
+    "tpc_maths": "Mathematik",
+    "tpc_music": "Musik",
+    "tpc_robotics": "Robotik",
+    "tpc_sound": "Klänge",
+
+    "lvl_1" : "Anfänger*innen",
+    "lvl_2" : "Fortgeschrittene",
+
+    "og_description": "Aktivitäten und Materialien um MicroBlocks zu lernen und zu unterrichten." ,
+    "og_image_alt": "Microblocks Logo und ein lächelndes LED board"
+}

@@ -1,0 +1,18 @@
+{
+    "author": "von @1",
+    "boards": "Boards",
+    "components": "Bestandteile",
+    "no-components": "None",
+    "resources": "Materialien",
+    "activity-card": "Projektanleitung",
+    "teachers-guide": "Lehrkräftehandreichungen",
+    "back-to-activity": "Projekt ansehen",
+    "activity-details": "Projektdetails",
+    "lbl-level": "Level",
+    "lbl-duration": "Geschätzte Dauer",
+    "duration": "@1-@2 Minuten",
+    "lbl-topics": "Themen",
+    "lbl-printable": "Druckfähige Version",
+    "printable-txt": "Du kannst eine druckfähige Version dieser Seite laden oder sie als PDF Datei speichern.",
+    "btn-printable": "Druckfähige Version"
+}

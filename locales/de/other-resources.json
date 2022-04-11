@@ -1,0 +1,36 @@
+{
+	"other-resources": "Weitere Materialien",
+	"intro-text": "Nützliche Materialien für Pädagog*innen, erstellt vom MicroBlocks Team und der globalen MicroBlocks Community.",
+	"activities-lbl": "Aktivitäten und Tutorials",
+	"articles-lbl": "Artikel",
+	"courses-lbl": "Curricula und Kurse",
+	"manuals-lbl": "Manuals and HowTos",
+	"visit-resource": "Material anzeigen",
+
+	"sensor-examples-title": "Sensoren in Aktion",
+	"sensor-examples-desc": "Viele Beispiele von John Hegarty mit Sensoren und dem micro:bit. Verwende das Menü in der oberen linken Ecke, um Seiten auszuwählen.",
+
+	"cobie-cards-title": "Cobies MicroBlocks Karten",
+	"cobie-cards-desc": "Schöne Projektanleitungen von Cobie van de Ven.",
+
+	"classroom-steam-activites-title": "MINT im Klassenzimmer mit dem ESP32",
+	"classroom-steam-activites-desc": "Einfache Beispiele mit dem ESP32, einem Steckbrett und ein paar zusätzlichen elektronischen Komponenten. Enthält Schaltpläne und Skripte.",
+
+	"finch-title": "Finch und MicroBlocks",
+	"finch-desc": "So kannst du den Birdbrain Technologies Finch Robot mit MicroBlocks verwenden.",
+
+	"hummingbird-title": "Hummingbird und MicroBlocks",
+	"hummingbird-desc": "Werde kreativ mit dem Birdbrain Technologies Hummingbird Robotik Baukasten und MicroBlocks.",
+
+	"cpx-ornament-title": "Circuit Playground Express Weihnachtsdeko",
+	"cpx-ornament-desc": "Erstelle farbenfrohe Festtagsdekoration mit MicroBlocks und dem Adafruit Circuit Playground Express.",
+
+	"black-inventors-title": "Schwarze Erfinderinnen und Pioniere",
+	"black-inventors-desc": "Eine Liste inspirierender afroamerikanischer Erfinderinnen und Pioniere. Finde mehr heraus über den Erfinder der modernen Ampelsysteme oder einen der ersten Ärzte, der eine erfolgreiche Herztransplantation durchführte.",
+
+	"girls-robotics-kit-title": "Günstige Baukästen für kreative Robotik – Toll für Mädchen",
+	"girls-robotics-kit-desc": "Beschreibt, wie MicroBlocks, micro:bit und ein paar zusätzliche elektronische Komponenten eingesetzt werden können, um kreative Roboter zu bauen und damit alle Geschlechter gleichermaßen zu begeistern.",
+	"okdo-card-set-title": "Projektanleitung für den OKdo Baukasten",
+
+	"okdo-card-set-desc": "Diese 10 Projektanleitungen wurden für das OKdo MicroBlocks micro:bit Classroom Pack entwickelt, können aber auch ohne den Baukasten verwendet werden."
+}
