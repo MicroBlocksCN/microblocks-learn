@@ -5,7 +5,7 @@
     "result-count-one": "1 Ergebnis.",
     "result-count-zero": "Kein Ergebnis.",
     "no-components": "None",
-    "components-unset": "Zurücksetzen",
+    "components-unset": "Alle",
     "levels-all": "Alle",
     "components-all": "Alle",
     "locales-all": "Alle",
@@ -14,13 +14,21 @@
     "language": "Sprache",
     "board": "Board",
     "chk-compatible": "und kompatible Boards",
-    "components": "Bestandteile",
+    "components": "Weitere Komponenten",
     "level+resources": "Level & Materialien",
-    "chk-card": "Projektanleitung vorhanden",
+    "chk-card": "Projektkarten vorhanden",
     "chk-guide": "Lehrkräftehandreichung vorhanden",
     "topics": "Themen",
     "btn-reset": "Zurücksetzen",
 
+    "le-name": "Duy-Loan Le",
+    "le-txt": "@1 ist eine Ingenieurin; sie ist die erste Frau und Amerikanerin asiatischer Herkunft, die als Texas Instruments Senior Fellow gewählt wurde.",
+    "evelyn-name": "Evelyn Boyd Granville",
+    "evelyn-txt": "@1 ist eine Computer Pionierin. Sie war die zweite Afroamerikanerin, die einen Doktortitel in Mathematik erlangte.",
     "adele-name": "Adele Goldberg",
-    "adele-txt": "@1 ist eine amerikanische Informatikerin und Pädagogin. Sie ist Mitentwicklerin der Programmiersprache Smalltalk."
+    "adele-txt": "@1 ist eine amerikanische Informatikerin und Pädagogin. Sie ist Mitentwicklerin der Programmiersprache Smalltalk.",
+    "rosza-name": "Rósza Péter",
+    "rosza-txt": "@1 war eine ungarische Mathematikerin auch bekannt als die Begründerin der Rekursion.",
+    "nashlie-name": "Nashlie H. Sephus",
+    "nashlie-txt": "@1 ist eine amerikanische Ingenieurin und Unternehmerin. Ihr Fokus liegt auf dem Maschinellen Lernen und der Identifikation von algorithmischem Bias."
 }

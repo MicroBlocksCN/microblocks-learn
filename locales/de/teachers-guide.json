@@ -1,10 +1,10 @@
 {
     "author": "von @1",
     "boards": "Boards",
-    "components": "Bestandteile",
-    "no-components": "None",
+    "components": "Weitere Komponenten",
+    "no-components": "Keine",
     "resources": "Materialien",
-    "activity-card": "Projektanleitung",
+    "activity-card": "Projektkarten",
     "teachers-guide": "Lehrkräftehandreichungen",
     "back-to-activity": "Projekt ansehen",
     "activity-details": "Projektdetails",
