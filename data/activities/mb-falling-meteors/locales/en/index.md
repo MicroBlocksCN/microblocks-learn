@@ -1,6 +1,6 @@
 ### What You'll Do
 
-In this project, you'll create a game for the BBC micro:bit. Using the buttons, the player will move a shield to catch falling meteors and save the Earth. 
+In this project, you'll create a game for the BBC micro:bit. Using the buttons, the player will move a shield to catch falling meteors and save the Earth.
 
 <video controls="" width="500">
   <source src="https://gpblocks.org/hourOfCode2018/microbitGame/MeteorGame.mp4" type="video/mp4">
@@ -21,7 +21,7 @@ Experienced coders can skip ahead and build the scripts shown in the *All the Sc
 
 You need a BBC micro:bit:
 
-![A micro:bit board](microbit.png)
+![A micro:bit board](microbit.png =500x*)
 
 You also need a computer with a USB port, a USB cable to connect the micro:bit to your computer, and the (free!) MicroBlocks software.
 
@@ -47,7 +47,7 @@ You could use the *set to* block to reset the score to zero at the start of the 
 
 When your micro:bit is connected, you can click on a variable to see its value. A little talk bubble with the value will appear next to the variable.
 
-Don't worry if variables are a new idea; you'll see how they work as we go along. 
+Don't worry if variables are a new idea; you'll see how they work as we go along.
 [[/note]]
 
 To create a variable, click on the *Variables* category on the left side of the MicroBlocks screen and then click on the *Add a variable* button.
@@ -61,7 +61,10 @@ A new *shield x* block will appear the *Variables* category. You'll use that blo
 [[note]]
 #### Trouble?
 
-Check that your micro:bit is correctly set up and connected. The indicator circle should be green. If it's not, check that you installed MicroBlocks on your micro:bit, that the micro:bit is attached to the computer with the USB cable, and that you don't have a bad or "power only" USB cable. 
+Check that your micro:bit is correctly set up and connected.
+The indicator circle should be green. If it is not, check that you installed
+the MicroBlocks firmware on your micro:bit, that the micro:bit is attached to the computer
+with a USB cable, and that you don't have a bad or "power only" USB cable.
 [[/note]]
 
 Now, add a script to make the shield appear on the LED display. Drag out and assemble blocks into a script like this:
@@ -90,7 +93,7 @@ But, wait -- after the lit LED has moved several steps to the right, it disappea
 
 [[note]]
 #### Debugging
-No worries. Even the most expert professional programmers write code with bugs. Finding and fixing bugs is part of the normal programming process, just as fixing spelling and grammar mistakes is part of the writing process. Debugging is fun! Like a detective, you look for clues, and like a scientist you do experiments to learn more about the bug. 
+No worries. Even the most expert professional programmers write code with bugs. Finding and fixing bugs is part of the normal programming process, just as fixing spelling and grammar mistakes is part of the writing process. Debugging is fun! Like a detective, you look for clues, and like a scientist you do experiments to learn more about the bug.
 [[/note]]
 
 In this case, clicking on the *shield x* block provides a valuable clue:
@@ -148,7 +151,7 @@ But there's a problem. We don't want the game to be over after just one meteor. 
 
 Why does the script compare *meteor y* to 7? After all, the meteor is off the bottom of the screen as soon as *meteor y* is greater than 5.
 
-Making that number a little bigger than 5 leaves a little pause between falling meteors. That same effect could have been achieved using a *wait milliseconds* block. There are often many ways to solve a given problem and one of the creative parts of programming is deciding which solution to use. 
+Making that number a little bigger than 5 leaves a little pause between falling meteors. That same effect could have been achieved using a *wait milliseconds* block. There are often many ways to solve a given problem and one of the creative parts of programming is deciding which solution to use.
 [[/note]]
 
 Insert this *if* block into the script that makes the meteor fall:
