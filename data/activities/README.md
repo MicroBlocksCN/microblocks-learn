@@ -44,7 +44,7 @@ specific for that locale. This file has one required field:
 
 * **title:**            The localized title of this activity.
 
-The locale metadata file can also override fields from the top-level `meta.json` file,
+The locale metadata file can also override certain fields from the top-level `meta.json` file,
 such as **card-url** and **card-slides-url**.
 
 ## Files
@@ -117,7 +117,11 @@ Headings *H5* and higher can also be used if needed.
 ### Tips and Facts
 
 Our implementation of MarkDown has an extention that lets us
-define _fun facts_, _notes_ and _safety notes_. Here's how to use that feature:
+define _facts_, _notes_ and _safety notes_.
+A *fact* highlights some interesting information related to the activity.
+A *note* provides advice about the process of coding or building the activity.
+
+Here's how to use that feature:
 
 ```
 [[fact]]
