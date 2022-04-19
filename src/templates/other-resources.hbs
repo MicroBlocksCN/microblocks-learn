@@ -46,6 +46,31 @@
             </div>
 
             <div class="col col-12 col-px lg-col-4 xl-col-3">
+                <h2 class="v_resources__section-title">{{localize "references-lbl"}}</h2>
+            </div>
+
+            <div class="col col-12 col-px lg-col-8 xl-col-9">
+                <div class="v_resources__section-grid">
+                    
+                    {{#each references}}
+                        {{> _resource-card }}
+                    {{/each}}
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Resource 02 -->
+    <div class="v_resources__section">
+        <div class="row">
+
+            <div class="col col-12 col-px">
+                <div class="v_resources__section-border"></div>
+            </div>
+
+            <div class="col col-12 col-px lg-col-4 xl-col-3">
                 <h2 class="v_resources__section-title">{{localize "activities-lbl"}}</h2>
             </div>
 
@@ -62,7 +87,7 @@
         </div>
     </div>
 
-    <!-- Resource 02 -->
+    <!-- Resource 03 -->
     <div class="v_resources__section">
         <div class="row">
 

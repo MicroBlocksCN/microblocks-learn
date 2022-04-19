@@ -57,5 +57,32 @@
 			"langCode": "en",
 			"href": "https://katiedays.com/blog/2020/02/24/a-robotics-kit-for-the-every-day-teacher/"
 		}
+	],
+
+	"references": [
+		{
+			"title": "user-guide-title",
+			"description": "user-guide-desc",
+			"langCode": "en",
+			"href": "https://wiki.microblocks.fun/ide"
+		},
+		{
+			"title": "blocks-reference-title",
+			"description": "blocks-reference-desc",
+			"langCode": "en",
+			"href": "https://wiki.microblocks.fun/reference_manual"
+		},
+		{
+			"title": "key-libraries-title",
+			"description": "key-libraries-desc",
+			"langCode": "en",
+			"href": "https://wiki.microblocks.fun/libraries"
+		},
+		{
+			"title": "supported-boards-title",
+			"description": "supported-boards-reference-desc",
+			"langCode": "en",
+			"href": "https://wiki.microblocks.fun/boards/supported"
+		}
 	]
 }

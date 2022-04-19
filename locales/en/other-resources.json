@@ -1,6 +1,7 @@
 {
 	"other-resources": "Other Resources",
-	"intro-text": "Useful resources for educators, many contributed by the global MicroBlocks community.",
+	"intro-text": "Useful resources from the MicroBlocks team and others.",
+	"references-lbl": "Reference",
 	"activities-lbl": "Activities and Tutorials",
 	"articles-lbl": "Articles",
 	"courses-lbl": "Curricula and Courses",
@@ -32,5 +33,17 @@
 	"girls-robotics-kit-desc": "Describes using MicroBlocks, the micro:bit, and a few additional components in creative robotics activities that can inspire and engage girls, as well as boys.",
 
 	"okdo-card-set-title": "Activity Cards from OKdo Classroom Kit",
-	"okdo-card-set-desc": "This set of ten cards was developed to go with the OKdo MicroBlocks micro:bit Classroom Pack but the cards can be used without the kit."
+	"okdo-card-set-desc": "This set of ten cards was developed to go with the OKdo MicroBlocks micro:bit Classroom Pack but the cards can be used without the kit.",
+
+	"user-guide-title": "User Guide",
+	"user-guide-desc": "Documents the MicroBlocks programming environment.",
+
+	"blocks-reference-title": "Blocks Reference",
+	"blocks-reference-desc": "Documents all MicroBlocks built-in blocks, with many examples.",
+
+	"key-libraries-title": "Libraries",
+	"key-libraries-desc": "Documents the most frequently used MicroBlocks libraries.",
+
+	"supported-boards-title": "Board Guide",
+	"supported-boards-reference-desc": "Recommended microcontroller boards supported by MicroBlocks."
 }
