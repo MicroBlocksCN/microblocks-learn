@@ -98,22 +98,27 @@
     display: block;
     width: max-content;
     position: relative;
-    margin-bottom: $space-250;
+    margin-bottom: $space-300;
 
     background-color: $color-script-pane;
     border: none;
     border-radius: $borderRadius-025;
     line-height: 0;
 
+    padding: $space-100 $space-100 $space-075 $space-100;
+    
     img {
       margin: 0;
-      padding: $space-100 $space-100 $space-075 $space-100;
 
       transition: opacity $trans-0200 $trans-easing;
 
       &:hover {
         opacity: 0.75;
         cursor: grab;
+      }
+
+      & + img {
+        margin-left: $space-100;
       }
     }
 
