@@ -793,4 +793,5 @@ build();
 if (debugMode) {
     watch();
     serve();
+    console.log("\nHTTP Server: '127.0.0.1:3000/en'");
 }
