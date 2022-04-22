@@ -1,0 +1,10 @@
+{
+    "title": "Controlling the Weather with a micro:bit",
+    "author": "MicroBlocks",
+    "level": 1,
+    "time": [ 15, 45 ],
+    "boards": [ "microbit" ],
+    "components": [ "kite", "string" ],
+    "topics": [ "science" ],
+    "card-slides-url": "https://docs.google.com/presentation/d/yourGoogleSlides"
+}
