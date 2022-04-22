@@ -22,7 +22,6 @@ Feel free to check with us at the above email before writing a new activity.
 
 All MicroBlocks activities are shared under the Creative Commons Attribution-ShareAlike 4.0 International license.
 
-
 ## Markdown Formatting
 
 The activity Markdown file should be named index.md.
@@ -51,16 +50,15 @@ If an image needs a caption, add a Markdown title attribute in double quotes lik
 
 `![An Image](image.png "This is the caption and will show up as a caption")`
 
+Non-script images can be scaled to a specific width like this:
+
+`![](greenCircle.jpg =60x*)`
+
 ### Draggable Script Images
 
 Script images created with the **save picture of script** or **save a picture of all scripts** commands in the MicroBlocks editor can be dragged to MicroBlocks running in a browser window to add them to a MicroBlocks project. That makes it easier for users to recreate the scripts when exploring the activity.
 
 To ensure that they are displayed at the correct size, script images should be saved at **printable (200%)** scale. To use that scale, select **show advanced blocks** in the MicroBlocks gear menu, then right-click on the scripting area and select **set exported script scale**. The images will be way too large in normal Markdown viewers but will be scaled down to the correct size when deployed on the website. Using high resolution allows the scripts to look sharp and clear when printed.
-
-Non-script images can be scaled to a specific width like this:
-
-`![](greenCircle.jpg =60x*)`
-
 
 ### Notes, Tips and Warnings
 
@@ -89,6 +87,8 @@ while level 3 is for the notice title (e.g. Be careful with the batteries).
 
 Since these are custom extensions, they won't be recognized by your Markdown viewer,
 but they will render correctly when your markdown is deployed on the website.
+
+Avoid other Markdown extensions and the use of HTML in the Markdown file.
 
 ## Activity Thumbnail
 
@@ -132,7 +132,6 @@ The file should be in [JSON](https://www.json.org/json-en.html) format with the 
 * **components:** (optional) A list of external components the activity requires such as servos, LEDs, NeoPixels, etc.
 * **topics:** (optional) A list of topics the activity covers, such as art, music, history, cryptography, etc.
 * **card-slides-url** (optional) A link to the source file for the PDF activity card.
-
 
 To create your metadata file, you can copy and edit [this template](sample-metadata.json).
 
