@@ -1,4 +1,4 @@
-# Creatinge and Submitting a MicroBlocks Activity
+# Creating and Submitting a MicroBlocks Activity
 
 We welcome high-quality activity submissions from the MicroBlocks community.
 
