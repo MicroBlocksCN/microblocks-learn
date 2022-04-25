@@ -94,7 +94,7 @@ Avoid other Markdown extensions and the use of HTML in the Markdown file.
 
 The activity thumbnail communicates visually what your activity is about.
 
-The image should be in JPEG format with a 16:9 aspect ratio, ideally 640x360 pixels or larger.
+The image should be in JPEG format with a 16:9 aspect ratio, and a minimum size of 640x360 pixels.
 
 The file should be named thumbnail.jpg.
 
