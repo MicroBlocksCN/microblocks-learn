@@ -1,6 +1,7 @@
 {
     "other-resources": "Altres Recursos",
     "intro-text": "Recursos útils per a educadors, molts d'ells creats per la comunitat global de MicroBlocks.",
+	"references-lbl": "Referència",
     "activities-lbl": "Activitats i Tutorials",
 	"articles-lbl": "Articles",
 	"courses-lbl": "Cursos",
@@ -32,5 +33,17 @@
 	"girls-robotics-kit-desc": "Descriu l'ús de MicroBlocks, la micro:bit i uns quants components addicionals en activitats de robòtica creativa que poden inspirar i implicar les noies, així com els nens.",
 
 	"okdo-card-set-title": "Fitxes d'activitats d'OKdo Classroom Kit",
-	"okdo-card-set-desc": "Aquest conjunt de deu targetes es va desenvolupar per anar amb el paquet d'aula micro:bit d'OKdo MicroBlocks, però les targetes es poden utilitzar sense el kit."
+	"okdo-card-set-desc": "Aquest conjunt de deu targetes es va desenvolupar per anar amb el paquet d'aula micro:bit d'OKdo MicroBlocks, però les targetes es poden utilitzar sense el kit.",
+
+	"user-guide-title": "Guia de l'Usuari",
+	"user-guide-desc": "Documenta l'entorn de programació MicroBlocks.",
+
+	"blocks-reference-title": "Referència de Blocs",
+	"blocks-reference-desc": "Documenta tots els blocs integrats de MicroBlocks, amb molts exemples.",
+
+	"key-libraries-title": "Biblioteques",
+	"key-libraries-desc": "Documenta les biblioteques de MicroBlocks més utilitzades.",
+
+	"supported-boards-title": "Guia de la Placa del Microcontrolador",
+	"supported-boards-reference-desc": "Plaques de microcontroladors recomanades compatibles amb MicroBlocks."
 }
