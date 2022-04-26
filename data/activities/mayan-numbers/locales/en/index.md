@@ -204,25 +204,3 @@ Finally, we should also send the groups of twenty from the script that decrement
 With this setup, you can now print numbers as big as 399 in Maya!
 
 As an exercise left for the reader, could you think of a way to chain an arbitrary number of micro:bits to be able to draw even bigger numbers?
-
-### Test (please ignore; will be deleted)
-
-![test](test0.png)
-
-![test](test5.png)
-
-![test](test20.png)
-
-![test](test10.png)
-
-![test](test11.png)
-
-![test](test12.png)
-
-![test](test13.png)
-
-![test](test14.png)
-
-![test](test15.png)
-
-![test](test20.png)
