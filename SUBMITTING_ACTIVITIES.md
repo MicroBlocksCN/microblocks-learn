@@ -4,27 +4,23 @@ We welcome high-quality activity submissions from the MicroBlocks community.
 
 To submit an activity, please prepare a .zip file containing:
 
-* the [Markdown](https://www.markdownguide.org/basic-syntax/) file
-for your activity (index.md)
+* the [Markdown](https://www.markdownguide.org/basic-syntax/) file for your activity (`index.md`)
 * all images referenced by the Markdown file
-* a thumbnail image for the activity
-* a metatdata JSON file for the activity (see below)
-* any additional files such as teachers-guide.md or activity-card.pdf
+* a thumbnail image for the activity (`thumbnail.jpg`)
+* a metatdata JSON file for the activity (`metadata.json`)
+* any additional files such as `teachers-guide.md` or `activity-card.pdf`
 
 Send the zip file to:
 
 `interest (at) microblocks (dot) fun`
 
-We may reject activities that we feel are not a good match for the MicroBlocks community,
-do not follow our formatting or presentation conventions, duplicate existing activites,
-or for other reasons.
-Feel free to check with us at the above email before writing a new activity.
+We may reject activities that we feel are not a good match for the MicroBlocks community, do not follow our formatting or presentation conventions, duplicate existing activites, or for other reasons. Feel free to check with us via email before writing a new activity.
 
 All MicroBlocks activities are shared under the Creative Commons Attribution-ShareAlike 4.0 International license.
 
 ## Markdown Formatting
 
-The activity Markdown file should be named index.md.
+The activity Markdown file should be named `index.md`.
 
 Here is how to format the Markdown.
 
@@ -36,15 +32,11 @@ Sections should use level 4 headings (i.e. `#### Step 1`).
 
 You can also use headings levels 5 and up.
 
-**Note:** Do not use heading levels 1 and 2.
-Those levels are reserved for other content on the activities page.
+**Note:** Do not use heading levels 1 and 2. Those levels are reserved for other content on the activities page.
 
 ### Images
 
-Use simple file names (e.g. `![An Image](image.png)`) for your images
-and include the image files in the same folder as your Markdown file.
-It is best to avoid linking to images on other sites since those links could
-break in the future.
+Use simple file names (e.g. `![An Image](image.png)`) for your images and include the image files in the same folder as your Markdown file. It is best to avoid linking to images on other sites since those links could break in the future.
 
 If an image needs a caption, add a Markdown title attribute in double quotes like this:
 
@@ -58,7 +50,9 @@ Non-script images can be scaled to a specific width like this:
 
 Script images created with the **save picture of script** or **save a picture of all scripts** commands in the MicroBlocks editor can be dragged to MicroBlocks running in a browser window to add them to a MicroBlocks project. That makes it easier for users to recreate the scripts when exploring the activity.
 
-To ensure that they are displayed at the correct size, script images should be saved at **printable (200%)** scale. To use that scale, select **show advanced blocks** in the MicroBlocks gear menu, then right-click on the scripting area and select **set exported script scale**. The images will be way too large in normal Markdown viewers but will be scaled down to the correct size when deployed on the website. Using high resolution allows the scripts to look sharp and clear when printed.
+Script images should be saved at **printable (200%)** scale.
+
+To use that scale, select **show advanced blocks** in the MicroBlocks gear menu, then right-click on the scripting area and select **set exported script scale**. The images will appear much too large in normal Markdown viewers but will be scaled down to the correct size when deployed on the website. Using printable resolution allows the scripts to look sharp and clear when printed.
 
 ### Notes, Tips and Warnings
 
@@ -80,13 +74,9 @@ Write your safety note here
 [[/safety]]
 ```
 
-You can optionally add level 3 and 4 headings to your notices
-as shown in the safety note above.
-Level 4 is for the notice type (e.g. SAFETY NOTE),
-while level 3 is for the notice title (e.g. Be careful with the batteries).
+You can optionally add level 3 and 4 headings to your notices as shown in the safety note above. Level 4 is for the notice type (e.g. SAFETY NOTE), while level 3 is for the notice title (e.g. Be careful with the batteries).
 
-Since these are custom extensions, they won't be recognized by your Markdown viewer,
-but they will render correctly when your markdown is deployed on the website.
+Since these are custom extensions, they won't be recognized by your Markdown viewer, but they will render correctly when your markdown is deployed on the website.
 
 Avoid other Markdown extensions and the use of HTML in the Markdown file.
 
@@ -96,27 +86,21 @@ The activity thumbnail communicates visually what your activity is about.
 
 The image should be in JPEG format with a 16:9 aspect ratio, ideally 640x360 pixels or larger.
 
-The file should be named thumbnail.jpg.
+The file should be named `thumbnail.jpg`.
 
 ## Teacher's Guide
 
-If your activity includes a teacher's guide, write it in Markdown,
-using the formatting conventions above, and include it in the activity folder.
+If your activity includes a teacher's guide, write it in Markdown, using the formatting conventions above, and include it in the activity folder.
 
-The file should be named teachers-guide.md.
+The file should be named `teachers-guide.md`.
 
 ## Activity Card
 
-If your activity includes a student-facing activity card designed to be printed,
-please include the PDF file. Activity cards are typically created using Google Slides,
-which allows one to do precise page layout.
+If your activity includes a student-facing activity card designed to be printed, please include the PDF file. Activity cards are typically created using Google Slides, which allows one to do precise page layout.
 
-The file should be named activity-card.pdf.
+The file should be named `activity-card.pdf`.
 
-**Optional activity card source:**
-If you want others to be able to translate or remix your
-activity card, please provide a URL to the source file in
-the metadata file, ideally a link to a Google Slides document.
+**Optional activity card source:** If you want others to be able to translate or remix your activity card, please provide a URL to the source file in the metadata file, ideally a link to a Google Slides document.
 
 ## Activity Metadata
 
@@ -133,6 +117,6 @@ The file should be in [JSON](https://www.json.org/json-en.html) format with the 
 * **topics:** (optional) A list of topics the activity covers, such as art, music, history, cryptography, etc.
 * **card-slides-url** (optional) A link to the source file for the PDF activity card.
 
-To create your metadata file, you can copy and edit [this template](sample-metadata.json).
+To create your metadata file, you can download and edit [this template](sample-metadata.json).
 
-The file should be named meta.json.
+The file should be named `meta.json`.
