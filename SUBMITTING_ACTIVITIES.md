@@ -84,7 +84,7 @@ Avoid other Markdown extensions and the use of HTML in the Markdown file.
 
 The activity thumbnail communicates visually what your activity is about.
 
-The image should be in JPEG format with a 16:9 aspect ratio, and a minimum size of 640x360 pixels.
+The image should be in JPEG format with a 16:9 aspect ratio with a minimum size of 640x360 pixels.
 
 The file should be named `thumbnail.jpg`.
 
@@ -106,7 +106,7 @@ The file should be named `activity-card.pdf`.
 
 The metadata is used by the activities filtering system.
 
-The file should be in [JSON](https://www.json.org/json-en.html) format with the following fields:
+The file should be in [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) format with the following fields:
 
 * **title:** The title of your activity, in the language the activity is written in.
 * **author:** The name of the author or organization that created the activity.
