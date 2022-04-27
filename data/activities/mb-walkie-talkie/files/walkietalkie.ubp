@@ -1,0 +1,156 @@
+module main
+author unknown
+version 1 0 
+description ''
+variables 'send buffer' 'rcv buffer' 
+
+	spec ' ' 'play recieved data' 'play  _' 'auto' '10'
+	spec 'r' 'receive' 'receive'
+	spec 'r' 'record' 'record'
+	spec ' ' 'transmit' 'transmit _' 'auto' '10'
+
+to 'play recieved data' count {
+  comment 'Play count sampler from rcv buffer through the speaker'
+  for i count {
+    comment 'map the byte value (0-255) to the range 256-766
+(i.e. the middle portion of the PWM output range)
+set the pulse width of the speaker pin to simulate
+an analog output value'
+    analogWriteOp 27 ((2 * (at i (v 'rcv buffer'))) + 256)
+    waitMicros 80
+  }
+}
+
+to receive {
+  comment 'Receive sound data'
+  local 'next' 1
+  local 'packet' (newList 32)
+  waitUntil ('[radio:packetReceive]' packet)
+  forever {
+    if ((at 2 packet) == 123) {
+      comment 'if this packet is one of ours, copy its payload into rcv buffer'
+      for i 30 {
+        atPut next (v 'rcv buffer') (at (i + 2) packet)
+        next += 1
+      }
+      if ((next + 30) > (size (v 'rcv buffer'))) {
+        comment 'rcv buffer is full; return the sample count'
+        return next
+      }
+      comment 'reset the timer and wait for a packet
+if no packet arrives within the timeout,
+assume the transmission is complete'
+      resetTimer
+    }
+    repeatUntil ('[radio:packetReceive]' packet) {
+      if ((timer) > 100) {
+        comment 'transmission complete; return the sample count'
+        return next
+      }
+    }
+  }
+}
+
+to record {
+  comment 'Record sound into the send buffer.'
+  digitalWriteOp 28 true
+  for i (size (v 'send buffer')) {
+    comment 'map microphone values into 8-bit range (0..255) '
+    local 'sample' ((('[sensors:microphone]') >> 3) + 131)
+    sample = (maximum 0 (minimum sample 255))
+    comment 'store the sample in send buffer'
+    atPut i (v 'send buffer') sample
+    if (not (buttonA)) {
+      comment 'if button A is released, stop and return sample count'
+      digitalWriteOp 28 false
+      return i
+    }
+    waitMicros 33
+  }
+  comment 'send buffer is full; stop and return sample count'
+  digitalWriteOp 28 false
+  return (size (v 'send buffer'))
+}
+
+to transmit count {
+  comment 'Transmit the recorded data'
+  local 'packet' (newList 32)
+  comment 'first two bytes of the packet are its size (32 bytes)
+and protocol (123 = walkie talkie)'
+  atPut 1 packet 32
+  atPut 2 packet 123
+  count = (minimum count (size (v 'send buffer')))
+  local 'next' 1
+  comment 'send count bytes from send buffer, 30 bytes per packet'
+  repeatUntil ((next + 30) > count) {
+    comment 'copy the next 30 bytes into the packet payload'
+    for i 30 {
+      atPut (i + 2) packet (at next (v 'send buffer'))
+      next += 1
+    }
+    comment 'send the packet'
+    '[radio:packetSend]' packet
+  }
+}
+
+script 451 39 {
+whenButtonPressed 'A'
+comment 'Record and send sound when button A is pressed.
+Top-middle LED of display is lit while transmitting.'
+local 'sample count' 0
+local 'sample count' (record)
+setUserLED true
+transmit (v 'sample count')
+setUserLED false
+}
+
+script 43 47 {
+whenStarted
+comment 'Receive and play walkie-talkie packets '
+comment 'Bufers for outgoing an incoming sound data.'
+'send buffer' = ('[data:newByteArray]' 42000)
+'rcv buffer' = ('[data:newByteArray]' 42000)
+forever {
+  comment 'Clear the receive buffer'
+  atPut 'all' (v 'rcv buffer') 0
+  local 'sample count' (receive)
+  'play recieved data' (v 'sample count')
+}
+}
+
+script 496 281 {
+'play recieved data' (v 'sample count')
+}
+
+script 499 326 (v send buffer)
+
+script 44 353 {
+to 'play recieved data' {}
+}
+
+
+module 'Radio Primitives' Comm
+author MicroBlocks
+version 1 1 
+tags radio communication messaging network 
+description 'Low level BBC micro:bit radio primitives. You are probably looking for the Radio library in the folder above.
+
+Messages to send and receive strings, numbers, and pairs use the same packet format as MakeCode and can be used to communicate with devices running MakeCode.
+
+The packetSend/packetReceive primitives provide access to raw 32-byte radio packets so you can create your own protocol. The first byte gives the message length in bytes not counting the length byte; max is 31. The next byte is "1" for MakeCode packets; use anything but "1" for you own protocol and then it is up to you to define the format for the rest of the packet. See https://ukbaz.github.io/howto/ubit_radio.html.
+'
+
+	spec ' ' '[radio:sendInteger]' 'radio send number _' 'num' 123
+	spec ' ' '[radio:sendString]' 'radio send string _' 'str' 'Hello!'
+	spec ' ' '[radio:sendPair]' 'radio send pair _ = _' 'str num' 'light' 10
+	spec 'r' '[radio:messageReceived]' 'radio message received?'
+	spec 'r' '[radio:receivedInteger]' 'radio last number'
+	spec 'r' '[radio:receivedString]' 'radio last string'
+	spec 'r' '[radio:receivedMessageType]' 'radio last message type'
+	spec ' ' '[radio:setGroup]' 'radio set group _ (0-255)' 'num' 0
+	spec ' ' '[radio:setChannel]' 'radio set channel (0-83) _' 'num' 7
+	spec ' ' '[radio:setPower]' 'radio set power (0-7) _' 'num' 4
+	spec 'r' '[radio:signalStrength]' 'radio last signal strength'
+	spec 'r' '[radio:packetReceive]' 'radio receive packet _' 'str'
+	spec ' ' '[radio:packetSend]' 'radio send packet _' 'str'
+	spec ' ' '[radio:disableRadio]' 'disable radio'
