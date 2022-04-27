@@ -13,7 +13,7 @@ This script records about two seconds of sound when the A button is pressed:
 The script creates a list to hold the recorded sound and then fills it with sound samples from the microphone.
 
 [[fact]]
-### Turning Sound into Numbers 
+### Turning Sound into Numbers
 
 Sound waves make the air pressure fluctuate. Those fluctuations push your ear drum (or the diaphram of a microphone) in and out. Although the movements are tiny, your ear is able to detect them and tell your brain what you are hearing.
 
@@ -45,11 +45,15 @@ Connecting a small (~1-10 uF) capacitor in parallel with the speaker input will 
 
 ### Graphing Sound
 
-Open the graph and click the graph script to graph the recording.
+This script will graph the sound:
+
+![graph.png](graph.png)
+
+Record some sound, then open the graph and click the graph script to graph it.
 
 ![graph_output.png](graph_output.png)
 
-The graph shows the **sound samples** that were recorded from the microphone. The microphone converts the tiny fluctuations in air pressure created by sound waves into a varying voltage, which  micro:bit reads as numbers, which are collected by the record script. Graphing those numbers lets us see a visual representation of the recorded sound.
+The graph shows the **sound samples** that were recorded from the microphone. The microphone converts sound waves into a varying voltage, which the micro:bit converts to numbers, which are collected by the record script. Graphing those numbers creates a visual representation of the recorded sound.
 
 ### Complete Project
 
