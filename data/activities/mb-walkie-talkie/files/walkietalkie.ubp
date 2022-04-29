@@ -10,25 +10,25 @@ variables 'send buffer' 'rcv buffer'
 	spec ' ' 'transmit' 'transmit _' 'auto' '10'
 
 to 'play recieved data' count {
-  comment 'Play count sampler from rcv buffer through the speaker'
+  comment 'Play count sampler from rcv buffer through the speaker.'
   for i count {
-    comment 'map the byte value (0-255) to the range 256-766
-(i.e. the middle portion of the PWM output range)
-set the pulse width of the speaker pin to simulate
-an analog output value'
+    comment 'Map the byte value (0-255) to the range 256-766
+(i.e. the middle portion of the PWM output range).
+Set the pulse width of the speaker pin to simulate
+an analog output value.'
     analogWriteOp 27 ((2 * (at i (v 'rcv buffer'))) + 256)
-    waitMicros 80
+    waitMicros 110
   }
 }
 
 to receive {
-  comment 'Receive sound data'
+  comment 'Receive sound data.'
   local 'next' 1
   local 'packet' (newList 32)
   waitUntil ('[radio:packetReceive]' packet)
   forever {
     if ((at 2 packet) == 123) {
-      comment 'if this packet is one of ours, copy its payload into rcv buffer'
+      comment 'if this packet is one of ours, copy its 30-byte payload into rcv buffer'
       for i 30 {
         atPut next (v 'rcv buffer') (at (i + 2) packet)
         next += 1
@@ -38,7 +38,7 @@ to receive {
         return next
       }
       comment 'reset the timer and wait for a packet
-if no packet arrives within the timeout,
+if no packet arrives for a while then
 assume the transmission is complete'
       resetTimer
     }
@@ -56,24 +56,25 @@ to record {
   digitalWriteOp 28 true
   for i (size (v 'send buffer')) {
     comment 'map microphone values into 8-bit range (0..255) '
-    local 'sample' ((('[sensors:microphone]') >> 3) + 131)
+    local 'sample' ((('[sensors:microphone]') / 8) + 128)
+    comment '... and make sure they are in that range'
     sample = (maximum 0 (minimum sample 255))
     comment 'store the sample in send buffer'
     atPut i (v 'send buffer') sample
     if (not (buttonA)) {
-      comment 'if button A is released, stop and return sample count'
+      comment 'if button A is released, stop and return the sample count'
       digitalWriteOp 28 false
       return i
     }
     waitMicros 33
   }
-  comment 'send buffer is full; stop and return sample count'
+  comment 'send buffer is full; stop and return the sample count'
   digitalWriteOp 28 false
   return (size (v 'send buffer'))
 }
 
 to transmit count {
-  comment 'Transmit the recorded data'
+  comment 'Transmit the recorded data.'
   local 'packet' (newList 32)
   comment 'first two bytes of the packet are its size (32 bytes)
 and protocol (123 = walkie talkie)'
@@ -81,7 +82,7 @@ and protocol (123 = walkie talkie)'
   atPut 2 packet 123
   count = (minimum count (size (v 'send buffer')))
   local 'next' 1
-  comment 'send count bytes from send buffer, 30 bytes per packet'
+  comment 'transmit count bytes from send buffer'
   repeatUntil ((next + 30) > count) {
     comment 'copy the next 30 bytes into the packet payload'
     for i 30 {
@@ -93,39 +94,29 @@ and protocol (123 = walkie talkie)'
   }
 }
 
-script 451 39 {
+script 382 40 {
 whenButtonPressed 'A'
 comment 'Record and send sound when button A is pressed.
 Top-middle LED of display is lit while transmitting.'
-local 'sample count' 0
 local 'sample count' (record)
 setUserLED true
 transmit (v 'sample count')
 setUserLED false
 }
 
-script 43 47 {
+script 40 40 {
 whenStarted
-comment 'Receive and play walkie-talkie packets '
-comment 'Bufers for outgoing an incoming sound data.'
-'send buffer' = ('[data:newByteArray]' 42000)
-'rcv buffer' = ('[data:newByteArray]' 42000)
+comment 'Receive and play walkie-talkie packets. '
+comment 'Create the send and receive buffers'
+'send buffer' = ('[data:newByteArray]' 45000)
+'rcv buffer' = ('[data:newByteArray]' 45000)
 forever {
   comment 'Clear the receive buffer'
   atPut 'all' (v 'rcv buffer') 0
+  comment 'Receive and play a message'
   local 'sample count' (receive)
   'play recieved data' (v 'sample count')
 }
-}
-
-script 496 281 {
-'play recieved data' (v 'sample count')
-}
-
-script 499 326 (v send buffer)
-
-script 44 353 {
-to 'play recieved data' {}
 }
 
 

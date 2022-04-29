@@ -2,7 +2,7 @@
     "author": "MicroBlocks",
     "level": 2,
     "boards": [ "board_microbit" ],
-    "time": [ 30, 45 ],
+    "time": [ 45, 90 ],
     "topics": [ "tpc_sound" ],
     "components": [ ]
 }
