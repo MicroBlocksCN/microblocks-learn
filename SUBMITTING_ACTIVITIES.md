@@ -22,7 +22,9 @@ All MicroBlocks activities are shared under the Creative Commons Attribution-Sha
 
 The activity Markdown file should be named `index.md`.
 
-Here is how to format the Markdown.
+Here is how to format the Markdown according to the Learn MicroBlocks site.
+
+*If you you are not familiar with Markdown, you can check this comprehensive [Getting Started section](https://www.markdownguide.org/getting-started/) on Markdown Guide.*
 
 ### Titles
 
