@@ -1,0 +1,65 @@
+{
+    "index-nav-item": "首页",
+    "activities-nav-item": "活动",
+    "get-started-nav-item": "起步",
+    "educators-nav-item": "教师",
+    "other-resources-nav-item": "其他资源",
+    "run-nav-item": "运行 MicroBlocks",
+
+    "contribute": "贡献",
+    "contribute-txt": "我们急需 @1, @2, @3 and @4.",
+    "lnk-translators": "翻译者",
+    "lnk-content-creators": "内容创作者",
+    "lnk-ambassadors": "宣传者",
+    "lnk-patrons": "捐献者",
+
+    "report-issue": "报告",
+    "report-issue-txt": "向我们的事项跟踪器报告一个程序错误或者提交一个需求。",
+    "repo": "BitBucket 仓库",
+
+    "contact": "联系我们",
+    "contact-txt": "有问题？想合作？给我们发封邮件吧！",
+
+    "copyright": "来自 @1, @2 and @3.",
+    "license": "Microblocks 是 @1, 授权协议为 @2.",
+    "free-software": "自由软件",
+    "mpl2": "Mozilla Public License v2.0",
+
+    "board_calliope": "Calliope",
+    "board_clue": "Adafruit Clue",
+    "board_cpx": "Circuit Playground Express",
+    "board_cpxbf": "Circuit Playground Bluefruit",
+    "board_ed1": "Citilab ED1",
+    "board_microbit": "micro:bit",
+    "board_nodemcu": "NodeMCU",
+    "board_pico": "RaspberryPi Pico",
+
+    "cmp_alligators": "鳄鱼夹",
+    "cmp_angle_servo": "角度舵机",
+    "cmp_cr_servo": "360度舵机",
+    "cmp_dht22": "DHT22 环境温湿度传感器",
+    "cmp_ext_board": "拓展板",
+    "cmp_webthings-gateway": "WebThings 路由",
+    "cmp_ir_remote": "IR 遥控",
+    "cmp_led": "LED 灯",
+    "cmp_led_rgb": "RGB 灯",
+    "cmp_neopixels": "NeoPixels 彩色灯带",
+    "cmp_speaker": "喇叭",
+    "cmp_pir": "PIR 人体存在感应器",
+
+    "tpc_art": "艺术",
+    "tpc_data": "数据",
+    "tpc_game": "游戏",
+    "tpc_iot": "物联网",
+    "tpc_history": "历史",
+    "tpc_maths": "数学",
+    "tpc_music": "音乐",
+    "tpc_robotics": "机器人",
+    "tpc_sound": "声音",
+
+    "lvl_1" : "初学者",
+    "lvl_2" : "有经验",
+
+    "og_description": "教学 MicroBlocks 的活动与资源。" ,
+    "og_image_alt": "Microblocks 标志与一个微笑的主板"
+}

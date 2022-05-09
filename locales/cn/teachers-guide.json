@@ -1,0 +1,18 @@
+{
+    "author": "来自 @1",
+    "boards": "主板",
+    "components": "配件",
+    "no-components": "无需配件",
+    "resources": "资源",
+    "activity-card": "活动卡",
+    "teachers-guide": "教师指引",
+    "back-to-activity": "查看活动",
+    "activity-details": "活动详情",
+    "lbl-level": "等级",
+    "lbl-duration": "所需时间",
+    "duration": "@1-@2 分钟",
+    "lbl-topics": "主题",
+    "lbl-printable": "打印版",
+    "printable-txt": "你可以下载一个打印版或者保存为PDF。",
+    "btn-printable": "打印版"
+}

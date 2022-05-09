@@ -1,0 +1,36 @@
+{
+	"other-resources": "其他资源",
+	"intro-text": "其他教师资源总览，大多来自全球 MicroBlocks 社区。",
+	"activities-lbl": "活动与引导",
+	"articles-lbl": "文章",
+	"courses-lbl": "课程",
+	"manuals-lbl": "说明与指引",
+	"visit-resource": "浏览资源",
+
+	"sensor-examples-title": "传感器在行动",
+	"sensor-examples-desc": "由 John Hegarty 创作的 Micro:bit 传感器使用案例。左上角的菜单键可以跳到不同页面。",
+
+	"cobie-cards-title": "Cobie 的 MicroBlocks 活动卡组",
+	"cobie-cards-desc": "由 Cobie van de Ven 创作的优秀活动卡组。",
+
+	"classroom-steam-activites-title": "基于 ESP32 的 STEAM 课堂",
+	"classroom-steam-activites-desc": "使用 ESP32 加上一些面包板还有一些电子配件的一些简单例子，带有接线图与代码。",
+
+	"finch-title": "Finch 与 MicroBlocks",
+	"finch-desc": "如何在 Microblocks 中使用 Birdbrain Technologies 的 Finch 机器人。",
+
+	"hummingbird-title": "Hummingbird 与 MicroBlocks",
+	"hummingbird-desc": "如何在 Microblocks 中使用 Birdbrain Technologies 的 Hummingbird 机器人组装套装。",
+
+	"cpx-ornament-title": "Circuit Playground Express 节日装饰",
+	"cpx-ornament-desc": "用 MicroBlocks 与 Adafruit 的 Circuit Playground Express 制作一个多彩的节日装饰吧。",
+
+	"black-inventors-title": "非裔美国人中的创新者与发明者",
+	"black-inventors-desc": "一份非裔美国创新者与发明者名单，包括现代交通灯的发明者，第一位成功完成心脏移植手术的医生。",
+
+	"girls-robotics-kit-title": "低成本机器人组装套装——女生优选",
+	"girls-robotics-kit-desc": "使用 MicroBlocks、 micro:bit和其他一些组件，可以组织能够吸引与启发女生们的机器人组装活动，当然男生也可以。",
+
+	"okdo-card-set-title": "OKdo 教育套装的活动卡组",
+	"okdo-card-set-desc": "这套卡组有十张，原设计是为 OKdo MicroBlocks micro:bit 教育套装准备的，但没有这个套装也能使用这套卡组。"
+}
