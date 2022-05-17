@@ -4,10 +4,10 @@
     "get-started-nav-item": "起步",
     "educators-nav-item": "教师",
     "other-resources-nav-item": "其他资源",
-    "run-nav-item": "运行 MicroBlocks",
+    "run-nav-item": "运行",
 
     "contribute": "贡献",
-    "contribute-txt": "我们急需 @1, @2, @3 and @4.",
+    "contribute-txt": "我们急需 @1, @2, @3 和 @4.",
     "lnk-translators": "翻译者",
     "lnk-content-creators": "内容创作者",
     "lnk-ambassadors": "宣传者",
@@ -20,7 +20,7 @@
     "contact": "联系我们",
     "contact-txt": "有问题？想合作？给我们发封邮件吧！",
 
-    "copyright": "来自 @1, @2 and @3.",
+    "copyright": "由 @1, @2 和 @3 创建.",
     "license": "Microblocks 是 @1, 授权协议为 @2.",
     "free-software": "自由软件",
     "mpl2": "Mozilla Public License v2.0",

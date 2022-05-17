@@ -1,6 +1,6 @@
 ### 连接 micro:bit
 
-**微块新手？** 请参阅 [开始](https://microblocks.fun/get-started).
+**micro:bit 新手？** 请参阅 [开始](https://microblocks.fun/get-started).
 
 打开 MicroBlocks 并使用 USB 数据线将 micro:bit 连接到您的计算机。
 
@@ -11,7 +11,7 @@ MicroBlocks 桌面应用程序将自动连接到 micro:bit。
 
 ![](connectionCircle.png =150x*)
 
-### 纽扣
+### 按钮
 
 从 *Control* 中，将两个 **when button pressed** 块拖入脚本区域。
 
@@ -37,7 +37,7 @@ MicroBlocks 桌面应用程序将自动连接到 micro:bit。
 
 ![](animation-hey.png) ![](animation-face.png) ![](animation-shapes.png)
 
-使用按钮帽来启动动画。如何控制动画速度？
+使用按钮来启动动画。如何控制动画速度？
 
 ### 滚动文本
 
@@ -45,6 +45,6 @@ MicroBlocks 桌面应用程序将自动连接到 micro:bit。
 
 ![](scrollText.png)
 
-您还可以滚动数字。试试这个脚本来创建倒计时！
+你还可以滚动数字。试试用这个脚本来创建倒计时！
 
 ![](scroll321Go.png)
