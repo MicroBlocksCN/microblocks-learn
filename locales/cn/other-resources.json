@@ -1,6 +1,7 @@
 {
 	"other-resources": "其他资源",
 	"intro-text": "其他教师资源总览，大多来自全球 MicroBlocks 社区。",
+	"references-lbl": "参考",
 	"activities-lbl": "活动与引导",
 	"articles-lbl": "文章",
 	"courses-lbl": "课程",
@@ -32,5 +33,18 @@
 	"girls-robotics-kit-desc": "使用 MicroBlocks、 micro:bit和其他一些组件，可以组织能够吸引与启发女生们的机器人组装活动，当然男生也可以。",
 
 	"okdo-card-set-title": "OKdo 教育套装的活动卡组",
-	"okdo-card-set-desc": "这套卡组有十张，原设计是为 OKdo MicroBlocks micro:bit 教育套装准备的，但没有这个套装也能使用这套卡组。"
+	"okdo-card-set-desc": "这套卡组有十张，原设计是为 OKdo MicroBlocks micro:bit 教育套装准备的，但没有这个套装也能使用这套卡组。",
+
+	"user-guide-title": "用户指南",
+	"user-guide-desc": "MicroBlocks 编程环境文档",
+
+	"blocks-reference-title": "积木参考",
+	"blocks-reference-desc": "记录 MicroBlocks 所有的内置积木，并有许多例子。",
+
+	"key-libraries-title": "库",
+	"key-libraries-desc": "记录最常用的 MicroBlocks 库。",
+
+	"supported-boards-title": "主板指南",
+	"supported-boards-reference-desc": "推荐使用的 MicroBlocks 支持的微控制器主板。"
+
 }
