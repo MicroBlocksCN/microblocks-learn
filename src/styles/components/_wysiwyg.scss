@@ -127,7 +127,7 @@
       // only makes sense in computers, but
       // it is used at half screen size
       @include breakpoint(sm) {
-        content: 'Drag to the IDE';
+        content: 'Drag to MicroBlocks';
 
         display: block;
         position: absolute;
@@ -141,6 +141,11 @@
         color: $color-grey-400;
 
         transition: color $trans-0200 $trans-easing;
+
+        // Translations
+        html[lang="ca"] & { content: 'Arrossega a MicroBlocks'; }
+        html[lang="cn"] & { content: 'Chineese Test'; }
+        html[lang="es"] & { content: 'Arrastra a MicroBlocks'; }
       }
     }
 
