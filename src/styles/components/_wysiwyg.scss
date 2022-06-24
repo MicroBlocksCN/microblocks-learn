@@ -141,6 +141,11 @@
         color: $color-grey-400;
 
         transition: color $trans-0200 $trans-easing;
+
+        // Translations
+        html[lang="ca"] & { content: 'Arrossega a MicroBlocks'; }
+        html[lang="cn"] & { content: 'Chineese Test'; }
+        html[lang="es"] & { content: 'Arrastra a MicroBlocks'; }
       }
     }
 
