@@ -1,0 +1,8 @@
+{
+    "author": "MicroBlocks",
+    "level": 2,
+    "boards": [ "board_ed1", "board_m5stack" ],
+    "time": [ 45, 60 ],
+    "topics": [ "tpc_sound", "tpc_music" ],
+    "components": [ ]
+}
