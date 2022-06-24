@@ -3,5 +3,6 @@
     "level": 2,
     "boards": [ "board_microbit" ],
     "time": [ 45, 60 ],
+    "components": [ "cmp_ir_remote",  "cmp_macqueen" ],
     "topics": [  ]
 }

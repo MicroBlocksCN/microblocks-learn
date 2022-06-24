@@ -4,49 +4,44 @@ The [Maqueen](https://www.dfrobot.com/product-2557.html) is a small, micro:bit c
 
 ![rob0148-en.jpg](rob0148-en.jpg)
 
-It features a line tracker, an ultrasonic distance sensor, LED headlights, an IR receiver, a buzzer, four downward-facing RGB NeoPixels. It also has an I2C port, two servo Ports (S1, S2), and two Gravity expansion ports (P1, P2).
+It features a line tracker, an ultrasonic distance sensor, LED headlights, an IR receiver, a buzzer, and four downward-facing RGB NeoPixels. It also has an I2C port, two servo Ports (S1, S2), and two Gravity expansion ports (P1, P2).
 
 ![](featurediagram_edit2.png)
 
-In this activity, we will be programing the Maqueen to be controlled by an IR keypad, as well as set its speed.
+In this activity, we will program the Maqueen to be controlled by an IR remote control.
 
 We used this simple IR remote:
 
 ![](ir-remote_trn.png)
 
-You can use any IR remote that uses the NEC protocol. You can test a remote by running the **Macqueen IR keycode** block and pressing a key on the remote. If the block returns a number, then the remote will work, although you'll probably need to change the scripts to use the key codes sent by your own remote.
+However, you can use any IR remote that uses the common NEC protocol. You can test a remote by running the **Macqueen IR keycode** block and pressing a key on the remote. If that block returns a number, then the remote will work, although you'll need to use the key codes sent by your own remote.
 
 ### Scripts
 
 ![](allScripts-new.png)
 
-### Process
+### Libraries
 
-Before we get into the details of the code, let's take care of a few housekeeping tasks to setup our project.
+This activity uses two libraries:
 
-#### Selecting the Libraries
+* **Maqueen** (in the **Robots** folder): to control the features of the car.
+* **NeoPixel** (optional): to use the colorful NeoPixel LEDs under the car.
 
-Maqueen has a nice set of 4 NeoPixel LEDs on the underside. If you want to enhance your activity by using these lights, we will need some help from a specific MicroBlocks library:
+To load these libraries, click on **+** next to **Libraries** and add the library.
 
-* **NeoPixel**: to use the colorful NeoPixel LEDs under the car.
+### IR Basics
 
-* **Maqueen**: to control the features of the car.
+Let's review the operation of the IR remote control.
 
-To load these libraries, click on the **Libraries** menu option and then select the library from the categories displayed.
-
-#### IR Basics
-
-Let's review the operation of the IR keypad.
-
-Anytime one of the keys are pressed, the keypad transmits an invisible sequence of codes from the IR LED located in the front of it.
+Anytime one of its keys are pressed, the remote control emits an invisible sequence of long and short flashes from the infrared (IR) LED located in the front of it.
 
 ![irled2.png](irled2.png)
 
 [[note]]
-The human eye is not sensitive to infrared light, but many digital cameras are. Infrared often appears as a purple glow in the camera image. However, some cameras, such as those in iPhones, have a special filter that blocks infrared.
+The human eye is not sensitive to infrared light, but many digital cameras are. Infrared usually appears as a purple glow in camera images. However, some cameras, such as those in iPhones, have a special filter that blocks infrared.
 [[/note]]
 
-Another sensor located at the front of the car receives these signals and decodes them according to the protocol supported.
+An IR receiver located at the front of the car receives and decodes the IR signal.
 
 ![macqueen_front_org.png](macqueen_front_org.png)
 
@@ -54,27 +49,19 @@ In order to read the codes in our MicroBlocks program, we need to use the **Maqu
 
 ![](block_irkey_ok.png)
 
-### User Interfce
+### Key Controls
 
-#### Key Controls
+Our program will use 15 keys to control the car:
 
-Our program  will be controlled by an IR Keypad that has 17 keys on it:
-
-* **Arrow keys:** will control the direction the car is travelling.
-
-* **OK key**: will stop the car movement.
-
-* **0-9 keys**: will be used to set the movement speed of the car.
-
-* __* and # keys:__ not used. User programmable.
+* **0-9 keys**: set speed
+* **Arrow keys:** set direction
+* **OK key**: stop
 
 To adjust the car speed, simply press one of the numeric keys 0-9.
-0 (zero) will stop the car, just like the OK key.
-1-9 will adjust the speed from the slowest to the fastest. Remember to press one of the direction arrow keys to activate the newly selected speed.
+The 0 (zero) or OK key will stop the car.
+Keys 1-9 set the speed from the slowest to the fastest. Press one of the direction arrow keys to activate the newly selected speed.
 
-Now we can start looking at the code to do what we have described above.
-
-### Code Details
+### Code
 
 MicroBlocks is a real-time, multi-tasking environment. This means that we can write our code such that various conditions are detected and acted upon in parallel.
 
@@ -103,13 +90,12 @@ So we create two lists:
 - first one called **IRcodes**, that will store the numeric codes
 - second one called **keyNames**, that will store the names assigned by us.
 
-What we want done is this:
+When get a keycode from the remote, we'll look up the keycode in the first table (IR codes). Then we'll use its location index to extract the name for that key from the second list (keyNames).
 
-When we press a key and get a keycode, we want to look it up in the first table (IR codes) and use its location index to pick up a name we have assigned from the second list (keyNames).
+To accomplish this, we'll use two **data category** blocks:
 
-To accomplish this we make use of the two **data category** blocks:
-
-![](block_find64.png) &nbsp;&nbsp; ![](block_itemOK.png)
+![](block_find64.png)
+![](block_itemOK.png)
 
 The **find** block enables us to search the IRcodes list for a keycode we want to locate. Using the example of the OK key (value=64), this block will return the value of 5; meaning numeric code 64 is found in position 5 of the list.
 
@@ -121,7 +107,7 @@ By combining these two operations in a custom block **IRkey**, we gain the abili
 
 ![](block_irkeyresult.png)
 
-So if we execute the **IRkey** block and then press the **OK key** on the keypad, it will return to us the name of the key: **ok**, instead of its numeric value 64.
+So if we execute the **IRkey** block and then press the **OK key** on the keypad, it will return the name of the key (**ok**) instead of its numeric value (64).
 
 We are ready to use this very helpful block in our program.
 
@@ -183,32 +169,25 @@ We also display the letter **L** on the micro:bit display as a feedback.
 This block controls the speed of the car, and sets it according to the value 0-9 detected. As mentioned above in the **speedIncrement** description, the speed is calculated based on the increment value.
 We also display the key value **0-9** on the micro:bit display as a feedback.
 
-
 ### Discussion
 
-Wow, we have reached the end of our Maqueen activity.
-
-As you start using the program, you will notice that IR signals are very much directional. Meaning the remote control has to be pointing directly at the sensor on the car, or there has to be a way for the signals to reach the sensor. Therefore, when the car is moving away from you, it is not easy to send controls to it.
+As you use this program to control the car, you will notice that IR signals are very much directional. Either the remote control must be pointing directly at the sensor on the car, or the signals must be able to reach the sensor by reflecting off a wall or other surface. When the car is moving away from you, it is not easy to send controls to it.
 
 **How can we improve IR reception and eliminate the problem?**
 
-One possibility is to erect some barriers around the testing area and see if we can use them to bounce the signals to the car.
+One possibility is to erect some barriers around the testing area and see if we can use them to bounce the signals to the car. Experiment with different layouts to improve the IR signal reception.
 
-Experiment with different layouts to improve the IR signal reception.
+**What additional of features of the Maqueen might we add?**
 
-We mentioned that there were 17 keys on our remote controller. However we only programmed 15 of them. The keys __* and #__ are not used yet.
-
-**What additional of features of the Maqueen can we program in our project and assign to * and # keys?**
-
-Here is where your creativity and newly learned programming skills come into play. Check out the Maqueen library blocks and see what you can come up with.
+There are 17 keys on the remote control but we only programmed 15 of them. The keys __* and #__ are not used yet. What might you do with those? Check out the Maqueen library blocks and see what you can come up with.
 
 Here are a few additional enhancement or changes that you might entertain:
 
-* Try to **speed up the car** movements.
-* Engage the distance sensor to **implement collision avoidance**.
-* Combine car movements with **tone signals**.
-* There are **four NeoPixel LEDs** under the car. See if you can integrate them into the program.
-* There are **two red LEDs** in the front of the car. See if you can use them **as turn signals**.
+* Try to **speed up** the car's movements.
+* Use the distance sensor to **avoid collisions**.
+* Combine car movements with **tones or music**.
+* Use the **four NeoPixel LEDs** under the car.
+* Use the **two red LEDs** on the front of the car as **turn signals**.
 
 ### Project Download
 
