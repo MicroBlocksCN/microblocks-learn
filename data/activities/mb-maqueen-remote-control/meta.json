@@ -1,0 +1,7 @@
+{
+    "author": "MicroBlocks",
+    "level": 2,
+    "boards": [ "board_microbit" ],
+    "time": [ 45, 60 ],
+    "topics": [  ]
+}
