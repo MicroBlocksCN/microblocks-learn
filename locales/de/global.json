@@ -18,7 +18,7 @@
     "repo": "BitBucket Repository",
 
     "contact": "Kontaktiere uns",
-    "contact-txt": "Du hast eine Frage oder möchtest mit uns zusammenarbeiten? Melde dich!", 
+    "contact-txt": "Du hast eine Frage oder möchtest mit uns zusammenarbeiten? Melde dich!",
 
     "copyright": "von @1, @2 und @3.",
     "license": "Microblocks ist @1, veröffentlicht unter der @2.",
@@ -30,6 +30,7 @@
     "board_cpx": "Circuit Playground Express",
     "board_cpxbf": "Circuit Playground Bluefruit",
     "board_ed1": "Citilab ED1",
+    "board_m5stack": "M5 Stack",
     "board_microbit": "micro:bit",
     "board_nodemcu": "NodeMCU",
     "board_pico": "RaspberryPi Pico",
