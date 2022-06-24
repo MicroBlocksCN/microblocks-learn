@@ -30,6 +30,7 @@
     "board_cpx": "Circuit Playground Express",
     "board_cpxbf": "Circuit Playground Bluefruit",
     "board_ed1": "Citilab ED1",
+    "board_m5stack": "M5 Stack",
     "board_microbit": "micro:bit",
     "board_nodemcu": "NodeMCU",
     "board_pico": "RaspberryPi Pico",
