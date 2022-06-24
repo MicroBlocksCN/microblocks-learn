@@ -127,7 +127,7 @@
       // only makes sense in computers, but
       // it is used at half screen size
       @include breakpoint(sm) {
-        content: 'Drag to the IDE';
+        content: 'Drag to MicroBlocks';
 
         display: block;
         position: absolute;
