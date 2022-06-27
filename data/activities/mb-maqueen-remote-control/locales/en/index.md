@@ -181,15 +181,11 @@ One possibility is to erect some barriers around the testing area and see if we 
 
 There are 17 keys on the remote control but we only programmed 15 of them. The keys __* and #__ are not used yet. What might you do with those? Check out the Maqueen library blocks and see what you can come up with.
 
-Here are a few additional enhancement or changes that you might entertain:
+Here are some additional enhancements you might entertain:
 
 * Try to **speed up** the car's movements.
 * Use the distance sensor to **avoid collisions**.
 * Combine car movements with **tones or music**.
 * Use the **four NeoPixel LEDs** under the car.
 * Use the **two red LEDs** on the front of the car as **turn signals**.
-
-### Project Download
-
-[Download](maqueen_ircontrol.ubp) the program to try out this activity.
 
