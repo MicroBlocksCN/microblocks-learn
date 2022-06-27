@@ -14,7 +14,7 @@ We used this simple IR remote:
 
 ![](ir-remote_trn.png)
 
-However, you can use any IR remote that uses the common NEC protocol. You can test a remote by running the **Macqueen IR keycode** block and pressing a key on the remote. If that block returns a number, then the remote will work, although you'll need to use the key codes sent by your own remote.
+However, you can use any IR remote that uses the common NEC protocol. You can test a remote by running the **Maqueen IR keycode** block and pressing a key on the remote. If that block returns a number, then the remote will work, although you'll need to use the key codes sent by your own remote.
 
 ### Scripts
 
