@@ -7,6 +7,12 @@
 			"href": "https://digi-lab.org/downloads/microblocks%20kaarten%20digilab.pdf"
 		},
 		{
+			"title": "peter-cards-title",
+			"description": "peter-cards-desc",
+			"langCode": "nl",
+			"href": "https://petermathijssen.nl/"
+		},
+		{
 			"title": "finch-title",
 			"description": "finch-desc",
 			"langCode": "en",
