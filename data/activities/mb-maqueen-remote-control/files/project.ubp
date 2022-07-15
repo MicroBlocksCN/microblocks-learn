@@ -1,0 +1,604 @@
+module main
+author unknown
+version 1 0 
+description ''
+variables IRcodes keyNames speed speedIncrement key '"4"' 
+
+	spec 'r' 'IRkey' 'IRkey'
+
+to IRkey {
+  return (at ('[data:find]' ('Maqueen IR keycode') IRcodes) keyNames)
+}
+
+script 465 43 {
+to IRkey {}
+}
+
+script 64 44 {
+comment 'Maqueen IR Control Project
+Drive the Maqueen car using IR control keypad.
+Key Assignments:
+Arrows: four directions
+OK: Stop
+Numbers: set speed (0=stop, 9=fast)
+
+* and # keys: user programmable'
+}
+
+script 59 208 {
+whenStarted
+IRcodes = ('[data:makeList]' 70 68 67 21 64 22 25 13 12 24 94 8 28 90 82 66 74)
+keyNames = ('[data:makeList]' 'fwd' 'left' 'right' 'bwd' 'ok' ' 1' ' 2' ' 3' ' 4' ' 5' ' 6' ' 7' ' 8' ' 9' ' 0' '*' '#')
+speedIncrement = 10
+speed = 16
+displayCharacter '+'
+forever {
+  key = (IRkey)
+  waitMillis 100
+}
+}
+
+script 359 208 {
+whenCondition (key == 'ok')
+displayCharacter 'S'
+'Maqueen stop motors' 'both'
+}
+
+script 733 213 {
+whenCondition (key == 'right')
+displayCharacter 'R'
+'Maqueen motor' 'right' 'bwd' speed
+'Maqueen motor' 'left' 'fwd' speed
+}
+
+script 357 327 {
+whenCondition (key == 'fwd')
+displayCharacter 'F'
+'Maqueen motor' 'both' 'fwd' speed
+}
+
+script 734 364 {
+whenCondition (key == 'left')
+displayCharacter 'L'
+'Maqueen motor' 'left' 'bwd' speed
+'Maqueen motor' 'right' 'fwd' speed
+}
+
+script 357 448 {
+whenCondition (key == 'bwd')
+displayCharacter 'B'
+'Maqueen motor' 'both' 'bwd' speed
+}
+
+script 356 570 {
+whenCondition (and (key >= ' 0') (key <= ' 9'))
+speed = (speedIncrement * (key * 1))
+displayCharacter (key * 1)
+}
+
+
+module 'IR Remote' Comm
+author MicroBlocks
+version 1 2 
+tags ir infrared remote 
+description 'Sends and receives infrared remote control messages like the ones used for TV sets or air conditioners. Currently supports only the NEC protocol, which is quite common but not the only IR protocol in use. An NEC message consists of a one byte device number and a one byte command. 
+
+Note: Transmitting IR does not work on ESP8266 boards.
+
+Receiving requires an IR receiver module, such as those built into the Circuit Playground Express and ED1 boards. Transmitting requires an IR transmitter LED, such as those built into the Circuit Playground Express and several M5 Stack products. Inexpensive IR LED transmitter and receivers are available for use with other boards.'
+variables _ir_pin _ir_pulse_times _ir_transmit_pin 
+
+	spec 'r' 'receiveIR' 'receive IR code'
+	spec ' ' 'attachIR' 'attach IR receiver to pin _' 'num' 0
+	spec ' ' '_testIR' 'test IR'
+	spec 'r' '_receiveIRFromDevice' 'receive IR code from device _' 'num' -1
+	spec ' ' '_captureIRMessage' '_captureIRMessage' 'any'
+	spec ' ' '_dumpIR' '_dumpIR' 'any'
+	spec 'r' '_getIRByte' '_getIRByte _' 'auto any' 4
+	spec 'r' '_got32Bits' '_got32Bits' 'any'
+	spec ' ' 'IR_Transmit' 'IR transmit device _ command _' 'num num' 48896 1
+	spec ' ' '_IR_SendByte' '_IR_SendByte _' 'auto' '10'
+
+to IR_Transmit device command {
+  if (_ir_transmit_pin == 0) {if (or ((boardType) == 'CircuitPlayground') ((boardType) == 'M5Atom-Matrix')) {
+    _ir_transmit_pin = 12
+  } ((boardType) == 'M5StickC') {
+    _ir_transmit_pin = 9
+  }}
+  comment 'Message start pulse and space'
+  '[io:playTone]' _ir_transmit_pin 38000
+  waitMicros 9000
+  '[io:playTone]' _ir_transmit_pin 0
+  waitMicros 4500
+  comment 'Send device and command and their inverses'
+  '_IR_SendByte' (device & 255)
+  '_IR_SendByte' ((device >> 8) & 255)
+  '_IR_SendByte' command
+  '_IR_SendByte' ('~' command)
+  comment 'Send stop bit'
+  '[io:playTone]' _ir_transmit_pin 38000
+  waitMicros 562
+  '[io:playTone]' _ir_transmit_pin 0
+}
+
+to '_IR_SendByte' byte {
+  local 'bit' 1
+  repeat 8 {
+    if (0 == (byte & bit)) {
+      '[io:playTone]' _ir_transmit_pin 38000
+      waitMicros 530
+      '[io:playTone]' _ir_transmit_pin 0
+      waitMicros 530
+    } else {
+      '[io:playTone]' _ir_transmit_pin 38000
+      waitMicros 530
+      '[io:playTone]' _ir_transmit_pin 0
+      waitMicros 1630
+    }
+    bit = (bit << 1)
+  }
+}
+
+to '_captureIRMessage' {
+  if (_ir_pulse_times == 0) {
+    _ir_pulse_times = (newList 200)
+    if (and (_ir_pin == 0) ((boardType) == 'CircuitPlayground')) {
+      _ir_pin = 11
+    } (and (_ir_pin == 0) ((boardType) == 'Citilab ED1')) {
+      _ir_pin = 35
+    } (and (_ir_pin == 0) ((boardType) == 'D1-Mini')) {
+      _ir_pin = 2
+    }
+  }
+  fillList _ir_pulse_times 0
+  local 'i' 1
+  comment 'Wait for IR signal -- this is the start of a new message.
+Note: THe pin goes low when an IR signal is detected.'
+  waitUntil (not (digitalReadOp _ir_pin))
+  local 'start' (microsOp)
+  forever {
+    comment 'Record the time until the end of the current IR pulse ("mark")'
+    waitUntil (digitalReadOp _ir_pin)
+    local 'end' (microsOp)
+    atPut i _ir_pulse_times (end - start)
+    i += 1
+    start = end
+    comment 'Record time until the start of the next IR pulse ("space")'
+    repeatUntil (not (digitalReadOp _ir_pin)) {
+      if (((microsOp) - start) > 5000) {
+        comment 'No IR pulse for 5000 usecs means "end of message"'
+        return 0
+      }
+    }
+    local 'end' (microsOp)
+    atPut i _ir_pulse_times (end - start)
+    i += 1
+    start = end
+  }
+}
+
+to '_dumpIR' {
+  comment 'Print raw pulse timings to the terminal.
+Can be used to analyze new protocols.'
+  local 'i' 1
+  printIt '-----'
+  repeat (size _ir_pulse_times) {
+    local 'mark usecs' (at i _ir_pulse_times)
+    local 'space usecs' (at (i + 1) _ir_pulse_times)
+    printIt (v 'mark usecs') (v 'space usecs')
+    i += 2
+    if ((v 'space usecs') == 0) {
+      printIt 'timing entries:' (i - 2)
+      return 0
+    }
+  }
+}
+
+to '_getIRByte' position {
+  local 'result' 0
+  local 'i' position
+  local 'bit' 1
+  repeat 8 {
+    if ((at i _ir_pulse_times) > 1000) {result = (result | bit)}
+    bit = (bit << 1)
+    i += 2
+  }
+  return result
+}
+
+to '_got32Bits' {
+  return (and ((at 67 _ir_pulse_times) != 0) ((at 68 _ir_pulse_times) == 0))
+}
+
+to '_receiveIRFromDevice' deviceID {
+  forever {
+    '_captureIRMessage'
+    if ('_got32Bits') {
+      local 'id' ('_getIRByte' 20 nil)
+      if (id == deviceID) {
+        return ('_getIRByte' 36 nil)
+      }
+    }
+  }
+}
+
+to '_testIR' {
+  forever {
+    '_captureIRMessage'
+    if ('_got32Bits') {
+      comment 'Four byte message format:
+<device low byte><device high byte><command><command, bit-inverted>'
+      local 'b1' ('_getIRByte' 4 nil)
+      local 'b2' ('_getIRByte' 20 nil)
+      local 'b3' ('_getIRByte' 36 nil)
+      local 'b4' ('_getIRByte' 52 nil)
+      sayIt 'Device:' ((b2 << 8) | b1) 'code:' b3
+    }
+  }
+}
+
+to attachIR pin {
+  _ir_pin = pin
+}
+
+to receiveIR {
+  forever {
+    '_captureIRMessage'
+    if ('_got32Bits') {
+      return ('_getIRByte' 36 nil)
+    }
+  }
+}
+
+
+module 'LED Display' Output
+author MicroBlocks
+version 1 2 
+tags pixel matrix led tft 
+description 'Display primitives for the 5x5 LED display on the BBC micro:bit, Calliope mini and M5Atom Matrix. Boards with TFT displays (such as the Citilab ED1 or the M5Stack family) also support this primitives in a simulated "fat pixel" display.'
+variables _stop_scrolling_text 
+
+	spec ' ' '[display:mbDisplay]' 'display _' 'microbitDisplay' 15237440
+	spec ' ' '[display:mbDisplayOff]' 'clear display'
+	spec ' ' '[display:mbPlot]' 'plot x _ y _' 'num num' 3 3
+	spec ' ' '[display:mbUnplot]' 'unplot x _ y _' 'num num' 3 3
+	spec ' ' 'displayCharacter' 'display character _' 'str' 'A'
+	spec ' ' 'scroll_text' 'scroll text _ : pausing _ ms' 'str num' 'HELLO ROSA!' 100
+	spec ' ' 'stopScrollingText' 'stop scrolling'
+
+to displayCharacter s {
+  s = ('[data:join]' '' s)
+  if ((size s) == 0) {
+    '[display:mbDisplayOff]'
+    return 0
+  }
+  '[display:mbDrawShape]' ('[display:mbShapeForLetter]' (at 1 s))
+}
+
+to scroll_text text optionalDelay {
+  text = ('[data:join]' text '')
+  delay = 100
+  if ((pushArgCount) > 1) {
+    delay = optionalDelay
+  }
+  _stop_scrolling_text = (booleanConstant false)
+  local 'length' (size text)
+  for position ((length * 6) + 6) {
+    if _stop_scrolling_text {return 0}
+    for i length {
+      '[display:mbDrawShape]' ('[display:mbShapeForLetter]' ('[data:unicodeAt]' i text)) (((i * 6) + 2) - position) 1
+    }
+    waitMillis delay
+  }
+}
+
+to stopScrollingText {
+  _stop_scrolling_text = (booleanConstant true)
+  waitMillis 10
+  '[display:mbDisplayOff]'
+}
+
+
+module Maqueen Output
+author 'Turgut Guneysu'
+version 1 1 
+depends 'IR Remote' 
+choices LRBMenu left right both 
+choices DirMenu fwd bwd 
+choices PosMenu left right 
+description 'DFRobot Maqueen Car Kit Library
+Supports:
+  micro:bit v1 and v2
+  2 x N20 Motors (133rpm)
+  2 x LEDs
+  2 x Servos (use Servo Lib)
+  2 x Line Sensors
+  2 x Extension Ports
+  4 x RGB LEDs (use NEOPixel Lib)
+  HC-SR04 Distance Sensor
+  Buzzer
+  IR receiver (NEC)
+  I2C Connector
+  3.5-5V Battery Connector
+Pin assignments:
+  Buzzer = 0
+  Trigger = 1
+  Echo = 2
+  Servo1 = 1
+  Servo2 = 2
+  LED_Left = 8
+  LED_Right = 12
+  Line_Left = 13
+  Line_Right = 14
+  NeoPixels = 15
+  IR Receiver = 16
+Note: HC-SR04 and SERVOs share pins 1 and 2.
+'
+
+	spec ' ' 'Maqueen motor' 'Maqueen motor _ dir _ speed(0-255) _' 'menu.LRBMenu menu.DirMenu auto' 'both' 'fwd' 128
+	spec ' ' 'Maqueen stop motors' 'Maqueen stop motors _' 'menu.LRBMenu' 'both'
+	spec ' ' 'Maqueen LED' 'Maqueen LED _ _' 'menu.LRBMenu bool' 'left' true
+	spec ' ' 'Maqueen beep' 'Maqueen beep _ ms' 'auto' 100
+	spec 'r' 'Maqueen line sensor' 'Maqueen line sensor _' 'menu.PosMenu' 'left'
+	spec 'r' 'Maqueen sees line on left' 'Maqueen sees line on left _ right _' 'bool bool' true true
+	spec 'r' 'Maqueen distance (cm)' 'Maqueen distance (cm)'
+	spec 'r' 'Maqueen IR keycode' 'Maqueen IR keycode'
+
+to 'Maqueen IR keycode' {
+  comment 'Wait for an IR message and return the key code.'
+  attachIR 16
+  return (receiveIR)
+}
+
+to 'Maqueen LED' lrb LEDstatus {
+  comment '2 x red LEDs'
+  local '_mq_pin_LED_Left' 8
+  local '_mq_pin_LED_Right' 12
+  if (lrb == 'left') {
+    digitalWriteOp _mq_pin_LED_Left LEDstatus
+  } (lrb == 'right') {
+    digitalWriteOp _mq_pin_LED_Right LEDstatus
+  } (lrb == 'both') {
+    digitalWriteOp _mq_pin_LED_Left LEDstatus
+    digitalWriteOp _mq_pin_LED_Right LEDstatus
+  }
+}
+
+to 'Maqueen beep' duration {
+  comment 'Buzzer
+Remember to set the P0 switch.'
+  local '_mq_pin_Buzzer' 0
+  local 'end time' ((millisOp) + duration)
+  repeatUntil ((millisOp) >= (v 'end time')) {
+    digitalWriteOp _mq_pin_Buzzer true
+    waitMicros 1900
+    digitalWriteOp _mq_pin_Buzzer false
+    waitMicros 1900
+  }
+}
+
+to 'Maqueen distance (cm)' {
+  comment 'HC-SR04 Distance Sensor
+Contributed by Joan Guillén and Josep Ferràndiz'
+  local '_mq_pin_Trigger' 1
+  local '_mq_pin_Echo' 2
+  digitalWriteOp _mq_pin_Trigger false
+  waitMicros 2
+  digitalWriteOp _mq_pin_Trigger true
+  waitMicros 50
+  digitalWriteOp _mq_pin_Trigger false
+  local 'start' (microsOp)
+  waitUntil (or (not (digitalReadOp _mq_pin_Echo)) (((microsOp) - start) > 23320))
+  waitUntil (or (digitalReadOp _mq_pin_Echo) (((microsOp) - start) > 23320))
+  local 'init' (microsOp)
+  waitUntil (or (not (digitalReadOp _mq_pin_Echo)) (((microsOp) - init) > 23320))
+  local 'end' (microsOp)
+  return ((10 * (end - init)) / 583)
+}
+
+to 'Maqueen line sensor' lr {
+  comment '2 x Line Sensors (true/false)
+When Maqueen’s line-tracking sensor is put on the black line,
+the sensor outputs 0, and the blue LED turns off;
+if put on white area, it outputs 1 and the blue LED turns on.'
+  local '_mq_pin_Line_Left' 13
+  local '_mq_pin_Line_Right' 14
+  if (lr == 'left') {
+    return (digitalReadOp _mq_pin_Line_Left)
+  } (lr == 'right') {
+    return (digitalReadOp _mq_pin_Line_Right)
+  }
+}
+
+to 'Maqueen motor' lrb dir speed {
+  comment 'MOTOR CONTROL:
+
+//% blockId="left motor" block="left" M1 = 0,
+//% blockId="right motor" block="right" M2 = 1,
+//% blockId="all motor" block="all" All  (issue 2 cmds, one for each motor)
+
+//% blockId="CW" block="Forward" CW = 0x0,
+//% blockId="CCW" block="Backward" CCW = 0x1
+
+//% blockId=motor_MotorRun block="motor|%index|move|%Dir|at speed|%speed"
+//% speed.min=0 speed.max=255'
+  local '_mq_i2c_addr' (hexToInt '10')
+  speed = (minimum 255 speed)
+  if (dir == 'fwd') {
+    dir = 0
+  } (dir == 'bwd') {
+    dir = 1
+  }
+  if (lrb == 'left') {
+    lrb = 0
+    '[sensors:i2cWrite]' _mq_i2c_addr ('[data:makeList]' lrb dir speed)
+  } (lrb == 'right') {
+    lrb = 2
+    '[sensors:i2cWrite]' _mq_i2c_addr ('[data:makeList]' lrb dir speed)
+  } (lrb == 'both') {
+    '[sensors:i2cWrite]' _mq_i2c_addr ('[data:makeList]' 0 dir speed)
+    waitMillis 1
+    '[sensors:i2cWrite]' _mq_i2c_addr ('[data:makeList]' 2 dir speed)
+  }
+  waitMillis 50
+}
+
+to 'Maqueen sees line on left' leftSide rightSide {
+  comment 'Allows for dual evaluation of the sensors for faster results '
+  return (and (leftSide == (not ('Maqueen line sensor' 'left'))) (rightSide == (not ('Maqueen line sensor' 'right'))))
+}
+
+to 'Maqueen stop motors' lrb {
+  comment 'STOP Motors'
+  'Maqueen motor' lrb 'fwd' 0
+}
+
+
+module NeoPixel Output
+author MicroBlocks
+version 1 2 
+tags led strip rgb string ws2812 
+description 'Control NeoPixel (WS2812) RGB LED strips.
+'
+variables _np_pixels 
+
+	spec ' ' 'neoPixelAttach' 'attach _ LED NeoPixel strip to pin _ : has white _' 'num auto bool' 10 '' false
+	spec ' ' 'setNeoPixelColors10' 'set NeoPixels _ _ _ _ _ _ _ _ _ _' 'color color color color color color color color color color'
+	spec ' ' 'clearNeoPixels' 'clear NeoPixels'
+	spec ' ' 'neoPixelSetAllToColor' 'set all NeoPixels color _' 'color'
+	spec ' ' 'setNeoPixelColor' 'set NeoPixel _ color _' 'num color' 1
+	spec ' ' 'rotateNeoPixelsBy' 'rotate NeoPixels by _' 'auto' 1
+	spec 'r' 'colorFromRGB' 'color r _ g _ b _ (0-255)' 'num num num' 0 100 100
+	spec 'r' 'randomColor' 'random color'
+	spec ' ' '_NeoPixel_ensureInitialized' '_NeoPixel_ensureInitialized'
+	spec ' ' '_NeoPixel_rotate' '_NeoPixel_rotate_left _' 'bool' true
+	spec ' ' '_NeoPixel_update' '_NeoPixel_update'
+
+to '_NeoPixel_ensureInitialized' {
+  if (_np_pixels == 0) {if ((boardType) == 'M5Atom-Matrix') {
+    neoPixelAttach 25 '' false
+  } ((boardType) == 'D1-Mini') {
+    comment 'D1 mini kit'
+    neoPixelAttach 7 15 false
+  } else {
+    neoPixelAttach 10 '' false
+  }}
+}
+
+to '_NeoPixel_rotate' left {
+  '_NeoPixel_ensureInitialized'
+  local 'length' (size _np_pixels)
+  if left {
+    local 'first' (at 1 _np_pixels)
+    for i (length - 1) {
+      atPut i _np_pixels (at (i + 1) _np_pixels)
+    }
+    atPut length _np_pixels first
+  } else {
+    local 'last' (at length _np_pixels)
+    for i (length - 1) {
+      atPut ((length - i) + 1) _np_pixels (at (length - i) _np_pixels)
+    }
+    atPut 1 _np_pixels last
+  }
+}
+
+to '_NeoPixel_update' {
+  '[display:neoPixelSend]' _np_pixels
+  waitMicros 100
+}
+
+to clearNeoPixels {
+  '_NeoPixel_ensureInitialized'
+  fillList _np_pixels 0
+  '_NeoPixel_update'
+}
+
+to colorFromRGB r g b {
+  r = (maximum 0 (minimum r 255))
+  g = (maximum 0 (minimum g 255))
+  b = (maximum 0 (minimum b 255))
+  return (((r << 16) | (g << 8)) | b)
+}
+
+to neoPixelAttach number pinNumber optionalHasWhite {
+  hasWhite = false
+  if ((pushArgCount) > 2) {
+    hasWhite = optionalHasWhite
+  }
+  if (or (_np_pixels == 0) (number != (size _np_pixels))) {
+    _np_pixels = (newList number)
+  }
+  fillList _np_pixels 0
+  '[display:neoPixelSetPin]' pinNumber hasWhite
+}
+
+to neoPixelSetAllToColor color {
+  '_NeoPixel_ensureInitialized'
+  fillList _np_pixels color
+  '_NeoPixel_update'
+}
+
+to randomColor {
+  local 'n1' (random 100 200)
+  local 'n2' (random 0 100)
+  if (1 == (random 1 3)) {
+    return ((n1 << 16) | (n2 << 8))
+  } (1 == (random 1 2)) {
+    return ((n2 << 16) | n1)
+  } else {
+    return ((n1 << 8) | n2)
+  }
+}
+
+to rotateNeoPixelsBy n {
+  '_NeoPixel_ensureInitialized'
+  repeat (absoluteValue n) {
+    '_NeoPixel_rotate' (n > 0)
+  }
+  '_NeoPixel_update'
+}
+
+to setNeoPixelColor i color {
+  '_NeoPixel_ensureInitialized'
+  if (and (1 <= i) (i <= (size _np_pixels))) {
+    atPut i _np_pixels color
+    '_NeoPixel_update'
+  }
+}
+
+to setNeoPixelColors10 c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 {
+  '_NeoPixel_ensureInitialized'
+  if ((size _np_pixels) >= 1) {
+    atPut 1 _np_pixels c1
+  }
+  if ((size _np_pixels) >= 2) {
+    atPut 2 _np_pixels c2
+  }
+  if ((size _np_pixels) >= 3) {
+    atPut 3 _np_pixels c3
+  }
+  if ((size _np_pixels) >= 4) {
+    atPut 4 _np_pixels c4
+  }
+  if ((size _np_pixels) >= 5) {
+    atPut 5 _np_pixels c5
+  }
+  if ((size _np_pixels) >= 6) {
+    atPut 6 _np_pixels c6
+  }
+  if ((size _np_pixels) >= 7) {
+    atPut 7 _np_pixels c7
+  }
+  if ((size _np_pixels) >= 8) {
+    atPut 8 _np_pixels c8
+  }
+  if ((size _np_pixels) >= 9) {
+    atPut 9 _np_pixels c9
+  }
+  if ((size _np_pixels) >= 10) {
+    atPut 10 _np_pixels c10
+  }
+  '_NeoPixel_update'
+}
+
