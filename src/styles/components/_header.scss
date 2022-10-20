@@ -5,7 +5,7 @@
 
 .header {
   position: relative;
-  z-index: $zindex-above;
+  z-index: $zindex-aboveStandard;
 
   height: $space-350;
 
@@ -29,7 +29,7 @@
   top: $space-050;
   left: $space-050;
 
-  
+
   @include breakpoint(md) {
     width: 280px;
   }
