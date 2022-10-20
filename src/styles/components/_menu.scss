@@ -21,14 +21,14 @@
   font-weight: 700;
   font-size: $fontSize-150;
   text-align: center;
-  
+
   background-color: $color-yellow;
   background-image: url("assets/img/backgrounds/background-on-yellow.png");
   background-position: center center;
 
   box-shadow: $boxShadow-base;
   transition: right $trans-0400 $trans-easing;
-  
+
 
   // Size MD - Still responsive
   @include breakpoint(md) {
@@ -147,7 +147,7 @@
   @include breakpoint(xl) {
     margin: unset;
     font-size: $fontSize-125;
-  } 
+  }
 }
 
 
@@ -201,7 +201,7 @@
   background-repeat: no-repeat;
   background-color: $color-yellow-light;
 
-  
+
   @include breakpoint(xl) {
     font-size: 20px;
     line-height: 24px;
@@ -236,7 +236,7 @@
     width: auto;
     height: 100%;
     margin: 0;
-    padding: 0 $space-200;
+    padding: 0;
 
     display: flex;
     align-items: center;
@@ -256,5 +256,13 @@
 
   &:hover {
     color: $color-yellow;
+  }
+
+  @include breakpoint(xl) {
+    height: 100%;
+    padding: 0 $space-200;
+
+    display: flex;
+    align-items: center;
   }
 }
