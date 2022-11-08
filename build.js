@@ -738,7 +738,7 @@ function serve () {
             fileName = fileName + '/index.html';
         }
         respondWithFile(res, fileName, getParams(req.url));
-    }).listen(3000);
+    }).listen(3001);
 };
 
 function watchDirs (dirs, action) {
@@ -762,7 +762,7 @@ function watchDirs (dirs, action) {
 };
 
 function watch () {
-    var wss = new WebSocket.Server({ port: 8080 }),
+    var wss = new WebSocket.Server({ port: 8081 }),
         clients = [];
 
     watchDirs(
@@ -793,5 +793,5 @@ build();
 if (debugMode) {
     watch();
     serve();
-    console.log("\nHTTP Server: '127.0.0.1:3000/en'");
+    console.log("\nHTTP Server: '127.0.0.1:3001/en'");
 }
