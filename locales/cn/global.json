@@ -7,18 +7,18 @@
     "run-nav-item": "运行",
 
     "contribute": "贡献",
-    "contribute-txt": "我们急需 @1, @2, @3 和 @4.",
+    "contribute-txt": "我们正积极寻找 @1, @2, @3 和 @4.",
     "lnk-translators": "翻译者",
     "lnk-content-creators": "内容创作者",
     "lnk-ambassadors": "宣传者",
     "lnk-patrons": "捐献者",
 
     "report-issue": "报告",
-    "report-issue-txt": "向我们的事项跟踪器报告一个程序错误或者提交一个需求。",
+    "report-issue-txt": "欢迎在我们的问题跟踪系统上报告漏洞或提出功能需求。",
     "repo": "BitBucket 仓库",
 
     "contact": "联系我们",
-    "contact-txt": "有问题？想合作？给我们发封邮件吧！",
+    "contact-txt": "有疑问或有合作意向？给我们发封邮件吧！",
 
     "copyright": "由 @1, @2 和 @3 创建.",
     "license": "Microblocks 是 @1, 授权协议为 @2.",

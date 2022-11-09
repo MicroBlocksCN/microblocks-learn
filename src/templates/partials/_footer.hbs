@@ -14,9 +14,9 @@
         <div class="footer__col col-12 col-px md-col-6 lg-col-4 xl-col-3">
             <h3>{{localize "contribute"}}</h3>
 {{#markdown}}{{localize "contribute-txt"
-    (join "[" (localize "lnk-translators") "](https://microblocks.fun/contribute#translate)")
-    (join "[" (localize "lnk-content-creators") "](https://microblocks.fun/contribute#content-creation)")
-    (join "[" (localize "lnk-ambassadors") "](https://microblocks.fun/about#ambassadors)")
+    (join "[" (localize "lnk-translators") "](https://microblocksfun.cn/contribute#translate)")
+    (join "[" (localize "lnk-content-creators") "](https://microblocksfun.cn/contribute#content-creation)")
+    (join "[" (localize "lnk-ambassadors") "](https://microblocksfun.cn/about#ambassadors)")
     (join "[" (localize "lnk-patrons") "](https://microblocks.fun/contribute#financial-contribution)")
 }}{{/markdown}}
         </div>
@@ -27,12 +27,12 @@
             <p>
             {{localize "report-issue-txt"}}
             </p>
-            <a class="footer__link" href="https://bitbucket.org/john_maloney/smallvm/issues" target="_blank">
+            <a class="footer__link" href="https://github.com/MicroBlocksCN/smallvm/issues" target="_blank">
                 <div class="circle">
                     {{> svg.icon-bitbucket }}
                 </div>
                 <div class="link-circle-w-text__text">
-                    {{localize "repo"}}
+                    代码仓库
                 </div>
             </a>
         </div>
@@ -48,9 +48,20 @@
                     {{> svg.icon-email }}
                 </div>
                 <div class="link-circle-w-text__text">
-                    interest@microblocks.fun
+                    interest@microblocks.fun (官方邮箱)
                 </div>
             </a>
+
+            <a class="footer__link" href="mailto:wuwenjie718@gmail.com" target="_blank">
+                <div class="circle">
+                    {{> svg.icon-email }}
+                </div>
+                <div class="link-circle-w-text__text">
+                    wuwenjie718@gmail.com (国内推广者邮箱)
+                </div>
+            </a>
+            
+            
         </div>
 
     </div>
