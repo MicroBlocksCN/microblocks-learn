@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-现在可以通过 `http://localhost:3001/cn/` 访问站点，你在翻译时所做的修改都将实时更新。
+现在可以通过 `http://localhost:3001/cn` 访问站点，你在翻译时所做的修改都将实时更新。
 
 ## 提交**活动**(Activities)
 
@@ -55,4 +55,4 @@ npm run dev
 
 ## 开发者
 
-想要构建、测试、调试或扩展网站的开发人员,请参考 [这里](README.md)。
+想要构建、测试、调试或扩展网站的开发人员,请参考 [这里](README_en.md)。
