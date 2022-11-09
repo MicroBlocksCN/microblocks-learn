@@ -56,3 +56,7 @@ npm run dev
 ## 开发者
 
 想要构建、测试、调试或扩展网站的开发人员,请参考 [这里](README_en.md)。
+
+
+## 遇到问题？
+欢迎在 [issue](https://github.com/MicroBlocksCN/microblocks-learn/issues) 里提问。
