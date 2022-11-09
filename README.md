@@ -1,103 +1,52 @@
-# MicroBlocks Learning Site
+# MicroBlocks 学习网站
 
-## Submitting Activities
+## 翻译**活动**(Activities)
 
-We welcome high-quality activity submissions from the MicroBlocks community.
-See [submitting activities](SUBMITTING_ACTIVITIES.md) for more information.
+一个**活动**可以被视为一个 MicroBlocks 教学项目。
 
-The rest of this README is for developers who want build, test, debug, or extend the website.
+MicroBlocks 团队制作了许多有趣的活动: [活动页面](https://learn.microblocksfun.cn/en/)。目前，它们绝大多数是英文的。
 
-## Installation
+为了方便中文用户学习和使用这些活动，我们打算将它们翻译为中文。
 
-Install NodeJS (v16 recommended) and npm for your operating system,
-then clone this repository and run:
+以下是 Finn 翻译的第一个活动, 种瓜做了一些校对和调整:
+
+[开始使用 micro:bit](https://learn.microblocksfun.cn/cn/activities/aa-mb-get-started-cn)
+
+以下是它的英文版本和中文翻译版的 markdown 文件:
+
+- [英文版本](https://github.com/MicroBlocksCN/microblocks-learn/blob/masterCN/data/activities/aa-mb-get-started/locales/en/index.md)
+- [中文版本](https://github.com/MicroBlocksCN/microblocks-learn/blob/masterCN/data/activities/aa-mb-get-started/locales/cn/index.md)
+
+这个案例可作为学习样本，让翻译者弄清楚翻译文件的格式和路径之类的东西。
+
+所有的**活动**都可以在这里找到: [activities](https://github.com/MicroBlocksCN/microblocks-learn/tree/masterCN/data/activities)。
+
+### 在本地预览你的翻译工作
+
+<!--在线协作开发环境 replit-->
+
+安装 NodeJS(推荐 v16) 和 npm。
+
+使用 Git 克隆本仓库，运行:
 
 ```
 npm install
 ```
 
-In the root of the repository directory. This will install all dependencies for you.
-
-## Building
-
-### For developing
+上述命令将安装完项目依赖。之后使用以下命令启动开发环境:
 
 ```
 npm run dev
 ```
 
-You can now access the live-reloading dev site at http://localhost:3000
+现在可以通过 `http://localhost:3001/cn/` 访问站点，你在翻译时所做的修改都将实时更新。
 
-### For deploying
+## 提交**活动**(Activities)
 
-```
-npm run
-```
+欢迎 MicroBlocks 中文社区的用户提交有趣的活动。更多信息，请参考[提交活动](SUBMITTING_ACTIVITIES.md)。
 
-## HandleBars additions
+也欢迎大家将活动制作英文版本，提交给 [MicroBlocks官方仓库](https://gitlab.com/bromagosa/microblocks-learn)。
 
-### MarkDown
+## 开发者
 
-You can render MarkDown inline using this helper:
-
-```
-{{#markdown}}
-# Enter your markdown here
-And I will *render* it for you :)
-{{/markdown}}
-```
-
-Or fetch it from a markdown file under `data/markdown/` like this:
-
-`{{#markdown fileName}}`
-
-The file name goes without the extension.
-
-### Boolean operators
-
-We support the following:
-
-```
-(and arg1 arg2 ...)
-(or arg1 arg2 ...)
-```
-
-Which you can call from inside other helpers like `#if` or `#unless`, as follows:
-
-```
-{{#if (and is-green is-big)}}
-...
-{{/if}}
-```
-
-### Localization
-
-Localizing works by calling the `localize` helper, like this:
-
-```
-{{localize "button_ok"}}
-```
-
-Localize can also take arguments:
-
-```
-{{localize "greet" firstName}}
-```
-
-Please refer to `locales/README.md` for full documentation on localization.
-
-
-### Join strings
-
-You can join strings by using the `join` helper:
-
-```
-{{join "Welcome, " firstName}}
-```
-
-This can be used in a subexpression for, for example, localization:
-
-```
-{{localize (join "nav_" item)}}
-```
-
+想要构建、测试、调试或扩展网站的开发人员,请参考 [这里](README.md)。
