@@ -47,7 +47,7 @@ npm run dev
 
 也欢迎大家将活动制作英文版本，提交给 [MicroBlocks 官方仓库](https://gitlab.com/bromagosa/microblocks-learn)。
 
-## 提交翻译内容
+## 如何提交翻译内容和新的**活动**
 
 如果你熟悉 Github, 可以将你的翻译内容，以 Pull Request 方式提交即可。
 
