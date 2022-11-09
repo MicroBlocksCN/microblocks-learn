@@ -45,7 +45,13 @@ npm run dev
 
 欢迎 MicroBlocks 中文社区的用户提交有趣的活动。更多信息，请参考[提交活动](SUBMITTING_ACTIVITIES.md)。
 
-也欢迎大家将活动制作英文版本，提交给 [MicroBlocks官方仓库](https://gitlab.com/bromagosa/microblocks-learn)。
+也欢迎大家将活动制作英文版本，提交给 [MicroBlocks 官方仓库](https://gitlab.com/bromagosa/microblocks-learn)。
+
+## 提交翻译内容
+
+如果你熟悉 Github, 可以将你的翻译内容，以 Pull Request 方式提交即可。
+
+如果你不熟悉 Github, 可将你的翻译内容(或许还有中文配图)打包发送到邮箱: `wuwenjie718@gmail.com`。
 
 ## 开发者
 
