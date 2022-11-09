@@ -59,4 +59,4 @@ npm run dev
 
 
 ## 遇到问题？
-欢迎在 [issue](https://github.com/MicroBlocksCN/microblocks-learn/issues) 里提问。
+欢迎在 [Issues](https://github.com/MicroBlocksCN/microblocks-learn/issues) 里提问。
