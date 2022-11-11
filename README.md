@@ -43,9 +43,11 @@ npm run dev
 
 ## 提交**活动**(Activities)
 
-欢迎 MicroBlocks 中文社区的用户提交有趣的活动。更多信息，请参考[提交活动](SUBMITTING_ACTIVITIES.md)。
+MicroBlocks 团队制作了[许多有趣的活动](https://learn.microblocksfun.cn/en/), 也欢迎社区用户分享自己制作的有趣活动。
 
-也欢迎大家将活动制作英文版本，提交给 [MicroBlocks 官方仓库](https://gitlab.com/bromagosa/microblocks-learn)。
+如果你愿意分享， 建议使用[开始使用 micro:bit](https://github.com/MicroBlocksCN/microblocks-learn/blob/masterCN/data/activities/aa-mb-get-started/locales/cn/index.md)为模版，制作自己的活动，并提交到这个仓库。
+
+也欢迎大家将活动制作英文版本，提交给 [MicroBlocks 官方仓库](https://gitlab.com/bromagosa/microblocks-learn/-/blob/master/SUBMITTING_ACTIVITIES.md)。
 
 ## 如何提交翻译内容和新的**活动**
 
