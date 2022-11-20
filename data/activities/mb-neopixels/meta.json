@@ -3,5 +3,6 @@
     "level": 1,
     "boards": [ "board_microbit" ],
     "time": [ 15, 45 ],
-    "topics": [ "tpc_art" ]
+    "topics": [ "tpc_art" ],
+    "components": [ "cmp_neopixels" ]
 }
