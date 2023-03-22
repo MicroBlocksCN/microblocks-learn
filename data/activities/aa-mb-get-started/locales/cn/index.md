@@ -5,7 +5,7 @@ _翻译: Finn, [种瓜](https://wwj718.github.io/tags/microblocks/)_
 
 **如果你是micro:bit 新手**, 请从[这里开始](https://microblocksfun.cn/get-started).
 
-打开 MicroBlocks 并使用 USB 数据线将 micro:bit 连接到你的计算机。
+打开 MicroBlocks 并使用 USB 数据线将Circuit Playground开发板连接到你的计算机。备注：Circuit Playground开发板，价格高。更便宜的替代方案见...。
 
 如果你[在浏览器中运行 MicroBlocks(推荐)](https://microblocksfun.cn/run/microblocks.html), 请单击 USB 图标进行连接。
 如果你使用 MicroBlocks 桌面应用，程序将自动连接到 micro:bit。
