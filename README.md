@@ -2,6 +2,11 @@
 
 ## 翻译**活动**(Activities)
 
+[如何开展Microblocks学习教程翻译工作.pdf](https://scratch3-files.just4fun.site/%E5%A6%82%E4%BD%95%E5%BC%80%E5%B1%95Microblocks%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B%E7%BF%BB%E8%AF%91%E5%B7%A5%E4%BD%9C.pdf)
+
+---
+
+
 一个**活动**可以被视为一个 MicroBlocks 教学项目。
 
 MicroBlocks 团队制作了许多有趣的活动: [活动页面](https://learn.microblocksfun.cn/en/)。目前，它们绝大多数是英文的。
