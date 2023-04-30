@@ -1,6 +1,6 @@
 ### 概述
 
-[Macqueen小车](https://www.dfrobot.com/product-2557.html) 是一个由micro:bit控制的小车。
+[Maqueen小车](https://www.dfrobot.com/product-2557.html) 是一个由micro:bit控制的小车。
 
 ![rob0148-en.jpg](rob0148-en.jpg)
 
@@ -15,7 +15,7 @@
 
 ![](ir-remote_trn.png)
 
-然而，您可以使用任何基于通用 NEC 协议的红外遥控器。您可以通过运行 **Macqueen IR Keycode** 积木（见下一节），并按下遥控器上的键来测试遥控器。如果该积木返回一个数字，则遥控器能正常工作。注意，你使用的遥控器发送的编码可能与本教程使用的遥控器发送的编码不相同。
+然而，您可以使用任何基于通用 NEC 协议的红外遥控器。您可以通过运行 **Maqueen IR Keycode** 积木（见下一节），并按下遥控器上的键来测试遥控器。如果该积木返回一个数字，则遥控器能正常工作。注意，你使用的遥控器发送的编码可能与本教程使用的遥控器发送的编码不相同。
 
 ### 脚本
 
@@ -46,7 +46,7 @@
 
 ![macqueen_front_org.png](macqueen_front_org.png)
 
-为了读取Microblocks程序中的代码，我们需要使用  **Macqueen IR Keycode** 积木。在收到遥控器发出的红外信号时，此积木返回解码得到的编码。下图中，我们看到了按遥控器上的OK键的编码：
+为了读取Microblocks程序中的代码，我们需要使用  **Maqueen IR Keycode** 积木。在收到遥控器发出的红外信号时，此积木返回解码得到的编码。下图中，我们看到了按遥控器上的OK键的编码：
 
 ![](block_irkey_ok.png)
 
